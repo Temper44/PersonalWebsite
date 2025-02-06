@@ -1,15 +1,43 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Nunito_Sans } from "next/font/google";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+import "./globals.css";
+import CustomCursor from "./components/CustomCursor";
+import { CursorProvider } from "./components/context/CursorContext";
+import NextTopLoader from "nextjs-toploader";
+import ThemeContextProvider from "./components/context/ThemeContext";
+import ThemeSwitch from "./components/ThemeSwitch";
+
+const nunitoSans = Nunito_Sans({
+  variable: "--font-nunito-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const neueMontreal = localFont({
+  src: [
+    {
+      path: "../public/fonts/NeueMontreal-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/NeueMontreal-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/NeueMontreal-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/NeueMontreal-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-neue-montreal",
 });
 
 export const metadata: Metadata = {
@@ -23,11 +51,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html
+      lang="en"
+      className={`${nunitoSans.variable} ${neueMontreal.variable}`}
+    >
+      <body className={`font-nunito antialiased`}>
+        <ThemeContextProvider>
+          <CursorProvider>
+            <NextTopLoader color="#FF4D59" />
+            <CustomCursor />
+            {children}
+            <ThemeSwitch />
+          </CursorProvider>
+        </ThemeContextProvider>
       </body>
     </html>
   );
