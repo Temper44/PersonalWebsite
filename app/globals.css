@@ -97,7 +97,6 @@ a {
 }
 
 .bg-video {
-  /* mask-size: 50% 50%; */
   mask-position: center bottom;
   mask-repeat: no-repeat;
   opacity: 0.8;
