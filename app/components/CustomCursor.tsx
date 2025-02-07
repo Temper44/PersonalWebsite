@@ -7,7 +7,7 @@ const CustomCursor = () => {
   const { isCursorHovered, position, setPosition } = useCursor();
 
   useEffect(() => {
-    const updateCursorPosition = (e) => {
+    const updateCursorPosition = (e: { clientX: number; clientY: number }) => {
       setPosition({
         x: e.clientX,
         y: e.clientY,
@@ -19,7 +19,7 @@ const CustomCursor = () => {
     return () => {
       window.removeEventListener("mousemove", updateCursorPosition);
     };
-  }, []);
+  }, [setPosition]);
 
   return (
     <div

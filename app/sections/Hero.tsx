@@ -33,7 +33,7 @@ const Hero = () => {
         ? `/videos/${randomVideoNum}_tablet.mp4`
         : `/videos/${randomVideoNum}.mp4`;
     setRandomVideo(videoPath);
-  }, [isMobile, randomVideoNum]);
+  }, [isSmall, isTablet, randomVideoNum]);
 
   return (
     <section className="relative flex min-h-screen w-full flex-col items-center justify-center p-8 md:p-10">

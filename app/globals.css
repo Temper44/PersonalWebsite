@@ -107,7 +107,7 @@ a {
     mask-repeat: no-repeat;
     opacity: 0.8;
   }
-  @media (max-width: var(--tablet)) {
+  @media (max-width: 768) {
     mask-position: center;
   }
 }
