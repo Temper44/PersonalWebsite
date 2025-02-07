@@ -23,7 +23,7 @@ const Hero = () => {
 
   useEffect(() => {
     setRandomVideoNum(Math.floor(Math.random() * 6) + 1);
-    setRandomMaskNum(Math.floor(Math.random() * 4) + 1);
+    setRandomMaskNum(Math.floor(Math.random() * 2) + 1);
   }, []);
 
   useEffect(() => {
@@ -78,12 +78,14 @@ const Hero = () => {
           autoPlay
           loop
           muted
-          className="bg-video absolute inset-0 h-screen w-screen object-cover"
+          className="bg-video absolute left-14 top-[0] h-screen w-screen object-cover md:left-[11rem] md:top-0"
           aria-label="Background animation"
           style={{
             maskImage: isHovered
               ? "none"
               : `url('/img/mask${randomMaskNum}.svg')`,
+            maskRepeat: "no-repeat",
+            inset: isHovered ? "0" : "",
             WebkitMaskImage: isHovered
               ? "none"
               : `url('/img/mask${randomMaskNum}.svg')`,
