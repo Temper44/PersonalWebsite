@@ -4,25 +4,30 @@ import { navItems } from "@/lib/data";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { IoMdMail } from "react-icons/io";
+import Link from "next/link";
 
 const socialMedia = [
   {
     id: 1,
+    name: "Instagram",
     href: "https://instagram.com",
     icon: <FaInstagram />,
   },
   {
     id: 2,
+    name: "LinkedIn",
     href: "https://linkedin.com",
     icon: <FaLinkedin />,
   },
   {
     id: 3,
+    name: "GitHub",
     href: "https://github.com",
     icon: <FaGithub />,
   },
   {
     id: 4,
+    name: "Email",
     href: "mailto:mathiasebner2000@gmail.com",
     icon: <IoMdMail />,
   },
@@ -40,26 +45,28 @@ const Footer = () => {
         transition={{ delay: 1 }}
       >
         {socialMedia.map((link) => (
-          <a
+          <Link
             key={link.id}
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[1.2rem] text-black transition-colors duration-500 ease-in-out md:text-[1.15rem] xl:text-lg 2xl:text-xl dark:text-white"
+            aria-label={`More information on ${link.name}`}
+            className="text-[1.2rem] text-black transition-colors duration-500 ease-in-out dark:text-white md:text-[1.15rem] xl:text-lg 2xl:text-xl"
             onMouseEnter={() => setIsCursorHovered(true)}
             onMouseLeave={() => setIsCursorHovered(false)}
           >
             {link.icon}
-          </a>
+          </Link>
         ))}
-        <a
+        <Link
           href="/imprint"
           className="hidden text-sm transition-colors duration-500 ease-in-out md:inline xl:text-base 2xl:text-lg"
+          aria-label="More information on Imprint"
           onMouseEnter={() => setIsCursorHovered(true)}
           onMouseLeave={() => setIsCursorHovered(false)}
         >
           Imprint
-        </a>
+        </Link>
       </motion.div>
       <motion.nav
         className="hidden items-center justify-center md:flex md:gap-6 lg:gap-8"
@@ -68,15 +75,16 @@ const Footer = () => {
         transition={{ delay: 1.3 }}
       >
         {navItems.map((item) => (
-          <a
+          <Link
             key={item.name}
             href={item.link}
+            aria-label={`More information on ${item.name}`}
             className="nav-hover-btn"
             onMouseEnter={() => setIsCursorHovered(true)}
             onMouseLeave={() => setIsCursorHovered(false)}
           >
             {item.name}
-          </a>
+          </Link>
         ))}
       </motion.nav>
     </footer>

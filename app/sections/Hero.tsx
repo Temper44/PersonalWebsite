@@ -13,23 +13,25 @@ const Hero = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isHoveredPortrait, setIsHoveredPortrait] = useState(false);
 
-  // const isSmall = useMediaQuery({ maxWidth: 440 });
+  const isSmall = useMediaQuery({ maxWidth: 520 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
-  // const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+  const isTablet = useMediaQuery({ minWidth: 520, maxWidth: 1024 });
 
   const [randomVideo, setRandomVideo] = useState("/videos/1.mp4");
   const [randomVideoNum, setRandomVideoNum] = useState(1);
   const [randomMaskNum, setRandomMaskNum] = useState(1);
 
   useEffect(() => {
-    setRandomVideoNum(Math.floor(Math.random() * 7) + 1);
-    setRandomMaskNum(Math.floor(Math.random() * 3) + 1);
+    setRandomVideoNum(Math.floor(Math.random() * 6) + 1);
+    setRandomMaskNum(Math.floor(Math.random() * 4) + 1);
   }, []);
 
   useEffect(() => {
-    const videoPath = isMobile
-      ? `/videos/${randomVideoNum}.mp4`
-      : `/videos/${randomVideoNum}.mp4`;
+    const videoPath = isSmall
+      ? `/videos/${randomVideoNum}_mobile.mp4`
+      : isTablet
+        ? `/videos/${randomVideoNum}_tablet.mp4`
+        : `/videos/${randomVideoNum}.mp4`;
     setRandomVideo(videoPath);
   }, [isMobile, randomVideoNum]);
 
@@ -37,7 +39,7 @@ const Hero = () => {
     <section className="relative flex min-h-screen w-full flex-col items-center justify-center p-8 md:p-10">
       <MobileMenu />
       <Spotlights />
-      <div className="absolute left-0 top-0 flex h-screen w-full items-center justify-center bg-grid-black/[0.04] dark:bg-grid-white/[0.03]">
+      <div className="absolute left-0 top-0 flex h-screen w-full items-center justify-center bg-grid-black/[0.07] dark:bg-grid-white/[0.03]">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,theme(colors.background))] dark:bg-black" />
       </div>
       <div className="container flex flex-col items-center justify-center sm:flex-row 2xl:justify-start">
@@ -77,6 +79,7 @@ const Hero = () => {
           loop
           muted
           className="bg-video absolute inset-0 h-screen w-screen object-cover"
+          aria-label="Background animation"
           style={{
             maskImage: isHovered
               ? "none"

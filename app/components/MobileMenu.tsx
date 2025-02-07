@@ -4,6 +4,7 @@ import { navItems } from "@/lib/data";
 import { TextHoverEffect } from "./ui/TextHoverEffect";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Link from "next/link";
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,9 +70,13 @@ const MobileMenu = () => {
       >
         <nav className="flex h-screen flex-col items-center justify-center gap-6">
           {navItems.map((item) => (
-            <a key={item.name} href={item.link}>
+            <Link
+              key={item.name}
+              href={item.link}
+              aria-label={`More information on ${item.name}`}
+            >
               {isOpen && <TextHoverEffect text={item.name} />}
-            </a>
+            </Link>
           ))}
         </nav>
       </motion.div>
