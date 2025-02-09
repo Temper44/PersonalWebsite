@@ -2,9 +2,11 @@
 
 import React, { useEffect } from "react";
 import { useCursor } from "./context/CursorContext";
+import { useMediaQuery } from "react-responsive";
 
 const CustomCursor = () => {
   const { isCursorHovered, position, setPosition } = useCursor();
+  const isSmall = useMediaQuery({ maxWidth: 520 });
 
   useEffect(() => {
     const updateCursorPosition = (e: { clientX: number; clientY: number }) => {
@@ -22,22 +24,26 @@ const CustomCursor = () => {
   }, [setPosition]);
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        zIndex: 9999,
-        top: `${position.y}px`,
-        left: `${position.x}px`,
-        width: isCursorHovered ? "55px" : "35px", // Change size on hover
-        height: isCursorHovered ? "55px" : "35px",
-        backgroundColor: "#1A5773", // Example color
-        borderRadius: "50%",
-        transform: "translate(-50%, -50%)",
-        pointerEvents: "none", // Make sure the cursor doesn't interfere with clicks
-        mixBlendMode: "difference", // You can change this to 'multiply', 'screen', etc.
-        transition: "width 0.1s ease, height 0.1s ease",
-      }}
-    />
+    <>
+      {!isSmall && (
+        <div
+          style={{
+            position: "absolute",
+            zIndex: 9999,
+            top: `${position.y}px`,
+            left: `${position.x}px`,
+            width: isCursorHovered ? "55px" : "35px", // Change size on hover
+            height: isCursorHovered ? "55px" : "35px",
+            backgroundColor: "#1A5773", // Example color
+            borderRadius: "50%",
+            transform: "translate(-50%, -50%)",
+            pointerEvents: "none", // Make sure the cursor doesn't interfere with clicks
+            mixBlendMode: "difference", // You can change this to 'multiply', 'screen', etc.
+            transition: "width 0.1s ease, height 0.1s ease",
+          }}
+        />
+      )}
+    </>
   );
 };
 

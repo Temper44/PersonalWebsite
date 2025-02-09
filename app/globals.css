@@ -92,23 +92,26 @@ a {
     mask-size: 100%;
   }
   50% {
-    mask-size: 104%;
+    mask-size: 103%;
   }
 }
 
 .bg-video {
-  mask-position: center bottom;
   mask-repeat: no-repeat;
   opacity: 0.8;
-  animation: breathing 18s infinite ease-in-out;
+  animation: breathing 17s infinite ease-in-out;
   @media (max-width: 640px) {
     mask-position: center;
     animation: none;
     mask-repeat: no-repeat;
+    mask-size: 550px;
     opacity: 0.8;
   }
-  @media (max-width: 768) {
+  @media (min-width: 641) {
     mask-position: center;
+  }
+  @media (min-width: 1000) {
+    mask-position: center bottom;
   }
 }
 

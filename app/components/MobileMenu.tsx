@@ -40,7 +40,7 @@ const MobileMenu = () => {
         onClick={toggleMenu}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.3, duration: 0.3 }}
+        transition={{ delay: 1.3, duration: 1 }}
       >
         <svg width="50" height="50" viewBox="0 0 100 100">
           <path
