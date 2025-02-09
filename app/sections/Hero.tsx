@@ -87,7 +87,7 @@ const Hero = () => {
             autoPlay
             loop
             muted
-            className="bg-video absolute left-3 top-[0] h-screen w-screen object-cover md:left-[11rem] md:top-0"
+            className="bg-video pointer-events-none absolute left-3 top-[0] h-screen w-screen object-cover md:left-[11rem] md:top-0"
             aria-label="Background animation"
             style={{
               maskImage: isHovered
