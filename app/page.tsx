@@ -2,7 +2,7 @@ import Hero from "./sections/Hero";
 
 export default function Home() {
   return (
-    <main className="mx-auto flex flex-col items-center justify-center w-full min-h-screen lg:h-screen overflow-clip">
+    <main className="mx-auto flex max-h-[100svh] min-h-screen w-full flex-col items-center justify-center overflow-clip lg:h-screen">
       <Hero />
     </main>
   );
