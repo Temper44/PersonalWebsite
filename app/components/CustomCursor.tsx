@@ -6,8 +6,7 @@ import { useMediaQuery } from "react-responsive";
 
 const CustomCursor = () => {
   const { isCursorHovered, position, setPosition } = useCursor();
-  const isSmall = useMediaQuery({ maxWidth: 520 });
-  const isLandscape = useMediaQuery({ query: "(orientation: landscape)" });
+  const isTablet = useMediaQuery({ maxWidth: 1024 });
 
   useEffect(() => {
     const updateCursorPosition = (e: { clientX: number; clientY: number }) => {
@@ -26,7 +25,7 @@ const CustomCursor = () => {
 
   return (
     <>
-      {!isSmall && (
+      {!isTablet && (
         <div
           style={{
             position: "absolute",
