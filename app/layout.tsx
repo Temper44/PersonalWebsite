@@ -3,9 +3,9 @@ import { Nunito_Sans } from "next/font/google";
 import localFont from "next/font/local";
 
 import "./globals.css";
-import CustomCursor from "./components/CustomCursor";
+// import CustomCursor from "./components/CustomCursor";
 import { CursorProvider } from "./components/context/CursorContext";
-import NextTopLoader from "nextjs-toploader";
+// import NextTopLoader from "nextjs-toploader";
 import ThemeContextProvider from "./components/context/ThemeContext";
 import ThemeSwitch from "./components/ThemeSwitch";
 
@@ -58,8 +58,8 @@ export default function RootLayout({
       <body className={`font-nunito antialiased`}>
         <ThemeContextProvider>
           <CursorProvider>
-            <NextTopLoader color="#FF4D59" />
-            <CustomCursor />
+            {/* <NextTopLoader color="#FF4D59" /> */}
+            {/* <CustomCursor /> */}
             {children}
             <ThemeSwitch />
           </CursorProvider>

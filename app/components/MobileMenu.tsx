@@ -5,11 +5,13 @@ import { TextHoverEffect } from "./ui/TextHoverEffect";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
+import { useMediaQuery } from "react-responsive";
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen((prevState) => !prevState);
   const menuRef = useRef(null);
+  const isVerySmallPhone = useMediaQuery({ maxHeight: 680 });
 
   useGSAP(() => {
     if (isOpen) {
@@ -32,8 +34,9 @@ const MobileMenu = () => {
   return (
     <>
       <motion.button
-        className={`burgerMenu fixed right-8 top-8 z-50 transition-all md:hidden ${
-          isOpen && "opened rounded-full bg-black p-2 dark:bg-white"
+        className={`burgerMenu fixed right-8 top-6 z-50 flex items-center justify-center transition-all md:hidden ${
+          isOpen &&
+          "opened right-6 top-6 rounded-full bg-black p-2 dark:bg-white"
         }`}
         aria-label="Main Menu"
         aria-expanded={isOpen}
@@ -68,7 +71,9 @@ const MobileMenu = () => {
         // exit={{ y: "-100%" }}
         // transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <nav className="flex h-screen flex-col items-center justify-center gap-6">
+        <nav
+          className={`flex h-screen flex-col items-center justify-center gap-6 ${isVerySmallPhone && "gap-0"}`}
+        >
           {navItems.map((item) => (
             <Link
               key={item.name}

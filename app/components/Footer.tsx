@@ -37,7 +37,7 @@ const Footer = () => {
   const { setIsCursorHovered } = useCursor();
 
   return (
-    <footer className="container absolute bottom-0 flex w-full items-center justify-between px-14 py-7">
+    <footer className="container absolute bottom-0 flex items-center justify-between px-14 py-7">
       <motion.div
         className="flex w-full items-center justify-center gap-4 md:w-auto"
         initial={{ opacity: 0, y: 100 }}

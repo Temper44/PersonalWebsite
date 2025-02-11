@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 export const TextHoverEffect = ({
   text,
@@ -14,6 +15,7 @@ export const TextHoverEffect = ({
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
   const [maskPosition, setMaskPosition] = useState({ cx: "50%", cy: "50%" });
+  const isVerySmallPhone = useMediaQuery({ maxHeight: 680 });
 
   useEffect(() => {
     if (svgRef.current && cursor.x !== null && cursor.y !== null) {
@@ -84,7 +86,7 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="0.5"
-        className="fill-transparent stroke-black font-montreal text-[3.25rem] font-bold dark:stroke-neutral-200"
+        className={`fill-transparent stroke-black font-montreal text-[3.25rem] font-bold dark:stroke-neutral-200 ${isVerySmallPhone && "text-[2rem]"}`}
         style={{ opacity: hovered ? 0.7 : 0 }}
       >
         {text}
@@ -95,7 +97,7 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="0.5"
-        className="fill-transparent stroke-black font-montreal text-[3.25rem] font-bold dark:stroke-neutral-200"
+        className={`fill-transparent stroke-black font-montreal text-[3.25rem] font-bold dark:stroke-neutral-200 ${isVerySmallPhone && "text-[2rem]"}`}
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
         animate={{
           strokeDashoffset: 0,
@@ -116,7 +118,7 @@ export const TextHoverEffect = ({
         stroke="url(#textGradient)"
         strokeWidth="0.5"
         mask="url(#textMask)"
-        className="fill-transparent stroke-black font-montreal text-[3.25rem] font-bold dark:stroke-neutral-200"
+        className={`fill-transparent stroke-black font-montreal text-[3.25rem] font-bold dark:stroke-neutral-200 ${isVerySmallPhone && "text-[2rem]"}`}
       >
         {text}
       </text>
