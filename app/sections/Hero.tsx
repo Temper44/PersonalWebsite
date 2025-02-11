@@ -39,7 +39,7 @@ const Hero = () => {
           : `/videos/${randomVideoNum}.mp4`;
 
   return (
-    <section className="relative flex max-h-[100svh] min-h-screen w-full flex-col items-center justify-center p-8 md:p-10">
+    <section className="relative flex h-screen max-h-[100svh] w-full flex-col items-center justify-center p-8 md:p-10">
       <MobileMenu />
       <Spotlights />
 
