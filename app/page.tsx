@@ -79,7 +79,10 @@ export default function Home() {
           </span>{" "}
           <br />
           <span className="font-bold">technologist</span>. <br /> I like to:{" "}
-          {isMobile && <br />} <FlipWords words={words} />
+          {isMobile && <br />}{" "}
+          <div className="min-h-[60px] md:min-h-[80px] lg:min-h-[105px]">
+            <FlipWords words={words} />
+          </div>
         </motion.h1>
 
         {randomVideoNum !== null && (
@@ -93,8 +96,8 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
-              delay: 0.8,
-              duration: 1.2,
+              delay: 1,
+              duration: 1.5,
               type: "tween",
               ease: "easeIn",
             }}

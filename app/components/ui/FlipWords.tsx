@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export const FlipWords = ({
   words,
-  duration = 100,
+  duration = 1000,
   className,
 }: {
   words: string[];
