@@ -99,21 +99,22 @@ a {
 
 .bg-video {
   mask-repeat: no-repeat;
-  opacity: 0.8;
   animation: breathing 17s infinite ease-in-out;
   @media (max-width: 640px) {
-    mask-position: center;
+    mask-position: center left;
     animation: none;
     mask-repeat: no-repeat;
-    mask-size: 550px;
-    opacity: 0.8;
+    mask-size: 500px;
+  }
+  @media (max-width: 1024) {
+    animation: none;
   }
   @media (min-width: 641) {
     mask-position: center;
   }
-  @media (min-width: 1000) {
+  /* @media (min-width: 1000) {
     mask-position: center bottom;
-  }
+  } */
 }
 
 @supports (background-clip: text) or (-webkit-background-clip: text) {

@@ -36,7 +36,7 @@ const MobileMenu = () => {
       <motion.button
         className={`burgerMenu fixed right-8 top-6 z-50 flex items-center justify-center transition-all md:hidden ${
           isOpen &&
-          "opened right-6 top-6 rounded-full bg-black p-2 dark:bg-white"
+          "opened right-[1.4rem] top-4 rounded-full bg-black p-2 dark:bg-white"
         }`}
         aria-label="Main Menu"
         aria-expanded={isOpen}

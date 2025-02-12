@@ -7,8 +7,8 @@ export const navItems = [
 ];
 
 export const words = [
-  "code",
   "design",
+  "code",
   "photograph",
   "model",
   "animate",

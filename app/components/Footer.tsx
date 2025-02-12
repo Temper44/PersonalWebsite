@@ -37,7 +37,7 @@ const Footer = () => {
   const { setIsCursorHovered } = useCursor();
 
   return (
-    <footer className="container absolute bottom-0 flex items-center justify-between px-14 py-7">
+    <footer className="container absolute bottom-0 flex items-center justify-between px-11 py-7">
       <motion.div
         className="flex w-full items-center justify-center gap-4 md:w-auto"
         initial={{ opacity: 0, y: 100 }}
@@ -60,7 +60,7 @@ const Footer = () => {
         ))}
         <Link
           href="/imprint"
-          className="hidden text-sm transition-colors duration-500 ease-in-out md:inline xl:text-base 2xl:text-lg"
+          className="text-sm transition-colors duration-500 ease-in-out md:inline xl:text-base 2xl:text-lg"
           aria-label="More information on Imprint"
           onMouseEnter={() => setIsCursorHovered(true)}
           onMouseLeave={() => setIsCursorHovered(false)}

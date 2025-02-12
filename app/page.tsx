@@ -40,7 +40,7 @@ export default function Home() {
           : `/videos/${randomVideoNum}.mp4`;
 
   return (
-    <main className="relative mx-auto flex h-[100dvh] w-screen flex-col items-center justify-center overflow-hidden p-8">
+    <main className="relative mx-auto flex h-[100dvh] w-screen flex-col items-center justify-center overflow-hidden">
       <MobileMenu />
       <CustomCursor />
       <Spotlights />
@@ -50,9 +50,9 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,theme(colors.background))] dark:bg-black" />
       </div>
 
-      <div className="container flex flex-col items-center justify-center sm:flex-row 2xl:justify-start">
+      <div className="container flex flex-col items-center justify-center px-6 sm:flex-row sm:px-11 2xl:justify-start">
         <motion.h1
-          className="relative z-10 min-w-[80vw] font-montreal text-4xl font-medium capitalize !leading-tight tracking-wide transition-colors duration-500 ease-in-out xs:text-5xl md:text-6xl lg:text-6xl xl:min-w-[70vw] xl:text-7xl 2xl:text-[5.25rem]"
+          className="relative z-10 min-w-[80vw] font-montreal text-4xl font-medium !leading-tight tracking-wide transition-colors duration-500 ease-in-out xs:text-5xl md:text-6xl lg:text-6xl xl:min-w-[70vw] xl:text-7xl 2xl:text-[5.25rem]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
@@ -75,10 +75,10 @@ export default function Home() {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            creative
+            Creative
           </span>{" "}
           <br />
-          <span className="font-bold">technologist</span>. <br /> I like to:{" "}
+          <span className="font-bold">Technologist</span>. <br /> I like to:{" "}
           {isMobile && <br />}{" "}
           <div className="min-h-[60px] md:min-h-[80px] lg:min-h-[105px]">
             <FlipWords words={words} />
@@ -91,10 +91,10 @@ export default function Home() {
             autoPlay
             loop
             muted
-            className="bg-video pointer-events-none absolute left-3 top-[0] h-screen w-screen object-cover md:left-[11rem] md:top-0"
+            className="bg-video pointer-events-none absolute left-3 top-0 h-screen w-screen object-cover md:left-[11rem]"
             aria-label="Background animation"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={{ opacity: 0.8 }}
             transition={{
               delay: 1,
               duration: 1.5,
