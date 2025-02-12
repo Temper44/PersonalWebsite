@@ -8,7 +8,7 @@ export const TextHoverEffect = ({
   // duration,
 }: {
   text: string;
-  duration?: number;
+  // duration?: number;
   automatic?: boolean;
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);

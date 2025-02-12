@@ -123,7 +123,7 @@ export default function Home() {
             className="pointer-events-none absolute inset-0 z-40 flex h-screen w-screen items-center justify-center backdrop-blur-md"
           >
             <motion.img
-              src="/img/portrait.jpg"
+              src="/img/portrait.webp"
               alt="My Picture"
               className="absolute z-50 max-h-[35vh] max-w-[35vw] overflow-clip rounded-full shadow-lg"
               initial={{ scale: 0.9, opacity: 0 }}
