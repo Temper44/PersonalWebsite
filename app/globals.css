@@ -4,11 +4,9 @@
 
 @view-transition {
   navigation: auto;
-}
-
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation-duration: 2s;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 :root {
@@ -27,10 +25,6 @@
     --background-rgb: 8, 14, 16; /* Used for the video mask */
     --foreground-rgb: 247, 247, 247; /* Used for the video mask */
   }
-}
-
-* {
-  /* outline: 1px solid red; */
 }
 
 body {

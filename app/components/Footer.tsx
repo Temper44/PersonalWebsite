@@ -43,9 +43,9 @@ const Footer = () => {
     <footer className="container absolute bottom-0 flex items-center justify-between px-11 py-7">
       <motion.div
         className="flex w-full items-center justify-center gap-4 md:w-auto"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
       >
         {socialMedia.map((link) => (
           <Link
@@ -74,9 +74,9 @@ const Footer = () => {
       {!isMobile && (
         <motion.nav
           className="hidden items-center justify-center md:flex md:gap-6 lg:gap-8"
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.3 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.3, duration: 1 }}
         >
           {navItems.map((item) => (
             <Link
