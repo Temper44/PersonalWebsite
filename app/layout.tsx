@@ -12,6 +12,7 @@ import ThemeSwitch from "./components/ThemeSwitch";
 const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const neueMontreal = localFont({
@@ -38,6 +39,7 @@ const neueMontreal = localFont({
     },
   ],
   variable: "--font-neue-montreal",
+  display: "swap",
 });
 
 export const metadata: Metadata = {

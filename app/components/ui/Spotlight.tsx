@@ -3,11 +3,12 @@ import { cn } from "@/lib/utils";
 import { useTheme } from "../context/ThemeContext";
 
 type SpotlightProps = {
+  id: string;
   className?: string;
   fill?: string;
 };
 
-export const Spotlight = ({ className, fill }: SpotlightProps) => {
+export const Spotlight = ({ id, className, fill }: SpotlightProps) => {
   const { theme } = useTheme();
 
   return (
@@ -33,7 +34,7 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
       </g>
       <defs>
         <filter
-          id="filter"
+          id={id}
           x="0.860352"
           y="0.838989"
           width="3785.16"
