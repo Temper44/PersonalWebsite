@@ -3,7 +3,7 @@ export const navItems = [
   { name: "Blog", link: "/blog" },
   { name: "Photos", link: "/photos" },
   { name: "Posters", link: "/posters" },
-  { name: "3D-Models", link: "/models" },
+  { name: "3D-Models", link: "/3d-models" },
 ];
 
 export const words = [
