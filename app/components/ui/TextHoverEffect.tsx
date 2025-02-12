@@ -5,7 +5,7 @@ import { useMediaQuery } from "react-responsive";
 
 export const TextHoverEffect = ({
   text,
-  duration,
+  // duration,
 }: {
   text: string;
   duration?: number;
