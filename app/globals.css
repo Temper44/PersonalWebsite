@@ -106,10 +106,10 @@ a {
     mask-repeat: no-repeat;
     mask-size: 500px;
   }
-  @media (max-width: 1024) {
+  @media (max-width: 1024px) {
     animation: none;
   }
-  @media (min-width: 641) {
+  @media (min-width: 640px) {
     mask-position: center;
   }
   /* @media (min-width: 1000) {
