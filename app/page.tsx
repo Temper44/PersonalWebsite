@@ -17,16 +17,17 @@ export default function Home() {
   const isSmall = useMediaQuery({ maxWidth: 520 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 520, maxWidth: 1024 });
+  const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   // Fix: Initialize state as null to prevent SSR mismatches
   const [randomVideoNum, setRandomVideoNum] = useState<number | null>(null);
   const [randomMaskNum, setRandomMaskNum] = useState<number | null>(null);
 
+  const [isClient, setIsClient] = useState(false);
+
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      setRandomVideoNum(Math.floor(Math.random() * 6) + 1);
-      setRandomMaskNum(Math.floor(Math.random() * 2) + 1);
-    }
+    setRandomVideoNum(Math.floor(Math.random() * 4) + 1);
+    setRandomMaskNum(Math.floor(Math.random() * 2) + 1);
   }, []);
 
   // Only set video path if `randomVideoNum` is available
@@ -39,10 +40,22 @@ export default function Home() {
           ? `/videos/${randomVideoNum}_tablet.mp4`
           : `/videos/${randomVideoNum}.mp4`;
 
+  // Set `isClient` to true after the component mounts
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    // Avoid rendering client-dependent components during SSR
+    return (
+      <main className="relative mx-auto flex h-[100dvh] w-screen flex-col items-center justify-center overflow-hidden"></main>
+    );
+  }
+
   return (
     <main className="relative mx-auto flex h-[100dvh] w-screen flex-col items-center justify-center overflow-hidden">
-      <MobileMenu />
-      <CustomCursor />
+      {isMobile && <MobileMenu />}
+      {isDesktop && <CustomCursor />}
       <Spotlights />
 
       {/* Background Grid Overlay */}

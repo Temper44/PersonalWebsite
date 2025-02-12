@@ -4,13 +4,15 @@ import { navItems } from "@/lib/data";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { IoMdMail } from "react-icons/io";
+
 import Link from "next/link";
+import { useMediaQuery } from "react-responsive";
 
 const socialMedia = [
   {
     id: 1,
     name: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/ebnermathias/",
     icon: <FaInstagram />,
   },
   {
@@ -22,7 +24,7 @@ const socialMedia = [
   {
     id: 3,
     name: "GitHub",
-    href: "https://github.com",
+    href: "https://github.com/Temper44",
     icon: <FaGithub />,
   },
   {
@@ -35,6 +37,7 @@ const socialMedia = [
 
 const Footer = () => {
   const { setIsCursorHovered } = useCursor();
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   return (
     <footer className="container absolute bottom-0 flex items-center justify-between px-11 py-7">
@@ -68,25 +71,27 @@ const Footer = () => {
           Imprint
         </Link>
       </motion.div>
-      <motion.nav
-        className="hidden items-center justify-center md:flex md:gap-6 lg:gap-8"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.3 }}
-      >
-        {navItems.map((item) => (
-          <Link
-            key={item.name}
-            href={item.link}
-            aria-label={`More information on ${item.name}`}
-            className="nav-hover-btn"
-            onMouseEnter={() => setIsCursorHovered(true)}
-            onMouseLeave={() => setIsCursorHovered(false)}
-          >
-            {item.name}
-          </Link>
-        ))}
-      </motion.nav>
+      {!isMobile && (
+        <motion.nav
+          className="hidden items-center justify-center md:flex md:gap-6 lg:gap-8"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.3 }}
+        >
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              href={item.link}
+              aria-label={`More information on ${item.name}`}
+              className="nav-hover-btn"
+              onMouseEnter={() => setIsCursorHovered(true)}
+              onMouseLeave={() => setIsCursorHovered(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </motion.nav>
+      )}
     </footer>
   );
 };
