@@ -71,6 +71,9 @@ const MobileMenu = () => {
         // exit={{ y: "-100%" }}
         // transition={{ duration: 0.5, ease: "easeOut" }}
       >
+        <div className="absolute left-0 top-0 flex h-screen w-screen items-center justify-center bg-dot-black/[0.1] dark:bg-dot-white/[0.1]">
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,theme(colors.background))] dark:bg-black" />
+        </div>
         <nav
           className={`flex h-screen flex-col items-center justify-center gap-6 ${isVerySmallPhone && "gap-0"}`}
         >

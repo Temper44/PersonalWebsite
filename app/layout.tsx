@@ -7,6 +7,7 @@ import { CursorProvider } from "./components/context/CursorContext";
 import NextTopLoader from "nextjs-toploader";
 import ThemeContextProvider from "./components/context/ThemeContext";
 import ThemeSwitch from "./components/ThemeSwitch";
+import { ReactLenis } from "lenis/react";
 
 const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
@@ -58,11 +59,19 @@ export default function RootLayout({
     >
       <body className={`font-nunito antialiased`}>
         <ThemeContextProvider>
-          <CursorProvider>
-            <NextTopLoader color="#FF4D59" />
-            {children}
-            <ThemeSwitch />
-          </CursorProvider>
+          <ReactLenis
+            root
+            options={{
+              lerp: 0.05,
+              duration: 2,
+            }}
+          >
+            <CursorProvider>
+              <NextTopLoader color="#FF4D59" />
+              {children}
+              <ThemeSwitch />
+            </CursorProvider>
+          </ReactLenis>
         </ThemeContextProvider>
       </body>
     </html>
