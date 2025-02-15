@@ -67,7 +67,7 @@ export default function RootLayout({
             }}
           >
             <CursorProvider>
-              <NextTopLoader color="#FF4D59" showSpinner={false} />
+              <NextTopLoader color="#FF4D59" showSpinner={false} height={4} />
               {children}
               <ThemeSwitch />
             </CursorProvider>

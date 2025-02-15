@@ -12,10 +12,11 @@ import ScrollToTopButton from "../components/ScrollToTopButton";
 import GridGallery from "../components/GridGallery";
 import Footer from "../components/Footer";
 import { loadParallaxImages, loadSliderImages } from "../../lib/loadImages";
+import ScrollProgressBar from "../components/ScrollProgressBar";
 
 export default function Page() {
   // const isSmall = useMediaQuery({ maxWidth: 520 });
-  // const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   const landscapeImages = loadSliderImages();
@@ -30,15 +31,26 @@ export default function Page() {
         <div className="pointer-events-none fixed inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,theme(colors.background))] dark:bg-black" />
       </div>
 
+      {isMobile && <ScrollProgressBar />}
       <MobileMenu isFullPage={true} />
       {isDesktop && <CustomCursor />}
       <ScrollToTopButton />
 
       <div className="container flex min-h-screen flex-col items-center justify-center p-6">
-        <h1 className="font-grain font-montreal text-[10rem] font-bold capitalize">
+        <motion.h1
+          className="font-grain font-montreal text-7xl font-bold capitalize tracking-wide xs:text-[6.2rem] sm:text-9xl md:text-[9rem] lg:text-[10rem] xl:text-[11rem] 2xl:text-[12rem]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            delay: 0.1,
+            duration: 1,
+            type: "tween",
+            ease: "easeIn",
+          }}
+        >
           Photos
-        </h1>
-        <TextGenerateEffect words={words} className="px-[10rem]" />
+        </motion.h1>
+        <TextGenerateEffect words={words} className="py-4 md:px-[10rem]" />
       </div>
 
       <div className="container flex flex-col items-center">

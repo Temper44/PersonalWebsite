@@ -5,12 +5,12 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const GridImage = ({
-  aspectRatio,
+  className,
   src,
   alt,
   sizes,
 }: {
-  aspectRatio: string;
+  className?: string;
   src: string;
   alt: string;
   sizes: string;
@@ -24,7 +24,7 @@ const GridImage = ({
   return (
     <motion.div
       ref={ref}
-      className={`relative w-full shadow-md aspect-[${aspectRatio}]`}
+      className={`${className} relative w-full shadow-md`}
       initial={{ opacity: 0, scale: 0.95 }}
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
       transition={{

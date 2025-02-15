@@ -1,11 +1,12 @@
 "use client";
 
 import { useScroll, useTransform, motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { cn } from "@/lib/utils";
+import { useMediaQuery } from "react-responsive";
 
 export const ParallaxScroll = ({
   images,
@@ -17,17 +18,31 @@ export const ParallaxScroll = ({
   const { scrollYProgress } = useScroll();
   const [currentImage, setCurrentImage] = useState<number | null>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [lightboxClosed, setLightboxClosed] = useState(true);
 
-  // Parallax transform values
-  const translateFirst = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const translateSecond = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const translateThird = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
+  const translateFirst = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? [0, 0] : [0, -200],
+  );
+  const translateSecond = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? [0, 0] : [0, 200],
+  );
+  const translateThird = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? [0, 0] : [0, 0],
+  );
 
   // Split images into 3 parts
   const third = Math.ceil(images.length / 3);
   const firstPart = images.slice(0, third);
-  const secondPart = images.slice(third, 2 * third);
-  const thirdPart = images.slice(2 * third);
+  const secondPart = images.slice(third, 1.9 * third);
+  const thirdPart = images.slice(1.9 * third);
 
   const AnimatedWrapper = ({
     children,
@@ -47,23 +62,63 @@ export const ParallaxScroll = ({
         ref={ref}
         style={{ y: translate }}
         initial={{ opacity: 0, scale: 0.95 }}
-        animate={isInView ? { opacity: 1, scale: 1 } : {}}
+        animate={isInView && lightboxClosed ? { opacity: 1, scale: 1 } : {}}
         transition={{
           duration: 0.6,
           ease: "easeOut",
         }}
-        className="shadow-xl"
+        className="overflow-hidden shadow-xl"
       >
         {children}
       </motion.div>
     );
   };
 
+  const ParallaxImage = ({
+    idx,
+    el,
+    className,
+  }: {
+    idx: number;
+    el: { thumb: string };
+    className: string;
+  }) => {
+    return (
+      <motion.div
+        className={`${className} relative h-full w-full shadow-md`}
+        onClick={() => {
+          setCurrentImage(idx);
+          setIsOpen(true);
+          setLightboxClosed(false);
+        }}
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
+        <Image
+          src={el.thumb}
+          className="brightness-100 transition-all duration-300 hover:brightness-75"
+          fill
+          quality={100}
+          style={{ objectFit: "cover" }}
+          alt={`Image ${idx + 1}`}
+          sizes="(max-width: 640px) 100vw, 33vw"
+        />
+      </motion.div>
+    );
+  };
+
+  useEffect(() => {
+    if (!isOpen) {
+      setLightboxClosed(true);
+    }
+  }, [isOpen]);
+
   return (
     <div className={cn("w-full items-start overflow-hidden", className)}>
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-8 px-4 py-40 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-        <div className="grid gap-8 md:gap-6">
+      <div className="container mx-auto grid grid-cols-1 items-start gap-8 px-4 py-40 md:grid-cols-3 lg:grid-cols-3">
+        <div className="grid gap-8">
           <Lightbox
+            className="cursor-pointer"
             open={isOpen}
             close={() => setIsOpen(false)}
             index={currentImage || 0}
@@ -74,91 +129,31 @@ export const ParallaxScroll = ({
           />
           {firstPart.map((el, idx) => (
             <AnimatedWrapper key={`grid-1-${idx}`} translate={translateFirst}>
-              <div className="relative overflow-hidden">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="relative"
-                >
-                  <div
-                    className="cursor-pointer"
-                    onClick={() => {
-                      setCurrentImage(idx);
-                      setIsOpen(true);
-                    }}
-                  >
-                    <Image
-                      src={el.thumb}
-                      className="h-120 !m-0 w-full object-cover object-left-top brightness-100 transition-all duration-300 hover:brightness-75"
-                      height={400}
-                      width={400}
-                      alt={`Image ${idx + 1}`}
-                    />
-                  </div>
-                </motion.div>
-              </div>
+              <ParallaxImage idx={idx} el={el} className="aspect-[4/5]" />
             </AnimatedWrapper>
           ))}
         </div>
 
-        <div className="grid gap-8 md:gap-6">
+        <div className="grid gap-8">
           {secondPart.map((el, idx) => (
             <AnimatedWrapper key={`grid-2-${idx}`} translate={translateSecond}>
-              <div className="relative overflow-hidden">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="relative"
-                >
-                  <div
-                    className="cursor-pointer"
-                    onClick={() => {
-                      setCurrentImage(idx + firstPart.length);
-                      setIsOpen(true);
-                    }}
-                  >
-                    <Image
-                      src={el.thumb}
-                      className="!m-0 h-80 w-full object-cover object-left-top brightness-100 transition-all duration-300 hover:brightness-75"
-                      height={400}
-                      width={400}
-                      alt={`Image ${idx + 1}`}
-                    />
-                  </div>
-                </motion.div>
-              </div>
+              <ParallaxImage
+                idx={idx + firstPart.length}
+                el={el}
+                className="aspect-[3/4]"
+              />
             </AnimatedWrapper>
           ))}
         </div>
 
-        <div className="grid gap-8 md:gap-6">
+        <div className="grid gap-8">
           {thirdPart.map((el, idx) => (
             <AnimatedWrapper key={`grid-3-${idx}`} translate={translateThird}>
-              <div className="relative overflow-hidden">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="relative"
-                >
-                  <div
-                    className="cursor-pointer"
-                    onClick={() => {
-                      setCurrentImage(
-                        idx + firstPart.length + secondPart.length,
-                      );
-                      setIsOpen(true);
-                    }}
-                  >
-                    <Image
-                      src={el.thumb}
-                      className="h-90 !m-0 w-full object-cover object-left-top brightness-100 transition-all duration-300 hover:brightness-75"
-                      height={400}
-                      width={400}
-                      alt={`Image ${idx + 1}`}
-                    />
-                  </div>
-                </motion.div>
-              </div>
+              <ParallaxImage
+                idx={idx + firstPart.length + secondPart.length}
+                el={el}
+                className="aspect-[4/5]"
+              />
             </AnimatedWrapper>
           ))}
         </div>

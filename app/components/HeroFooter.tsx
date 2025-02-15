@@ -1,39 +1,9 @@
 import React from "react";
 import { useCursor } from "./context/CursorContext";
-import { navItems } from "@/lib/data";
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { navItems, socialMedia } from "@/lib/data";
 import { motion } from "framer-motion";
-import { IoMdMail } from "react-icons/io";
-
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
-
-const socialMedia = [
-  {
-    id: 1,
-    name: "Instagram",
-    href: "https://www.instagram.com/ebnermathias/",
-    icon: <FaInstagram />,
-  },
-  {
-    id: 2,
-    name: "LinkedIn",
-    href: "https://linkedin.com",
-    icon: <FaLinkedin />,
-  },
-  {
-    id: 3,
-    name: "GitHub",
-    href: "https://github.com/Temper44",
-    icon: <FaGithub />,
-  },
-  {
-    id: 4,
-    name: "Email",
-    href: "mailto:mathiasebner2000@gmail.com",
-    icon: <IoMdMail />,
-  },
-];
 
 const HeroFooter = () => {
   const { setIsCursorHovered } = useCursor();
@@ -78,18 +48,20 @@ const HeroFooter = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.3, duration: 1 }}
         >
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.link}
-              aria-label={`More information on ${item.name}`}
-              className="nav-hover-btn"
-              onMouseEnter={() => setIsCursorHovered(true)}
-              onMouseLeave={() => setIsCursorHovered(false)}
-            >
-              {item.name}
-            </Link>
-          ))}
+          {navItems.map((item, index) =>
+            index === 0 ? null : (
+              <Link
+                key={item.name}
+                href={item.link}
+                aria-label={`More information on ${item.name}`}
+                className="nav-hover-btn"
+                onMouseEnter={() => setIsCursorHovered(true)}
+                onMouseLeave={() => setIsCursorHovered(false)}
+              >
+                {item.name}
+              </Link>
+            ),
+          )}
         </motion.nav>
       )}
     </footer>

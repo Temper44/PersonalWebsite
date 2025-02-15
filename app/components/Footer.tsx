@@ -1,36 +1,8 @@
 import React from "react";
 import { useCursor } from "./context/CursorContext";
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { IoMdMail } from "react-icons/io";
 import Link from "next/link";
-
-const socialMedia = [
-  {
-    id: 1,
-    name: "Instagram",
-    href: "https://www.instagram.com/ebnermathias/",
-    icon: <FaInstagram />,
-  },
-  {
-    id: 2,
-    name: "LinkedIn",
-    href: "https://linkedin.com",
-    icon: <FaLinkedin />,
-  },
-  {
-    id: 3,
-    name: "GitHub",
-    href: "https://github.com/Temper44",
-    icon: <FaGithub />,
-  },
-  {
-    id: 4,
-    name: "Email",
-    href: "mailto:mathiasebner2000@gmail.com",
-    icon: <IoMdMail />,
-  },
-];
+import { socialMedia } from "@/lib/data";
 
 const Footer = () => {
   const { setIsCursorHovered } = useCursor();

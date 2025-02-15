@@ -54,7 +54,7 @@ export default function Home() {
 
   return (
     <main className="relative mx-auto flex h-[100dvh] w-screen flex-col items-center justify-center overflow-hidden">
-      {isMobile && <MobileMenu />}
+      {isMobile && <MobileMenu displayHome={false} />}
       {isDesktop && <CustomCursor />}
       <Spotlights />
 

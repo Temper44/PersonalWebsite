@@ -33,7 +33,12 @@ body {
 
   font-family: Arial, Helvetica, sans-serif;
   cursor: none;
+
   /* overflow: auto; */
+}
+
+img {
+  pointer-events: none;
 }
 
 body.no-scroll {
@@ -203,6 +208,14 @@ a {
   .nav-hover-btn:hover::after {
     transform-origin: bottom left;
     transform: scaleX(1);
+  }
+
+  .nav-text {
+    @apply fill-transparent font-montreal text-[3.25rem] font-bold tracking-widest sm:text-6xl md:text-7xl xl:text-8xl;
+    transition: all 0.2s ease-in;
+    /* @media screen and (min-width: 1720px) {
+      font-size: 6.5rem;
+    } */
   }
 }
 
