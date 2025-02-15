@@ -33,13 +33,12 @@ export const TextHoverEffect = ({
     <svg
       ref={svgRef}
       width="100%"
-      height="100%"
-      viewBox="0 0 300 80"
+      height="100px"
       xmlns="http://www.w3.org/2000/svg"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onMouseMove={(e) => setCursor({ x: e.clientX, y: e.clientY })}
-      className="select-none"
+      className="flex select-none items-center justify-center text-center"
     >
       <defs>
         <linearGradient
@@ -82,48 +81,54 @@ export const TextHoverEffect = ({
           />
         </mask>
       </defs>
-      <text
-        x="50%"
-        y="50%"
-        textAnchor="middle"
-        dominantBaseline="middle"
-        strokeWidth="0.5"
-        className={`fill-transparent stroke-black font-montreal text-[3.25rem] font-bold dark:stroke-neutral-200 ${isVerySmallPhone && "text-[2rem]"}`}
-        style={{ opacity: hovered ? 0.7 : 0 }}
-      >
-        {text}
-      </text>
-      <motion.text
-        x="50%"
-        y="50%"
-        textAnchor="middle"
-        dominantBaseline="middle"
-        strokeWidth="0.5"
-        className={`fill-transparent stroke-black font-montreal text-[3.25rem] font-bold dark:stroke-neutral-200 ${isVerySmallPhone && "text-[2rem]"}`}
-        initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
-        animate={{
-          strokeDashoffset: 0,
-          strokeDasharray: 1000,
-        }}
-        transition={{
-          duration: 5,
-          ease: "easeInOut",
-        }}
-      >
-        {text}
-      </motion.text>
-      <text
-        x="50%"
-        y="50%"
-        textAnchor="middle"
-        dominantBaseline="middle"
-        stroke="url(#textGradient)"
-        strokeWidth="0.5"
-        mask="url(#textMask)"
-        className={`fill-transparent stroke-black font-montreal text-[3.25rem] font-bold dark:stroke-neutral-200 ${isVerySmallPhone && "text-[2rem]"}`}
-      >
-        {text}
-      </text>
+      <g transform="scale(1)">
+        <text
+          x="50%"
+          y="50%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          strokeWidth="0.5"
+          className={`fill-transparent stroke-black font-montreal text-[3.25rem] font-bold dark:stroke-neutral-200 md:text-7xl ${isVerySmallPhone && "text-[2rem]"}`}
+          style={{ opacity: hovered ? 0.7 : 0 }}
+        >
+          {text}
+        </text>
+      </g>
+      <g transform="scale(1)">
+        <motion.text
+          x="50%"
+          y="50%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          strokeWidth="0.5"
+          className={`fill-transparent stroke-black font-montreal text-[3.25rem] font-bold dark:stroke-neutral-200 md:text-7xl ${isVerySmallPhone && "text-[2rem]"}`}
+          initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
+          animate={{
+            strokeDashoffset: 0,
+            strokeDasharray: 1000,
+          }}
+          transition={{
+            duration: 5,
+            ease: "easeInOut",
+          }}
+        >
+          {text}
+        </motion.text>
+      </g>
+      <g transform="scale(1)">
+        <text
+          x="50%"
+          y="50%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          stroke="url(#textGradient)"
+          strokeWidth="0.5"
+          mask="url(#textMask)"
+          className={`fill-transparent stroke-black font-montreal text-[3.25rem] font-bold dark:stroke-neutral-200 md:text-7xl ${isVerySmallPhone && "text-[2rem]"}`}
+        >
+          {text}
+        </text>
+      </g>
     </svg>
   );
 };

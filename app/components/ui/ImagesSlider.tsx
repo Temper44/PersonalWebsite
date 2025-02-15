@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 export const ImagesSlider = ({
   images,
@@ -44,10 +45,10 @@ export const ImagesSlider = ({
     setLoading(true);
     const loadPromises = images.map((image) => {
       return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = image;
-        img.onload = () => resolve(image);
-        img.onerror = reject;
+        const imgElement = new window.Image(); // Avoid conflict with next/image
+        imgElement.src = image;
+        imgElement.onload = () => resolve(image);
+        imgElement.onerror = reject;
       });
     });
 
@@ -58,6 +59,7 @@ export const ImagesSlider = ({
       })
       .catch((error) => console.error("Failed to load images", error));
   };
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight") {
@@ -94,7 +96,7 @@ export const ImagesSlider = ({
       rotateX: 0,
       opacity: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.8,
         ease: [0.645, 0.045, 0.355, 1.0],
       },
     },
@@ -135,15 +137,26 @@ export const ImagesSlider = ({
 
       {areImagesLoaded && (
         <AnimatePresence>
-          <motion.img
+          <motion.div
             key={currentIndex}
-            src={loadedImages[currentIndex]}
             initial="initial"
             animate="visible"
             exit={direction === "up" ? "upExit" : "downExit"}
             variants={slideVariants}
-            className="image absolute inset-0 h-full w-full object-cover object-center"
-          />
+            className="absolute inset-0 h-full w-full"
+          >
+            <Image
+              src={loadedImages[currentIndex]}
+              alt={`Slide ${currentIndex}`}
+              // placeholder="blur"
+              // blurDataURL={loadedImages[currentIndex]}
+              fill
+              priority
+              loading="eager"
+              quality={100}
+              sizes="(max-width: 768px) 100vw, (max-width: 1526px) 80vw, 100vw"
+            />
+          </motion.div>
         </AnimatePresence>
       )}
     </div>
