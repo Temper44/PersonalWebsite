@@ -1,0 +1,28 @@
+"use client";
+import React, { useEffect, useState } from "react";
+
+const ScrollProgressBar = () => {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY; // Current scroll position
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight; // Total scrollable height
+      const progress = (scrollTop / docHeight) * 100; // Calculate progress as a percentage
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll); // Cleanup on unmount
+  }, []);
+
+  return (
+    <div
+      className="fixed left-0 top-0 z-50 h-1 bg-blue-700"
+      style={{ width: `${scrollProgress}%` }}
+    />
+  );
+};
+
+export default ScrollProgressBar;

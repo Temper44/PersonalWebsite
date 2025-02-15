@@ -57,7 +57,7 @@ export default function RootLayout({
       lang="en"
       className={`${nunitoSans.variable} ${neueMontreal.variable}`}
     >
-      <body className={`font-nunito antialiased`}>
+      <body className={`vsc-initialized font-nunito antialiased`}>
         <ThemeContextProvider>
           <ReactLenis
             root
@@ -67,7 +67,7 @@ export default function RootLayout({
             }}
           >
             <CursorProvider>
-              <NextTopLoader color="#FF4D59" />
+              <NextTopLoader color="#FF4D59" showSpinner={false} height={4} />
               {children}
               <ThemeSwitch />
             </CursorProvider>

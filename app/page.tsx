@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import MobileMenu from "./components/MobileMenu";
 import Spotlights from "./components/Spotlights";
-import Footer from "./components/Footer";
+import HeroFooter from "./components/HeroFooter";
 import { words } from "@/lib/data";
 import CustomCursor from "./components/CustomCursor";
 
@@ -54,7 +54,7 @@ export default function Home() {
 
   return (
     <main className="relative mx-auto flex h-[100dvh] w-screen flex-col items-center justify-center overflow-hidden">
-      {isMobile && <MobileMenu />}
+      {isMobile && <MobileMenu displayHome={false} />}
       {isDesktop && <CustomCursor />}
       <Spotlights />
 
@@ -147,7 +147,7 @@ export default function Home() {
           </motion.div>
         )}
       </div>
-      <Footer />
+      <HeroFooter />
     </main>
   );
 }
