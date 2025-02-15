@@ -6,7 +6,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
-import LandscapeWarning from "./LandScapeWarning";
 import { useCursor } from "./context/CursorContext";
 
 interface MobileMenuProps {
@@ -21,7 +20,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
   const isVerySmallPhone = useMediaQuery({ maxHeight: 680 });
   // const isSmall = useMediaQuery({ maxWidth: 520 });
   // const isTablet = useMediaQuery({ minWidth: 768 });
-  const isDesktop = useMediaQuery({ minWidth: 1024 });
+  // const isDesktop = useMediaQuery({ minWidth: 1024 });
   // const isLargeDesktop = useMediaQuery({ minWidth: 1280 });
   const { setIsCursorHovered } = useCursor();
 

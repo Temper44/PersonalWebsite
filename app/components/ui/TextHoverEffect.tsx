@@ -23,7 +23,7 @@ export const TextHoverEffect = ({
   const maskDefId = `textMask-${uniqueId}`;
 
   const isDesktop = useMediaQuery({ minWidth: 1280 });
-  const isBigDesktop = useMediaQuery({ minWidth: 1600 });
+  // const isBigDesktop = useMediaQuery({ minWidth: 1600 });
 
   useEffect(() => {
     if (svgRef.current && cursor.x !== null && cursor.y !== null) {

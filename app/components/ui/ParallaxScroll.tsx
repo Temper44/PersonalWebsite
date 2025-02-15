@@ -1,6 +1,12 @@
 "use client";
 
-import { useScroll, useTransform, motion, useInView } from "framer-motion";
+import {
+  useScroll,
+  useTransform,
+  motion,
+  useInView,
+  MotionValue,
+} from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
@@ -49,7 +55,7 @@ export const ParallaxScroll = ({
     translate,
   }: {
     children: React.ReactNode;
-    translate: any;
+    translate: MotionValue<number>;
   }) => {
     const ref = useRef<HTMLDivElement>(null);
     const isInView = useInView(ref, {
