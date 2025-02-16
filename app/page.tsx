@@ -102,6 +102,7 @@ export default function Home() {
           <motion.video
             src={videoPath}
             autoPlay
+            controls={false}
             loop
             muted
             className="bg-video pointer-events-none absolute left-3 top-0 h-screen w-screen object-cover md:left-[11rem]"
