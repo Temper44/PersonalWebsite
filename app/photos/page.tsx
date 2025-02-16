@@ -47,12 +47,13 @@ export default function Page() {
         <HeroText heading="Photos" subheading={words} />
       </div>
 
-      <div className="container flex flex-col items-center" id="secondSection">
+      <div className="container flex flex-col items-center" id="images">
         <MarqueeText text="landscape shots" />
         <ImagesSlider
           className="mb-20 aspect-[3/2] w-screen md:mb-0 md:w-[80vw] 2xl:w-full"
           images={landscapeImages}
           overlay={false}
+          autoplay={isDesktop && true}
         >
           <motion.div
             initial={{

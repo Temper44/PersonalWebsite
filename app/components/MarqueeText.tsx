@@ -71,7 +71,7 @@ const MarqueeText = ({ text }: { text: string }) => {
           whiteSpace: "nowrap",
         }}
       >
-        <h2 className="mb-20 mt-32 inline-block font-montreal text-5xl font-normal uppercase tracking-wide xs:text-6xl sm:text-8xl md:text-[8rem] lg:text-[9rem] xl:text-[10rem] 2xl:text-[11rem]">
+        <h2 className="mb-20 mt-32 inline-block font-montreal text-4xl font-normal uppercase tracking-wide xs:text-5xl sm:text-7xl md:text-[8rem] lg:text-[9rem] xl:text-[10rem] 2xl:text-[11rem]">
           {text} - {text} - {text} - {text} - {text} - {text}
         </h2>
       </div>

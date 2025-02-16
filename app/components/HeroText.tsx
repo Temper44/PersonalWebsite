@@ -7,10 +7,12 @@ const HeroText = ({
   heading,
   subheading,
   infoText,
+  anchor,
 }: {
   heading: string;
   subheading: string;
   infoText?: string;
+  anchor?: string;
 }) => {
   const { setIsCursorHovered } = useCursor();
 
@@ -35,7 +37,7 @@ const HeroText = ({
       {!infoText && (
         <motion.a
           className="scrollIcon mt-40 md:mt-20"
-          href="#secondSection"
+          href={`#${anchor}`}
           aria-label="scroll down"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
