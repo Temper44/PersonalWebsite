@@ -3,13 +3,7 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 
-const MarqueeText = ({
-  text,
-  className,
-}: {
-  text: string;
-  className: string;
-}) => {
+const MarqueeText = ({ text }: { text: string }) => {
   const marqueeRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
@@ -77,11 +71,9 @@ const MarqueeText = ({
           whiteSpace: "nowrap",
         }}
       >
-        <h2 className={className}>
+        <h2 className="mb-20 mt-32 inline-block font-montreal text-5xl font-normal uppercase tracking-wide xs:text-6xl sm:text-8xl md:text-[8rem] lg:text-[9rem] xl:text-[10rem] 2xl:text-[11rem]">
           {text} - {text} - {text} - {text} - {text} - {text}
         </h2>
-        {/* <h2 className={className}>{text}</h2>
-        <h2 className={className}>{text}</h2> */}
       </div>
     </div>
   );

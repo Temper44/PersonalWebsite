@@ -121,7 +121,7 @@ export const ParallaxScroll = ({
 
   return (
     <div className={cn("w-full items-start overflow-hidden", className)}>
-      <div className="container mx-auto grid grid-cols-1 items-start gap-8 px-4 py-40 md:grid-cols-3 lg:grid-cols-3">
+      <div className="container mx-auto grid grid-cols-1 items-start gap-8 px-4 py-4 md:grid-cols-3 lg:grid-cols-3">
         <div className="grid gap-8">
           <Lightbox
             className="cursor-pointer"

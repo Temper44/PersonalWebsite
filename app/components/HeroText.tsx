@@ -36,6 +36,7 @@ const HeroText = ({
         <motion.a
           className="scrollIcon mt-40 md:mt-20"
           href="#secondSection"
+          aria-label="scroll down"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           onMouseEnter={() => setIsCursorHovered(true)}

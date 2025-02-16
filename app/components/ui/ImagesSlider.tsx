@@ -1,8 +1,10 @@
 "use client";
+
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { useDrag } from "@use-gesture/react"; // Gesture library
 
 export const ImagesSlider = ({
   images,
@@ -22,7 +24,6 @@ export const ImagesSlider = ({
   direction?: "up" | "down";
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  // const [loading, setLoading] = useState(false);
   const [loadedImages, setLoadedImages] = useState<string[]>([]);
 
   const handleNext = () => {
@@ -42,10 +43,9 @@ export const ImagesSlider = ({
   }, []);
 
   const loadImages = () => {
-    // setLoading(true);
     const loadPromises = images.map((image) => {
       return new Promise((resolve, reject) => {
-        const imgElement = new window.Image(); // Avoid conflict with next/image
+        const imgElement = new window.Image();
         imgElement.src = image;
         imgElement.onload = () => resolve(image);
         imgElement.onerror = reject;
@@ -55,7 +55,6 @@ export const ImagesSlider = ({
     Promise.all(loadPromises)
       .then((loadedImages) => {
         setLoadedImages(loadedImages as string[]);
-        // setLoading(false);
       })
       .catch((error) => console.error("Failed to load images", error));
   };
@@ -83,7 +82,16 @@ export const ImagesSlider = ({
       window.removeEventListener("keydown", handleKeyDown);
       clearInterval(interval);
     };
-  }, []);
+  }, [autoplay]);
+
+  // Add gesture functionality using useDrag from react-use-gesture
+  const bind = useDrag(({ swipe: [swipeX] }: { swipe: [number, number] }) => {
+    if (swipeX < 0) {
+      handleNext(); // Swipe left to move to the next image
+    } else if (swipeX > 0) {
+      handlePrevious(); // Swipe right to move to the previous image
+    }
+  });
 
   const slideVariants = {
     initial: {
@@ -127,6 +135,7 @@ export const ImagesSlider = ({
       style={{
         perspective: "1000px",
       }}
+      {...bind()} // Attach swipe gestures to the container
     >
       {areImagesLoaded && children}
       {areImagesLoaded && overlay && (
@@ -148,8 +157,6 @@ export const ImagesSlider = ({
             <Image
               src={loadedImages[currentIndex]}
               alt={`Slide ${currentIndex}`}
-              // placeholder="blur"
-              // blurDataURL={loadedImages[currentIndex]}
               fill
               priority
               loading="eager"

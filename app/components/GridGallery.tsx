@@ -2,7 +2,7 @@ import GridImage from "./GridImage";
 
 const GridGallery = () => {
   return (
-    <div className="container mx-auto grid w-full grid-cols-1 gap-5 py-20 sm:grid-cols-12 sm:gap-2 sm:py-24 md:py-40 lg:py-52">
+    <div className="container mx-auto grid w-full grid-cols-1 gap-5 sm:grid-cols-12 sm:gap-2">
       {/* Block 1 */}
       <div className="col-span-12 sm:col-span-6 sm:row-span-5">
         <GridImage

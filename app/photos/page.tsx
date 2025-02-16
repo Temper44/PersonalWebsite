@@ -22,7 +22,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
   // const isSmall = useMediaQuery({ maxWidth: 520 });
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  // const isMobile = useMediaQuery({ maxWidth: 768 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
   const gridGalleryRef = useRef(null);
 
@@ -31,33 +31,6 @@ export default function Page() {
 
   const words = `No matter where I am, I’m always looking for that perfect moment, whether in nature or the city. At least I try to..`;
 
-  // useGSAP(() => {
-  //   ScrollTrigger.create({
-  //     trigger: gridGalleryRef.current, // The element to trigger the effect
-  //     start: "top center", // When the top of the grid gallery hits the center of the viewport
-  //     end: "bottom center", // When the bottom of the grid gallery hits the center of the viewport
-  //     onEnter: () => {
-  //       gsap.to(".bg-gradient", {
-  //         backgroundColor: "red", // Background color change
-  //         duration: 2,
-  //         ease: "power2.inOut",
-  //       });
-  //     },
-  //     onLeaveBack: () => {
-  //       const isDarkMode = window.matchMedia(
-  //         "(prefers-color-scheme: dark)",
-  //       ).matches;
-
-  //       gsap.to(".bg-gradient", {
-  //         backgroundColor: isDarkMode ? "black" : "white", // Dark mode uses black, light mode uses white
-  //         duration: 1,
-  //         ease: "power2.inOut",
-  //       });
-  //     },
-  //     scrub: true, // Optional: Scrub to make it more interactive as you scroll
-  //   });
-  // }, [gridGalleryRef]);
-
   return (
     <main className="max-w-screen relative mx-auto flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden">
       <div className="bg-grain fixed inset-0 z-[-10] h-screen w-screen"></div>
@@ -65,7 +38,7 @@ export default function Page() {
         <div className="bg-gradient pointer-events-none fixed inset-0 z-[-10] flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,theme(colors.background))] dark:bg-black" />
       </div>
 
-      {isMobile && <ScrollProgressBar />}
+      <ScrollProgressBar />
       <MobileMenu isFullPage={true} />
       {isDesktop && <CustomCursor />}
       <ScrollToTopButton />
@@ -75,12 +48,9 @@ export default function Page() {
       </div>
 
       <div className="container flex flex-col items-center" id="secondSection">
-        <MarqueeText
-          text="landscape shots"
-          className="my-28 inline-block font-montreal text-7xl font-normal uppercase tracking-wide xs:text-[5.2rem] sm:text-8xl md:text-[8rem] lg:text-[9rem] xl:text-[10rem] 2xl:text-[11rem]"
-        />
+        <MarqueeText text="landscape shots" />
         <ImagesSlider
-          className="aspect-[3/2] w-screen md:w-[80vw] 2xl:w-full"
+          className="mb-20 aspect-[3/2] w-screen md:mb-0 md:w-[80vw] 2xl:w-full"
           images={landscapeImages}
           overlay={false}
         >
@@ -100,10 +70,7 @@ export default function Page() {
           ></motion.div>
         </ImagesSlider>
 
-        <MarqueeText
-          text="Selected Work"
-          className="my-28 inline-block font-montreal text-7xl font-normal uppercase tracking-wide xs:text-[5.2rem] sm:text-8xl md:text-[8rem] lg:text-[9rem] xl:text-[10rem] 2xl:text-[11rem]"
-        />
+        <MarqueeText text="Selected Work" />
 
         <div
           ref={gridGalleryRef}
@@ -111,10 +78,7 @@ export default function Page() {
         >
           <GridGallery />
         </div>
-        <MarqueeText
-          text="Street collection"
-          className="my-28 inline-block font-montreal text-7xl font-normal uppercase tracking-wide xs:text-[5.2rem] sm:text-8xl md:text-[8rem] lg:text-[9rem] xl:text-[10rem] 2xl:text-[11rem]"
-        />
+        <MarqueeText text="Street collection" />
         <ParallaxScroll images={parallaxImages} />
       </div>
       <Footer />
