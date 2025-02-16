@@ -19,7 +19,6 @@ export default function Home() {
   const isTablet = useMediaQuery({ minWidth: 520, maxWidth: 1024 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
-  // Fix: Initialize state as null to prevent SSR mismatches
   const [randomVideoNum, setRandomVideoNum] = useState<number | null>(null);
   const [randomMaskNum, setRandomMaskNum] = useState<number | null>(null);
 
@@ -46,7 +45,6 @@ export default function Home() {
   }, []);
 
   if (!isClient) {
-    // Avoid rendering client-dependent components during SSR
     return (
       <main className="relative mx-auto flex h-[100dvh] w-screen flex-col items-center justify-center overflow-hidden"></main>
     );
@@ -71,7 +69,6 @@ export default function Home() {
           transition={{
             delay: 0.1,
             duration: 0.9,
-            type: "tween",
             ease: "easeIn",
           }}
         >
@@ -112,7 +109,6 @@ export default function Home() {
             transition={{
               delay: 1,
               duration: 1.5,
-              type: "tween",
               ease: "easeIn",
             }}
             style={{
@@ -134,12 +130,12 @@ export default function Home() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="pointer-events-none absolute inset-0 z-40 flex h-screen w-screen items-center justify-center backdrop-blur-md"
+            className="pointer-events-none absolute inset-0 z-[100] flex h-screen w-screen items-center justify-center backdrop-blur-md"
           >
             <motion.img
               src="/img/portrait.webp"
               alt="My Picture"
-              className="absolute z-50 max-h-[35vh] max-w-[35vw] overflow-clip rounded-full shadow-lg"
+              className="absolute z-[100] max-h-[35vh] max-w-[35vw] overflow-clip rounded-full shadow-lg"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}

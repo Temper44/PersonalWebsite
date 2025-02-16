@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GoArrowUp } from "react-icons/go";
+import { useCursor } from "../components/context/CursorContext";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { setIsCursorHovered } = useCursor();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,8 +33,10 @@ const ScrollToTopButton = () => {
     <AnimatePresence>
       {isVisible && (
         <motion.button
-          className="fixed bottom-8 right-8 z-50 flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-full bg-black text-white shadow-md dark:bg-white dark:text-black"
+          className="fixed bottom-8 right-8 z-10 flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-full bg-black text-white shadow-md dark:bg-white dark:text-black"
           onClick={scrollToTop}
+          onMouseEnter={() => setIsCursorHovered(true)}
+          onMouseLeave={() => setIsCursorHovered(false)}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}

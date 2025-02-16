@@ -48,7 +48,6 @@ export const FlipWords = ({
           display: "inline-block",
         }}
         transition={{
-          type: "tween",
           stiffness: 90,
           damping: 10,
           delay: 2,

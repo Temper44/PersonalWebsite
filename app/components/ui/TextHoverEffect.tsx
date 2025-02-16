@@ -7,9 +7,11 @@ import { useMediaQuery } from "react-responsive";
 export const TextHoverEffect = ({
   text,
   duration,
+  active,
 }: {
   text: string;
   duration?: number;
+  active?: boolean;
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
@@ -42,7 +44,7 @@ export const TextHoverEffect = ({
       ref={svgRef}
       width="100vw"
       height={isDesktop ? `14vh` : `10vh`}
-      viewBox={isDesktop ? `0 0 400 120` : `0 0 400 100`}
+      viewBox={isDesktop ? `0 0 600 120` : `0 0 400 100`}
       xmlns="http://www.w3.org/2000/svg"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -100,7 +102,7 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="1"
-        className="nav-text stroke-black dark:stroke-neutral-200"
+        className={`nav-text stroke-black dark:stroke-neutral-200 ${active && "stroke-red-500 dark:stroke-red-500"}`}
         style={{
           opacity: hovered ? 0.3 : 0, // Fade out on hover
         }}
@@ -115,7 +117,7 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="1"
-        className="nav-text stroke-black dark:stroke-neutral-200"
+        className={`nav-text stroke-black dark:stroke-neutral-200 ${active && "stroke-red-500 dark:stroke-red-500"}`}
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
         animate={{
           strokeDashoffset: 0,
@@ -136,12 +138,12 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         stroke={`url(#${gradientId})`} // Use unique gradient ID
-        strokeWidth="2" // Slightly thicker for stronger visibility
+        strokeWidth="3" // Slightly thicker for stronger visibility
         mask={`url(#${maskDefId})`} // Use unique mask ID
         className="nav-text"
         style={{
           opacity: hovered ? 1 : 0, // Show only on hover
-          filter: "brightness(2)", // Slight brightness boost
+          filter: "brightness(1)", // Slight brightness boost
         }}
       >
         {text}

@@ -7,7 +7,7 @@ export const TextGenerateEffect = ({
   words,
   className,
   filter = true,
-  duration = 0.4,
+  duration = 0.5,
 }: {
   words: string;
   className?: string;
@@ -25,7 +25,7 @@ export const TextGenerateEffect = ({
       },
       {
         duration: duration ? duration : 1,
-        delay: stagger(0.2),
+        delay: stagger(0.1),
       },
     );
   }, [scope.current]);
@@ -52,7 +52,7 @@ export const TextGenerateEffect = ({
 
   return (
     <div className={cn("font-bold", className)}>
-      <div className="md:text-1xl bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text py-4 text-left font-montreal text-base font-normal !leading-tight tracking-wide text-transparent xs:text-lg md:text-center lg:text-2xl xl:text-3xl 2xl:text-4xl">
+      <div className="bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text py-4 text-left font-montreal text-base font-normal !leading-relaxed tracking-wide text-transparent xs:text-lg sm:text-center md:text-xl xl:text-2xl 2xl:text-3xl">
         {renderWords()}
       </div>
     </div>

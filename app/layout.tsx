@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
 import localFont from "next/font/local";
 
-import "./globals.css";
+import "./globals.scss";
 import { CursorProvider } from "./components/context/CursorContext";
 import NextTopLoader from "nextjs-toploader";
 import ThemeContextProvider from "./components/context/ThemeContext";
@@ -67,7 +67,12 @@ export default function RootLayout({
             }}
           >
             <CursorProvider>
-              <NextTopLoader color="#FF4D59" showSpinner={false} height={4} />
+              <NextTopLoader
+                color="#FF4D59"
+                showSpinner={false}
+                height={4}
+                showForHashAnchor={false}
+              />
               {children}
               <ThemeSwitch />
             </CursorProvider>

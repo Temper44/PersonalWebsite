@@ -34,9 +34,9 @@ const CustomCursor = () => {
         zIndex: 9999,
         top: `${position.y}px`,
         left: `${position.x}px`,
-        width: isCursorHovered ? "55px" : "35px", // Change size on hover
-        height: isCursorHovered ? "55px" : "35px",
-        backgroundColor: "#1A5773", // Example color
+        width: isCursorHovered ? "52px" : "25px", // Change size on hover
+        height: isCursorHovered ? "52px" : "25px",
+        backgroundColor: "#ffffff", // Example color #1A5773
         borderRadius: "50%",
         transform: "translate(-50%, -50%)",
         pointerEvents: "none", // Ensure cursor doesn't interfere with clicks
