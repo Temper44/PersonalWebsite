@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useCursor } from "./context/CursorContext";
 import { navItems, socialMedia } from "@/lib/data";
 import { motion } from "framer-motion";
@@ -7,10 +7,19 @@ import { useMediaQuery } from "react-responsive";
 
 const HeroFooter = () => {
   const { setIsCursorHovered } = useCursor();
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect media query changes
+  const mediaQueryMobile = useMediaQuery({ maxWidth: 768 });
+
+  // Prevent re-renders by syncing state once
+  useEffect(() => {
+    setIsMobile(mediaQueryMobile);
+  }, [mediaQueryMobile]);
 
   return (
     <footer className="container absolute bottom-0 flex items-center justify-between px-11 py-7">
+      {/* Social Media Links */}
       <motion.div
         className="flex w-full items-center justify-center gap-4 md:w-auto"
         initial={{ opacity: 0 }}
@@ -41,29 +50,31 @@ const HeroFooter = () => {
           Imprint
         </Link>
       </motion.div>
-      {!isMobile && (
-        <motion.nav
-          className="hidden items-center justify-center md:flex md:gap-6 lg:gap-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.3, duration: 1 }}
-        >
-          {navItems.map((item, index) =>
-            index === 0 ? null : (
-              <Link
-                key={item.name}
-                href={item.link}
-                aria-label={`More information on ${item.name}`}
-                className="nav-hover-btn"
-                onMouseEnter={() => setIsCursorHovered(true)}
-                onMouseLeave={() => setIsCursorHovered(false)}
-              >
-                {item.name}
-              </Link>
-            ),
-          )}
-        </motion.nav>
-      )}
+
+      {/* Navigation */}
+      <motion.nav
+        className={`items-center justify-center md:flex md:gap-6 lg:gap-8 ${
+          isMobile ? "hidden" : "flex"
+        }`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.3, duration: 1 }}
+      >
+        {navItems.map((item, index) =>
+          index === 0 ? null : (
+            <Link
+              key={item.name}
+              href={item.link}
+              aria-label={`More information on ${item.name}`}
+              className="nav-hover-btn"
+              onMouseEnter={() => setIsCursorHovered(true)}
+              onMouseLeave={() => setIsCursorHovered(false)}
+            >
+              {item.name}
+            </Link>
+          ),
+        )}
+      </motion.nav>
     </footer>
   );
 };
