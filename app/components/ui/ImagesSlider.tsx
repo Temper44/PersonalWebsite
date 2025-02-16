@@ -134,6 +134,7 @@ export const ImagesSlider = ({
       )}
       style={{
         perspective: "1000px",
+        touchAction: "none",
       }}
       {...bind()} // Attach swipe gestures to the container
     >
