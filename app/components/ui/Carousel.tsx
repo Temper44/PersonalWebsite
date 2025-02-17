@@ -20,7 +20,7 @@ const CarouselControl = ({
 
   return (
     <button
-      className={`border-3 mx-2 flex h-10 w-10 items-center justify-center rounded-full border border-black border-opacity-30 bg-neutral-200 dark:bg-neutral-800 ${
+      className={`border-3 mx-3 flex h-10 w-10 scale-110 items-center justify-center rounded-full border border-black border-opacity-30 bg-neutral-200 dark:bg-neutral-800 sm:scale-100 ${
         type === "previous" ? "rotate-180" : ""
       }`}
       title={title}
@@ -171,7 +171,7 @@ const Slide = ({ src, index, current, handleSlideClick }: SlideProps) => {
         transformOrigin: "bottom",
       }}
     >
-      <div className="absolute left-0 top-0 h-full w-full overflow-hidden bg-[#1D1F2F] transition-all duration-150 ease-out">
+      <div className="absolute left-0 top-0 h-full w-full overflow-hidden bg-[#000000] transition-all duration-150 ease-out">
         <Image
           className="duration-600 absolute inset-0 h-full object-cover opacity-100 transition-opacity ease-in-out"
           style={{
@@ -185,9 +185,9 @@ const Slide = ({ src, index, current, handleSlideClick }: SlideProps) => {
           sizes="(max-width: 640px) 100vw, 75vw"
         />
 
-        {current === index && (
-          <div className="bg-unset absolute inset-0 transition-all duration-1000" />
-        )}
+        {/* {current === index && (
+          <div className="bg-unset duration-[5000] absolute inset-0 transition-all" />
+        )} */}
       </div>
     </li>
   );

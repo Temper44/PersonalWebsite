@@ -44,7 +44,7 @@ const HeroText = ({
           onMouseEnter={() => setIsCursorHovered(true)}
           onMouseLeave={() => setIsCursorHovered(false)}
           transition={{
-            delay: 1.85,
+            delay: 2,
             duration: 1,
             ease: "easeIn",
           }}
