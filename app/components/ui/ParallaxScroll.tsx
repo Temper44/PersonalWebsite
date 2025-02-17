@@ -13,6 +13,7 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "react-responsive";
+import { useCursor } from "../context/CursorContext";
 
 export const ParallaxScroll = ({
   images,
@@ -89,6 +90,8 @@ export const ParallaxScroll = ({
     el: { thumb: string };
     className: string;
   }) => {
+    const { setIsCursorHovered } = useCursor();
+
     return (
       <motion.div
         className={`${className} relative h-full w-full shadow-md`}
@@ -99,6 +102,8 @@ export const ParallaxScroll = ({
         }}
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
+        onMouseEnter={() => setIsCursorHovered(true)}
+        onMouseLeave={() => setIsCursorHovered(false)}
       >
         <Image
           src={el.thumb}

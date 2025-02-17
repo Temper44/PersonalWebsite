@@ -4,8 +4,6 @@ import React, { useRef } from "react";
 import MobileMenu from "../components/MobileMenu";
 import CustomCursor from "../components/CustomCursor";
 import { useMediaQuery } from "react-responsive";
-import { ImagesSlider } from "../components/ui/ImagesSlider";
-import { motion } from "framer-motion";
 import { ParallaxScroll } from "../components/ui/ParallaxScroll";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import GridGallery from "../components/GridGallery";
@@ -17,6 +15,7 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import HeroText from "../components/HeroText";
 import MarqueeText from "../components/MarqueeText";
+import { Carousel } from "../components/ui/Carousel";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,33 +43,14 @@ export default function Page() {
       <ScrollToTopButton />
 
       <div className="container flex min-h-screen flex-col items-center justify-center p-6">
-        <HeroText heading="Photos" subheading={words} />
+        <HeroText heading="Photos" subheading={words} anchor="images" />
       </div>
 
       <div className="container flex flex-col items-center" id="images">
         <MarqueeText text="landscape shots" />
-        <ImagesSlider
-          className="mb-20 aspect-[3/2] w-screen md:mb-0 md:w-[80vw] 2xl:w-full"
-          images={landscapeImages}
-          overlay={false}
-          autoplay={isDesktop && true}
-        >
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: -80,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.6,
-            }}
-            className="z-50 flex flex-col items-center justify-center p-3"
-          ></motion.div>
-        </ImagesSlider>
-
+        <div className="relative h-full w-screen overflow-hidden pb-20">
+          <Carousel slides={landscapeImages} />
+        </div>
         <MarqueeText text="Selected Work" />
 
         <div
