@@ -10,7 +10,7 @@ const HeroText = ({
   anchor,
 }: {
   heading: string;
-  subheading: string;
+  subheading?: string;
   infoText?: string;
   anchor?: string;
 }) => {
@@ -30,10 +30,13 @@ const HeroText = ({
       >
         {heading}
       </motion.h1>
-      <TextGenerateEffect
-        words={subheading}
-        className="py-4 md:px-[4em] lg:px-[7.5rem] xl:px-[10rem]"
-      />
+      {subheading && (
+        <TextGenerateEffect
+          words={subheading}
+          className="py-4 md:px-[4em] lg:px-[7.5rem] xl:px-[10rem]"
+        />
+      )}
+
       {!infoText && (
         <motion.a
           className="scrollIcon mt-40 md:mt-20"

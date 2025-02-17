@@ -47,7 +47,7 @@ export default function Page() {
           start: `top ${isDesktop ? "top" : "top+=100"}`, // start when the top of the trigger element hits the top of the viewport
           end: "bottom top", // end when the top of the trigger element hits the top of the viewport
           scrub: 2,
-          markers: true,
+          // markers: true,
         },
       });
 
