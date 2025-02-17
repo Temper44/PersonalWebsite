@@ -8,6 +8,7 @@ import ScrollToTopButton from "../components/ScrollToTopButton";
 import Footer from "../components/Footer";
 import ScrollProgressBar from "../components/ScrollProgressBar";
 import HeroText from "../components/HeroText";
+import FixedBackground from "../components/FixedBackground";
 
 export default function Page() {
   // const isSmall = useMediaQuery({ maxWidth: 520 });
@@ -17,10 +18,7 @@ export default function Page() {
 
   return (
     <main className="max-w-screen relative mx-auto flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden">
-      <div className="bg-grain fixed inset-0 z-0 h-screen w-screen"></div>
-      <div className="fixed left-0 top-0 z-[-10] flex h-screen w-screen items-center justify-center bg-dot-black/[0.2] dark:bg-dot-white/[0.1]">
-        <div className="bg-gradient pointer-events-none fixed inset-0 z-[-10] flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,theme(colors.background))] dark:bg-black" />
-      </div>
+      <FixedBackground />
 
       {isMobile && <ScrollProgressBar />}
       <MobileMenu isFullPage={true} />

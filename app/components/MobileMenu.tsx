@@ -49,7 +49,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
   return (
     <>
       <motion.button
-        className={`burgerMenu fixed right-8 top-6 z-50 flex items-center justify-center transition-all ${!isFullPage && "md:hidden"} ${
+        className={`burgerMenu fixed right-8 top-6 z-50 flex items-center justify-center rounded-full backdrop-blur-[0.4rem] transition-all ${!isFullPage && "md:hidden"} ${
           isOpen &&
           "opened right-[1.4rem] top-4 rounded-full bg-black p-2 dark:bg-white"
         }`}
