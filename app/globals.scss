@@ -480,8 +480,9 @@ body::-webkit-scrollbar-thumb {
 
 .photoSvg path,
 .posterSvg path {
-  stroke-dasharray: 0;
-  stroke-dashoffset: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  opacity: 0;
   stroke-width: 0.8;
   stroke: #000;
   fill: none;
