@@ -182,7 +182,7 @@ const Slide = ({ src, index, current, handleSlideClick }: SlideProps) => {
           fill
           onLoad={imageLoaded}
           quality={100}
-          sizes="(max-width: 640px) 100vw, 75vw"
+          sizes="(max-width: 640px) 100vw, 70vw"
         />
 
         {/* {current === index && (
