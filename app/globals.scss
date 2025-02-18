@@ -454,9 +454,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .heroSvg {
-  width: 70%;
+  width: 80%;
   position: fixed;
-  top: 35%;
+  top: 25%;
   transform: translateX(-50%);
   left: 50%;
   display: flex;
@@ -465,8 +465,7 @@ body::-webkit-scrollbar-thumb {
 
   @media screen and (max-width: 768px) {
     width: 90%;
-    top: 40%;
-    // left: 0%;
+    top: 25%;
     transform: translateX(-50%);
     left: 50%;
   }
@@ -479,5 +478,8 @@ body::-webkit-scrollbar-thumb {
   stroke: #000;
   fill: none;
   transition: stroke-dashoffset 0.3s ease-out;
-  /* transition: stroke-dashoffset 1s; */
+}
+
+.dark .heroSvg path {
+  stroke: white;
 }

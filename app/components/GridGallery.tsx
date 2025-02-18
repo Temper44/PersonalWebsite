@@ -32,7 +32,7 @@ const GridGallery = () => {
           trigger: svgRef.current,
           start: "top top",
           end: "bottom 10%",
-          scrub: 2,
+          scrub: 3,
         },
       },
     );
