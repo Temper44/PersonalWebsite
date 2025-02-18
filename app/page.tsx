@@ -65,7 +65,7 @@ export default function Home() {
       <FixedBackground />
       <BackgroundBeams />
 
-      <section className="container flex flex-col items-center justify-center px-6 sm:flex-row sm:px-11 2xl:justify-start">
+      <section className="textShadow container flex flex-col items-center justify-center px-6 sm:flex-row sm:px-11 2xl:justify-start">
         <motion.h1
           className="relative z-10 min-w-[80vw] font-montreal text-4xl font-medium !leading-tight tracking-wide transition-colors duration-500 ease-in-out xs:text-5xl md:text-6xl lg:text-6xl xl:min-w-[70vw] xl:text-7xl 2xl:text-[5.25rem]"
           initial={{ opacity: 0 }}
@@ -80,6 +80,7 @@ export default function Home() {
           <span
             onMouseEnter={() => setIsHoveredPortrait(true)}
             onMouseLeave={() => setIsHoveredPortrait(false)}
+            className=""
           >
             I&apos;m
           </span>{" "}

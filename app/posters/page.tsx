@@ -12,6 +12,8 @@ import FixedBackground from "../components/FixedBackground";
 import MarqueeText from "../components/MarqueeText";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { loadParallaxPoster } from "@/lib/loadImages";
+import { ParallaxScrollPoster } from "../components/ui/ParallaxScrollPoster";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,6 +21,9 @@ export default function Page() {
   // const isSmall = useMediaQuery({ maxWidth: 520 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
+
+  const parallaxPoster = loadParallaxPoster();
+
   const words = `Here's where my random design ideas come to life. I just let the process take me wherever it goes`;
 
   const svgRef = useRef<SVGSVGElement>(null);
@@ -113,6 +118,7 @@ export default function Page() {
 
       <section className="container flex flex-col items-center" id="posters">
         <MarqueeText text="selected work" />
+        <ParallaxScrollPoster images={parallaxPoster} />
       </section>
       <Footer />
     </main>
