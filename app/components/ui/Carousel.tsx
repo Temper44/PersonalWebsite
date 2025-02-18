@@ -184,10 +184,6 @@ const Slide = ({ src, index, current, handleSlideClick }: SlideProps) => {
           quality={100}
           sizes="(max-width: 640px) 100vw, 70vw"
         />
-
-        {/* {current === index && (
-          <div className="bg-unset duration-[5000] absolute inset-0 transition-all" />
-        )} */}
       </div>
     </li>
   );
