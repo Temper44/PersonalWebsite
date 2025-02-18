@@ -9,6 +9,8 @@ import Spotlights from "./components/Spotlights";
 import HeroFooter from "./components/HeroFooter";
 import { words } from "@/lib/data";
 import CustomCursor from "./components/CustomCursor";
+import { BackgroundBeams } from "./components/ui/BackgroundBeams";
+import FixedBackground from "./components/FixedBackground";
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false);
@@ -57,11 +59,13 @@ export default function Home() {
       <Spotlights />
 
       {/* Background Grid Overlay */}
-      <div className="absolute left-0 top-0 flex h-screen w-screen items-center justify-center bg-grid-black/[0.07] dark:bg-grid-white/[0.03]">
+      {/* <div className="absolute left-0 top-0 flex h-screen w-screen items-center justify-center bg-grid-black/[0.07] dark:bg-grid-white/[0.03]">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,theme(colors.background))] dark:bg-black" />
-      </div>
+      </div> */}
+      <FixedBackground />
+      <BackgroundBeams />
 
-      <div className="container flex flex-col items-center justify-center px-6 sm:flex-row sm:px-11 2xl:justify-start">
+      <section className="container flex flex-col items-center justify-center px-6 sm:flex-row sm:px-11 2xl:justify-start">
         <motion.h1
           className="relative z-10 min-w-[80vw] font-montreal text-4xl font-medium !leading-tight tracking-wide transition-colors duration-500 ease-in-out xs:text-5xl md:text-6xl lg:text-6xl xl:min-w-[70vw] xl:text-7xl 2xl:text-[5.25rem]"
           initial={{ opacity: 0 }}
@@ -143,7 +147,7 @@ export default function Home() {
             />
           </motion.div>
         )}
-      </div>
+      </section>
       <HeroFooter />
     </main>
   );

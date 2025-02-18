@@ -44,10 +44,10 @@ export default function Page() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: svgRef.current,
-          start: `top ${isDesktop ? "top" : "top+=100"}`, // start when the top of the trigger element hits the top of the viewport
+          start: `top ${isDesktop ? "top-=100px" : "top+=100"}`, // start when the top of the trigger element hits the top of the viewport
           end: "bottom+=2000px top", // end when the top of the trigger element hits the top of the viewport
           scrub: isDesktop ? 2 : 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-          markers: true,
+          // markers: true,
         },
       });
 
@@ -58,7 +58,7 @@ export default function Page() {
       }).to(paths, {
         strokeDashoffset: (i, target) => target.getTotalLength(),
         ease: "power2.in",
-        opacity: 0,
+        opacity: 0.5,
       });
     }
   }, []);
@@ -72,14 +72,14 @@ export default function Page() {
       {isDesktop && <CustomCursor />}
       <ScrollToTopButton />
 
-      <div className="container flex min-h-screen flex-col items-center justify-center p-6">
+      <section className="container flex min-h-screen flex-col items-center justify-center p-6">
         <HeroText heading="Photos" subheading={words} anchor="images" />
-      </div>
+      </section>
 
-      <div className="h-screen">
+      <section className="h-screen">
         <svg
           ref={svgRef}
-          className="heroSvg"
+          className="photoSvg"
           width="570"
           height="407"
           viewBox="0 0 570 407"
@@ -201,14 +201,14 @@ export default function Page() {
             </clipPath>
           </defs>
         </svg>
-      </div>
+      </section>
 
-      <div className="container flex flex-col items-center" id="images">
+      <section className="container flex flex-col items-center" id="images">
         <MarqueeText text="landscape shots" />
         <div className="relative h-full w-screen overflow-hidden pb-20">
           <Carousel slides={landscapeImages} />
         </div>
-        <MarqueeText text="Selected Work" />
+        <MarqueeText text="selected work" />
 
         <div
           ref={gridGalleryRef}
@@ -216,9 +216,9 @@ export default function Page() {
         >
           <GridGallery />
         </div>
-        <MarqueeText text="Street collection" />
+        <MarqueeText text="street collection" />
         <ParallaxScroll images={parallaxImages} />
-      </div>
+      </section>
       <Footer />
     </main>
   );
