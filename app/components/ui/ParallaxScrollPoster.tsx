@@ -101,7 +101,7 @@ export const ParallaxScrollPoster = ({
           quality={100}
           style={{ objectFit: "cover" }}
           alt={`Image ${idx + 1}`}
-          sizes="(max-width: 768px) 100vw, 10vw"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </motion.div>
     );
