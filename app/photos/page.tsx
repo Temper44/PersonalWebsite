@@ -45,7 +45,7 @@ export default function Page() {
         scrollTrigger: {
           trigger: svgRef.current,
           start: `top ${isDesktop ? "top-=100px" : "top+=100"}`, // start when the top of the trigger element hits the top of the viewport
-          end: `${isDesktop ? "bottom+=2000px" : "bottom+=1000px"} top`, // end when the top of the trigger element hits the top of the viewport
+          end: `${isDesktop ? "bottom+=1300px" : "bottom+=1000px"} top`, // end when the top of the trigger element hits the top of the viewport
           scrub: isDesktop ? 2 : 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
           // markers: true,
         },

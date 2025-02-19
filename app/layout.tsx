@@ -8,6 +8,7 @@ import NextTopLoader from "nextjs-toploader";
 import ThemeContextProvider from "./components/context/ThemeContext";
 import ThemeSwitch from "./components/ThemeSwitch";
 import { ReactLenis } from "lenis/react";
+import PageTransissionAnimation from "./components/PageTransissionAnimation";
 
 const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
@@ -58,26 +59,28 @@ export default function RootLayout({
       className={`${nunitoSans.variable} ${neueMontreal.variable}`}
     >
       <body className={`vsc-initialized font-nunito antialiased`}>
-        <ThemeContextProvider>
-          <ReactLenis
-            root
-            options={{
-              lerp: 0.05,
-              duration: 2,
-            }}
-          >
-            <CursorProvider>
-              <NextTopLoader
-                color="#FF4D59"
-                showSpinner={false}
-                height={4}
-                showForHashAnchor={false}
-              />
-              {children}
-              <ThemeSwitch />
-            </CursorProvider>
-          </ReactLenis>
-        </ThemeContextProvider>
+        <PageTransissionAnimation>
+          <ThemeContextProvider>
+            <ReactLenis
+              root
+              options={{
+                lerp: 0.05,
+                duration: 2,
+              }}
+            >
+              <CursorProvider>
+                <NextTopLoader
+                  color="#FF4D59"
+                  showSpinner={false}
+                  height={4}
+                  showForHashAnchor={false}
+                />
+                {children}
+                <ThemeSwitch />
+              </CursorProvider>
+            </ReactLenis>
+          </ThemeContextProvider>
+        </PageTransissionAnimation>
       </body>
     </html>
   );
