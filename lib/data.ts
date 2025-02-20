@@ -2,6 +2,7 @@ import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import React from "react";
 import { IoMdMail } from "react-icons/io";
 import { ReactElement } from "react";
+import { IoMdInformationCircleOutline } from "react-icons/io";
 
 // Define the type for social media items
 interface SocialMediaItem {
@@ -36,6 +37,12 @@ export const socialMedia: SocialMediaItem[] = [
     name: "Email",
     href: "mailto:mathiasebner2000@gmail.com",
     icon: React.createElement(IoMdMail),
+  },
+  {
+    id: 5,
+    name: "Imprint",
+    href: "/imprint",
+    icon: React.createElement(IoMdInformationCircleOutline),
   },
 ];
 

@@ -40,7 +40,7 @@ const HeroFooter = () => {
             {link.icon}
           </Link>
         ))}
-        <Link
+        {/* <Link
           href="/imprint"
           className="text-sm transition-colors duration-500 ease-in-out md:inline xl:text-base 2xl:text-lg"
           aria-label="More information on Imprint"
@@ -48,7 +48,7 @@ const HeroFooter = () => {
           onMouseLeave={() => setIsCursorHovered(false)}
         >
           Imprint
-        </Link>
+        </Link> */}
       </motion.div>
 
       {/* Navigation */}
