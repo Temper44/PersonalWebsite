@@ -23,6 +23,7 @@ export default {
       fontFamily: {
         nunito: ["var(--font-nunito-sans)"], // Default font
         grotesk: ["var(--font-overused-grotesk)"], // Only used when specified
+        raleway: ["var(--font-overused-raleway)"], // Only used when specified
       },
       screens: {
         xs: "375px",

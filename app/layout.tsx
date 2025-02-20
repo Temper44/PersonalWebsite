@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
+import { Raleway } from "next/font/google";
 import localFont from "next/font/local";
 
 import "./globals.scss";
@@ -12,6 +13,12 @@ import PageTransissionAnimation from "./components/PageTransissionAnimation";
 
 const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const raleway = Raleway({
+  variable: "--font-raleway",
   subsets: ["latin"],
   display: "swap",
 });
@@ -76,7 +83,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${nunitoSans.variable} ${overusedGrotesk.variable}`}
+      className={`${nunitoSans.variable} ${raleway.variable} ${overusedGrotesk.variable}`}
     >
       <body className={`vsc-initialized font-nunito antialiased`}>
         <PageTransissionAnimation>

@@ -64,7 +64,7 @@ export default function Home() {
       {isTablet && <BackgroundBeams />}
       <section className="textShadow container flex flex-col items-center justify-center px-6 sm:flex-row sm:px-11">
         <motion.h1
-          className="font-grotesk relative z-10 mt-[-6rem] text-left text-6xl !leading-none transition-colors duration-500 ease-in-out xs:text-8xl md:text-8xl lg:text-9xl xl:text-[9rem]"
+          className="font-raleway relative z-10 mt-[-6rem] text-left text-6xl !leading-none transition-colors duration-500 ease-in-out xs:text-8xl md:text-8xl lg:text-9xl xl:text-[9rem]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
@@ -73,8 +73,8 @@ export default function Home() {
             ease: "easeIn",
           }}
         >
-          <span className="mb-3 block text-center text-2xl font-normal sm:mb-0 sm:text-left 2xl:text-4xl">
-            hey! I&apos;m{" "}
+          <span className="mb-3 block text-center text-2xl font-light sm:mb-2 sm:text-left 2xl:text-4xl">
+            Hey! I&apos;m{" "}
             <span
               onMouseEnter={() => setIsHoveredPortrait(true)}
               onMouseLeave={() => setIsHoveredPortrait(false)}
@@ -86,7 +86,7 @@ export default function Home() {
           </span>
           <div className="marquee-forward">
             <span
-              className="colorEffect font-semibold"
+              className="colorEffect font-bold"
               // onMouseEnter={() => setIsHovered(true)}
               // onMouseLeave={() => setIsHovered(false)}
             >
