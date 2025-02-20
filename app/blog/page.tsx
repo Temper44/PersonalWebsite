@@ -25,11 +25,10 @@ export default function Page() {
       {isDesktop && <CustomCursor />}
       {/* <ScrollToTopButton /> */}
 
-      <section className="container flex min-h-screen flex-col items-center justify-center p-6">
+      <section className="container flex flex-col items-center justify-center p-6">
         <HeroText heading="Blog" subheading={words} infoText="Coming soon.." />
       </section>
 
-      <section className="container flex flex-col items-center"></section>
       <Footer />
     </main>
   );

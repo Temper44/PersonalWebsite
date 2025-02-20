@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 
 import "./globals.scss";
 import { CursorProvider } from "./components/context/CursorContext";
-import NextTopLoader from "nextjs-toploader";
+// import NextTopLoader from "nextjs-toploader";
 import ThemeContextProvider from "./components/context/ThemeContext";
 import ThemeSwitch from "./components/ThemeSwitch";
 import { ReactLenis } from "lenis/react";
@@ -16,30 +16,50 @@ const nunitoSans = Nunito_Sans({
   display: "swap",
 });
 
-const neueMontreal = localFont({
+const overusedGrotesk = localFont({
   src: [
     {
-      path: "../public/fonts/NeueMontreal-Light.woff2",
+      path: "../public/fonts/OverusedGrotesk-Light.woff2",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../public/fonts/NeueMontreal-Medium.woff2",
-      weight: "500",
+      path: "../public/fonts/OverusedGrotesk-Book.woff2",
+      weight: "350",
       style: "normal",
     },
     {
-      path: "../public/fonts/NeueMontreal-Regular.woff2",
+      path: "../public/fonts/OverusedGrotesk-Roman.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../public/fonts/NeueMontreal-Bold.woff2",
+      path: "../public/fonts/OverusedGrotesk-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/OverusedGrotesk-SemiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/OverusedGrotesk-Bold.woff2",
       weight: "700",
       style: "normal",
     },
+    {
+      path: "../public/fonts/OverusedGrotesk-ExtraBold.woff2",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/OverusedGrotesk-Black.woff2",
+      weight: "900",
+      style: "normal",
+    },
   ],
-  variable: "--font-neue-montreal",
+  variable: "--font-overused-grotesk",
   display: "swap",
 });
 
@@ -56,7 +76,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${nunitoSans.variable} ${neueMontreal.variable}`}
+      className={`${nunitoSans.variable} ${overusedGrotesk.variable}`}
     >
       <body className={`vsc-initialized font-nunito antialiased`}>
         <PageTransissionAnimation>
@@ -69,12 +89,12 @@ export default function RootLayout({
               }}
             >
               <CursorProvider>
-                <NextTopLoader
+                {/* <NextTopLoader
                   color="#FF4D59"
                   showSpinner={false}
                   height={4}
                   showForHashAnchor={false}
-                />
+                /> */}
                 {children}
                 <ThemeSwitch />
               </CursorProvider>

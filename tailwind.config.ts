@@ -22,7 +22,7 @@ export default {
       },
       fontFamily: {
         nunito: ["var(--font-nunito-sans)"], // Default font
-        montreal: ["var(--font-neue-montreal)"], // Only used when specified
+        grotesk: ["var(--font-overused-grotesk)"], // Only used when specified
       },
       screens: {
         xs: "375px",

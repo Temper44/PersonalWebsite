@@ -20,13 +20,13 @@ export default function PageTransitionAnimation({
   useEffect(() => {
     if (!isFirstLoad) {
       setIsTransitioning(true);
-      setTimeout(() => setIsTransitioning(false), 800); // Match transition duration
+      setTimeout(() => setIsTransitioning(false), 800); // Adjusted timing to match animation
     }
   }, [pathname]);
 
   return (
     <>
-      {/* Content - This ensures the page only updates AFTER the animation completes */}
+      {/* Show the page content only when transition is done */}
       {!isTransitioning && children}
 
       {/* Fullscreen transition overlay */}
@@ -35,17 +35,23 @@ export default function PageTransitionAnimation({
           <motion.div
             key={pathname}
             initial={{
-              clipPath: "inset(0% 0% 100% 0%)",
-              //   backgroundColor: "white",
-            }} // Starts hidden
-            animate={{
-              clipPath: "inset(0% 0% 0% 0%)",
-              backgroundColor: "black",
-            }} // Reveals page
-            exit={{
-              clipPath: "inset(100% 0% 0% 0%)",
+              scaleY: 0,
+              //   borderRadius: "200px", // Rounded corners
               //   backgroundColor: "black",
-            }} // Covers page
+            }}
+            animate={{
+              scaleY: 1,
+              //   borderRadius: "200px",
+              backgroundColor: "black",
+            }}
+            exit={{
+              scaleY: 0,
+              //   borderBottomLeftRadius: "200px",
+              //   borderBottomRightRadius: "200px",
+              transformOrigin: "bottom",
+
+              //   backgroundColor: "black",
+            }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
             style={{
               position: "fixed",
@@ -54,7 +60,8 @@ export default function PageTransitionAnimation({
               width: "100vw",
               height: "100vh",
               zIndex: 99999,
-              pointerEvents: "none", // Ensures it doesn't block interactions
+              transformOrigin: "top",
+              pointerEvents: "none", // Prevents blocking interactions
             }}
           />
         )}
