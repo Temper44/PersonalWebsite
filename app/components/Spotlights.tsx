@@ -6,18 +6,18 @@ const Spotlights = () => {
       <Spotlight
         id="filter"
         fill="blue"
-        className="left-[2rem] top-[4rem] h-screen w-[200vw] md:left-[-2rem] md:top-[-1.5rem] md:w-[170vw]"
+        className="bottom-[-26rem] left-[0rem] w-[200vw] sm:bottom-[-50rem] md:left-[-2rem] md:w-[100vw] lg:bottom-[-65rem]"
       />
-      <Spotlight
+      {/* <Spotlight
         id="filter2"
         fill="#08B1FF"
-        className="md:left-50 left-[5rem] top-[13rem] h-[80vh] w-[200vw] sm:w-[120vw] md:w-[80vw]"
+        className="md:left-50 left-[5rem] top-[10rem] h-[80vh] w-[200vw] sm:w-[120vw] md:w-[80vw]"
       />
       <Spotlight
         id="filter3"
         fill="#FF4D59" //red
-        className="left-[15rem] top-[7rem] h-[80vh] w-[150vw] sm:w-[80vw] md:top-[1rem] md:w-[100vw]"
-      />
+        className="left-[8rem] top-[3rem] h-[80vh] w-[200vw] sm:w-[80vw] md:top-[1rem] md:w-[100vw]"
+      /> */}
       <Spotlight
         id="filter4"
         fill="purple"

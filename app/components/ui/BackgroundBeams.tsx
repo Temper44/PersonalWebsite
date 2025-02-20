@@ -2,7 +2,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { useMediaQuery } from "react-responsive";
 
 export const BackgroundBeams = React.memo(
   ({ className }: { className?: string }) => {
@@ -58,8 +57,6 @@ export const BackgroundBeams = React.memo(
       "M-44 -573C-44 -573 24 -168 488 -41C952 86 1020 491 1020 491",
       "M-37 -581C-37 -581 31 -176 495 -49C959 78 1027 483 1027 483",
     ];
-    const isSmall = useMediaQuery({ maxWidth: 640 });
-
     return (
       <div
         className={cn(
@@ -87,8 +84,8 @@ export const BackgroundBeams = React.memo(
               key={`path-` + index}
               d={path}
               stroke={`url(#linearGradient-${index})`}
-              strokeOpacity={`${isSmall ? "0.8" : "0.4"}`}
-              strokeWidth={`${isSmall ? "1.2" : "0.7"}`}
+              strokeOpacity="0.4"
+              strokeWidth="0.7"
             ></motion.path>
           ))}
           <defs>

@@ -9,6 +9,7 @@ import Footer from "../components/Footer";
 // import ScrollProgressBar from "../components/ScrollProgressBar";
 import HeroText from "../components/HeroText";
 import FixedBackground from "../components/FixedBackground";
+import { SpotlightNew } from "../components/ui/SpotlightNew";
 
 export default function Page() {
   // const isSmall = useMediaQuery({ maxWidth: 520 });
@@ -19,6 +20,7 @@ export default function Page() {
   return (
     <main className="max-w-screen relative mx-auto flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden">
       <FixedBackground />
+      {isDesktop && <SpotlightNew />}
 
       {/* {isMobile && <ScrollProgressBar />} */}
       <MobileMenu isFullPage={true} />

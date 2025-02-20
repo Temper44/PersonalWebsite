@@ -14,6 +14,7 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { loadParallaxPoster } from "@/lib/loadImages";
 import { ParallaxScrollPoster } from "../components/ui/ParallaxScrollPoster";
+import { SpotlightNew } from "../components/ui/SpotlightNew";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,6 +65,7 @@ export default function Page() {
   return (
     <main className="max-w-screen relative mx-auto flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden">
       <FixedBackground />
+      {isDesktop && <SpotlightNew />}
 
       {isMobile && <ScrollProgressBar />}
       <MobileMenu isFullPage={true} />

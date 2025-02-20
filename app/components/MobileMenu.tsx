@@ -86,7 +86,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
         ref={menuRef}
       >
         <div className="top-0flex absolute left-0 h-screen w-screen items-center justify-center bg-grid-small-black/[0.15] dark:bg-grid-small-white/[0.25]">
-          <div className="absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,theme(colors.background))] dark:bg-black" />
+          <div className="absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_40%,theme(colors.background))] dark:bg-black" />
         </div>
         <nav
           className={`z-100 relative flex h-screen flex-col items-center justify-center gap-0`}

@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import MobileMenu from "./components/MobileMenu";
-// import Spotlights from "./components/Spotlights";
+import Spotlights from "./components/Spotlights";
 import HeroFooter from "./components/HeroFooter";
 // import { words } from "@/lib/data";
 import CustomCursor from "./components/CustomCursor";
@@ -19,7 +19,7 @@ export default function Home() {
 
   const isSmall = useMediaQuery({ maxWidth: 640 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
-  // const isTablet = useMediaQuery({ minWidth: 520, maxWidth: 1024 });
+  const isTablet = useMediaQuery({ minWidth: 768 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   // const [randomVideoNum, setRandomVideoNum] = useState<number | null>(null);
@@ -57,14 +57,14 @@ export default function Home() {
     <main className="relative mx-auto flex h-[100dvh] w-screen flex-col items-center justify-center overflow-hidden">
       {isMobile && <MobileMenu displayHome={false} />}
       {isDesktop && <CustomCursor />}
-      {/* <Spotlights /> */}
+      <Spotlights />
 
       {/* <WavyBackground backgroundFill="transparent"> */}
       <FixedBackground />
-      <BackgroundBeams />
+      {isTablet && <BackgroundBeams />}
       <section className="textShadow container flex flex-col items-center justify-center px-6 sm:flex-row sm:px-11">
         <motion.h1
-          className="font-grotesk relative z-10 mt-[-10rem] text-left text-6xl !leading-none transition-colors duration-500 ease-in-out xs:text-8xl md:text-8xl lg:text-9xl xl:text-9xl 2xl:text-[9rem]"
+          className="font-grotesk relative z-10 mt-[-6rem] text-left text-6xl !leading-none transition-colors duration-500 ease-in-out xs:text-8xl md:text-8xl lg:text-9xl xl:text-[9rem]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
@@ -96,13 +96,13 @@ export default function Home() {
               <>
                 {" "}
                 <span aria-hidden className="colorEffect font-semibold">
-                  Creative -
+                  -Creative
                 </span>
                 <span aria-hidden className="colorEffect font-semibold">
-                  Creative -
+                  -Creative
                 </span>
                 <span aria-hidden className="colorEffect font-semibold">
-                  Creative -
+                  -Creative
                 </span>
               </>
             )}
@@ -115,13 +115,13 @@ export default function Home() {
               <>
                 {" "}
                 <span aria-hidden className="pb-4 font-normal tracking-tight">
-                  - Technologist
+                  Technologist-
                 </span>
                 <span aria-hidden className="pb-4 font-normal tracking-tight">
-                  - Technologist
+                  Technologist-
                 </span>
                 <span aria-hidden className="pb-4 font-normal tracking-tight">
-                  - Technologist
+                  Technologist-
                 </span>
               </>
             )}

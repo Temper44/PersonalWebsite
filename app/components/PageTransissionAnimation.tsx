@@ -37,21 +37,20 @@ export default function PageTransitionAnimation({
             initial={{
               scaleY: 0,
               //   borderRadius: "200px", // Rounded corners
-              //   backgroundColor: "black",
+              // backgroundColor: "black",
             }}
             animate={{
               scaleY: 1,
               //   borderRadius: "200px",
               backgroundColor: "black",
-              borderTopLeftRadius: "5000px",
-              borderTopRightRadius: "5000px",
+              borderTopLeftRadius: "50px",
+              borderTopRightRadius: "50px",
             }}
             exit={{
               scaleY: 0,
-
               transformOrigin: "bottom",
 
-              //   backgroundColor: "black",
+              // backgroundColor: "white",
             }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
             style={{
