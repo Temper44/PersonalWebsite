@@ -544,7 +544,7 @@ body::-webkit-scrollbar-thumb {
     overflow: hidden;
 
     span {
-      font-weight: 500 !important;
+      // font-weight: 500 !important;
       white-space: nowrap; /* Prevent wrapping */
       will-change: transform, background-position; /* Optimize animation */
       animation:

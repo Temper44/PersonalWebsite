@@ -104,13 +104,13 @@ export default function Home() {
             {isSmall && (
               <>
                 {" "}
-                <span aria-hidden className="colorEffect font-semibold">
+                <span aria-hidden className="colorEffect font-bold">
                   -Creative
                 </span>
-                <span aria-hidden className="colorEffect font-semibold">
+                <span aria-hidden className="colorEffect font-bold">
                   -Creative
                 </span>
-                <span aria-hidden className="colorEffect font-semibold">
+                <span aria-hidden className="colorEffect font-bold">
                   -Creative
                 </span>
               </>
