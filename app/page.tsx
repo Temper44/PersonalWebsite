@@ -63,17 +63,17 @@ export default function Home() {
       <FixedBackground />
       {isTablet && <BackgroundBeams />}
       <section className="textShadow container flex flex-col items-center justify-center px-6 sm:flex-row sm:px-11">
-        <motion.h1
-          className="font-raleway relative z-10 mt-[-6rem] text-left text-6xl !leading-none transition-colors duration-500 ease-in-out xs:text-8xl md:text-8xl lg:text-9xl xl:text-[9rem]"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            delay: 0.1,
-            duration: 0.9,
-            ease: "easeIn",
-          }}
-        >
-          <span className="mb-3 block text-center text-2xl font-light sm:mb-2 sm:text-left 2xl:text-4xl">
+        <motion.h1 className="font-raleway relative z-10 mt-[-6rem] text-left text-6xl !leading-none transition-colors duration-500 ease-in-out xs:text-8xl md:text-8xl lg:text-9xl xl:text-[9rem]">
+          <motion.span
+            className="mb-3 block text-center text-2xl font-light sm:mb-2 sm:text-left 2xl:text-4xl"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: 0.2,
+              duration: 0.9,
+              ease: "easeIn",
+            }}
+          >
             Hey! I&apos;m{" "}
             <span
               onMouseEnter={() => setIsHoveredPortrait(true)}
@@ -83,8 +83,17 @@ export default function Home() {
               Mathias
             </span>
             , a
-          </span>
-          <div className="marquee-forward">
+          </motion.span>
+          <motion.div
+            className="marquee-forward"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: 0.5,
+              duration: 0.9,
+              ease: "easeIn",
+            }}
+          >
             <span
               className="colorEffect font-bold"
               // onMouseEnter={() => setIsHovered(true)}
@@ -106,8 +115,17 @@ export default function Home() {
                 </span>
               </>
             )}
-          </div>
-          <div className="marquee-backward">
+          </motion.div>
+          <motion.div
+            className="marquee-backward"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: 0.8,
+              duration: 0.9,
+              ease: "easeIn",
+            }}
+          >
             <span className="pb-4 font-normal tracking-tight">
               Technologist
             </span>
@@ -125,7 +143,7 @@ export default function Home() {
                 </span>
               </>
             )}
-          </div>
+          </motion.div>
         </motion.h1>
 
         {isHoveredPortrait && (
