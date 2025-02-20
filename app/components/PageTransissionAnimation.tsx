@@ -43,11 +43,12 @@ export default function PageTransitionAnimation({
               scaleY: 1,
               //   borderRadius: "200px",
               backgroundColor: "black",
+              borderTopLeftRadius: "5000px",
+              borderTopRightRadius: "5000px",
             }}
             exit={{
               scaleY: 0,
-              //   borderBottomLeftRadius: "200px",
-              //   borderBottomRightRadius: "200px",
+
               transformOrigin: "bottom",
 
               //   backgroundColor: "black",

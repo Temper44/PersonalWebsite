@@ -64,7 +64,7 @@ export default function Home() {
       <BackgroundBeams />
       <section className="textShadow container flex flex-col items-center justify-center px-6 sm:flex-row sm:px-11">
         <motion.h1
-          className="font-grotesk relative z-10 mt-[-10rem] text-left text-6xl !leading-none transition-colors duration-500 ease-in-out xs:text-8xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[9rem]"
+          className="font-grotesk relative z-10 mt-[-10rem] text-left text-6xl !leading-none transition-colors duration-500 ease-in-out xs:text-8xl md:text-8xl lg:text-9xl xl:text-9xl 2xl:text-[9rem]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
@@ -73,15 +73,16 @@ export default function Home() {
             ease: "easeIn",
           }}
         >
-          <span className="block text-center text-2xl font-normal sm:text-left 2xl:text-4xl">
-            Hey,{" "}
+          <span className="mb-3 block text-center text-2xl font-normal sm:mb-0 sm:text-left 2xl:text-4xl">
+            hey! I&apos;m{" "}
             <span
               onMouseEnter={() => setIsHoveredPortrait(true)}
               onMouseLeave={() => setIsHoveredPortrait(false)}
+              className="font-medium underline"
             >
-              I&apos;m
-            </span>{" "}
-            a
+              Mathias
+            </span>
+            , a
           </span>
           <div className="marquee-forward">
             <span
@@ -106,21 +107,20 @@ export default function Home() {
               </>
             )}
           </div>
-
           <div className="marquee-backward">
-            <span className="pb-3 font-normal tracking-tight">
+            <span className="pb-4 font-normal tracking-tight">
               Technologist
             </span>
             {isSmall && (
               <>
                 {" "}
-                <span aria-hidden className="font-normal tracking-tight">
+                <span aria-hidden className="pb-4 font-normal tracking-tight">
                   - Technologist
                 </span>
-                <span aria-hidden className="font-normal tracking-tight">
+                <span aria-hidden className="pb-4 font-normal tracking-tight">
                   - Technologist
                 </span>
-                <span aria-hidden className="font-normal tracking-tight">
+                <span aria-hidden className="pb-4 font-normal tracking-tight">
                   - Technologist
                 </span>
               </>

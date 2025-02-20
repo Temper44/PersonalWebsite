@@ -19,7 +19,7 @@ const HeroText = ({
   return (
     <>
       <motion.h1
-        className="font-grain font-grotesk text-center text-7xl font-bold capitalize !leading-[1.15] tracking-wide xs:text-[6.2rem] sm:text-9xl md:text-[9rem] lg:text-[10rem] xl:text-[11rem] 2xl:text-[12rem]"
+        className="font-grain font-grotesk pb-2 text-center text-7xl font-bold capitalize !leading-[1.15] tracking-wide xs:text-[6.2rem] sm:text-9xl md:text-[9rem] lg:text-[10rem] xl:text-[11rem] 2xl:text-[12rem]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
