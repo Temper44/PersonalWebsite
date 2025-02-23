@@ -36,11 +36,11 @@ export default {
         spotlight: {
           "0%": {
             opacity: "0",
-            transform: "translate(-72%, -62%) scale(0.5)",
+            transform: "translate(-50%, -50%) scale(0.5)", // Center and scale down
           },
           "100%": {
             opacity: "1",
-            transform: "translate(-50%,-40%) scale(1)",
+            transform: "translate(0, 0) scale(1)", // Fade in and scale up
           },
         },
       },

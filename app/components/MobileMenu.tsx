@@ -27,32 +27,31 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
   // GSAP animation on menu state change (open/close)
   useEffect(() => {
     if (isOpen) {
-      // GSAP Timeline for menu opening
       const timeline = gsap.timeline({
         defaults: { duration: 0.75, ease: "power2.out" },
       });
 
       timeline
+        .set(menuRef.current, { visibility: "visible" }) // Ensure it's visible before animation
         .fromTo(
           menuRef.current,
           { opacity: 0, x: "100%" },
           { opacity: 1, x: "0%" },
-        ) // Menu sliding in
+        )
         .fromTo(
           menuItemsRef.current,
-          { opacity: 0, x: 85 }, // Initial state for items
-          { opacity: 1, x: 0, stagger: 0.1 }, // Stagger the menu items
-          "-=0.5", // Sync with the menu animation
+          { opacity: 0, x: 85 },
+          { opacity: 1, x: 0, stagger: 0.1 },
+          "-=0.5",
         );
     } else {
-      // GSAP Timeline for menu closing
       const timeline = gsap.timeline({
-        defaults: { duration: 0.5, ease: "power2.out" },
+        defaults: { duration: 0.3, ease: "power2.out" },
       });
 
       timeline
-        .to(menuRef.current, { opacity: 0, x: "100%" }) // Menu sliding out
-        .to(menuItemsRef.current, { opacity: 0, y: 20, stagger: 0.1 }); // Stagger fade-out for items
+        .to(menuRef.current, { opacity: 0, x: "100%" })
+        .set(menuRef.current, { visibility: "hidden" }); // Hide after animation
     }
   }, [isOpen]);
 
@@ -120,7 +119,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
         ref={menuRef}
       >
         <div className="absolute left-0 top-0 flex h-screen w-screen items-center justify-center bg-grid-small-black/[0.15] dark:bg-grid-small-white/[0.25]">
-          <div className="absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,theme(colors.background))] dark:bg-black" />
+          <div className="absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,theme(colors.background))] dark:bg-black" />
         </div>
         <nav
           className={`z-100 relative flex h-screen flex-col items-center justify-center gap-2 xs:gap-6 lg:gap-4 xl:gap-0 ${isMobileOrTabletLandscape && "!gap-2"}`}
