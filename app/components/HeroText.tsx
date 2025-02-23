@@ -19,11 +19,11 @@ const HeroText = ({
   return (
     <>
       <motion.h1
-        className="font-grain font-raleway text-center text-7xl font-bold capitalize !leading-[1.15] tracking-wide xs:text-[6.2rem] sm:text-9xl md:text-[9rem] lg:text-[10rem] xl:text-[11rem] 2xl:text-[12rem]"
+        className="colorEffect textShadow font-urbanist text-center text-7xl font-bold capitalize !leading-[1.2] tracking-wide xs:text-[6.2rem] sm:text-9xl md:text-[9rem] lg:text-[10rem] xl:text-[11rem] 2xl:text-[12rem]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
-          delay: 0.1,
+          delay: 0.5,
           duration: 1,
           ease: "easeIn",
         }}

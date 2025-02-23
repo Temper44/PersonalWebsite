@@ -118,15 +118,15 @@ export const TextHoverEffect = ({
         dominantBaseline="middle"
         strokeWidth="1"
         className={`nav-text stroke-black dark:stroke-neutral-200 ${active && "stroke-red-500 dark:stroke-red-500"}`}
-        initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
-        animate={{
-          strokeDashoffset: 0,
-          strokeDasharray: 1000,
-        }}
-        transition={{
-          duration: 2.9,
-          ease: "easeInOut",
-        }}
+        // initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
+        // animate={{
+        //   strokeDashoffset: 0,
+        //   strokeDasharray: 1000,
+        // }}
+        // transition={{
+        //   duration: 2.9,
+        //   ease: "easeInOut",
+        // }}
       >
         {text}
       </motion.text>

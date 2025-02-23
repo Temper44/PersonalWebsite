@@ -35,22 +35,18 @@ export default function PageTransitionAnimation({
           <motion.div
             key={pathname}
             initial={{
-              scaleY: 0,
-              //   borderRadius: "200px", // Rounded corners
-              // backgroundColor: "black",
+              translateY: "-100%", // Initial position off-screen
+              opacity: 1, // Fade in
             }}
             animate={{
-              scaleY: 1,
-              //   borderRadius: "200px",
-              backgroundColor: "black",
-              borderTopLeftRadius: "50px",
-              borderTopRightRadius: "50px",
+              translateY: "0%", // Move into place
+              opacity: 1, // Fade in completely
+              backgroundImage:
+                "linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%)", // Gradient as backgroundImage
             }}
             exit={{
-              scaleY: 0,
-              transformOrigin: "bottom",
-
-              // backgroundColor: "white",
+              translateY: "100%", // Exit the screen
+              opacity: 0, // Fade out
             }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
             style={{
@@ -62,6 +58,7 @@ export default function PageTransitionAnimation({
               zIndex: 99999,
               transformOrigin: "top",
               pointerEvents: "none", // Prevents blocking interactions
+              willChange: "transform, opacity, backgroundImage", // Ensure backgroundImage is optimized
             }}
           />
         )}

@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@view-transition {
-  navigation: auto;
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
-}
+// @view-transition {
+//   navigation: auto;
+//   transition:
+//     opacity 0.5s ease,
+//     transform 0.5s ease;
+// }
 
 :root {
   --background: #f7f7f7;
@@ -152,11 +152,10 @@ a {
   .colorEffect {
     background-image: linear-gradient(
       to right,
-      rgba(250, 78, 10),
+      #fd4f55,
       rgba(247, 12, 204),
-      rgba(0, 106, 255),
-      rgba(48, 248, 255),
-      rgba(250, 78, 10)
+      #0890ff,
+      #fd4f55
     );
 
     -webkit-background-clip: text;
@@ -164,7 +163,7 @@ a {
 
     color: transparent;
     background-size: 200%;
-    animation: gradientAnimate 7s ease infinite;
+    animation: gradientAnimate 8s ease infinite;
     transition: all 0.4s ease-in;
   }
 
@@ -176,15 +175,15 @@ a {
       background-position: 0% 50%;
     }
   }
-
-  .colorEffect:hover {
-    color: var(--foreground);
-  }
 }
 
 @layer utilities {
   .nav-hover-btn {
     @apply relative text-xs font-semibold uppercase transition-colors duration-500 ease-in-out md:text-[0.8rem] xl:text-sm 2xl:text-base;
+  }
+
+  .nav-hover-btn:hover {
+    color: #fd4f55;
   }
 
   .nav-sidebar {
@@ -214,156 +213,123 @@ a {
   }
 
   .nav-text {
-    @apply font-grotesk fill-transparent text-[3.25rem] font-bold tracking-widest sm:text-6xl md:text-7xl xl:text-8xl;
-    transition: all 0.2s ease-in;
+    @apply font-urbanist text-[3.25rem] font-semibold !leading-[1.2] tracking-widest text-black dark:text-white sm:text-6xl md:text-7xl xl:text-8xl;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0px; /* Initially no gap */
+    transition:
+      transform 0.4s ease-in-out,
+      gap 0.4s ease-in-out;
+    text-decoration-thickness: 6px;
+
+    @media screen and (max-width: 768px) {
+      text-decoration-thickness: 4px;
+    }
+
+    color: black; /* Default text color */
   }
-}
 
-:root {
-  --bg-color: hsl(240deg 10% 12%);
-  --bg-grain: url("https://assets.codepen.io/64/svgNoise2.svg");
-  --bg-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-
-  --shadow-size: max(140px, 40vw);
-  --shadow-size-fallback: 40vw;
-  --shadow-blur: 60;
-
-  --color-1: #6328da;
-  --color-2: #ff1bf1;
-  --color-3: #008cea;
-
-  --bg-1-x: 0;
-  --bg-1-y: 0;
-  --bg-2-x: 0;
-  --bg-2-y: 0;
-  --bg-3-x: 0;
-  --bg-3-y: 0;
-}
-
-@supports (color: color(display-p3 1 1 1)) {
-  :root {
-    --color-1: color(display-p3 0.36 0.17 0.82);
-    --color-2: color(display-p3 0.95 0.04 0.95);
-    --color-3: color(display-p3 0.01 0.53 0.99);
+  .nav-text::before {
+    content: "";
+    position: absolute;
+    left: -10px; /* Start position (hidden inside text) */
+    width: 0px;
+    height: 0px;
+    background-color: #fd4f55;
+    border-radius: 50%;
+    transform: scale(0);
+    transition:
+      transform 0.2s ease-in-out,
+      width 0.2s ease-in-out,
+      height 0.2s ease-in-out,
+      left 0.2s ease-in-out;
   }
-}
 
-@media (min-width: 960px) {
-  :root {
-    --shadow-size: max(72px, 25vw);
-    --shadow-size-fallback: 25vw;
-    --shadow-blur: 80;
-  }
-}
-
-.font-grain {
-  mix-blend-mode: darken;
-  background: var(--bg-grain),
-    conic-gradient(
-      from 140deg at calc(var(--bg-1-x) * 1%) 90%,
-      hsl(238deg 100% 5%),
-      hsl(60deg 100% 99%),
-      hsl(248deg 100% 31%),
-      hsl(315deg 64% 51%),
-      hsl(25deg 95% 61%),
-      hsl(55deg 100% 75%),
-      hsl(60deg 100% 99%),
-      hsl(199deg 94% 74%),
-      hsl(236deg 95% 28%),
-      hsl(244deg 100% 4%)
-    ),
-    radial-gradient(
-      ellipse at calc(var(--bg-2-x) * 1%) calc(var(--bg-2-y) * 1%),
-      rgb(211, 205, 205) 12%,
-      transparent 35%
-    ),
-    radial-gradient(
-      ellipse at calc(var(--bg-3-x) * 1%) calc(var(--bg-3-y) * 1%),
-      hsl(212deg 94% 68%),
-      transparent 35%
+  .nav-text:hover:not(.nav-text-isActive) {
+    color: transparent;
+    transform: translateX(20px); /* Moves text to the right smoothly */
+    background-image: linear-gradient(
+      to right,
+      #fd4f55,
+      rgba(247, 12, 204),
+      #0890ff,
+      #fd4f55
     );
-  background-repeat: repeat;
-  background-blend-mode: color-burn;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 1;
-  animation: bg 20s linear infinite alternate;
-  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2)); /* Stronger shadow */
-}
 
-.dark .font-grain {
-  mix-blend-mode: lighten;
-}
+    -webkit-background-clip: text;
+    background-clip: text;
 
-@property --bg-1-x {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 0;
-}
+    color: transparent;
+    background-size: 200%;
+    animation: gradientAnimate 8s ease infinite;
+    transition: all 0.4s ease-in;
 
-@property --bg-2-x {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 0;
-}
-@property --bg-2-y {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 0;
-}
-@property --bg-3-x {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 0;
-}
-@property --bg-3-y {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 0;
-}
-
-@keyframes bg {
-  0% {
-    --bg-1-x: calc(50 / 2);
-    --bg-2-y: calc(80 / 2);
-    --bg-2-x: calc(70 / 2);
-    --bg-3-y: calc(40 / 2);
-    --bg-3-x: calc(90 / 2);
+    @keyframes gradientAnimate {
+      0% {
+        background-position: 200% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   }
 
-  25% {
-    --bg-1-x: 30;
-    --bg-2-y: 50;
-    --bg-2-x: 80;
-    --bg-3-y: 20;
-    --bg-3-x: 70;
+  .nav-text:hover:not(.nav-text-isActive)::before {
+    width: 10px;
+    height: 10px;
+    transform: scale(1);
+    left: -20px; /* Moves circle out to the left */
   }
 
-  50% {
-    --bg-1-x: 10;
-    --bg-2-y: 40;
-    --bg-2-x: 30;
-    --bg-3-y: 80;
-    --bg-3-x: 50;
+  .nav-text-isActive:hover {
+    transform: none !important; /* Prevent text movement */
+    background-image: none !important; /* Remove background clip */
+    animation: none !important; /* Disable animation */
   }
 
-  75% {
-    --bg-1-x: 70;
-    --bg-2-y: 10;
-    --bg-2-x: 50;
-    --bg-3-y: 30;
-    --bg-3-x: 40;
-  }
-
-  100% {
-    --bg-1-x: calc(50 / 2);
-    --bg-2-y: calc(80 / 2);
-    --bg-2-x: calc(70 / 2);
-    --bg-3-y: calc(40 / 2);
-    --bg-3-x: calc(90 / 2);
+  .nav-text-isActive::before {
+    width: 0px; /* Ensure circle doesn't appear when active */
+    height: 0px; /* Ensure circle doesn't appear when active */
+    transform: scale(0); /* Ensure circle is hidden */
   }
 }
+// :root {
+//   --bg-color: hsl(240deg 10% 12%);
+//   --bg-grain: url("https://assets.codepen.io/64/svgNoise2.svg");
+//   --bg-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+
+//   --shadow-size: max(140px, 40vw);
+//   --shadow-size-fallback: 40vw;
+//   --shadow-blur: 60;
+
+//   --color-1: #6328da;
+//   --color-2: #ff1bf1;
+//   --color-3: #008cea;
+
+//   --bg-1-x: 0;
+//   --bg-1-y: 0;
+//   --bg-2-x: 0;
+//   --bg-2-y: 0;
+//   --bg-3-x: 0;
+//   --bg-3-y: 0;
+// }
+
+// @supports (color: color(display-p3 1 1 1)) {
+//   :root {
+//     --color-1: color(display-p3 0.36 0.17 0.82);
+//     --color-2: color(display-p3 0.95 0.04 0.95);
+//     --color-3: color(display-p3 0.01 0.53 0.99);
+//   }
+// }
+
+// @media (min-width: 960px) {
+//   :root {
+//     --shadow-size: max(72px, 25vw);
+//     --shadow-size-fallback: 25vw;
+//     --shadow-blur: 80;
+//   }
+// }
 
 body {
   --sb-track-color: #d1d1d1; /* Light mode track color */

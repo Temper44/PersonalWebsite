@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Nunito_Sans } from "next/font/google";
-import { Raleway } from "next/font/google";
-import localFont from "next/font/local";
+// import { Nunito_Sans } from "next/font/google";
+// import { Raleway } from "next/font/google";
+import { Urbanist } from "next/font/google";
+// import localFont from "next/font/local";
 
 import "./globals.scss";
 import { CursorProvider } from "./components/context/CursorContext";
@@ -11,64 +12,70 @@ import ThemeSwitch from "./components/ThemeSwitch";
 import { ReactLenis } from "lenis/react";
 import PageTransissionAnimation from "./components/PageTransissionAnimation";
 
-const nunitoSans = Nunito_Sans({
-  variable: "--font-nunito-sans",
+// const nunitoSans = Nunito_Sans({
+//   variable: "--font-nunito-sans",
+//   subsets: ["latin"],
+//   display: "swap",
+// });
+
+// const raleway = Raleway({
+//   variable: "--font-raleway",
+//   subsets: ["latin"],
+//   display: "swap",
+// });
+
+const urbanist = Urbanist({
+  variable: "--font-urbanist",
   subsets: ["latin"],
   display: "swap",
 });
 
-const raleway = Raleway({
-  variable: "--font-raleway",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const overusedGrotesk = localFont({
-  src: [
-    {
-      path: "../public/fonts/OverusedGrotesk-Light.woff2",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/OverusedGrotesk-Book.woff2",
-      weight: "350",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/OverusedGrotesk-Roman.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/OverusedGrotesk-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/OverusedGrotesk-SemiBold.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/OverusedGrotesk-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/OverusedGrotesk-ExtraBold.woff2",
-      weight: "800",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/OverusedGrotesk-Black.woff2",
-      weight: "900",
-      style: "normal",
-    },
-  ],
-  variable: "--font-overused-grotesk",
-  display: "swap",
-});
+// const overusedGrotesk = localFont({
+//   src: [
+//     {
+//       path: "../public/fonts/OverusedGrotesk-Light.woff2",
+//       weight: "300",
+//       style: "normal",
+//     },
+//     {
+//       path: "../public/fonts/OverusedGrotesk-Book.woff2",
+//       weight: "350",
+//       style: "normal",
+//     },
+//     {
+//       path: "../public/fonts/OverusedGrotesk-Roman.woff2",
+//       weight: "400",
+//       style: "normal",
+//     },
+//     {
+//       path: "../public/fonts/OverusedGrotesk-Medium.woff2",
+//       weight: "500",
+//       style: "normal",
+//     },
+//     {
+//       path: "../public/fonts/OverusedGrotesk-SemiBold.woff2",
+//       weight: "600",
+//       style: "normal",
+//     },
+//     {
+//       path: "../public/fonts/OverusedGrotesk-Bold.woff2",
+//       weight: "700",
+//       style: "normal",
+//     },
+//     {
+//       path: "../public/fonts/OverusedGrotesk-ExtraBold.woff2",
+//       weight: "800",
+//       style: "normal",
+//     },
+//     {
+//       path: "../public/fonts/OverusedGrotesk-Black.woff2",
+//       weight: "900",
+//       style: "normal",
+//     },
+//   ],
+//   variable: "--font-overused-grotesk",
+//   display: "swap",
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -83,9 +90,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${nunitoSans.variable} ${raleway.variable} ${overusedGrotesk.variable}`}
+      className={`${urbanist.variable}`} //${nunitoSans.variable} ${overusedGrotesk.variable} ${raleway.variable}
     >
-      <body className={`vsc-initialized font-nunito antialiased`}>
+      <body className={`vsc-initialized font-urbanist antialiased`}>
         <PageTransissionAnimation>
           <ThemeContextProvider>
             <ReactLenis

@@ -21,9 +21,10 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        nunito: ["var(--font-nunito-sans)"], // Default font
-        grotesk: ["var(--font-overused-grotesk)"], // Only used when specified
-        raleway: ["var(--font-overused-raleway)"], // Only used when specified
+        // nunito: ["var(--font-nunito-sans)"], // Default font
+        // grotesk: ["var(--font-overused-grotesk)"], // Only used when specified
+        // raleway: ["var(--font-raleway)"], // Only used when specified
+        urbanist: ["var(--font-urbanist)"], // Only used when specified
       },
       screens: {
         xs: "375px",

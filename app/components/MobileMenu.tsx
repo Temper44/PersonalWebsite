@@ -1,12 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { navItems } from "@/lib/data";
-import { TextHoverEffect } from "./ui/TextHoverEffect";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import { useCursor } from "./context/CursorContext";
 import { usePathname } from "next/navigation"; // Import the useRouter hook
+import { useMediaQuery } from "react-responsive";
 
 interface MobileMenuProps {
   isFullPage?: boolean;
@@ -17,24 +16,43 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen((prevState) => !prevState);
   const menuRef = useRef(null);
+  const menuItemsRef = useRef<HTMLAnchorElement[]>([]); // Refs for individual menu items
   const { setIsCursorHovered } = useCursor();
   const pathname = usePathname(); // Get the current router
 
-  useGSAP(() => {
+  const isMobileOrTabletLandscape = useMediaQuery({
+    query: "(max-width: 1024px) and (orientation: landscape)", // Only detect landscape mode on mobile/tablets
+  });
+
+  // GSAP animation on menu state change (open/close)
+  useEffect(() => {
     if (isOpen) {
-      gsap.fromTo(
-        menuRef.current,
-        { opacity: 0, x: "100%", y: 0 },
-        { opacity: 1, y: 0, x: "0%", duration: 0.75, ease: "power2.out" },
-      );
-    } else {
-      gsap.to(menuRef.current, {
-        opacity: 0,
-        x: "100%",
-        y: 0,
-        duration: 0.5,
-        ease: "power2.out",
+      // GSAP Timeline for menu opening
+      const timeline = gsap.timeline({
+        defaults: { duration: 0.75, ease: "power2.out" },
       });
+
+      timeline
+        .fromTo(
+          menuRef.current,
+          { opacity: 0, x: "100%" },
+          { opacity: 1, x: "0%" },
+        ) // Menu sliding in
+        .fromTo(
+          menuItemsRef.current,
+          { opacity: 0, x: 85 }, // Initial state for items
+          { opacity: 1, x: 0, stagger: 0.1 }, // Stagger the menu items
+          "-=0.5", // Sync with the menu animation
+        );
+    } else {
+      // GSAP Timeline for menu closing
+      const timeline = gsap.timeline({
+        defaults: { duration: 0.5, ease: "power2.out" },
+      });
+
+      timeline
+        .to(menuRef.current, { opacity: 0, x: "100%" }) // Menu sliding out
+        .to(menuItemsRef.current, { opacity: 0, y: 20, stagger: 0.1 }); // Stagger fade-out for items
     }
   }, [isOpen]);
 
@@ -45,6 +63,22 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
       document.body.classList.remove("no-scroll");
     }
   }, [isOpen]);
+
+  // Listen for the Esc key to close the menu
+  useEffect(() => {
+    const handleEscKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false); // Close the menu when the Escape key is pressed
+      }
+    };
+
+    window.addEventListener("keydown", handleEscKey);
+
+    // Cleanup the event listener when the component unmounts or the menu closes
+    return () => {
+      window.removeEventListener("keydown", handleEscKey);
+    };
+  }, []);
 
   return (
     <>
@@ -85,11 +119,11 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
         className={`nav-sidebar ${!isFullPage && "md:hidden"}`}
         ref={menuRef}
       >
-        <div className="top-0flex absolute left-0 h-screen w-screen items-center justify-center bg-grid-small-black/[0.15] dark:bg-grid-small-white/[0.25]">
-          <div className="absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_40%,theme(colors.background))] dark:bg-black" />
+        <div className="absolute left-0 top-0 flex h-screen w-screen items-center justify-center bg-grid-small-black/[0.15] dark:bg-grid-small-white/[0.25]">
+          <div className="absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,theme(colors.background))] dark:bg-black" />
         </div>
         <nav
-          className={`z-100 relative flex h-screen flex-col items-center justify-center gap-0`}
+          className={`z-100 relative flex h-screen flex-col items-center justify-center gap-2 xs:gap-6 lg:gap-4 xl:gap-0 ${isMobileOrTabletLandscape && "!gap-2"}`}
         >
           {navItems.map((item, index) => {
             if (index === 0 && !displayHome) {
@@ -102,12 +136,20 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
               <Link
                 key={item.name}
                 href={item.link}
+                onMouseEnter={() => setIsCursorHovered(true)}
+                onMouseLeave={() => setIsCursorHovered(false)}
                 aria-label={`More information on my ${item.name}`}
+                ref={(el) => {
+                  if (el && !menuItemsRef.current.includes(el)) {
+                    menuItemsRef.current.push(el); // Ensure each element is only added once
+                  }
+                }}
               >
-                {/* Pass the isActive prop to TextHoverEffect */}
-                {isOpen && (
-                  <TextHoverEffect text={item.name} active={isActive} />
-                )}
+                <h3
+                  className={`nav-text ${isActive && "nav-text-isActive line-through decoration-rose-500"} ${isMobileOrTabletLandscape && "!text-2xl"}`}
+                >
+                  {item.name}
+                </h3>
               </Link>
             );
           })}

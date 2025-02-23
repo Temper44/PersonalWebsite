@@ -63,7 +63,7 @@ export default function Home() {
       <FixedBackground />
       {isTablet && <BackgroundBeams />}
       <section className="textShadow container flex flex-col items-center justify-center px-6 sm:flex-row sm:px-11">
-        <motion.h1 className="font-raleway relative z-10 mt-[-6rem] text-left text-6xl !leading-none transition-colors duration-500 ease-in-out xs:text-8xl md:text-8xl lg:text-9xl xl:text-[9rem]">
+        <motion.h1 className="font-urbanist relative z-10 mt-[-6rem] text-left text-6xl !leading-none transition-colors duration-500 ease-in-out xs:text-8xl md:text-8xl lg:text-9xl xl:text-[9rem]">
           <motion.span
             className="mb-3 block text-center text-2xl font-light sm:mb-2 sm:text-left 2xl:text-4xl"
             initial={{ opacity: 0 }}
@@ -78,7 +78,7 @@ export default function Home() {
             <span
               onMouseEnter={() => setIsHoveredPortrait(true)}
               onMouseLeave={() => setIsHoveredPortrait(false)}
-              className="font-medium underline"
+              className="font-normal underline"
             >
               Mathias
             </span>
@@ -126,9 +126,7 @@ export default function Home() {
               ease: "easeIn",
             }}
           >
-            <span className="pb-4 font-normal tracking-tight">
-              Technologist
-            </span>
+            <span className="pb-4 font-normal">Technologist</span>
             {isSmall && (
               <>
                 {" "}
