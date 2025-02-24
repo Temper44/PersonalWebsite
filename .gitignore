@@ -4,3 +4,5 @@ node_modules/
 .next/
 # Ignore .env file
 .env
+
+depricated/

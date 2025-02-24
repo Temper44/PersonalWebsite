@@ -182,10 +182,6 @@ a {
     @apply relative text-xs font-medium uppercase tracking-wide transition-colors duration-500 ease-in-out md:text-[0.8rem] xl:text-sm 2xl:text-base;
   }
 
-  .nav-hover-btn:hover {
-    color: #fd4f55;
-  }
-
   .nav-sidebar {
     @apply fixed left-0 right-0 top-0 z-20 mx-auto block bg-white opacity-0 dark:bg-black;
   }
@@ -495,3 +491,115 @@ body::-webkit-scrollbar-thumb {
     }
   }
 }
+
+.marquee-forward-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+
+  span {
+    white-space: nowrap; /* Prevent wrapping */
+    will-change: transform, background-position; /* Optimize animation */
+    animation:
+      marquee-move-text2 7s linear infinite,
+      gradientAnimate 7s ease infinite;
+  }
+
+  @keyframes marquee-move-text2 {
+    from {
+      transform: translateX(0%); /* Start at default position */
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+}
+
+.gallery {
+  height: 175vh;
+  background: rgb(45, 45, 45);
+  position: relative;
+  display: flex;
+  gap: 2vw;
+  padding: 2vw;
+  box-sizing: border-box;
+  overflow: hidden;
+  .column {
+    position: relative;
+    height: 100%;
+    width: 25%;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    .imageContainer {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      border-radius: 1vw;
+      overflow: hidden;
+      img {
+        object-fit: cover;
+      }
+    }
+    &:nth-of-type(1) {
+      top: -45%;
+    }
+    &:nth-of-type(2) {
+      top: -95%;
+    }
+    &:nth-of-type(3) {
+      top: -45%;
+    }
+    &:nth-of-type(4) {
+      top: -75%;
+    }
+  }
+}
+.spacer {
+  height: 100vh;
+}
+
+.bezierLine {
+  height: 1px;
+  margin-block: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.bezierLine svg {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: -250px;
+  // background-color: aqua;
+}
+
+.bezierLine svg path {
+  stroke: white;
+  stroke-width: 1px;
+  fill: none;
+}
+
+.bezierLine .box {
+  height: 40px;
+  width: 100%;
+  position: relative;
+  top: -20px;
+  z-index: 1;
+}
+
+.bezierLine .box:hover {
+  height: 200px;
+  top: -100px;
+  // background-color: red;
+}
+
+.field-input {
+  @apply w-full rounded-md border border-black/10 px-5 py-2 text-base tracking-wide text-zinc-900 shadow-sm placeholder:text-zinc-400;
+}
+
+// .field-btn {
+//   @apply flex items-center justify-center gap-3 rounded-lg bg-black px-5 py-2 text-base text-white shadow-2xl;
+// }

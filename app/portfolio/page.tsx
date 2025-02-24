@@ -5,12 +5,14 @@ import MobileMenu from "../components/MobileMenu";
 import CustomCursor from "../components/CustomCursor";
 import { useMediaQuery } from "react-responsive";
 import ScrollToTopButton from "../components/ScrollToTopButton";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 import ScrollProgressBar from "../components/ScrollProgressBar";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { HeroParallax } from "../components/ui/HeroParallax";
 import { products } from "@/lib/data";
+// import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
+import PortfolioFooter from "../sections/PorfolioFooter";
 // import { SpotlightNew } from "../components/ui/SpotlightNew";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -30,8 +32,10 @@ export default function Page() {
       <ScrollToTopButton />
 
       <HeroParallax products={products} />
-      {/* <section className="container flex flex-col items-center"></section> */}
-      <Footer />
+      <section className="container flex flex-col items-center"></section>
+      {/* <ParallaxScrollGallery /> */}
+      <PortfolioFooter />
+      {/* <Footer /> */}
     </main>
   );
 }

@@ -62,6 +62,12 @@ export const navItems: NavItem[] = [
   { name: "3D-Models", link: "/models" },
 ];
 
+//extended version of navItems with imprint
+export const navItemsFull: NavItem[] = [
+  ...navItems,
+  { name: "Imprint", link: "/imprint" },
+];
+
 // Define the words array
 export const words: string[] = [
   "design",

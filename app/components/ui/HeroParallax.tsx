@@ -103,15 +103,17 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="relative left-0 top-0 z-10 mx-auto w-full max-w-7xl px-4 pt-12 md:pt-28">
-      <h1 className="textShadow text-7xl font-medium leading-none dark:text-white md:text-7xl md:font-semibold md:!leading-tight xl:text-8xl">
+    <div className="relative left-0 top-0 z-10 mx-auto w-full max-w-[100rem] px-4 pt-12">
+      <h1 className="textShadow text-7xl font-medium leading-none dark:text-white md:text-7xl md:font-semibold md:!leading-tight xl:text-8xl 2xl:text-9xl">
         Experience the{" "}
-        <span className="text-[5rem] font-bold xl:text-[7rem]">Web</span>{" "}
-        <br></br> with a{" "}
-        <span className="colorEffect text-[5rem] font-bold xl:text-[7rem]">
+        <span className="text-[5rem] font-bold italic text-zinc-900 dark:text-slate-100 xl:text-[7rem] 2xl:text-[9rem]">
+          Web
+        </span>{" "}
+        <br /> with a{" "}
+        <span className="colorEffect text-[5rem] font-bold xl:text-[7rem] 2xl:text-[9rem]">
           Creative
         </span>{" "}
-        approach
+        <span>approach</span>
       </h1>
       {/* <p className="mt-8 max-w-2xl text-base dark:text-neutral-200 md:text-xl">
         We build beautiful products with the latest technologies and frameworks.

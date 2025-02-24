@@ -2,7 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { navItems } from "@/lib/data";
 import gsap from "gsap";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from "next-transition-router";
 import { useCursor } from "./context/CursorContext";
 import { usePathname } from "next/navigation"; // Import the useRouter hook
 import { useMediaQuery } from "react-responsive";
