@@ -7,8 +7,6 @@ export default function MagneticButton({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  // Removed unused Position interface
-
   interface MouseEvent {
     clientX: number;
     clientY: number;
