@@ -10,7 +10,8 @@ import { CursorProvider } from "./components/context/CursorContext";
 import ThemeContextProvider from "./components/context/ThemeContext";
 import ThemeSwitch from "./components/ThemeSwitch";
 import { ReactLenis } from "lenis/react";
-import PageTransissionAnimation from "./components/PageTransissionAnimation";
+// import PageTransissionAnimation from "./components/PageTransissionAnimation";
+import { TransitionProvider } from "./components/TransitionProvider";
 
 // const nunitoSans = Nunito_Sans({
 //   variable: "--font-nunito-sans",
@@ -93,7 +94,8 @@ export default function RootLayout({
       className={`${urbanist.variable}`} //${nunitoSans.variable} ${overusedGrotesk.variable} ${raleway.variable}
     >
       <body className={`vsc-initialized font-urbanist antialiased`}>
-        <PageTransissionAnimation>
+        {/* <PageTransissionAnimation> */}
+        <TransitionProvider>
           <ThemeContextProvider>
             <ReactLenis
               root
@@ -114,7 +116,8 @@ export default function RootLayout({
               </CursorProvider>
             </ReactLenis>
           </ThemeContextProvider>
-        </PageTransissionAnimation>
+        </TransitionProvider>
+        {/* </PageTransissionAnimation> */}
       </body>
     </html>
   );
