@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GoArrowUp } from "react-icons/go";
 import { useCursor } from "../components/context/CursorContext";
+import MagneticButton from "./MagneticButton";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,19 +33,23 @@ const ScrollToTopButton = () => {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.button
-          className="fixed bottom-8 right-8 z-10 flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-full bg-black text-white shadow-md dark:bg-white dark:text-black"
-          onClick={scrollToTop}
-          onMouseEnter={() => setIsCursorHovered(true)}
-          onMouseLeave={() => setIsCursorHovered(false)}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          transition={{ duration: 0.3 }}
-          aria-label="Scroll to top"
-        >
-          <GoArrowUp size={24} />
-        </motion.button>
+        <div className="fixed bottom-20 right-20 z-10">
+          <MagneticButton>
+            <motion.button
+              className="flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-full bg-black text-white shadow-md dark:bg-white dark:text-black"
+              onClick={scrollToTop}
+              onMouseEnter={() => setIsCursorHovered(true)}
+              onMouseLeave={() => setIsCursorHovered(false)}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.3 }}
+              aria-label="Scroll to top"
+            >
+              <GoArrowUp size={24} />
+            </motion.button>
+          </MagneticButton>
+        </div>
       )}
     </AnimatePresence>
   );

@@ -117,7 +117,7 @@ export default function Home() {
             )}
           </motion.div>
           <motion.div
-            className="marquee-backward"
+            className="marquee-backward mt-4 sm:mt-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
@@ -126,7 +126,7 @@ export default function Home() {
               ease: "easeIn",
             }}
           >
-            <span className="pb-4 font-normal">Technologist</span>
+            <span className="font-normal">Technologist</span>
             {isSmall && (
               <>
                 {" "}

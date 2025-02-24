@@ -104,7 +104,7 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div className="relative left-0 top-0 z-10 mx-auto w-full max-w-7xl px-4 pt-12 md:pt-28">
-      <h1 className="text-7xl font-medium leading-none dark:text-white md:text-7xl md:font-semibold md:!leading-tight xl:text-8xl">
+      <h1 className="textShadow text-7xl font-medium leading-none dark:text-white md:text-7xl md:font-semibold md:!leading-tight xl:text-8xl">
         Experience the{" "}
         <span className="text-[5rem] font-bold xl:text-[7rem]">Web</span>{" "}
         <br></br> with a{" "}
