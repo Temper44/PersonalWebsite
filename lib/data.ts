@@ -3,7 +3,6 @@ import React from "react";
 import { IoMdMail } from "react-icons/io";
 import { ReactElement } from "react";
 import { IoMdInformationCircleOutline } from "react-icons/io";
-import { link } from "fs";
 
 // Define the type for social media items
 interface SocialMediaItem {

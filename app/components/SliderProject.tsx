@@ -1,6 +1,5 @@
-import React, { useRef } from "react";
+import React from "react";
 import Button from "../components/Button";
-import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import MaskText from "./MaskText";
 import Link from "next/link";
