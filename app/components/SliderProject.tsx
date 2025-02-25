@@ -12,7 +12,7 @@ const SliderProject = () => {
   //   });
 
   return (
-    <div className="panel grid h-[100dvh] w-screen grid-cols-1 gap-y-3 bg-gray-800 p-4 md:auto-rows-auto md:grid-cols-2 md:gap-20 md:p-16">
+    <div className="panel grid h-[100dvh] w-screen grid-cols-1 gap-y-3 bg-gray-800 p-4 pb-8 md:auto-rows-auto md:grid-cols-2 md:gap-20 md:p-16">
       <div className="order-2 flex flex-col justify-between gap-6 md:order-1">
         <div className="flex flex-col gap-4">
           <Link href="/detail">
