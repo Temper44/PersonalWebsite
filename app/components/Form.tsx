@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FaPaperPlane } from "react-icons/fa";
 import Toast from "./Toast";
+import Button from "./Button";
 
 const Form = () => {
   const formRef = useRef(null);
@@ -57,7 +58,7 @@ const Form = () => {
       <form
         ref={formRef}
         onSubmit={handleSubmit}
-        className="flex w-full flex-col space-y-4 py-2 sm:py-4"
+        className="flex w-full flex-col space-y-6 py-2 sm:py-4"
       >
         <input
           type="email"
@@ -80,14 +81,7 @@ const Form = () => {
           placeholder="Your message"
           maxLength={1000}
         />
-
-        <button
-          type="submit"
-          className="group flex h-[3rem] w-[8rem] items-center justify-center gap-2 rounded-full bg-gray-900 text-white outline-none transition-all hover:scale-110 hover:bg-gray-950 focus:scale-110 active:scale-105"
-        >
-          Submit{" "}
-          <FaPaperPlane className="group:hover:translate-x-1 text-xs opacity-70 transition-all group-hover:-translate-y-1" />
-        </button>
+        <Button type="submit" text="Submit" icon={<FaPaperPlane />} />
       </form>
     </>
   );

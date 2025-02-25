@@ -78,6 +78,27 @@ export const words: string[] = [
   "drink coffee",
 ];
 
+export const skills: string[] = [
+  "NextJS",
+  "React",
+  "TypeScript",
+  "CMS",
+  "Component Libraries",
+  "SEO",
+  "a11y",
+  "Web Animations",
+  "Relational Databases",
+  "Ruby on Rails",
+  "PHP",
+  "C#",
+  "BaaS",
+  "Git",
+  "Docker",
+  "APIs",
+  "Adobe Suite",
+  "Figma",
+];
+
 export const products = [
   {
     title: "Moonbeam",
