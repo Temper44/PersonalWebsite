@@ -3,11 +3,19 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-export default function MaskText({ text }: { text: string[] }) {
+export default function MaskText({
+  text,
+  className,
+  headline = false,
+}: {
+  text: string[];
+  className?: string;
+  headline?: boolean;
+}) {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     margin: "-100px",
-    once: true,
+    // once: true,
   });
 
   const animation = {
@@ -25,19 +33,28 @@ export default function MaskText({ text }: { text: string[] }) {
   return (
     <div ref={ref}>
       {text.map((phrase, index) => (
-        <div
-          key={index}
-          className="overflow-hidden text-4xl text-white dark:text-black"
-        >
-          <motion.p
-            custom={index}
-            variants={animation}
-            initial="initial"
-            animate={isInView ? "enter" : ""}
-            className="leading-tight"
-          >
-            {phrase}
-          </motion.p>
+        <div key={index} className="overflow-hidden">
+          {headline ? (
+            <motion.h1
+              custom={index}
+              variants={animation}
+              initial="initial"
+              animate={isInView ? "enter" : ""}
+              className={className}
+            >
+              {phrase}
+            </motion.h1>
+          ) : (
+            <motion.p
+              custom={index}
+              variants={animation}
+              initial="initial"
+              animate={isInView ? "enter" : ""}
+              className={className}
+            >
+              {phrase}
+            </motion.p>
+          )}
         </div>
       ))}
     </div>

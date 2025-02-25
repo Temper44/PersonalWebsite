@@ -617,3 +617,15 @@ body::-webkit-scrollbar-thumb {
 .dark .field-input {
   @apply border-white/10 bg-zinc-900 text-white;
 }
+
+.projectsWrapper {
+  display: flex;
+  width: 300vw; /* Makes sure all panels fit */
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.panel {
+  width: 100vw;
+  height: 100vh;
+}

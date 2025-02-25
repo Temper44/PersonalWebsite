@@ -7,9 +7,11 @@ import gsap from "gsap";
 export default function TextGradient({
   text,
   className,
+  opacityClassName = "opacity-20",
 }: {
   text: string;
-  className: string;
+  className?: string;
+  opacityClassName?: string;
 }) {
   const refs = useRef<(HTMLSpanElement | null)[]>([]);
   const body = useRef(null);
@@ -25,7 +27,7 @@ export default function TextGradient({
       scrollTrigger: {
         trigger: container.current,
         scrub: true,
-        start: `top center`,
+        start: `top top`, //top center
         end: `+=${window.innerHeight / 1.5}`,
       },
       opacity: 1,
@@ -40,11 +42,19 @@ export default function TextGradient({
     phrase.split(" ").forEach((word, i) => {
       const letters = splitLetters(word);
       body.push(
-        <p key={word + "_" + i} className="m-0 mr-[0.5rem]">
+        <p key={word + "_" + i} className="mb-[0.5rem] mr-[0.5rem]">
           {letters}
         </p>,
       );
     });
+    body.push(
+      <span
+        className="h-[5px] flex-1 self-center bg-zinc-900 opacity-0 dark:bg-zinc-300"
+        ref={(el) => {
+          refs.current.push(el);
+        }}
+      />,
+    );
     return body;
   };
 
@@ -53,7 +63,7 @@ export default function TextGradient({
     word.split(" ").forEach((letter, i) => {
       letters.push(
         <span
-          className="opacity-20"
+          className={opacityClassName}
           key={letter + "_" + i}
           ref={(el) => {
             refs.current.push(el);

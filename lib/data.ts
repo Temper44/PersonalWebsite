@@ -3,6 +3,7 @@ import React from "react";
 import { IoMdMail } from "react-icons/io";
 import { ReactElement } from "react";
 import { IoMdInformationCircleOutline } from "react-icons/io";
+import { link } from "fs";
 
 // Define the type for social media items
 interface SocialMediaItem {
@@ -97,6 +98,34 @@ export const skills: string[] = [
   "APIs",
   "Adobe Suite",
   "Figma",
+];
+
+export const projects = [
+  {
+    name: "TeamConnect",
+    date: "2024",
+    role: "Frontend Developer",
+    team: "Mathias Ebner, Hannes Beinhundner",
+    technologies: "React, TypeScript, TailwindCSS",
+    colors: ["#FFD700", "#FF8C00"],
+    detailsPageLink: `/project/teamConnect`,
+    liveLink: "https://team-connect.app/",
+    subheading: "Easy Team Building for Digital Projects",
+    descriptionShort:
+      "A web solution for efficient team formation and collaboration in interdisciplinary project environments. Overcome the challenges of team building and discover a new level of efficiency and collaboration. Users can create profiles showcasing their skills, interests, and past projects, join existing teams, or initiate their own",
+    descriptionLong:
+      "A web solution for efficient team formation and collaboration in interdisciplinary project environments. Overcome the challenges of team building and discover a new level of efficiency and collaboration. Users can create detailed profiles highlighting their skills, interests, and past projects, enabling them to connect with like-minded individuals. Whether joining existing teams or initiating their own projects, users can collaborate effectively, streamline workflows, and enhance productivity through a user-friendly and engaging experience.",
+    descriptionFull: "",
+    imgPreview: { src: "/img/gallery/1.jpg", alt: "TeamConnect" },
+    imgScroll: { src: "/img/gallery/1.jpg", alt: "TeamConnect" },
+    imgFullScreen: [
+      {
+        src: "/img/gallery/1.jpg",
+        alt: "TeamConnect",
+        title: "Homepage",
+      },
+    ],
+  },
 ];
 
 export const products = [

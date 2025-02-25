@@ -13,6 +13,8 @@ import { products } from "@/lib/data";
 // import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
 import PortfolioFooter from "../sections/PorfolioFooter";
 import AboutMe from "../sections/AboutMe";
+import Skills from "../sections/Skills";
+import Projects from "../sections/Projects";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -250,7 +252,9 @@ export default function Page() {
           </defs>
         </svg>
       </section>
-      <AboutMe />
+      <Projects />
+      {/* <AboutMe />
+      <Skills /> */}
       {/* <ParallaxScrollGallery /> */}
       <PortfolioFooter />
     </main>
