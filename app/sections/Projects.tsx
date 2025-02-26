@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import MarqueeText from "../components/MarqueeText";
 import SliderProject from "../components/SliderProject";
+import { projects } from "@/lib/data";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,10 +40,23 @@ const Projects = () => {
       <MarqueeText text="Selected work" />
       <div
         ref={projectsContainer}
-        className="flex h-screen w-[300vw] overflow-x-hidden"
+        className="flex h-screen w-[200vw] overflow-x-hidden"
       >
+        {projects.map((project, i) => (
+          <SliderProject
+            key={project.name}
+            className={i % 2 ? "bg-black dark:bg-white" : ""}
+            name={project.name}
+            detailsPageLink={project.detailsPageLink}
+            subheading={project.subheading}
+            descriptionShort={project.descriptionShort}
+            imgPreview={project.imgPreview}
+            currentCounter={i}
+            projectsLength={projects.length}
+          />
+        ))}
         {/* <SliderProject /> */}
-        <SliderProject />
+        {/* <SliderProject /> */}
         {/* <div className="panel">THREE</div> */}
         {/* <div className="panel bg-black dark:bg-white">TWO</div>
         <SliderProject /> */}

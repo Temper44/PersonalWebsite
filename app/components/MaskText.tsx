@@ -2,15 +2,18 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useCursor } from "./context/CursorContext";
 
 export default function MaskText({
   text,
   className,
   headline = false,
+  cursorHoverEffect = false,
 }: {
   text: string[];
   className?: string;
   headline?: boolean;
+  cursorHoverEffect?: boolean;
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -30,6 +33,8 @@ export default function MaskText({
     }),
   };
 
+  const { setIsCursorHovered } = useCursor();
+
   return (
     <div ref={ref}>
       {text.map((phrase, index) => (
@@ -41,6 +46,10 @@ export default function MaskText({
               initial="initial"
               animate={isInView ? "enter" : ""}
               className={className}
+              onMouseEnter={() => cursorHoverEffect && setIsCursorHovered(true)}
+              onMouseLeave={() =>
+                cursorHoverEffect && setIsCursorHovered(false)
+              }
             >
               {phrase}
             </motion.h1>
