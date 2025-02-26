@@ -620,12 +620,12 @@ body::-webkit-scrollbar-thumb {
 
 .projectsWrapper {
   display: flex;
-  width: 300vw; /* Makes sure all panels fit */
+  width: 100vw; /* Makes sure all panels fit */
   height: 100vh;
   overflow-x: hidden;
 }
 
-.panel {
-  width: 100vw;
-  height: 100vh;
-}
+// .panel {
+//   width: 100vw;
+//   height: 100vh;
+// }

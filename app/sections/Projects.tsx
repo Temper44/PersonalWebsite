@@ -44,8 +44,8 @@ const Projects = () => {
         {/* <SliderProject /> */}
         <SliderProject />
         {/* <div className="panel">THREE</div> */}
-        <div className="panel bg-black dark:bg-white">TWO</div>
-        <SliderProject />
+        {/* <div className="panel bg-black dark:bg-white">TWO</div>
+        <SliderProject /> */}
       </div>
     </>
   );
