@@ -19,8 +19,8 @@ const SliderProject = () => {
             <MaskText
               text={["Project Title"]}
               headline
-              className="textShadow text-4xl font-semibold leading-relaxed tracking-wide sm:text-5xl md:pb-2 md:text-7xl"
-            ></MaskText>
+              className="textShadow text-4xl font-semibold leading-tight tracking-wide sm:text-5xl md:pb-2 md:text-7xl"
+            />
           </Link>
           <MaskText
             text={[

@@ -33,7 +33,7 @@ const ScrollToTopButton = () => {
   return (
     <AnimatePresence>
       {isVisible && (
-        <div className="fixed bottom-20 right-14 z-10">
+        <div className="fixed bottom-14 right-14 z-10">
           <MagneticButton>
             <motion.button
               className="flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-full bg-black text-white shadow-md dark:bg-white dark:text-black"
