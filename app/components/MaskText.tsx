@@ -40,7 +40,7 @@ export default function MaskText({
       {text.map((phrase, index) => (
         <div key={index} className="overflow-hidden">
           {headline ? (
-            <motion.h1
+            <motion.h3
               custom={index}
               variants={animation}
               initial="initial"
@@ -52,7 +52,7 @@ export default function MaskText({
               }
             >
               {phrase}
-            </motion.h1>
+            </motion.h3>
           ) : (
             <motion.p
               custom={index}
