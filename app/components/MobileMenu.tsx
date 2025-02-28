@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { navItems } from "@/lib/data";
 import gsap from "gsap";
 // import Link from "next/link";
@@ -20,6 +20,8 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
   const menuRef = useRef(null);
   const menuItemsRef = useRef<HTMLAnchorElement[]>([]); // Refs for individual menu items
   const { setIsCursorHovered } = useCursor();
+  const { scrollYProgress } = useScroll();
+  const [visible, setVisible] = useState(true);
   const pathname = usePathname(); // Get the current router
 
   const isMobileOrTabletLandscape = useMediaQuery({
@@ -81,9 +83,40 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
     };
   }, []);
 
+  useMotionValueEvent(scrollYProgress, "change", (current) => {
+    // Check if current is not undefined and is a number
+    if (typeof current === "number") {
+      const direction = current! - scrollYProgress.getPrevious()!;
+
+      if (scrollYProgress.get() < 0.12) {
+        // also set true for the initial state
+        setVisible(true);
+      } else {
+        if (direction < 0) {
+          setVisible(true);
+        } else {
+          setVisible(false);
+        }
+      }
+    }
+  });
+
   return (
     <>
-      <div className="fixed right-20 top-6 z-50">
+      <motion.div
+        className="fixed right-20 top-6 z-50"
+        initial={{
+          opacity: 1,
+          y: -100,
+        }}
+        animate={{
+          y: visible ? 0 : -100,
+          opacity: visible ? 1 : 0,
+        }}
+        transition={{
+          duration: 0.2,
+        }}
+      >
         <MagneticButton>
           <motion.button
             className={`burgerMenu flex items-center justify-center rounded-full backdrop-blur-[0.4rem] transition-all ${!isFullPage && "md:hidden"} ${
@@ -118,7 +151,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
             </svg>
           </motion.button>
         </MagneticButton>
-      </div>
+      </motion.div>
 
       <motion.div
         className={`nav-sidebar ${!isFullPage && "md:hidden"}`}

@@ -53,7 +53,7 @@ const Projects = () => {
             imgPreview={project.imgPreview}
             currentCounter={i}
             projectsLength={projects.length}
-            // reverseTextColor={i % 2 ? true : false}
+            reverseColor={i % 2 ? true : false}
           />
         ))}
       </div>

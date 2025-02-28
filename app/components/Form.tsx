@@ -3,6 +3,8 @@ import emailjs from "@emailjs/browser";
 import { FaPaperPlane } from "react-icons/fa";
 import Toast from "./Toast";
 import Button from "./Button";
+import { useInView } from "motion/react";
+import { motion } from "framer-motion";
 
 const Form = () => {
   const formRef = useRef(null);
@@ -45,6 +47,11 @@ const Form = () => {
     }
   };
 
+  const isInViewForm = useInView(formRef, {
+    once: false,
+    margin: "0px 0px 0px 0px",
+  });
+
   return (
     <>
       {toast && (
@@ -55,10 +62,16 @@ const Form = () => {
         />
       )}
 
-      <form
+      <motion.form
         ref={formRef}
         onSubmit={handleSubmit}
         className="flex w-full flex-col space-y-6 py-2 sm:py-4"
+        initial={{ opacity: 0, y: -100 }}
+        animate={isInViewForm ? { opacity: 1, y: 0 } : {}}
+        transition={{
+          duration: 0.6,
+          ease: "easeOut",
+        }}
       >
         <input
           type="email"
@@ -81,8 +94,13 @@ const Form = () => {
           placeholder="Your message"
           maxLength={1000}
         />
-        <Button type="submit" text="Submit" icon={<FaPaperPlane />} />
-      </form>
+        <Button
+          type="submit"
+          text="Submit"
+          className="place-self-end"
+          icon={<FaPaperPlane />}
+        />
+      </motion.form>
     </>
   );
 };
