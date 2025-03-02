@@ -17,19 +17,22 @@ export default function ThemeSwitch() {
   const [visible, setVisible] = useState(true);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
     if (typeof current === "number") {
       const direction = current! - scrollYProgress.getPrevious()!;
 
+      // 🔥 Check if the page is scrollable
+      const isScrollable =
+        document.documentElement.scrollHeight > window.innerHeight;
+
+      if (!isScrollable) {
+        setVisible(true); // Always show the menu if scrolling isn't possible
+        return;
+      }
+
       if (scrollYProgress.get() < 0.12) {
-        // also set true for the initial state
         setVisible(true);
       } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
+        setVisible(direction < 0);
       }
     }
   });

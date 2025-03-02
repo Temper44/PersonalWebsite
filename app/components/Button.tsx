@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef } from "react";
 import { useCursor } from "./context/CursorContext";
 import Link from "next/link";
@@ -11,7 +13,7 @@ const Button = ({
   href,
   className,
 }: {
-  type: "button" | "submit" | "reset";
+  type?: "button" | "submit" | "reset";
   text: string;
   icon?: React.ReactNode;
   href?: string;

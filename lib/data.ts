@@ -102,13 +102,13 @@ export const skills: string[] = [
 export const projects = [
   {
     name: "TeamConnect",
+    slug: "TeamConnect",
     date: "2024",
     role: "Design, Concept and Development",
     team: "Mathias Ebner, Hannes Beinhundner",
-    technologies:
-      "NextJS, TypeScript, Supabase, Prisma, NextAuth, Zod, MaterialUI",
+    technologies: "NextJS, TypeScript, Supabase, Prisma, NextAuth, MaterialUI",
     colors: ["#FFD700", "#FF8C00"],
-    detailsPageLink: `/project/teamConnect`,
+    detailsPageLink: `/portfolio/TeamConnect`,
     liveLink: "https://team-connect.app/",
     subheading: "Easy Team Building for Digital Projects",
     descriptionShort:
@@ -116,7 +116,7 @@ export const projects = [
     descriptionLong:
       "A web solution for efficient team formation and collaboration in interdisciplinary project environments. Overcome the challenges of team building and discover a new level of efficiency and collaboration. Users can create detailed profiles highlighting their skills, interests, and past projects, enabling them to connect with like-minded individuals. Whether joining existing teams or initiating their own projects, users can collaborate effectively, streamline workflows, and enhance productivity through a user-friendly and engaging experience.",
     descriptionFull: "",
-    imgPreview: { src: "/img/gallery/1.jpg", alt: "TeamConnect" },
+    imgPreview: { src: "/img/slider/_MG_9457.jpg", alt: "TeamConnect" },
     imgScroll: { src: "/img/gallery/1.jpg", alt: "TeamConnect" },
     imgFullScreen: [
       {
@@ -124,16 +124,22 @@ export const projects = [
         alt: "TeamConnect",
         title: "Homepage",
       },
+      {
+        src: "/img/gallery/2.jpg",
+        alt: "TeamConnect2",
+        title: "Homepage2",
+      },
     ],
   },
   {
     name: "GroupGo",
+    slug: "GroupGo",
     date: "2023",
     role: "Design, Concept and Development",
     team: "Mathias Ebner, Christoph Tupi",
     technologies: "React, Firebase, MaterialUI",
     colors: ["#FFD700", "#FF8C00"],
-    detailsPageLink: `/project/GroupGo`,
+    detailsPageLink: `/portfolio/GroupGo`,
     liveLink: "https://groupgo-44f2a.web.app/",
     subheading: "Built to make your trip planning easier",
     descriptionShort:
@@ -152,12 +158,13 @@ export const projects = [
   },
   {
     name: "GameHub",
+    slug: "GameHub",
     date: "2023",
     role: "Design, Concept and Development",
     team: "Mathias Ebner, David Grois, Alexander Buchner",
     technologies: "Ruby on Rails, Firebase, MaterialUI",
     colors: ["#FFD700", "#FF8C00"],
-    detailsPageLink: `/project/GroupGo`,
+    detailsPageLink: `/portfolio/GameHub`,
     liveLink: "https://groupgo-44f2a.web.app/",
     subheading: "Built to make your trip planning easier",
     descriptionShort:

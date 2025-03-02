@@ -29,6 +29,10 @@ export default {
       screens: {
         xs: "375px",
       },
+      maxWidth: {
+        "8xl": "1536px", // Adding custom max-w-8xl
+        "9xl": "1920px", // Adding custom max-w-9xl
+      },
       animation: {
         spotlight: "spotlight 2s ease .75s 1 forwards",
         first: "moveVertical 30s ease infinite",

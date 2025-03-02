@@ -1,11 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import MobileMenu from "../components/MobileMenu";
-import CustomCursor from "../components/CustomCursor";
 import { useMediaQuery } from "react-responsive";
-import ScrollToTopButton from "../components/ScrollToTopButton";
-import ScrollProgressBar from "../components/ScrollProgressBar";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { HeroParallax } from "../components/ui/HeroParallax";
@@ -15,12 +11,13 @@ import PortfolioFooter from "../sections/PorfolioFooter";
 // import AboutMe from "../sections/AboutMe";
 // import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
+import PageUtilities from "../components/PageUtilities";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
   // const isSmall = useMediaQuery({ maxWidth: 520 });
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  // const isMobile = useMediaQuery({ maxWidth: 768 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   const svgRef = useRef<SVGSVGElement>(null);
@@ -62,10 +59,7 @@ export default function Page() {
     <main className="max-w-screen relative mx-auto overflow-hidden">
       <div className="bg-grain fixed inset-0 z-[-10] h-screen w-screen" />
 
-      {isMobile && <ScrollProgressBar />}
-      <MobileMenu isFullPage={true} />
-      {isDesktop && <CustomCursor />}
-      <ScrollToTopButton />
+      <PageUtilities />
 
       <HeroParallax products={products} />
       <section className="h-screen">

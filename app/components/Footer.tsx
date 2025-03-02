@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { useCursor } from "./context/CursorContext";
 import { motion } from "framer-motion";
@@ -9,7 +11,7 @@ const Footer = () => {
 
   return (
     <motion.footer
-      className="container absolute bottom-0 flex w-full items-center justify-center gap-4 px-11 py-7 md:w-auto"
+      className="container absolute bottom-0 left-1/2 flex w-full -translate-x-1/2 items-center justify-center gap-4 px-11 py-7 md:w-auto"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 1, duration: 1 }}

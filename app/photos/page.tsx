@@ -65,7 +65,7 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="max-w-screen relative mx-auto flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden">
+    <main className="max-w-screen relative mx-auto flex min-h-dvh flex-col items-center justify-center overflow-hidden">
       <FixedBackground />
       {/* {isDesktop && <SpotlightNew />} */}
 

@@ -48,7 +48,7 @@ const SliderProject = ({
 
   return (
     <div
-      className={`panel flex h-[100dvh] w-screen items-center justify-center ${className}`}
+      className={`panel flex h-dvh w-screen items-center justify-center ${className}`}
     >
       <div className="grid h-full max-w-screen-2xl grid-cols-1 gap-y-3 p-4 pb-6 md:auto-rows-auto md:grid-cols-2 md:gap-10 md:p-12 md:pb-6 xl:gap-20 xl:pt-28 2xl:pt-36">
         <div className="order-2 flex flex-col justify-between gap-6 md:order-1">
