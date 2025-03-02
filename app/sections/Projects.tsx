@@ -36,11 +36,11 @@ const Projects = () => {
   }, []);
 
   return (
-    <>
+    <div className="overflow-hidden">
       <MarqueeText text="Selected work" />
       <div
         ref={projectsContainer}
-        className="flex h-screen w-[200vw] overflow-x-hidden"
+        className="flex h-screen w-[300vw] !overflow-hidden"
       >
         {projects.map((project, i) => (
           <SliderProject
@@ -57,7 +57,7 @@ const Projects = () => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

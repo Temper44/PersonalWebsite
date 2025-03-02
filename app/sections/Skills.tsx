@@ -31,7 +31,7 @@ const Skills = () => {
   });
 
   return (
-    <section className="relative flex flex-col items-center">
+    <section className="relative flex flex-col items-center overflow-hidden">
       <MarqueeText text="Skills/Interests" />
       <div className="skillsContainer h-dvh w-screen">
         <h2 className="absolute left-1/2 top-3/4 -translate-x-1/2 text-center text-xl font-extralight">

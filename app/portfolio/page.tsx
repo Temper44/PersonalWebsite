@@ -246,10 +246,10 @@ export default function Page() {
           </defs>
         </svg>
       </section> */}
-      {/* <Skills /> */}
-
-      {/* <Projects /> */}
       <AboutMe />
+      <Skills />
+      <Projects />
+
       {/* <ParallaxScrollGallery /> */}
       <PortfolioFooter />
     </main>

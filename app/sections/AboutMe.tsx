@@ -5,15 +5,15 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MaskText from "../components/MaskText";
 import TextGradient from "../components/TextGradient";
-import BezierLine from "../components/BezierLine";
 import hoverEffect from "hover-effect";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutMe = () => {
   const aboutMeRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null); // Change to div for sticky behavior
+  const imageRef = useRef<HTMLDivElement>(null);
   const imageContainer = useRef<HTMLDivElement>(null);
+  const hasLoaded = useRef(false); // Prevent re-initialization
 
   useEffect(() => {
     if (aboutMeRef.current && imageRef.current) {
@@ -27,7 +27,6 @@ const AboutMe = () => {
             start: "center center",
             end: "bottom center",
             scrub: true,
-            // markers: true,
           },
           ease: "easeIn",
         },
@@ -38,7 +37,6 @@ const AboutMe = () => {
         start: "top-=100px center",
         end: "start+=100px center",
         scrub: true,
-        // markers: true,
         onEnter: () => {
           aboutMeRef.current?.classList.add("bg-zinc-900", "dark:bg-zinc-100");
         },
@@ -49,25 +47,40 @@ const AboutMe = () => {
           );
         },
       });
-
-      new hoverEffect({
-        parent: imageContainer.current,
-        intensity: 0.3,
-        image1: "./img/portrait.jpg",
-        image2: "./img/portrait2.jpg",
-        displacementImage: "./img/distortion2.jpg",
-        imagesRatio: 5 / 4,
-      });
     }
+
+    // Lazy Load hover-effect images when in viewport
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasLoaded.current) {
+          hasLoaded.current = true; // Prevent multiple initializations
+          new hoverEffect({
+            parent: imageContainer.current,
+            intensity: 0.3,
+            image1: "./img/portrait.jpg",
+            image2: "./img/portrait2.jpg",
+            displacementImage: "./img/distortion2.jpg",
+            imagesRatio: 5 / 4,
+          });
+          observer.disconnect(); // Stop observing after loading
+        }
+      },
+      { rootMargin: "200px" }, // Load just before entering the viewport
+    );
+
+    if (imageContainer.current) {
+      observer.observe(imageContainer.current);
+    }
+
+    return () => observer.disconnect(); // Cleanup observer
   }, []);
 
   return (
     <section className="flex flex-col items-center">
       <MarqueeText text="About me" />
-
       <div
         ref={aboutMeRef}
-        className="relative flex min-h-[135vh] w-full flex-col justify-center rounded-[3rem] transition-colors duration-1000"
+        className="relative flex min-h-[140vh] w-full flex-col justify-center rounded-[3rem] transition-colors duration-1000"
       >
         <div className="absolute left-8 top-8 text-7xl text-white dark:text-black 2xl:text-8xl">
           <FiArrowDownRight />
@@ -83,7 +96,7 @@ const AboutMe = () => {
               <div
                 id="imgContainer"
                 ref={imageContainer}
-                className="object-fit aspect-[4/5] h-auto w-[80vw] !rounded-xl shadow-md md:w-[25vw]"
+                className="aspect-[4/5] h-auto w-[80vw] !rounded-xl object-cover shadow-md md:w-[25vw]"
               ></div>
             </div>
           </div>
