@@ -21,7 +21,7 @@ const ProjectImageZoom = ({ src, alt }: { src: string; alt: string }) => {
         scrub: 0.5,
         pin: true,
         pinSpacing: true,
-        markers: true,
+        // markers: true,
       },
     });
 
