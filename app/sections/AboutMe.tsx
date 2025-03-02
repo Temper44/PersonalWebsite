@@ -60,10 +60,10 @@ const AboutMe = () => {
             hasLoaded.current = true; // Prevent multiple initializations
             new hoverEffect({
               parent: imageContainer.current,
-              intensity: 0.3,
+              intensity: 0.2,
               image1: "./img/portrait.jpg",
               image2: "./img/portrait2.jpg",
-              displacementImage: "./img/distortion2.jpg",
+              displacementImage: "./img/distortion.png",
               imagesRatio: 5 / 4,
             });
             observer.disconnect(); // Stop observing after loading
