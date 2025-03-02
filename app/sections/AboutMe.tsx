@@ -5,14 +5,16 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MaskText from "../components/MaskText";
 import TextGradient from "../components/TextGradient";
+import BezierLine from "../components/BezierLine";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutMe = () => {
   const aboutMeRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null); // Change to div for sticky behavior
 
   useEffect(() => {
-    if (aboutMeRef.current) {
+    if (aboutMeRef.current && imageRef.current) {
       gsap.fromTo(
         aboutMeRef.current,
         { scale: 1 },
@@ -28,6 +30,7 @@ const AboutMe = () => {
           ease: "easeIn",
         },
       );
+
       ScrollTrigger.create({
         trigger: aboutMeRef.current,
         start: "top-=100px center",
@@ -44,40 +47,71 @@ const AboutMe = () => {
           );
         },
       });
+
+      // // Sticky Image Effect
+      // ScrollTrigger.create({
+      //   trigger: imageRef.current,
+      //   start: "top center",
+      //   end: "bottom top",
+      //   pin: true, // Makes it sticky
+      //   scrub: true,
+      //   markers: true, // Uncomment to debug
+      // });
     }
   }, []);
 
   return (
     <section className="flex flex-col items-center">
       <MarqueeText text="About me" />
+
       <div
         ref={aboutMeRef}
-        className="relative min-h-screen w-full rounded-[3rem] transition-colors duration-1000" //bg-zinc-900 dark:bg-zinc-100
+        className="relative flex min-h-[135vh] w-full flex-col justify-center rounded-[3rem] transition-colors duration-1000"
       >
-        <div className="absolute left-8 top-8 text-white dark:text-black 2xl:text-8xl">
+        <div className="absolute left-8 top-8 text-7xl text-white dark:text-black 2xl:text-8xl">
           <FiArrowDownRight />
         </div>
-        <div className="flex h-full w-full flex-row items-center gap-4 p-6">
-          <div className="">
-            <img
-              src="./img/portrait4-5.jpg"
-              alt="My Picture"
-              className="w-[30vw] rounded-xl shadow-md"
-            />
+        <div className="grid h-full w-full grid-cols-1 place-items-center gap-4 p-6 md:grid-cols-2">
+          <div className="relative my-20 h-full md:my-0">
+            <div ref={imageRef} className="sticky top-32 md:top-12">
+              <img
+                src="./img/portrait4-5.jpg"
+                alt="My Picture"
+                className="w-[90vw] rounded-xl shadow-md md:w-[25vw]"
+              />
+            </div>
           </div>
-          <div className="">
-            <MaskText
-              text={[
-                "It is a long established fact",
-                "that a reader will be distracted",
-                "by the readable content of a page",
-                "when looking at its layout.",
-              ]}
-            />
+
+          <div className="flex flex-col gap-6">
             <TextGradient
-              text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters."
-              className="text-4xl text-white dark:text-black"
+              text="Developer, Designer, Creator"
+              className="mb-6 mt-6 text-5xl uppercase text-white dark:text-black xs:text-6xl md:mb-20 md:mt-0 md:text-7xl xl:text-8xl 2xl:text-9xl"
+              opacityClassName="opacity-20"
+              animationStart="top center"
+              animationEnd="+=300"
+              spaceLine={false}
             />
+            <MaskText
+              className="text-2xl font-semibold tracking-wide text-white dark:text-black md:text-4xl"
+              text={["Mathias Ebner"]}
+              headline
+            />
+            <div className="flex w-full flex-col gap-6 self-center md:max-w-[65%]">
+              <MaskText
+                className="text-base font-light tracking-wide text-white dark:text-black"
+                text={[
+                  "is an Experience Designer and Artist driven by a deep commitment to human-centric principles. Her work transcends mere aesthetics, creating engaging and meaningful digital experiences.",
+                  "She’s exploring the future of technology through workshops, leveraging versatile media and blending scientific research approaches with a pragmatic hands-on mentality that makes innovative concepts graspable for anyone.",
+                ]}
+              />
+              <MaskText
+                className="text-base font-light tracking-wide text-white dark:text-black"
+                text={[
+                  "You can catch Melanie sharing her insights at events and workshops, spreading her creative mindset.",
+                  "is an Experience Designer and Artist driven by a deep commitment to human-centric principles. Her work transcends mere aesthetics, creating engaging and meaningful digital experiences.",
+                ]}
+              />
+            </div>
           </div>
         </div>
       </div>

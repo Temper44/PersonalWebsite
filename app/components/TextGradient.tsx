@@ -8,14 +8,22 @@ export default function TextGradient({
   text,
   className,
   opacityClassName = "opacity-20",
+  animationStart = "top top",
+  animationEnd = `+=${window.innerHeight / 1.5}`,
+  spaceLine = true,
 }: {
   text: string;
   className?: string;
   opacityClassName?: string;
+  animationStart?: string;
+  animationEnd?: string;
+  spaceLine?: boolean;
 }) {
   const refs = useRef<(HTMLSpanElement | null)[]>([]);
   const body = useRef(null);
   const container = useRef(null);
+
+  console.log(window.innerHeight);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -27,8 +35,9 @@ export default function TextGradient({
       scrollTrigger: {
         trigger: container.current,
         scrub: true,
-        start: `top top`, //top center
-        end: `+=${window.innerHeight / 1.5}`,
+        start: animationStart,
+        end: animationEnd,
+        // markers: true,
       },
       opacity: 1,
       ease: "none",
@@ -47,14 +56,17 @@ export default function TextGradient({
         </p>,
       );
     });
-    body.push(
-      <span
-        className="h-[5px] flex-1 self-center bg-zinc-900 opacity-0 dark:bg-zinc-300"
-        ref={(el) => {
-          refs.current.push(el);
-        }}
-      />,
-    );
+    if (spaceLine) {
+      body.push(
+        <span
+          key={"spacer"}
+          className="h-[5px] flex-1 self-center bg-zinc-300"
+          ref={(el) => {
+            refs.current.push(el);
+          }}
+        />,
+      );
+    }
     return body;
   };
 
@@ -77,7 +89,7 @@ export default function TextGradient({
   };
 
   return (
-    <div ref={container}>
+    <div ref={container} className="overflow-hidden">
       <div ref={body} className={`flex flex-wrap ${className}`}>
         {splitWords(text)}
       </div>

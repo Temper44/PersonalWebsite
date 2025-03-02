@@ -109,6 +109,7 @@ export const projects = [
     technologies: "NextJS, TypeScript, Supabase, Prisma, NextAuth, MaterialUI",
     colors: ["#FFD700", "#FF8C00"],
     detailsPageLink: `/portfolio/TeamConnect`,
+    nextProjectLink: `/portfolio/GroupGo`,
     liveLink: "https://team-connect.app/",
     subheading: "Easy Team Building for Digital Projects",
     descriptionShort:
@@ -140,6 +141,7 @@ export const projects = [
     technologies: "React, Firebase, MaterialUI",
     colors: ["#FFD700", "#FF8C00"],
     detailsPageLink: `/portfolio/GroupGo`,
+    nextProjectLink: `/portfolio/GameHub`,
     liveLink: "https://groupgo-44f2a.web.app/",
     subheading: "Built to make your trip planning easier",
     descriptionShort:
@@ -165,6 +167,7 @@ export const projects = [
     technologies: "Ruby on Rails, Firebase, MaterialUI",
     colors: ["#FFD700", "#FF8C00"],
     detailsPageLink: `/portfolio/GameHub`,
+    nextProjectLink: `/portfolio/TeamConnect`,
     liveLink: "https://groupgo-44f2a.web.app/",
     subheading: "Built to make your trip planning easier",
     descriptionShort:

@@ -57,11 +57,12 @@ const MarqueeText = ({ text }: { text: string }) => {
 
   return (
     <div
+      className="overflow-hidden"
       style={{
         overflow: "hidden",
         whiteSpace: "nowrap",
         position: "relative",
-        width: "100vw",
+        width: "99vw",
       }}
     >
       <div
@@ -71,7 +72,7 @@ const MarqueeText = ({ text }: { text: string }) => {
           whiteSpace: "nowrap",
         }}
       >
-        <h2 className="font-urbanist mb-20 mt-32 inline-block text-4xl font-normal uppercase italic tracking-wide xs:text-5xl sm:text-7xl md:text-[8rem] lg:text-[9rem] xl:text-[10rem] 2xl:text-[11rem]">
+        <h2 className="mb-20 mt-32 inline-block overflow-hidden font-urbanist text-4xl font-normal uppercase italic tracking-wide xs:text-5xl sm:text-7xl md:text-[8rem] lg:text-[9rem] xl:text-[10rem] 2xl:text-[11rem]">
           {text} - {text} - {text} - {text} - {text} - {text}
         </h2>
       </div>

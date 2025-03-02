@@ -38,7 +38,7 @@ const Skills = () => {
           I strive to learn and master modern web technologies to create
           seamless, accessible, and visually stunning experiences
         </h2>
-        <div className="mask-clip-path absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw]">
+        <div className="mask-clip-path absolute left-1/2 top-0 z-20 h-[40vh] w-[60vw] origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:h-[60vh] md:w-[30vw]">
           <BackgroundGradientAnimation interactive={false}>
             <div className="absolute inset-0 z-50 flex items-center justify-center px-10">
               <TextGradient

@@ -8,8 +8,8 @@ import { HeroParallax } from "../components/ui/HeroParallax";
 import { products } from "@/lib/data";
 // import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
 import PortfolioFooter from "../sections/PorfolioFooter";
-// import AboutMe from "../sections/AboutMe";
-// import Skills from "../sections/Skills";
+import AboutMe from "../sections/AboutMe";
+import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import PageUtilities from "../components/PageUtilities";
 
@@ -56,13 +56,13 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="max-w-screen relative mx-auto overflow-hidden">
+    <main className="max-w-screen relative mx-auto">
       <div className="bg-grain fixed inset-0 z-[-10] h-screen w-screen" />
 
       <PageUtilities />
 
       <HeroParallax products={products} />
-      <section className="h-screen">
+      {/* <section className="h-screen">
         <svg
           ref={svgRef}
           className="portfolioSvg"
@@ -245,10 +245,11 @@ export default function Page() {
             </clipPath>
           </defs>
         </svg>
-      </section>
-      <Projects />
-      {/* <AboutMe />
-      <Skills /> */}
+      </section> */}
+      {/* <Skills /> */}
+
+      {/* <Projects /> */}
+      <AboutMe />
       {/* <ParallaxScrollGallery /> */}
       <PortfolioFooter />
     </main>

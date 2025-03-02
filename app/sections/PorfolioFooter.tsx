@@ -31,7 +31,7 @@ export default function PortfolioFooter() {
 
   return (
     <footer
-      className="relative min-h-[180dvh] xs:min-h-[110dvh] sm:h-screen"
+      className="relative min-h-[180dvh] overflow-x-hidden xs:min-h-[110dvh] sm:h-screen"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
       <div className="absolute bottom-0 min-h-[180dvh] w-full xs:min-h-[110dvh] sm:fixed sm:h-screen">

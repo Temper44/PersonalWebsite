@@ -8,6 +8,7 @@ import ProjectImageZoom from "@/app/components/ProjectImageZoom";
 import { projects } from "@/lib/data";
 import { notFound } from "next/navigation";
 import { FiExternalLink } from "react-icons/fi";
+import { MdNavigateNext } from "react-icons/md";
 
 export async function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -156,7 +157,7 @@ export default async function Page({
         alt={project.imgPreview.alt}
       />
 
-      <div className="mx-auto my-36 flex max-w-7xl flex-col justify-center gap-12 p-4 md:gap-20 xl:gap-36">
+      <div className="mx-auto my-24 flex max-w-7xl flex-col justify-center gap-12 p-4 md:my-36 md:gap-20 xl:gap-36">
         {project.imgFullScreen.map((img) => (
           <ProjectImageFull
             key={img.title}
@@ -167,6 +168,13 @@ export default async function Page({
         ))}
       </div>
 
+      <div className="mb-28 flex w-full max-w-8xl justify-end p-4">
+        <Button
+          text="Next Project"
+          href={project.nextProjectLink}
+          icon={<MdNavigateNext size={24} />}
+        />
+      </div>
       <Footer />
     </main>
   );
