@@ -8,8 +8,8 @@ import { HeroParallax } from "../components/ui/HeroParallax";
 import { products } from "@/lib/data";
 // import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
 import PortfolioFooter from "../sections/PorfolioFooter";
-// import AboutMe from "../sections/AboutMe";
-import Skills from "../sections/Skills";
+import AboutMe from "../sections/AboutMe";
+// import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import PageUtilities from "../components/PageUtilities";
 
@@ -246,8 +246,8 @@ export default function Page() {
           </defs>
         </svg>
       </section> */}
-      {/* <AboutMe /> */}
-      <Skills />
+      <AboutMe />
+      {/* <Skills /> */}
       <Projects />
 
       {/* <ParallaxScrollGallery /> */}
