@@ -16,63 +16,68 @@ const AboutMe = () => {
   const hasLoaded = useRef(false); // Prevent re-initialization
 
   useEffect(() => {
-    if (aboutMeRef.current && imageRef.current) {
-      gsap.fromTo(
-        aboutMeRef.current,
-        { scale: 1 },
-        {
-          scale: 0.95,
-          scrollTrigger: {
-            trigger: aboutMeRef.current,
-            start: "center center",
-            end: "bottom center",
-            scrub: true,
+    if (typeof window !== "undefined") {
+      if (aboutMeRef.current && imageRef.current) {
+        gsap.fromTo(
+          aboutMeRef.current,
+          { scale: 1 },
+          {
+            scale: 0.95,
+            scrollTrigger: {
+              trigger: aboutMeRef.current,
+              start: "center center",
+              end: "bottom center",
+              scrub: true,
+            },
+            ease: "easeIn",
           },
-          ease: "easeIn",
+        );
+
+        ScrollTrigger.create({
+          trigger: aboutMeRef.current,
+          start: "top-=100px center",
+          end: "start+=100px center",
+          scrub: true,
+          onEnter: () => {
+            aboutMeRef.current?.classList.add(
+              "bg-zinc-900",
+              "dark:bg-zinc-100",
+            );
+          },
+          onLeaveBack: () => {
+            aboutMeRef.current?.classList.remove(
+              "bg-zinc-900",
+              "dark:bg-zinc-100",
+            );
+          },
+        });
+      }
+
+      // Lazy Load hover-effect images when in viewport
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting && !hasLoaded.current) {
+            hasLoaded.current = true; // Prevent multiple initializations
+            new hoverEffect({
+              parent: imageContainer.current,
+              intensity: 0.3,
+              image1: "./img/portrait.jpg",
+              image2: "./img/portrait2.jpg",
+              displacementImage: "./img/distortion2.jpg",
+              imagesRatio: 5 / 4,
+            });
+            observer.disconnect(); // Stop observing after loading
+          }
         },
+        { rootMargin: "200px" }, // Load just before entering the viewport
       );
 
-      ScrollTrigger.create({
-        trigger: aboutMeRef.current,
-        start: "top-=100px center",
-        end: "start+=100px center",
-        scrub: true,
-        onEnter: () => {
-          aboutMeRef.current?.classList.add("bg-zinc-900", "dark:bg-zinc-100");
-        },
-        onLeaveBack: () => {
-          aboutMeRef.current?.classList.remove(
-            "bg-zinc-900",
-            "dark:bg-zinc-100",
-          );
-        },
-      });
+      if (imageContainer.current) {
+        observer.observe(imageContainer.current);
+      }
+
+      return () => observer.disconnect(); // Cleanup observer
     }
-
-    // Lazy Load hover-effect images when in viewport
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !hasLoaded.current) {
-          hasLoaded.current = true; // Prevent multiple initializations
-          new hoverEffect({
-            parent: imageContainer.current,
-            intensity: 0.3,
-            image1: "./img/portrait.jpg",
-            image2: "./img/portrait2.jpg",
-            displacementImage: "./img/distortion2.jpg",
-            imagesRatio: 5 / 4,
-          });
-          observer.disconnect(); // Stop observing after loading
-        }
-      },
-      { rootMargin: "200px" }, // Load just before entering the viewport
-    );
-
-    if (imageContainer.current) {
-      observer.observe(imageContainer.current);
-    }
-
-    return () => observer.disconnect(); // Cleanup observer
   }, []);
 
   return (
