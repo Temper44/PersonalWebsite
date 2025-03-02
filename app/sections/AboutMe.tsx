@@ -6,12 +6,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MaskText from "../components/MaskText";
 import TextGradient from "../components/TextGradient";
 import BezierLine from "../components/BezierLine";
+import hoverEffect from "hover-effect";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutMe = () => {
   const aboutMeRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null); // Change to div for sticky behavior
+  const imageContainer = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (aboutMeRef.current && imageRef.current) {
@@ -48,15 +50,14 @@ const AboutMe = () => {
         },
       });
 
-      // // Sticky Image Effect
-      // ScrollTrigger.create({
-      //   trigger: imageRef.current,
-      //   start: "top center",
-      //   end: "bottom top",
-      //   pin: true, // Makes it sticky
-      //   scrub: true,
-      //   markers: true, // Uncomment to debug
-      // });
+      new hoverEffect({
+        parent: imageContainer.current,
+        intensity: 0.3,
+        image1: "./img/portrait.jpg",
+        image2: "./img/portrait2.jpg",
+        displacementImage: "./img/distortion2.jpg",
+        imagesRatio: 5 / 4,
+      });
     }
   }, []);
 
@@ -74,11 +75,16 @@ const AboutMe = () => {
         <div className="grid h-full w-full grid-cols-1 place-items-center gap-4 p-6 md:grid-cols-2">
           <div className="relative my-20 h-full md:my-0">
             <div ref={imageRef} className="sticky top-32 md:top-12">
-              <img
+              {/* <img
                 src="./img/portrait4-5.jpg"
                 alt="My Picture"
                 className="w-[90vw] rounded-xl shadow-md md:w-[25vw]"
-              />
+              /> */}
+              <div
+                id="imgContainer"
+                ref={imageContainer}
+                className="object-fit aspect-[4/5] h-auto w-[80vw] !rounded-xl shadow-md md:w-[25vw]"
+              ></div>
             </div>
           </div>
 
