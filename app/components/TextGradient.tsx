@@ -9,7 +9,7 @@ export default function TextGradient({
   className,
   opacityClassName = "opacity-20",
   animationStart = "top top",
-  animationEnd = `+=${typeof window !== "undefined" ? window.innerHeight / 1.5 : 500}`,
+  animationEnd = `+=500`,
   spaceLine = true,
 }: {
   text: string;
