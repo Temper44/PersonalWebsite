@@ -10,7 +10,7 @@ import { products } from "@/lib/data";
 import PortfolioFooter from "../sections/PorfolioFooter";
 // import AboutMe from "../sections/AboutMe";
 // import Skills from "../sections/Skills";
-// import Projects from "../sections/Projects";
+import Projects from "../sections/Projects";
 import PageUtilities from "../components/PageUtilities";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -248,7 +248,7 @@ export default function Page() {
       </section> */}
       {/* <AboutMe /> */}
       {/* <Skills /> */}
-      {/* <Projects /> */}
+      <Projects />
 
       {/* <ParallaxScrollGallery /> */}
       <PortfolioFooter />
