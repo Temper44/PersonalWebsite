@@ -7,7 +7,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { HeroParallax } from "../components/ui/HeroParallax";
 import { products } from "@/lib/data";
 // import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
-// import PortfolioFooter from "../sections/PorfolioFooter";
+import PortfolioFooter from "../sections/PorfolioFooter";
 // import AboutMe from "../sections/AboutMe";
 // import Skills from "../sections/Skills";
 // import Projects from "../sections/Projects";
@@ -251,7 +251,7 @@ export default function Page() {
       {/* <Projects /> */}
 
       {/* <ParallaxScrollGallery /> */}
-      {/* <PortfolioFooter /> */}
+      <PortfolioFooter />
     </main>
   );
 }
