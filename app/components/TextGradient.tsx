@@ -23,8 +23,6 @@ export default function TextGradient({
   const body = useRef(null);
   const container = useRef(null);
 
-  console.log(window.innerHeight);
-
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     createAnimation();
@@ -60,7 +58,7 @@ export default function TextGradient({
       body.push(
         <span
           key={"spacer"}
-          className="h-[5px] flex-1 self-center bg-zinc-300"
+          className={`h-[5px] flex-1 self-center bg-zinc-300 ${opacityClassName}`}
           ref={(el) => {
             refs.current.push(el);
           }}
