@@ -11,7 +11,7 @@ export default function PortfolioFooter() {
   const refMenu = useRef<HTMLDivElement>(null);
   const refParagraph = useRef<HTMLDivElement>(null);
 
-  const isInViewParagraph = useInView(refFooter, {
+  const isInViewParagraph = useInView(refParagraph, {
     once: false,
     margin: "0px 0px 0px 0px",
   });

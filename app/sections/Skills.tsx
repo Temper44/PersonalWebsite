@@ -25,7 +25,7 @@ const Skills = () => {
 
     clipAnimation.to(".mask-clip-path", {
       width: "100vw",
-      height: "100vh",
+      height: "100dvh",
       borderRadius: 0,
     });
   });
