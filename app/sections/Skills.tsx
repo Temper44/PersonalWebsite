@@ -16,7 +16,7 @@ const Skills = () => {
         trigger: ".skillsContainer",
         start: "center center",
         end: "+=800 center",
-        scrub: 0.5,
+        scrub: 1,
         pin: true,
         pinSpacing: true,
         // markers: true,
@@ -34,7 +34,7 @@ const Skills = () => {
     <section className="relative flex flex-col items-center overflow-hidden">
       <MarqueeText text="Skills/Interests" />
       <div className="skillsContainer h-dvh w-screen">
-        <h2 className="absolute left-1/2 top-3/4 -translate-x-1/2 text-center text-xl font-extralight">
+        <h2 className="absolute left-1/2 top-[60%] -translate-x-1/2 text-center text-base font-extralight tracking-wide sm:top-[75%] md:text-xl">
           I strive to learn and master modern web technologies to create
           seamless, accessible, and visually stunning experiences
         </h2>

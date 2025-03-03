@@ -31,7 +31,7 @@ export default function PortfolioFooter() {
 
   return (
     <footer
-      className="relative min-h-[180dvh] overflow-x-hidden xs:min-h-[110dvh] sm:h-screen"
+      className="relative min-h-[180dvh] overflow-x-hidden xs:min-h-[130dvh] sm:h-screen"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
       <div className="absolute bottom-0 min-h-[180dvh] w-full xs:min-h-[110dvh] sm:fixed sm:h-screen">
@@ -154,7 +154,7 @@ export default function PortfolioFooter() {
           </div>
 
           <motion.div
-            className="flex w-full max-w-6xl flex-col items-center justify-between px-4 text-xs font-light tracking-wide text-zinc-800 dark:text-white sm:flex-row"
+            className="flex w-full max-w-6xl flex-col items-center justify-between px-4 text-[0.65rem] font-light tracking-wide text-zinc-800 dark:text-white sm:flex-row sm:text-xs"
             ref={refFooter}
             initial={{ opacity: 0 }}
             animate={isInViewFooter ? { opacity: 1 } : {}}

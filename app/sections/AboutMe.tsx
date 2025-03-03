@@ -85,14 +85,14 @@ const AboutMe = () => {
       <MarqueeText text="About me" />
       <div
         ref={aboutMeRef}
-        className="relative flex min-h-[140vh] w-full flex-col justify-center rounded-[3rem] transition-colors duration-1000"
+        className="relative flex min-h-[130dvh] w-full flex-col justify-center rounded-[3rem] transition-colors duration-1000"
       >
         <div className="absolute left-8 top-8 text-7xl text-white dark:text-black 2xl:text-8xl">
           <FiArrowDownRight />
         </div>
-        <div className="grid h-full w-full grid-cols-1 place-items-center gap-4 p-6 md:grid-cols-2">
-          <div className="relative my-20 h-full md:my-0">
-            <div ref={imageRef} className="sticky top-32 md:top-12">
+        <div className="grid h-full w-full grid-cols-1 place-items-center gap-16 px-6 pb-24 pt-32 lg:grid-cols-2 lg:gap-4 lg:py-32">
+          <div className="relative my-32 h-full lg:my-0">
+            <div ref={imageRef} className="sticky top-32 lg:top-12">
               {/* <img
                 src="./img/portrait4-5.jpg"
                 alt="My Picture"
@@ -101,7 +101,7 @@ const AboutMe = () => {
               <div
                 id="imgContainer"
                 ref={imageContainer}
-                className="aspect-[4/5] h-auto w-[80vw] !rounded-xl object-cover shadow-md md:w-[25vw]"
+                className="aspect-[4/5] h-auto w-[80vw] !rounded-xl object-cover shadow-md sm:w-[65vw] sm:object-contain md:w-[55vw] lg:w-[35vw] xl:w-[28vw] xl:object-cover 2xl:w-[32vw]"
               ></div>
             </div>
           </div>
@@ -109,18 +109,18 @@ const AboutMe = () => {
           <div className="flex flex-col gap-6">
             <TextGradient
               text="Developer, Designer, Creator"
-              className="mb-6 mt-6 text-5xl uppercase text-white dark:text-black xs:text-6xl md:mb-20 md:mt-0 md:text-7xl xl:text-8xl 2xl:text-9xl"
+              className="mb-6 mt-6 text-5xl uppercase text-white dark:text-black xs:text-6xl sm:text-7xl md:mt-0 md:text-8xl lg:mb-20 lg:text-7xl xl:text-8xl 2xl:text-9xl"
               opacityClassName="opacity-20"
               animationStart="top center"
               animationEnd="+=300"
               spaceLine={false}
             />
             <MaskText
-              className="text-2xl font-semibold tracking-wide text-white dark:text-black md:text-4xl"
+              className="text-2xl font-semibold tracking-wide text-white dark:text-black md:text-3xl xl:text-4xl"
               text={["Mathias Ebner"]}
               headline
             />
-            <div className="flex w-full flex-col gap-6 self-center md:max-w-[65%]">
+            <div className="flex w-full flex-col gap-6 self-center lg:max-w-[70%] xl:max-w-[65%]">
               <MaskText
                 className="text-base font-light tracking-wide text-white dark:text-black"
                 text={[
