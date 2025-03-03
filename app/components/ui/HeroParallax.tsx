@@ -57,7 +57,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="relative flex h-[300vh] flex-col self-auto overflow-hidden py-40 antialiased [perspective:1000px] [transform-style:preserve-3d]"
+      className="relative flex min-h-[300vh] flex-col self-auto overflow-hidden bg-red-100 pb-40 pt-56 antialiased [perspective:1000px] [transform-style:preserve-3d] xs:min-h-[230vh] 2xl:min-h-[300vh]"
     >
       <Header />
       <motion.div
@@ -69,7 +69,7 @@ export const HeroParallax = ({
         }}
         className=""
       >
-        <motion.div className="mb-20 flex flex-row-reverse space-x-20 space-x-reverse">
+        <motion.div className="mb-14 flex flex-row-reverse space-x-10 space-x-reverse md:mb-20 md:space-x-20">
           {firstRow.map((product) => (
             <ProductCard
               product={product}
@@ -78,7 +78,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="mb-20 flex flex-row space-x-20">
+        <motion.div className="mb-14 flex flex-row space-x-10 md:mb-20 md:space-x-20">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
@@ -87,7 +87,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-20 space-x-reverse">
+        <motion.div className="flex flex-row-reverse space-x-10 space-x-reverse md:space-x-20">
           {thirdRow.map((product) => (
             <ProductCard
               product={product}
@@ -103,23 +103,18 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="relative left-0 top-0 z-10 mx-auto w-full max-w-[100rem] px-4 pt-12">
-      <h1 className="textShadow text-7xl font-medium leading-none dark:text-white md:text-7xl md:font-semibold md:!leading-tight xl:text-8xl 2xl:text-9xl">
+    <div className="relative left-0 top-0 z-10 mx-auto w-full max-w-[100rem] px-4 xl:pt-12">
+      <h1 className="textShadow md:[5.5rem] text-5xl font-medium leading-none dark:text-white xs:text-7xl sm:text-[5rem] md:font-semibold md:!leading-tight xl:text-8xl 2xl:text-9xl">
         Experience the{" "}
-        <span className="text-[5rem] font-bold italic text-zinc-900 dark:text-slate-100 xl:text-[7rem] 2xl:text-[9rem]">
+        <span className="text-[3.5rem] font-bold italic text-zinc-900 dark:text-slate-100 xs:text-[5rem] sm:text-[5.5rem] xl:text-[7rem] 2xl:text-[9rem]">
           Web
         </span>{" "}
         <br /> with a{" "}
-        <span className="colorEffect text-[5rem] font-bold xl:text-[7rem] 2xl:text-[9rem]">
+        <span className="colorEffect text-[3.5rem] font-bold xs:text-[5rem] sm:text-[5.5rem] xl:text-[7rem] 2xl:text-[9rem]">
           Creative
         </span>{" "}
         <span>approach</span>
       </h1>
-      {/* <p className="mt-8 max-w-2xl text-base dark:text-neutral-200 md:text-xl">
-        We build beautiful products with the latest technologies and frameworks.
-        We are a team of passionate developers and designers that love to build
-        amazing products.
-      </p> */}
     </div>
   );
 };
@@ -144,7 +139,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product relative h-96 w-[30rem] flex-shrink-0"
+      className="group/product relative aspect-[3/2] h-auto w-[15rem] flex-shrink-0 xs:w-[20rem] sm:w-[22rem] md:w-[24rem] lg:w-[26rem] xl:w-[28rem] 2xl:w-[30rem]"
     >
       <Link
         href={product.link}
@@ -152,11 +147,13 @@ export const ProductCard = ({
       >
         <Image
           src={product.thumbnail}
-          height="600"
-          width="600"
-          className="absolute inset-0 h-full w-full object-cover object-left-top"
+          fill
+          quality={100}
+          style={{ objectFit: "cover", objectPosition: "left top" }}
           alt={product.title}
         />
+        {/* height="600" width="600" className="absolute inset-0 h-full w-full
+        object-cover object-left-top" */}
       </Link>
       <div className="pointer-events-none absolute inset-0 h-full w-full bg-black opacity-0 group-hover/product:opacity-80"></div>
       <h2 className="absolute bottom-4 left-4 text-3xl text-white opacity-0 group-hover/product:opacity-100">
