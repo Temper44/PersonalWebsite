@@ -71,7 +71,7 @@ const ButtonSkillet = ({
       >
         <div className="absolute inset-0 rounded-full bg-gradient-to-r from-rose-500 to-purple-500" />
         {/* <div className="relative flex items-center gap-3 rounded-full bg-zinc-900 px-[26px] py-[9px] group-hover:bg-transparent dark:bg-zinc-100 sm:px-[28px] sm:py-[10px] xl:px-[30px] xl:py-[11px]"> */}
-        <div className="~/xl:~px-[1.62rem]/[1.87rem] ~/xl:~py-[0.56rem]/[0.68rem] relative flex items-center gap-3 rounded-full bg-zinc-900 group-hover:bg-transparent dark:bg-zinc-100">
+        <div className="~px-[1.64rem]/[1.9rem] ~py-[0.58rem]/[0.71rem] relative flex items-center gap-3 rounded-full bg-zinc-900 group-hover:bg-transparent dark:bg-zinc-100">
           {text}
           {icon && (
             <span className="text-xs opacity-80 transition-all group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:opacity-100">

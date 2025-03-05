@@ -9,7 +9,7 @@ export default function TextGradient({
   className,
   opacityClassName = "opacity-20",
   animationStart = "top top",
-  animationEnd = `+=500`,
+  animationEnd = `+=600`,
   spaceLine = true,
 }: {
   text: string;
@@ -49,7 +49,10 @@ export default function TextGradient({
     phrase.split(" ").forEach((word, i) => {
       const letters = splitLetters(word);
       body.push(
-        <p key={word + "_" + i} className="mb-[0.5rem] mr-[0.5rem]">
+        <p
+          key={word + "_" + i}
+          className="~mb-[0.5rem]/[1.1rem] ~mr-[0.5rem]/[1.1rem]"
+        >
           {letters}
         </p>,
       );

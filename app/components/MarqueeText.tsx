@@ -75,7 +75,7 @@ const MarqueeText = ({ text }: { text: string }) => {
         {/* <h2 className="mb-[4rem] mt-[9rem] inline-block overflow-hidden font-urbanist text-4xl font-normal uppercase italic tracking-wide xs:text-5xl sm:mb-[5rem] sm:mt-[10rem] sm:text-7xl md:mb-[6rem] md:mt-[11rem] md:text-[8rem] lg:text-[9rem] xl:text-[10rem] 2xl:mb-[8rem] 2xl:mt-[13rem] 2xl:text-[11rem]">
           {text} - {text} - {text} - {text} - {text} - {text} - {text} - {text}
         </h2> */}
-        <h2 className="~mb-[4rem]/[8rem] ~mt-[9rem]/[13rem] ~text-[2.25rem]/[11rem] inline-block overflow-hidden font-urbanist font-normal uppercase italic tracking-wide">
+        <h2 className="~mb-[4rem]/[8rem] ~mt-[9rem]/[13rem] ~text-[2.25rem]/[13rem] inline-block overflow-hidden font-urbanist font-normal uppercase italic tracking-wide">
           {text} - {text} - {text} - {text} - {text} - {text} - {text} - {text}
         </h2>
       </div>

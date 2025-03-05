@@ -116,20 +116,20 @@ const AboutMe = () => {
               spaceLine={false}
             />
             <MaskText
-              className="~text-2xl/4xl font-semibold tracking-wide text-white dark:text-black"
+              className="~text-2xl/5xl font-semibold tracking-wide text-white dark:text-black"
               text={["Mathias Ebner"]}
               headline
             />
             <div className="flex w-full flex-col gap-6 self-center lg:max-w-[70%] xl:max-w-[65%]">
               <MaskText
-                className="text-base font-light tracking-wide text-white dark:text-black"
+                className="~text-base/lg font-light tracking-wide text-white dark:text-black"
                 text={[
                   "is an Experience Designer and Artist driven by a deep commitment to human-centric principles. Her work transcends mere aesthetics, creating engaging and meaningful digital experiences.",
                   "She’s exploring the future of technology through workshops, leveraging versatile media and blending scientific research approaches with a pragmatic hands-on mentality that makes innovative concepts graspable for anyone.",
                 ]}
               />
               <MaskText
-                className="text-base font-light tracking-wide text-white dark:text-black"
+                className="~text-base/lg font-light tracking-wide text-white dark:text-black"
                 text={[
                   "You can catch Melanie sharing her insights at events and workshops, spreading her creative mindset.",
                   "is an Experience Designer and Artist driven by a deep commitment to human-centric principles. Her work transcends mere aesthetics, creating engaging and meaningful digital experiences.",

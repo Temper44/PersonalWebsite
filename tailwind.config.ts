@@ -32,7 +32,7 @@ export default {
       },
       screens: {
         xs: "23.4375rem", // 375pxrem",
-        // "3xl": "120rem", // 1920px
+        "3xl": "120rem", // 1920px
       },
       maxWidth: {
         "8xl": "96rem", // 1536px

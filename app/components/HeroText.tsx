@@ -19,7 +19,7 @@ const HeroText = ({
   return (
     <>
       <motion.h1
-        className="colorEffect textShadow ~text-[6.2rem]/[12rem] text-center font-urbanist font-bold capitalize tracking-wide max-xs:text-7xl"
+        className="colorEffect textShadow ~text-[6.2rem]/[14rem] text-center font-urbanist font-bold capitalize tracking-wide max-xs:text-7xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
@@ -33,7 +33,7 @@ const HeroText = ({
       {subheading && (
         <TextGenerateEffect
           words={subheading}
-          className="~/xl:~px-[0.5rem]/[10rem] py-4"
+          className="~px-[0.5rem]/[12rem] py-4"
         />
       )}
 
@@ -55,7 +55,7 @@ const HeroText = ({
       )}
       {infoText && (
         <motion.p
-          className="~/xl:~text-base/xl z-10 py-4 text-center font-bold text-black dark:text-white"
+          className="~text-base/2xl z-10 py-4 text-center font-bold text-black dark:text-white"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{

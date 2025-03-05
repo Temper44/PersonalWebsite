@@ -23,7 +23,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`More information on ${link.name}`}
-          className="~text-[1.175rem]/[1.25rem] text-black transition-colors duration-500 ease-in-out dark:text-white"
+          className="~text-[1.175rem]/[1.4rem] text-black transition-colors duration-500 ease-in-out dark:text-white"
           onMouseEnter={() => setIsCursorHovered(true)}
           onMouseLeave={() => setIsCursorHovered(false)}
         >

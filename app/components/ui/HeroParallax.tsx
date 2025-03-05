@@ -104,13 +104,13 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div className="relative left-0 top-0 z-10 mx-auto w-full max-w-[100rem] px-4 xl:pt-12">
-      <h1 className="~text-[4.5rem]/[8rem] font-medium leading-none dark:text-white max-xs:text-[3rem] md:font-semibold md:!leading-tight">
+      <h1 className="~text-[4.5rem]/[9.5rem] font-medium leading-none dark:text-white max-xs:text-[3rem] md:font-semibold md:!leading-tight">
         Experience the{" "}
-        <span className="~text-[5rem]/[9rem] font-bold italic text-zinc-900 dark:text-slate-100 max-xs:text-[3rem]">
+        <span className="~text-[5rem]/[10.5rem] font-bold italic text-zinc-900 dark:text-slate-100 max-xs:text-[3rem]">
           Web
         </span>{" "}
         <br /> with a{" "}
-        <span className="colorEffect ~text-[5rem]/[9rem] font-bold max-xs:text-[3rem]">
+        <span className="colorEffect ~text-[5rem]/[10.5rem] font-bold max-xs:text-[3rem]">
           Creative
         </span>{" "}
         <span>approach</span>

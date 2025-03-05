@@ -34,16 +34,16 @@ const Skills = () => {
     <section className="relative flex flex-col items-center overflow-hidden">
       <MarqueeText text="Skills" />
       <div className="skillsContainer h-dvh w-screen">
-        <h2 className="~/md:~text-base/xl absolute left-1/2 top-[60%] w-[80%] -translate-x-1/2 text-center font-extralight tracking-wide sm:top-[75%] md:w-auto">
+        <h2 className="~text-base/2xl absolute left-1/2 top-[60%] w-[80%] -translate-x-1/2 text-center font-extralight tracking-wide sm:top-[75%] md:w-auto">
           I strive to learn and master modern web technologies to create
           seamless, accessible, and visually stunning experiences
         </h2>
         <div className="mask-clip-path absolute left-1/2 top-0 z-20 h-[40vh] w-[60vw] origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:h-[60vh] md:w-[30vw]">
           <BackgroundGradientAnimation interactive={false}>
-            <div className="absolute inset-0 z-50 flex items-center justify-center px-10">
+            <div className="~px-8/28 absolute inset-0 z-50 flex items-center justify-center">
               <TextGradient
                 text={skills.join(" / ")}
-                className="textShadow ~text-3xl/7xl font-semibold text-white"
+                className="textShadow ~text-3xl/8xl font-semibold text-white"
                 opacityClassName="opacity-0"
               />
             </div>

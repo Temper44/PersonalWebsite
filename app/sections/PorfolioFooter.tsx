@@ -37,7 +37,7 @@ export default function PortfolioFooter() {
       <div className="absolute bottom-0 min-h-[180dvh] w-full xs:min-h-[110dvh] sm:fixed sm:h-screen">
         <div className="flex h-full w-full flex-col items-center justify-center pb-6 pt-32 sm:pt-32">
           <motion.p
-            className="~/lg:~text-sm/base tracking-wide"
+            className="~text-sm/xl tracking-wide"
             ref={refParagraph}
             initial={{ opacity: 0 }}
             animate={isInViewParagraph ? { opacity: 1 } : {}}
@@ -49,7 +49,7 @@ export default function PortfolioFooter() {
             Thanks for stopping by, want to
           </motion.p>
           <motion.div
-            className="marquee-forward-desktop ~/lg:~text-6xl/9xl ~/lg:~py-8/20"
+            className="marquee-forward-desktop ~text-[3.75rem]/[9rem] ~/lg:~py-8/20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
@@ -84,7 +84,7 @@ export default function PortfolioFooter() {
           <div className="w-full max-w-xl p-4">
             <Form />
           </div>
-          <div className="grid w-full max-w-6xl grid-cols-1 gap-10 px-4 py-4 sm:grid-cols-2 sm:gap-4 sm:py-12">
+          <div className="3xl:pt-14 grid w-full max-w-6xl grid-cols-1 gap-10 px-4 py-4 sm:grid-cols-2 sm:gap-4 sm:py-12 2xl:pt-4">
             <motion.div
               ref={refSocials}
               className="max-w-md"
@@ -95,7 +95,9 @@ export default function PortfolioFooter() {
                 ease: "easeOut",
               }}
             >
-              <h3 className="text-2xl font-semibold tracking-wide">Socials</h3>
+              <h3 className="~text-2xl/4xl font-semibold tracking-wide">
+                Socials
+              </h3>
               <div className="my-2 h-[1px] w-full bg-zinc-900 dark:bg-zinc-300" />
               <ul className="mt-2 grid grid-cols-2 gap-2">
                 {socialMedia.map(
@@ -103,7 +105,7 @@ export default function PortfolioFooter() {
                     index < 4 && (
                       <li
                         key={item.id}
-                        className="flex items-center gap-2 tracking-wide text-zinc-800 dark:text-zinc-100"
+                        className="~text-base/xl flex items-center gap-2 tracking-wide text-zinc-800 dark:text-zinc-100"
                       >
                         {item.icon}
                         <a
@@ -130,13 +132,15 @@ export default function PortfolioFooter() {
                 ease: "easeOut",
               }}
             >
-              <h3 className="text-2xl font-semibold tracking-wide">Menu</h3>
+              <h3 className="~text-2xl/4xl font-semibold tracking-wide">
+                Menu
+              </h3>
               <div className="my-2 h-[1px] w-full bg-zinc-900 dark:bg-zinc-300" />
               <ul className="mt-2 grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
                 {navItemsFull.map((item) => (
                   <li
                     key={item.name}
-                    className="flex items-center gap-2 tracking-wide text-zinc-800 dark:text-zinc-100"
+                    className="~text-base/xl flex items-center gap-2 tracking-wide text-zinc-800 dark:text-zinc-100"
                   >
                     <a
                       href={item.link}
@@ -154,7 +158,7 @@ export default function PortfolioFooter() {
           </div>
 
           <motion.div
-            className="flex w-full max-w-6xl flex-col items-center justify-between px-4 text-[0.65rem] font-light tracking-wide text-zinc-800 dark:text-white sm:flex-row sm:text-xs"
+            className="~text-[0.65rem]/[0.85rem] 3xl:bottom-6 3xl:absolute flex w-full max-w-6xl flex-col items-center justify-between px-4 font-light tracking-wide text-zinc-800 dark:text-white sm:flex-row"
             ref={refFooter}
             initial={{ opacity: 0 }}
             animate={isInViewFooter ? { opacity: 1 } : {}}
