@@ -55,9 +55,13 @@ export const HeroParallax = ({
     springConfig,
   );
   return (
+    // <div
+    //   ref={ref}
+    //   className="3xl:min-h-[210dvh] relative flex min-h-[300dvh] flex-grow flex-col self-auto overflow-hidden pb-40 pt-56 antialiased [perspective:1000px] [transform-style:preserve-3d] xs:min-h-[275dvh] md:min-h-[300dvh]"
+    // >
     <div
       ref={ref}
-      className="relative flex min-h-[300dvh] flex-col self-auto overflow-hidden pb-40 pt-56 antialiased [perspective:1000px] [transform-style:preserve-3d] xs:min-h-[285dvh] 2xl:min-h-[300dvh]"
+      className="relative flex min-h-full flex-grow flex-col self-auto overflow-hidden pb-[40rem] pt-[14rem] antialiased [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div

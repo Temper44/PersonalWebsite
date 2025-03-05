@@ -28,6 +28,7 @@ export default {
       },
       screens: {
         xs: "375px",
+        "3xl": "1920px",
       },
       maxWidth: {
         "8xl": "1536px", // Adding custom max-w-8xl

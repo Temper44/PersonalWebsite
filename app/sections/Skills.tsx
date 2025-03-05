@@ -32,7 +32,7 @@ const Skills = () => {
 
   return (
     <section className="relative flex flex-col items-center overflow-hidden">
-      <MarqueeText text="Skills/Interests" />
+      <MarqueeText text="Skills" />
       <div className="skillsContainer h-dvh w-screen">
         <h2 className="absolute left-1/2 top-[60%] w-[80%] -translate-x-1/2 text-center text-base font-extralight tracking-wide sm:top-[75%] md:w-auto md:text-xl">
           I strive to learn and master modern web technologies to create
