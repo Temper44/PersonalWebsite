@@ -7,13 +7,17 @@ const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
+import fluid, { extract, screens, fontSize } from "fluid-tailwind";
 
 export default {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: {
+    files: [
+      "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+      "./components/**/*.{js,ts,jsx,tsx,mdx}",
+      "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
+    extract, // Custom extractor to support the `~` modifier
+  },
   theme: {
     extend: {
       colors: {
@@ -27,12 +31,12 @@ export default {
         urbanist: ["var(--font-urbanist)"], // Only used when specified
       },
       screens: {
-        xs: "375px",
-        "3xl": "1920px",
+        xs: "23.4375rem", // 375pxrem",
+        // "3xl": "120rem", // 1920px
       },
       maxWidth: {
-        "8xl": "1536px", // Adding custom max-w-8xl
-        "9xl": "1920px", // Adding custom max-w-9xl
+        "8xl": "96rem", // 1536px
+        "9xl": "120rem", // 1920px
       },
       animation: {
         spotlight: "spotlight 2s ease .75s 1 forwards",
@@ -88,6 +92,9 @@ export default {
         },
       },
     },
+    screens, // Tailwind's default screens, in `rem`
+    fontSize,
+    /** @type {import('fluid-tailwind').FluidThemeConfig} */
   },
   plugins: [
     require("tailwindcss-animate"),
@@ -117,6 +124,9 @@ export default {
         },
       );
     },
+    fluid({
+      checkSC144: false, // default: true
+    }),
   ],
   darkMode: "class",
 } satisfies Config;

@@ -189,7 +189,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
                 }}
               >
                 <h3
-                  className={`nav-text ${isActive && "nav-text-isActive line-through decoration-rose-500"} ${isMobileOrTabletLandscape && "!text-2xl"}`}
+                  className={`nav-text ~text-[3.25rem]/[7rem] font-semibold !leading-[1.15] tracking-widest text-black dark:text-white ${isActive && "nav-text-isActive line-through decoration-rose-500"} ${isMobileOrTabletLandscape && "!text-2xl"}`}
                 >
                   {item.name}
                 </h3>

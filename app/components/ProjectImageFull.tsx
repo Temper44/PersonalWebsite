@@ -19,7 +19,7 @@ const ProjectImageFull = ({ title, src, alt }: ProjectImageItemProps) => {
     <div className="flex h-full w-full flex-col gap-4" ref={ref}>
       <MaskText
         text={[title]}
-        className="text-lg font-semibold tracking-wide 2xl:text-xl"
+        className="~text-lg/xl font-semibold tracking-wide"
         headline
       />
       <motion.div

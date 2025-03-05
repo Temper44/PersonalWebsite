@@ -37,7 +37,7 @@ export default function PortfolioFooter() {
       <div className="absolute bottom-0 min-h-[180dvh] w-full xs:min-h-[110dvh] sm:fixed sm:h-screen">
         <div className="flex h-full w-full flex-col items-center justify-center pb-6 pt-32 sm:pt-32">
           <motion.p
-            className="text-sm tracking-wide lg:text-base"
+            className="~/lg:~text-sm/base tracking-wide"
             ref={refParagraph}
             initial={{ opacity: 0 }}
             animate={isInViewParagraph ? { opacity: 1 } : {}}
@@ -49,7 +49,7 @@ export default function PortfolioFooter() {
             Thanks for stopping by, want to
           </motion.p>
           <motion.div
-            className="marquee-forward-desktop py-8 text-6xl sm:py-10 sm:text-7xl md:text-8xl lg:py-20 lg:text-9xl"
+            className="marquee-forward-desktop ~/lg:~text-6xl/9xl ~/lg:~py-8/20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{

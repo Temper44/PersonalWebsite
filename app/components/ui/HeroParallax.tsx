@@ -55,10 +55,6 @@ export const HeroParallax = ({
     springConfig,
   );
   return (
-    // <div
-    //   ref={ref}
-    //   className="3xl:min-h-[210dvh] relative flex min-h-[300dvh] flex-grow flex-col self-auto overflow-hidden pb-40 pt-56 antialiased [perspective:1000px] [transform-style:preserve-3d] xs:min-h-[275dvh] md:min-h-[300dvh]"
-    // >
     <div
       ref={ref}
       className="relative flex min-h-full flex-grow flex-col self-auto overflow-hidden pb-[40rem] pt-[14rem] antialiased [perspective:1000px] [transform-style:preserve-3d]"
@@ -108,13 +104,13 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div className="relative left-0 top-0 z-10 mx-auto w-full max-w-[100rem] px-4 xl:pt-12">
-      <h1 className="textShadow md:[5.5rem] text-5xl font-medium leading-none dark:text-white xs:text-7xl sm:text-[5rem] md:font-semibold md:!leading-tight xl:text-8xl 2xl:text-9xl">
+      <h1 className="~text-[4.5rem]/[8rem] font-medium leading-none dark:text-white max-xs:text-[3rem] md:font-semibold md:!leading-tight">
         Experience the{" "}
-        <span className="text-[3.5rem] font-bold italic text-zinc-900 dark:text-slate-100 xs:text-[5rem] sm:text-[5.5rem] xl:text-[7rem] 2xl:text-[9rem]">
+        <span className="~text-[5rem]/[9rem] font-bold italic text-zinc-900 dark:text-slate-100 max-xs:text-[3rem]">
           Web
         </span>{" "}
         <br /> with a{" "}
-        <span className="colorEffect text-[3.5rem] font-bold xs:text-[5rem] sm:text-[5.5rem] xl:text-[7rem] 2xl:text-[9rem]">
+        <span className="colorEffect ~text-[5rem]/[9rem] font-bold max-xs:text-[3rem]">
           Creative
         </span>{" "}
         <span>approach</span>

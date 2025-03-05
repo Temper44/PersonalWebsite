@@ -63,9 +63,9 @@ export default function Home() {
       <FixedBackground />
       {/* {isTablet && <BackgroundBeams />} */}
       <section className="textShadow container flex flex-col items-center justify-center px-6 sm:flex-row sm:px-11">
-        <motion.h1 className="relative z-10 mt-[-6rem] text-left font-urbanist text-6xl !leading-none transition-colors duration-500 ease-in-out xs:text-8xl md:text-8xl lg:text-9xl xl:text-[9rem]">
+        <motion.h1 className="~text-[6rem]/[10rem] relative z-10 mt-[-6rem] text-left !leading-none transition-colors duration-500 ease-in-out max-xs:text-6xl">
           <motion.span
-            className="mb-3 block text-center text-2xl font-light sm:mb-2 sm:text-left 2xl:text-4xl"
+            className="~text-2xl/4xl mb-3 block text-center font-light sm:mb-2 sm:text-left"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{

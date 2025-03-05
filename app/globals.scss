@@ -178,10 +178,6 @@ a {
 }
 
 @layer utilities {
-  .nav-hover-btn {
-    @apply relative text-xs font-medium uppercase tracking-wide transition-colors duration-500 ease-in-out md:text-[0.8rem] xl:text-sm 2xl:text-base;
-  }
-
   .nav-sidebar {
     @apply fixed left-0 right-0 top-0 z-20 mx-auto block bg-white opacity-0 dark:bg-black;
   }
@@ -209,7 +205,6 @@ a {
   }
 
   .nav-text {
-    @apply font-urbanist text-[3.25rem] font-semibold !leading-[1.2] tracking-widest text-black dark:text-white sm:text-6xl md:text-7xl xl:text-8xl;
     position: relative;
     display: inline-flex;
     align-items: center;

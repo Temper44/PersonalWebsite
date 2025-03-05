@@ -1,4 +1,5 @@
 import Button from "@/app/components/Button";
+import Chip from "@/app/components/Chip";
 import Footer from "@/app/components/Footer";
 import MaskText from "@/app/components/MaskText";
 import PageUtilities from "@/app/components/PageUtilities";
@@ -72,7 +73,7 @@ export default async function Page({
         <div className="order-2 flex flex-col gap-2 md:order-none">
           <MaskText
             text={["My role"]}
-            className="text-lg font-semibold tracking-wide 2xl:text-xl"
+            className="~text-lg/xl font-semibold tracking-wide"
             headline
           />
           <MaskText
@@ -83,7 +84,7 @@ export default async function Page({
         <div className="order-1 row-span-3 flex flex-col gap-2 md:order-none">
           <MaskText
             text={["Description"]}
-            className="text-lg font-semibold tracking-wide 2xl:text-xl"
+            className="~text-lg/xl font-semibold tracking-wide"
             headline
           />
           <MaskText
@@ -94,7 +95,7 @@ export default async function Page({
         <div className="order-3 flex flex-col gap-2 md:order-none">
           <MaskText
             text={["Team"]}
-            className="text-lg font-semibold tracking-wide 2xl:text-xl"
+            className="~text-lg/xl font-semibold tracking-wide"
             headline
           />
           <MaskText
@@ -105,7 +106,7 @@ export default async function Page({
         <div className="order-4 flex flex-col gap-2 md:order-none">
           <MaskText
             text={["Date"]}
-            className="text-lg font-semibold tracking-wide 2xl:text-xl"
+            className="~text-lg/xl font-semibold tracking-wide"
             headline
           />
           <MaskText
@@ -116,13 +117,22 @@ export default async function Page({
         <div className="order-5 flex flex-col gap-2 md:order-none">
           <MaskText
             text={["Technology"]}
-            className="text-lg font-semibold tracking-wide 2xl:text-xl"
+            className="~text-lg/xl font-semibold tracking-wide"
             headline
           />
-          <MaskText
+          {/* <MaskText
             text={[project.technologies]}
             className="text-base leading-relaxed text-zinc-900 dark:text-zinc-300"
-          />
+          /> */}
+          <div className="flex flex-wrap gap-4">
+            {project.technologies.map((name) => (
+              <Chip
+                key={name}
+                text={name}
+                className="~text-sm/base leading-relaxed text-zinc-900 dark:text-zinc-300"
+              />
+            ))}
+          </div>
         </div>
         <div className="order-6 row-span-2 flex flex-col gap-2 justify-self-end md:order-none">
           <Button

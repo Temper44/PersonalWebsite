@@ -34,7 +34,7 @@ const Skills = () => {
     <section className="relative flex flex-col items-center overflow-hidden">
       <MarqueeText text="Skills" />
       <div className="skillsContainer h-dvh w-screen">
-        <h2 className="absolute left-1/2 top-[60%] w-[80%] -translate-x-1/2 text-center text-base font-extralight tracking-wide sm:top-[75%] md:w-auto md:text-xl">
+        <h2 className="~/md:~text-base/xl absolute left-1/2 top-[60%] w-[80%] -translate-x-1/2 text-center font-extralight tracking-wide sm:top-[75%] md:w-auto">
           I strive to learn and master modern web technologies to create
           seamless, accessible, and visually stunning experiences
         </h2>
@@ -43,7 +43,7 @@ const Skills = () => {
             <div className="absolute inset-0 z-50 flex items-center justify-center px-10">
               <TextGradient
                 text={skills.join(" / ")}
-                className="textShadow text-3xl font-semibold text-white md:text-4xl lg:text-7xl"
+                className="textShadow ~text-3xl/7xl font-semibold text-white"
                 opacityClassName="opacity-0"
               />
             </div>

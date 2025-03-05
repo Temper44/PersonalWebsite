@@ -109,14 +109,14 @@ const AboutMe = () => {
           <div className="flex flex-col gap-6">
             <TextGradient
               text="Developer, Designer, Creator"
-              className="mb-6 mt-6 text-5xl uppercase text-white dark:text-black xs:text-6xl sm:text-7xl md:mt-0 md:text-8xl lg:mb-20 lg:text-7xl xl:text-8xl 2xl:text-9xl"
+              className="~text-6xl/9xl mb-6 mt-6 uppercase text-white dark:text-black max-xs:text-5xl md:mt-0 lg:mb-20 2xl:max-w-[65%]"
               opacityClassName="opacity-20"
               animationStart="top center"
-              animationEnd="+=300"
+              animationEnd="+=200"
               spaceLine={false}
             />
             <MaskText
-              className="text-2xl font-semibold tracking-wide text-white dark:text-black md:text-3xl xl:text-4xl"
+              className="~text-2xl/4xl font-semibold tracking-wide text-white dark:text-black"
               text={["Mathias Ebner"]}
               headline
             />
