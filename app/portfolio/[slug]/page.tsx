@@ -70,71 +70,68 @@ export default async function Page({
         alt={project.imgPreview.alt}
       />
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 p-4 md:grid-cols-2 2xl:gap-8">
-        <div className="~gap-2/4 order-2 flex flex-col md:order-none">
+        <div className="order-2 flex flex-col ~gap-2/4 md:order-none">
           <MaskText
             text={["My role"]}
-            className="~text-lg/2xl font-semibold tracking-wide"
+            className="font-semibold tracking-wide ~text-lg/2xl"
             headline
           />
           <MaskText
             text={[project.role]}
-            className="~text-base/lg leading-relaxed text-zinc-900 dark:text-zinc-300"
+            className="leading-relaxed text-zinc-900 ~text-base/lg dark:text-zinc-300"
           />
         </div>
-        <div className="~gap-2/3 order-1 row-span-3 flex flex-col md:order-none">
+        <div className="order-1 row-span-3 flex flex-col ~gap-2/3 md:order-none">
           <MaskText
             text={["Description"]}
-            className="~text-lg/2xl font-semibold tracking-wide"
+            className="font-semibold tracking-wide ~text-lg/2xl"
             headline
           />
           <MaskText
             text={[project.descriptionLong]}
-            className="~text-base/lg leading-relaxed text-zinc-900 dark:text-zinc-300"
+            className="leading-relaxed text-zinc-900 ~text-base/lg dark:text-zinc-300"
           />
         </div>
-        <div className="~gap-2/3 order-3 flex flex-col md:order-none">
+        <div className="order-3 flex flex-col ~gap-2/3 md:order-none">
           <MaskText
             text={["Team"]}
-            className="~text-lg/2xl font-semibold tracking-wide"
+            className="font-semibold tracking-wide ~text-lg/2xl"
             headline
           />
           <MaskText
             text={[project.team]}
-            className="~text-base/lg leading-relaxed text-zinc-900 dark:text-zinc-300"
+            className="leading-relaxed text-zinc-900 ~text-base/lg dark:text-zinc-300"
           />
         </div>
-        <div className="~gap-2/3 order-4 flex flex-col md:order-none">
+        <div className="order-4 flex flex-col ~gap-2/3 md:order-none">
           <MaskText
             text={["Date"]}
-            className="~text-lg/2xl font-semibold tracking-wide"
+            className="font-semibold tracking-wide ~text-lg/2xl"
             headline
           />
           <MaskText
             text={[project.date]}
-            className="~text-base/lg leading-relaxed text-zinc-900 dark:text-zinc-300"
+            className="leading-relaxed text-zinc-900 ~text-base/lg dark:text-zinc-300"
           />
         </div>
-        <div className="~gap-2/3 order-5 flex flex-col md:order-none">
+        <div className="order-5 flex flex-col ~gap-2/3 md:order-none">
           <MaskText
             text={["Technology"]}
-            className="~text-lg/2xl mb-3 font-semibold tracking-wide"
+            className="mb-3 font-semibold tracking-wide ~text-lg/2xl"
             headline
           />
-          {/* <MaskText
-            text={[project.technologies]}
-            className="~text-base/lg leading-relaxed text-zinc-900 dark:text-zinc-300"
-          /> */}
+
           <div className="flex flex-wrap gap-3 sm:gap-4">
             {project.technologies.map((name) => (
               <Chip
                 key={name}
                 text={name}
-                className="~text-sm/lg leading-relaxed text-zinc-900 dark:text-zinc-300"
+                className="leading-relaxed text-zinc-900 ~text-sm/lg dark:text-zinc-300"
               />
             ))}
           </div>
         </div>
-        <div className="~gap-2/3 order-6 row-span-2 flex flex-col justify-self-end md:order-none">
+        <div className="order-6 row-span-2 mt-8 flex flex-col justify-self-end ~gap-2/3 md:order-none md:mt-0">
           <Button
             text="View Project"
             href={project.detailsPageLink}

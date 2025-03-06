@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MaskText from "../components/MaskText";
 import TextGradient from "../components/TextGradient";
 import hoverEffect from "hover-effect";
+import { aboutMeTexts } from "@/lib/texts";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -109,30 +110,30 @@ const AboutMe = () => {
           <div className="flex flex-col gap-6">
             <TextGradient
               text="Developer, Designer, Creator"
-              className="~text-6xl/9xl mb-6 mt-6 uppercase text-white dark:text-black max-xs:text-5xl md:mt-0 lg:mb-20 2xl:max-w-[65%]"
+              className="mb-6 mt-6 uppercase text-white ~text-6xl/9xl dark:text-black max-xs:text-5xl md:mt-0 lg:mb-20 2xl:max-w-[65%]"
               opacityClassName="opacity-20"
               animationStart="top center"
               animationEnd="+=200"
               spaceLine={false}
             />
             <MaskText
-              className="~text-2xl/5xl font-semibold tracking-wide text-white dark:text-black"
+              className="font-semibold tracking-wide text-white ~text-2xl/5xl dark:text-black"
               text={["Mathias Ebner"]}
               headline
             />
             <div className="flex w-full flex-col gap-6 self-center lg:max-w-[70%] xl:max-w-[65%]">
               <MaskText
-                className="~text-base/lg font-light tracking-wide text-white dark:text-black"
+                className="font-light tracking-wide text-white ~text-base/lg dark:text-black"
                 text={[
-                  "is an Experience Designer and Artist driven by a deep commitment to human-centric principles. Her work transcends mere aesthetics, creating engaging and meaningful digital experiences.",
-                  "She’s exploring the future of technology through workshops, leveraging versatile media and blending scientific research approaches with a pragmatic hands-on mentality that makes innovative concepts graspable for anyone.",
+                  aboutMeTexts.firstParagraph,
+                  aboutMeTexts.secondParagraph,
                 ]}
               />
               <MaskText
-                className="~text-base/lg font-light tracking-wide text-white dark:text-black"
+                className="font-light tracking-wide text-white ~text-base/lg dark:text-black"
                 text={[
-                  "You can catch Melanie sharing her insights at events and workshops, spreading her creative mindset.",
-                  "is an Experience Designer and Artist driven by a deep commitment to human-centric principles. Her work transcends mere aesthetics, creating engaging and meaningful digital experiences.",
+                  aboutMeTexts.thirdParagraph,
+                  aboutMeTexts.fourthParagraph,
                 ]}
               />
             </div>

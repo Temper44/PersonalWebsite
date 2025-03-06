@@ -26,7 +26,6 @@ export default {
       },
       fontFamily: {
         // nunito: ["var(--font-nunito-sans)"], // Default font
-        // grotesk: ["var(--font-overused-grotesk)"], // Only used when specified
         // raleway: ["var(--font-raleway)"], // Only used when specified
         urbanist: ["var(--font-urbanist)"], // Only used when specified
       },
@@ -47,16 +46,6 @@ export default {
         fifth: "moveInCircle 20s ease infinite",
       },
       keyframes: {
-        spotlight: {
-          "0%": {
-            opacity: "0",
-            transform: "translate(-50%, -50%) scale(0.5)", // Center and scale down
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translate(0, 0) scale(1)", // Fade in and scale up
-          },
-        },
         moveHorizontal: {
           "0%": {
             transform: "translateX(-50%) translateY(-10%)",

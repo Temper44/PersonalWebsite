@@ -16,7 +16,7 @@ import HeroText from "../components/HeroText";
 import MarqueeText from "../components/MarqueeText";
 import { Carousel } from "../components/ui/Carousel";
 import FixedBackground from "../components/FixedBackground";
-// import { SpotlightNew } from "../components/ui/SpotlightNew";
+import { subHeadingTexts } from "@/lib/texts";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,8 +26,6 @@ export default function Page() {
 
   const landscapeImages = loadSliderImages();
   const parallaxImages = loadParallaxImages();
-
-  const words = `No matter where I am, I’m always looking for that perfect moment, whether in nature or the city. At least I try to..`;
 
   const svgRef = useRef<SVGSVGElement>(null);
 
@@ -67,7 +65,6 @@ export default function Page() {
   return (
     <main className="max-w-screen relative mx-auto flex min-h-dvh flex-col items-center justify-center overflow-hidden">
       <FixedBackground />
-      {/* {isDesktop && <SpotlightNew />} */}
 
       <ScrollProgressBar />
       <MobileMenu isFullPage={true} />
@@ -75,7 +72,11 @@ export default function Page() {
       <ScrollToTopButton />
 
       <section className="container flex min-h-screen flex-col items-center justify-center p-6">
-        <HeroText heading="Photos" subheading={words} anchor="images" />
+        <HeroText
+          heading="Photos"
+          subheading={subHeadingTexts.photos}
+          anchor="images"
+        />
       </section>
 
       <section className="h-screen">

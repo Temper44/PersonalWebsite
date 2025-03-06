@@ -87,3 +87,38 @@ const BezierLine = () => {
 };
 
 export default BezierLine;
+
+// .bezierLine {
+//   height: 1px;
+//   margin-block: 10px;
+//   width: 100%;
+//   position: relative;
+// }
+
+// .bezierLine svg {
+//   width: 100%;
+//   height: 300px;
+//   position: absolute;
+//   top: -250px;
+//   // background-color: aqua;
+// }
+
+// .bezierLine svg path {
+//   stroke: white;
+//   stroke-width: 1px;
+//   fill: none;
+// }
+
+// .bezierLine .box {
+//   height: 40px;
+//   width: 100%;
+//   position: relative;
+//   top: -20px;
+//   z-index: 1;
+// }
+
+// .bezierLine .box:hover {
+//   height: 200px;
+//   top: -100px;
+//   // background-color: red;
+// }

@@ -3,6 +3,7 @@ import { motion, useInView } from "motion/react";
 import React, { useRef } from "react";
 import Form from "../components/Form";
 import { useCursor } from "../components/context/CursorContext";
+import { footerText } from "@/lib/texts";
 
 export default function PortfolioFooter() {
   const { setIsCursorHovered } = useCursor();
@@ -11,33 +12,20 @@ export default function PortfolioFooter() {
   const refMenu = useRef<HTMLDivElement>(null);
   const refParagraph = useRef<HTMLDivElement>(null);
 
-  const isInViewParagraph = useInView(refParagraph, {
-    once: false,
-    margin: "0px 0px 0px 0px",
-  });
-
-  const isInViewSocials = useInView(refSocials, {
-    once: false,
-    margin: "0px 0px 0px 0px",
-  });
-  const isInViewMenu = useInView(refMenu, {
-    once: false,
-    margin: "0px 0px 0px 0px",
-  });
-  const isInViewFooter = useInView(refFooter, {
-    once: false,
-    margin: "0px 0px 0px 0px",
-  });
+  const isInViewParagraph = useInView(refParagraph);
+  const isInViewSocials = useInView(refSocials);
+  const isInViewMenu = useInView(refMenu);
+  const isInViewFooter = useInView(refFooter);
 
   return (
     <footer
-      className="relative min-h-[180dvh] overflow-x-hidden xs:min-h-[115dvh] sm:h-screen"
+      className="relative min-h-[180dvh] overflow-x-hidden xs:min-h-[130dvh] sm:h-screen"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
       <div className="absolute bottom-0 min-h-[180dvh] w-full xs:min-h-[110dvh] sm:fixed sm:h-screen">
         <div className="flex h-full w-full flex-col items-center justify-center pb-6 pt-32 sm:pt-32">
           <motion.p
-            className="~text-sm/xl tracking-wide"
+            className="tracking-wide ~text-sm/xl"
             ref={refParagraph}
             initial={{ opacity: 0 }}
             animate={isInViewParagraph ? { opacity: 1 } : {}}
@@ -46,7 +34,7 @@ export default function PortfolioFooter() {
               ease: "easeOut",
             }}
           >
-            Thanks for stopping by, want to
+            {footerText}
           </motion.p>
           <motion.div
             className="marquee-forward-desktop ~text-[3.75rem]/[9rem] ~/lg:~py-8/20"
@@ -84,7 +72,7 @@ export default function PortfolioFooter() {
           <div className="w-full max-w-xl p-4">
             <Form />
           </div>
-          <div className="3xl:pt-14 grid w-full max-w-6xl grid-cols-1 gap-10 px-4 py-4 sm:grid-cols-2 sm:gap-4 sm:py-12 2xl:pt-4">
+          <div className="grid w-full max-w-6xl grid-cols-1 gap-10 px-4 py-4 sm:grid-cols-2 sm:gap-4 sm:py-12 2xl:pt-4 3xl:pt-14">
             <motion.div
               ref={refSocials}
               className="max-w-md"
@@ -95,7 +83,7 @@ export default function PortfolioFooter() {
                 ease: "easeOut",
               }}
             >
-              <h3 className="~text-2xl/4xl font-semibold tracking-wide">
+              <h3 className="font-semibold tracking-wide ~text-2xl/4xl">
                 Socials
               </h3>
               <div className="my-2 h-[1px] w-full bg-zinc-900 dark:bg-zinc-300" />
@@ -105,7 +93,7 @@ export default function PortfolioFooter() {
                     index < 4 && (
                       <li
                         key={item.id}
-                        className="~text-base/xl flex items-center gap-2 tracking-wide text-zinc-800 dark:text-zinc-100"
+                        className="flex items-center gap-2 tracking-wide text-zinc-800 ~text-base/xl dark:text-zinc-100"
                       >
                         {item.icon}
                         <a
@@ -132,7 +120,7 @@ export default function PortfolioFooter() {
                 ease: "easeOut",
               }}
             >
-              <h3 className="~text-2xl/4xl font-semibold tracking-wide">
+              <h3 className="font-semibold tracking-wide ~text-2xl/4xl">
                 Menu
               </h3>
               <div className="my-2 h-[1px] w-full bg-zinc-900 dark:bg-zinc-300" />
@@ -140,7 +128,7 @@ export default function PortfolioFooter() {
                 {navItemsFull.map((item) => (
                   <li
                     key={item.name}
-                    className="~text-base/xl flex items-center gap-2 tracking-wide text-zinc-800 dark:text-zinc-100"
+                    className="flex items-center gap-2 tracking-wide text-zinc-800 ~text-base/xl dark:text-zinc-100"
                   >
                     <a
                       href={item.link}
@@ -158,7 +146,7 @@ export default function PortfolioFooter() {
           </div>
 
           <motion.div
-            className="~text-[0.65rem]/[0.85rem] 3xl:bottom-6 3xl:absolute flex w-full max-w-6xl flex-col items-center justify-between px-4 font-light tracking-wide text-zinc-800 dark:text-white sm:flex-row"
+            className="flex w-full max-w-6xl flex-col items-center justify-between px-4 font-light tracking-wide text-zinc-800 ~text-[0.65rem]/[0.85rem] dark:text-white sm:flex-row 3xl:absolute 3xl:bottom-6"
             ref={refFooter}
             initial={{ opacity: 0 }}
             animate={isInViewFooter ? { opacity: 1 } : {}}

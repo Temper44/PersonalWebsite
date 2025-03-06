@@ -2,28 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-// @view-transition {
-//   navigation: auto;
-//   transition:
-//     opacity 0.5s ease,
-//     transform 0.5s ease;
-// }
-
 :root {
   --background: #f7f7f7;
   --foreground: #080e10;
-  --background-rgb: 8, 14, 16; /* Used for the video mask */
-  --foreground-rgb: 247, 247, 247; /* Used for the video mask */
   --mobile: 640px;
   --tablet: 768px;
+  --sb-track-color: #d1d1d1; /* Light mode track color */
+  --sb-thumb-color: #3b3b3b; /* Light mode thumb color */
+  --sb-size: 11px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #080e10;
     --foreground: #f7f7f7;
-    --background-rgb: 8, 14, 16; /* Used for the video mask */
-    --foreground-rgb: 247, 247, 247; /* Used for the video mask */
   }
 }
 
@@ -104,33 +96,6 @@ a {
   stroke-dashoffset: -134;
   stroke-width: 3;
 }
-
-// @keyframes breathing {
-//   0%,
-//   100% {
-//     mask-size: 100%;
-//   }
-//   50% {
-//     mask-size: 103%;
-//   }
-// }
-
-// .bg-video {
-//   mask-repeat: no-repeat;
-//   animation: breathing 17s infinite ease-in-out;
-//   @media (max-width: 640px) {
-//     mask-position: center left;
-//     animation: none;
-//     mask-repeat: no-repeat;
-//     mask-size: 500px;
-//   }
-//   @media (max-width: 1024px) {
-//     animation: none;
-//   }
-//   @media (min-width: 640px) {
-//     mask-position: center;
-//   }
-// }
 
 .bg-grain {
   filter: contrast(100%) brightness(95%);
@@ -288,12 +253,6 @@ a {
     height: 0px; /* Ensure circle doesn't appear when active */
     transform: scale(0); /* Ensure circle is hidden */
   }
-}
-
-body {
-  --sb-track-color: #d1d1d1; /* Light mode track color */
-  --sb-thumb-color: #3b3b3b; /* Light mode thumb color */
-  --sb-size: 11px;
 }
 
 body::-webkit-scrollbar {
@@ -566,44 +525,6 @@ body::-webkit-scrollbar-thumb {
     }
   }
 }
-.spacer {
-  height: 100vh;
-}
-
-.bezierLine {
-  height: 1px;
-  margin-block: 10px;
-  width: 100%;
-  position: relative;
-}
-
-.bezierLine svg {
-  width: 100%;
-  height: 300px;
-  position: absolute;
-  top: -250px;
-  // background-color: aqua;
-}
-
-.bezierLine svg path {
-  stroke: white;
-  stroke-width: 1px;
-  fill: none;
-}
-
-.bezierLine .box {
-  height: 40px;
-  width: 100%;
-  position: relative;
-  top: -20px;
-  z-index: 1;
-}
-
-.bezierLine .box:hover {
-  height: 200px;
-  top: -100px;
-  // background-color: red;
-}
 
 .field-input {
   @apply w-full rounded-md border border-black/10 px-5 py-2 text-base tracking-wide text-zinc-900 shadow-sm placeholder:text-zinc-400;
@@ -615,16 +536,7 @@ body::-webkit-scrollbar-thumb {
 
 .projectsWrapper {
   display: flex;
-  width: 100vw; /* Makes sure all panels fit */
+  width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-}
-
-// .panel {
-//   width: 100vw;
-//   height: 100vh;
-// }
-
-canvas {
-  border-radius: 0.75rem;
 }

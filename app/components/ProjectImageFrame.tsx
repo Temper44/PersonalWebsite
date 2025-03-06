@@ -53,7 +53,7 @@ const ProjectImageFrame = ({
         <MaskText
           text={[name]}
           headline
-          className={`textShadow ~text-[3rem]/[8.5rem] font-semibold leading-tight tracking-wide text-white max-xs:text-4xl md:pb-2`}
+          className={`textShadow font-semibold leading-tight tracking-wide text-white ~text-[2.75rem]/[8.5rem] max-xs:text-4xl md:pb-2`}
         />
       </div>
     </div>

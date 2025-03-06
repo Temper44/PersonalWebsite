@@ -1,17 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-// import { FlipWords } from "./components/ui/FlipWords";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import MobileMenu from "./components/MobileMenu";
-// import Spotlights from "./components/Spotlights";
 import HeroFooter from "./components/HeroFooter";
-// import { words } from "@/lib/data";
 import CustomCursor from "./components/CustomCursor";
 // import { BackgroundBeams } from "./components/ui/BackgroundBeams";
 import FixedBackground from "./components/FixedBackground";
-// import { WavyBackground } from "./components/ui/WavyBackground";
 
 export default function Home() {
   // const [isHovered, setIsHovered] = useState(false);
@@ -22,25 +18,7 @@ export default function Home() {
   // const isTablet = useMediaQuery({ minWidth: 768 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
-  // const [randomVideoNum, setRandomVideoNum] = useState<number | null>(null);
-  // const [randomMaskNum, setRandomMaskNum] = useState<number | null>(null);
-
   const [isClient, setIsClient] = useState(false);
-
-  // useEffect(() => {
-  //   setRandomVideoNum(Math.floor(Math.random() * 4) + 1);
-  //   setRandomMaskNum(Math.floor(Math.random() * 2) + 1);
-  // }, []);
-
-  // Only set video path if `randomVideoNum` is available
-  // const videoPath =
-  //   randomVideoNum === null
-  //     ? "" // Avoid SSR mismatch by not rendering anything until state is set
-  //     : isSmall
-  //       ? `/videos/${randomVideoNum}_mobile.mp4`
-  //       : isTablet
-  //         ? `/videos/${randomVideoNum}_tablet.mp4`
-  //         : `/videos/${randomVideoNum}.mp4`;
 
   // Set `isClient` to true after the component mounts
   useEffect(() => {
@@ -57,15 +35,13 @@ export default function Home() {
     <main className="relative mx-auto flex h-dvh w-screen flex-col items-center justify-center overflow-hidden">
       {isMobile && <MobileMenu displayHome={false} />}
       {isDesktop && <CustomCursor />}
-      {/* <Spotlights /> */}
 
-      {/* <WavyBackground backgroundFill="transparent"> */}
       <FixedBackground />
       {/* {isTablet && <BackgroundBeams />} */}
       <section className="textShadow container flex flex-col items-center justify-center px-6 sm:flex-row sm:px-11">
-        <motion.h1 className="~text-[6rem]/[10rem] relative z-10 mt-[-6rem] text-left !leading-none transition-colors duration-500 ease-in-out max-xs:text-6xl">
+        <motion.h1 className="relative z-10 mt-[-6rem] text-left !leading-none transition-colors duration-500 ease-in-out ~text-[6rem]/[12rem] max-xs:text-6xl">
           <motion.span
-            className="~text-2xl/4xl mb-3 block text-center font-light sm:mb-2 sm:text-left"
+            className="mb-3 block text-center font-light ~text-2xl/4xl sm:mb-2 sm:text-left"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
@@ -153,7 +129,7 @@ export default function Home() {
             className="pointer-events-none absolute inset-0 z-[100] flex h-screen w-screen items-center justify-center backdrop-blur-md"
           >
             <motion.img
-              src="/img/portrait.webp"
+              src="/img/portrait_home.jpg"
               alt="My Picture"
               className="absolute z-[100] max-h-[35vh] max-w-[35vw] overflow-clip rounded-full shadow-lg"
               initial={{ scale: 0.9, opacity: 0 }}
@@ -164,7 +140,6 @@ export default function Home() {
           </motion.div>
         )}
       </section>
-      {/* </WavyBackground> */}
       <HeroFooter />
     </main>
   );

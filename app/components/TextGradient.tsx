@@ -51,7 +51,7 @@ export default function TextGradient({
       body.push(
         <p
           key={word + "_" + i}
-          className="~mb-[0.5rem]/[1.1rem] ~mr-[0.5rem]/[1.1rem]"
+          className="~mr-[0.5rem]/[1.1rem] ~mb-[0.5rem]/[1.1rem]"
         >
           {letters}
         </p>,
@@ -61,7 +61,7 @@ export default function TextGradient({
       body.push(
         <span
           key={"spacer"}
-          className={`h-[5px] flex-1 self-center bg-zinc-300 ${opacityClassName}`}
+          className={`flex-1 self-center bg-zinc-300 ~h-[0.2rem]/[0.45rem] ${opacityClassName}`}
           ref={(el) => {
             refs.current.push(el);
           }}

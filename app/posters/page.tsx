@@ -11,19 +11,13 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { loadParallaxPoster } from "@/lib/loadImages";
 import { ParallaxScrollPoster } from "../components/ui/ParallaxScrollPoster";
 import PageUtilities from "../components/PageUtilities";
-// import { SpotlightNew } from "../components/ui/SpotlightNew";
+import { subHeadingTexts } from "@/lib/texts";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
-  // const isSmall = useMediaQuery({ maxWidth: 520 });
-  // const isMobile = useMediaQuery({ maxWidth: 768 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
-
   const parallaxPoster = loadParallaxPoster();
-
-  const words = `Here's where my random design ideas come to life. I just let the process take me wherever it goes`;
-
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
@@ -62,12 +56,10 @@ export default function Page() {
   return (
     <main className="max-w-screen relative mx-auto flex min-h-dvh flex-col items-center justify-center overflow-hidden">
       <FixedBackground />
-      {/* {isDesktop && <SpotlightNew />} */}
-
       <PageUtilities />
 
       <section className="container flex min-h-screen flex-col items-center justify-center p-6">
-        <HeroText heading="Posters" subheading={words} />
+        <HeroText heading="Posters" subheading={subHeadingTexts.posters} />
       </section>
 
       <section className="h-screen">

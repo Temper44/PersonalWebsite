@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useTransform, useScroll, motion, MotionValue } from "framer-motion";
 import Lenis from "lenis";
+import { BackgroundGradientAnimation } from "./ui/BackgroundGradientAnimation";
 
 const images = [
   "1.jpg",
@@ -56,14 +57,22 @@ export default function ParallaxScrollGallery() {
 
   return (
     <>
-      <div className="spacer"></div>
+      <div className="h-[50vh] sm:h-[75vh]" />
+      {/* <BackgroundGradientAnimation
+        interactive={false}
+        containerClassName="h-[50vh] sm:h-[75vh] rounded-b-3xl"
+      /> */}
       <div ref={gallery} className="gallery">
         <Column images={[images[0], images[1], images[2]]} y={y} />
         <Column images={[images[3], images[4], images[5]]} y={y2} />
         <Column images={[images[6], images[7], images[8]]} y={y3} />
         <Column images={[images[9], images[10], images[11]]} y={y4} />
       </div>
-      <div className="spacer"></div>
+      <div className="h-[50vh] sm:h-[75vh]" />
+      {/* <BackgroundGradientAnimation
+        interactive={false}
+        containerClassName="h-[50vh] sm:h-[75vh]"
+      /> */}
     </>
   );
 }

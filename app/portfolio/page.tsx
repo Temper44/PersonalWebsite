@@ -12,12 +12,11 @@ import AboutMe from "../sections/AboutMe";
 import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import PageUtilities from "../components/PageUtilities";
+import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
-  // const isSmall = useMediaQuery({ maxWidth: 520 });
-  // const isMobile = useMediaQuery({ maxWidth: 768 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   const svgRef = useRef<SVGSVGElement>(null);
@@ -250,7 +249,7 @@ export default function Page() {
       <Skills />
       <Projects />
 
-      {/* <ParallaxScrollGallery /> */}
+      <ParallaxScrollGallery />
       <PortfolioFooter />
     </main>
   );

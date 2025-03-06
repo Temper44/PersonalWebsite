@@ -1,4 +1,4 @@
-import { Spotlight } from "@/app/components/ui/Spotlight";
+import { Spotlight } from "@/app/components/unused/Spotlight";
 
 const Spotlights = () => {
   return (
