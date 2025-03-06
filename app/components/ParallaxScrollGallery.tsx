@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useTransform, useScroll, motion, MotionValue } from "framer-motion";
 import Lenis from "lenis";
-import { BackgroundGradientAnimation } from "./ui/BackgroundGradientAnimation";
+// import { BackgroundGradientAnimation } from "./ui/BackgroundGradientAnimation";
 
 const images = [
   "1.jpg",
