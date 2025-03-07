@@ -106,7 +106,7 @@ export const Header = () => {
     <div className="relative left-0 top-0 z-10 mx-auto w-full max-w-[100rem] px-4 xl:pt-12">
       <h1 className="font-medium leading-none ~text-[4.5rem]/[9.5rem] dark:text-white max-xs:text-[3rem] md:font-semibold md:!leading-tight">
         Experience the{" "}
-        <span className="font-bold italic text-zinc-900 ~text-[5rem]/[10.5rem] dark:text-zinc-100 max-xs:text-[3rem]">
+        <span className="font-bold italic ~text-[5rem]/[10.5rem] max-xs:text-[3rem]">
           Web
         </span>{" "}
         <br /> with a{" "}
