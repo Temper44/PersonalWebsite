@@ -98,6 +98,7 @@ a {
 }
 
 .bg-grain {
+  @apply fixed inset-0 z-[-10] h-screen w-screen;
   filter: contrast(100%) brightness(95%);
   background: linear-gradient(
       20deg,
@@ -118,7 +119,7 @@ a {
     background-image: linear-gradient(
       to right,
       #fd4f55,
-      rgba(247, 12, 204),
+      #f70ccc,
       #0890ff,
       #fd4f55
     );
@@ -143,10 +144,6 @@ a {
 }
 
 @layer utilities {
-  .nav-sidebar {
-    @apply fixed left-0 right-0 top-0 z-20 mx-auto block bg-white opacity-0 dark:bg-black;
-  }
-
   .nav-hover-btn::after {
     content: "";
     position: absolute;
@@ -212,7 +209,7 @@ a {
     background-image: linear-gradient(
       to right,
       #fd4f55,
-      rgba(247, 12, 204),
+      #f70ccc,
       #0890ff,
       #fd4f55
     );
@@ -383,7 +380,7 @@ body::-webkit-scrollbar-thumb {
   stroke-dashoffset: 1000;
   opacity: 0;
   stroke-width: 0.8;
-  stroke: #000;
+  stroke: black;
   fill: none;
   transition: stroke-dashoffset 0.3s ease-out;
   @media screen and (max-width: 768px) {
@@ -398,7 +395,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .snakeSvg {
-  stroke: #000;
+  stroke: black;
   stroke-width: 4;
 }
 
@@ -486,7 +483,7 @@ body::-webkit-scrollbar-thumb {
 
 .gallery {
   height: 175vh;
-  background: rgb(45, 45, 45);
+  background: black;
   position: relative;
   display: flex;
   gap: 2vw;
@@ -539,4 +536,56 @@ body::-webkit-scrollbar-thumb {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
+}
+
+.max-screen-center {
+  @apply relative mx-auto flex min-h-dvh flex-col items-center justify-center overflow-hidden;
+}
+
+.container-flex-center {
+  @apply container flex min-h-[100dvh] flex-col items-center justify-center p-6;
+}
+
+.absolute-center {
+  @apply absolute left-1/2 -translate-x-1/2;
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-col-center {
+  @apply flex flex-col items-center justify-center;
+}
+
+.full-size {
+  @apply h-full w-full;
+}
+
+.relative-center {
+  @apply relative mx-auto;
+}
+
+canvas {
+  border-radius: 0.75rem; //for aboutMe Image
+}
+
+.f-col {
+  @apply flex flex-col;
+}
+
+.textSubHeading {
+  @apply font-semibold tracking-wide ~text-lg/2xl;
+}
+
+.projectDataText {
+  @apply leading-relaxed text-zinc-900 ~text-base/lg dark:text-zinc-100;
+}
+
+.projectDataWrapper {
+  @apply flex flex-col ~gap-2/3 md:order-none;
+}
+
+.textParagraph {
+  @apply font-light tracking-wide text-zinc-100 ~text-base/lg dark:text-zinc-900;
 }

@@ -61,8 +61,8 @@ export default async function Page({
   }
 
   return (
-    <main className="max-w-screen relative mx-auto overflow-hidden">
-      <div className="bg-grain fixed inset-0 z-[-10] h-screen w-screen" />
+    <main className="max-w-screen relative-center overflow-hidden">
+      <div className="bg-grain" />
       <PageUtilities />
       <ProjectImageFrame
         name={project.name}
@@ -70,54 +70,33 @@ export default async function Page({
         alt={project.imgPreview.alt}
       />
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 p-4 md:grid-cols-2 2xl:gap-8">
-        <div className="order-2 flex flex-col ~gap-2/4 md:order-none">
-          <MaskText
-            text={["My role"]}
-            className="font-semibold tracking-wide ~text-lg/2xl"
-            headline
-          />
-          <MaskText
-            text={[project.role]}
-            className="leading-relaxed text-zinc-900 ~text-base/lg dark:text-zinc-300"
-          />
+        <div className="projectDataWrapper order-2">
+          <MaskText text={["My role"]} className="textSubHeading" headline />
+          <MaskText text={[project.role]} className="projectDataText" />
         </div>
-        <div className="order-1 row-span-3 flex flex-col ~gap-2/3 md:order-none">
+        <div className="projectDataWrapper order-1 row-span-3">
           <MaskText
             text={["Description"]}
-            className="font-semibold tracking-wide ~text-lg/2xl"
+            className="textSubHeading"
             headline
           />
           <MaskText
             text={[project.descriptionLong]}
-            className="leading-relaxed text-zinc-900 ~text-base/lg dark:text-zinc-300"
+            className="textParagraph !text-zinc-900 dark:!text-zinc-100"
           />
         </div>
-        <div className="order-3 flex flex-col ~gap-2/3 md:order-none">
-          <MaskText
-            text={["Team"]}
-            className="font-semibold tracking-wide ~text-lg/2xl"
-            headline
-          />
-          <MaskText
-            text={[project.team]}
-            className="leading-relaxed text-zinc-900 ~text-base/lg dark:text-zinc-300"
-          />
+        <div className="projectDataWrapper order-3">
+          <MaskText text={["Team"]} className="textSubHeading" headline />
+          <MaskText text={[project.team]} className="projectDataText" />
         </div>
-        <div className="order-4 flex flex-col ~gap-2/3 md:order-none">
-          <MaskText
-            text={["Date"]}
-            className="font-semibold tracking-wide ~text-lg/2xl"
-            headline
-          />
-          <MaskText
-            text={[project.date]}
-            className="leading-relaxed text-zinc-900 ~text-base/lg dark:text-zinc-300"
-          />
+        <div className="projectDataWrapper order-4">
+          <MaskText text={["Date"]} className="textSubHeading" headline />
+          <MaskText text={[project.date]} className="projectDataText" />
         </div>
-        <div className="order-5 flex flex-col ~gap-2/3 md:order-none">
+        <div className="projectDataWrapper order-5">
           <MaskText
             text={["Technology"]}
-            className="mb-3 font-semibold tracking-wide ~text-lg/2xl"
+            className="textSubHeading mb-3"
             headline
           />
 
@@ -126,12 +105,12 @@ export default async function Page({
               <Chip
                 key={name}
                 text={name}
-                className="leading-relaxed text-zinc-900 ~text-sm/lg dark:text-zinc-300"
+                className="leading-relaxed text-zinc-900 ~text-sm/base dark:text-zinc-100"
               />
             ))}
           </div>
         </div>
-        <div className="order-6 row-span-2 mt-8 flex flex-col justify-self-end ~gap-2/3 md:order-none md:mt-0">
+        <div className="projectDataWrapper order-6 row-span-2 mt-8 justify-self-end md:mt-0">
           <Button
             text="View Project"
             href={project.detailsPageLink}
@@ -142,16 +121,13 @@ export default async function Page({
       <div className="mx-auto my-28 flex max-w-7xl justify-center">
         <div className="flex gap-6">
           {project.colors.map((color) => (
-            <div
-              key={color}
-              className="flex flex-col items-center justify-center gap-3"
-            >
+            <div key={color} className="flex-col-center gap-3">
               <span
                 key={color}
-                className="h-16 w-16 rounded-full md:h-20 md:w-20"
+                className="size-16 rounded-full md:size-20"
                 style={{ backgroundColor: color }}
               />
-              <span className="text-xs font-extralight text-zinc-900 dark:text-zinc-300">
+              <span className="text-xs font-extralight text-zinc-900 dark:text-zinc-100">
                 {color}
               </span>
             </div>
@@ -164,7 +140,7 @@ export default async function Page({
         alt={project.imgPreview.alt}
       />
 
-      <div className="mx-auto my-24 flex max-w-7xl flex-col justify-center gap-12 p-4 md:my-36 md:gap-20 xl:gap-36">
+      <div className="flex-col-center mx-auto my-24 max-w-7xl gap-12 p-4 md:my-36 md:gap-20 xl:gap-36">
         {project.imgFullScreen.map((img) => (
           <ProjectImageFull
             key={img.title}

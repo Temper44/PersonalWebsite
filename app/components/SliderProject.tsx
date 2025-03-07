@@ -47,33 +47,25 @@ const SliderProject = ({
   const { setIsCursorHovered } = useCursor();
 
   return (
-    <div
-      className={`panel flex h-dvh w-screen items-center justify-center ${className}`}
-    >
+    <div className={`panel flex-center h-dvh w-screen ${className}`}>
       <div className="grid h-full max-w-screen-2xl grid-cols-1 gap-y-3 p-4 pb-6 md:auto-rows-auto md:grid-cols-2 md:gap-10 md:p-12 md:pb-6 xl:gap-20 xl:pt-28 2xl:pt-36">
-        <div className="order-2 flex flex-col justify-between gap-6 md:order-1">
-          <div className="flex flex-col gap-4">
+        <div className="f-col order-2 justify-between gap-6 md:order-1">
+          <div className="f-col gap-4">
             <Link href={detailsPageLink}>
-              {/* <MaskText
-                text={[name]}
-                headline
-                className={`textShadow text-4xl font-semibold leading-tight tracking-wide xs:text-[2.75rem] sm:text-6xl md:pb-2 md:text-5xl lg:text-6xl xl:text-7xl ${reverseColor ? "text-zinc-300 dark:text-zinc-900" : ""}`}
-                cursorHoverEffect
-              /> */}
               <MaskText
                 text={[name]}
                 headline
-                className={`textShadow ~text-[2.75rem]/[4.5rem] font-semibold leading-tight tracking-wide max-xs:text-4xl md:pb-2 ${reverseColor ? "text-zinc-300 dark:text-zinc-900" : ""}`}
+                className={`textShadow font-semibold leading-tight tracking-wide ~text-[2.75rem]/[4.5rem] max-xs:text-4xl md:pb-2 ${reverseColor ? "!text-zinc-100 dark:!text-zinc-900" : ""}`}
                 cursorHoverEffect
               />
             </Link>
             <MaskText
               text={[subheading]}
-              className={`~text-[1.1rem]/[1.5rem] font-medium tracking-wide text-zinc-900 dark:text-zinc-300 max-xs:text-base ${reverseColor ? "text-zinc-300 dark:text-zinc-900" : ""}`}
+              className={`font-medium tracking-wide text-zinc-900 ~text-[1.1rem]/[1.5rem] dark:text-zinc-100 max-xs:text-base ${reverseColor ? "!text-zinc-100 dark:!text-zinc-900" : ""}`}
             />
             <MaskText
               text={[descriptionShort]}
-              className={`~text-base/xl font-light leading-relaxed tracking-wide text-zinc-900 dark:text-zinc-300 max-sm:text-sm ${reverseColor ? "text-zinc-300 dark:text-zinc-900" : ""}`}
+              className={`font-light leading-relaxed tracking-wide text-zinc-900 ~text-base/xl dark:text-zinc-100 max-sm:text-sm ${reverseColor ? "!text-zinc-100 dark:!text-zinc-900" : ""}`}
             />
           </div>
           <Button
@@ -91,7 +83,7 @@ const SliderProject = ({
         >
           <motion.div
             ref={refImage}
-            className="relative h-full w-full shadow-md"
+            className="full-size relative shadow-md"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{
@@ -110,10 +102,7 @@ const SliderProject = ({
           </motion.div>
         </Link>
         <div className="order-3 col-span-2 flex items-end">
-          <div
-            className="flex w-full items-center justify-between gap-4"
-            ref={refFooter}
-          >
+          <div className="flex-center w-full gap-4" ref={refFooter}>
             <motion.span
               initial={{ opacity: 0, scale: 0.95 }}
               animate={isInViewFooter ? { opacity: 1, scale: 1 } : {}}
@@ -121,7 +110,7 @@ const SliderProject = ({
                 duration: 1,
                 ease: "easeOut",
               }}
-              className={`h-[1px] flex-1 bg-zinc-900 dark:bg-zinc-300 ${reverseColor ? "bg-zinc-300 dark:bg-zinc-900" : ""}`}
+              className={`h-[1px] flex-1 bg-zinc-900 dark:bg-zinc-100 ${reverseColor ? "!bg-zinc-100 dark:!bg-zinc-900" : ""}`}
             />
             <motion.span
               initial={{ opacity: 0, scale: 0.95 }}
@@ -130,7 +119,7 @@ const SliderProject = ({
                 duration: 1,
                 ease: "easeOut",
               }}
-              className={`~/xl:~text-sm/xl mr-20 font-medium tracking-wider text-zinc-900 dark:text-zinc-300 md:mr-16 ${reverseColor ? "text-zinc-300 dark:text-zinc-900" : ""}`}
+              className={`mr-20 font-medium tracking-wider text-zinc-900 ~/xl:~text-sm/xl dark:text-zinc-100 md:mr-16 ${reverseColor ? "!text-zinc-100 dark:!text-zinc-900" : ""}`}
             >
               0{++currentCounter}/0{projectsLength}
             </motion.span>

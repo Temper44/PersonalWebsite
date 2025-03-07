@@ -18,10 +18,10 @@ const HeroFooter = () => {
   }, [mediaQueryMobile]);
 
   return (
-    <footer className="container absolute bottom-0 flex items-center justify-between px-11 py-7">
+    <footer className="container absolute bottom-0 flex items-center justify-around px-11 py-7">
       {/* Social Media Links */}
       <motion.div
-        className="flex w-full items-center justify-center gap-4 md:w-auto"
+        className="flex-center w-full gap-4 md:w-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
@@ -33,7 +33,7 @@ const HeroFooter = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`More information on ${link.name}`}
-            className="~text-[1.175rem]/[1.25rem] text-black transition-colors duration-500 ease-in-out dark:text-white"
+            className="transition-colors duration-500 ease-in-out ~text-[1.175rem]/[1.25rem] dark:text-white"
             onMouseEnter={() => setIsCursorHovered(true)}
             onMouseLeave={() => setIsCursorHovered(false)}
           >
@@ -66,7 +66,7 @@ const HeroFooter = () => {
               key={item.name}
               href={item.link}
               aria-label={`More information on ${item.name}`}
-              className="~text-[0.8rem]/[1rem] relative font-medium uppercase tracking-wide transition-colors duration-500 ease-in-out"
+              className="relative font-medium uppercase tracking-wide transition-colors duration-500 ease-in-out ~text-[0.8rem]/[1rem]"
               onMouseEnter={() => setIsCursorHovered(true)}
               onMouseLeave={() => setIsCursorHovered(false)}
             >

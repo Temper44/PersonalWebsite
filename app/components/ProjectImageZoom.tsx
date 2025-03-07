@@ -34,7 +34,7 @@ const ProjectImageZoom = ({ src, alt }: { src: string; alt: string }) => {
 
   return (
     <div className="imageContainer h-dvh w-screen">
-      <div className="mask-clip-path absolute left-1/2 top-0 z-20 h-[40vh] w-[60vw] origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:h-[60vh] md:w-[30vw]">
+      <div className="mask-clip-path absolute-center top-0 z-20 h-[40vh] w-[60vw] origin-center overflow-hidden rounded-3xl md:h-[60vh] md:w-[30vw]">
         <Image
           src={src}
           alt={alt}

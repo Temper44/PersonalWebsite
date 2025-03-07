@@ -23,7 +23,7 @@ export default function PortfolioFooter() {
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
       <div className="absolute bottom-0 min-h-[180dvh] w-full xs:min-h-[110dvh] sm:fixed sm:h-screen">
-        <div className="flex h-full w-full flex-col items-center justify-center pb-6 pt-32 sm:pt-32">
+        <div className="flex-col-center full-size pb-6 pt-32 sm:pt-32">
           <motion.p
             className="tracking-wide ~text-sm/xl"
             ref={refParagraph}
@@ -86,14 +86,14 @@ export default function PortfolioFooter() {
               <h3 className="font-semibold tracking-wide ~text-2xl/4xl">
                 Socials
               </h3>
-              <div className="my-2 h-[1px] w-full bg-zinc-900 dark:bg-zinc-300" />
+              <div className="my-2 h-[1px] w-full bg-zinc-900 dark:bg-zinc-100" />
               <ul className="mt-2 grid grid-cols-2 gap-2">
                 {socialMedia.map(
                   (item, index) =>
                     index < 4 && (
                       <li
                         key={item.id}
-                        className="flex items-center gap-2 tracking-wide text-zinc-800 ~text-base/xl dark:text-zinc-100"
+                        className="flex items-center gap-2 tracking-wide text-zinc-900 ~text-base/xl dark:text-zinc-100"
                       >
                         {item.icon}
                         <a
@@ -123,12 +123,12 @@ export default function PortfolioFooter() {
               <h3 className="font-semibold tracking-wide ~text-2xl/4xl">
                 Menu
               </h3>
-              <div className="my-2 h-[1px] w-full bg-zinc-900 dark:bg-zinc-300" />
+              <div className="my-2 h-[1px] w-full bg-zinc-900 dark:bg-zinc-100" />
               <ul className="mt-2 grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
                 {navItemsFull.map((item) => (
                   <li
                     key={item.name}
-                    className="flex items-center gap-2 tracking-wide text-zinc-800 ~text-base/xl dark:text-zinc-100"
+                    className="flex items-center gap-2 tracking-wide text-zinc-900 ~text-base/xl dark:text-zinc-100"
                   >
                     <a
                       href={item.link}
@@ -146,7 +146,7 @@ export default function PortfolioFooter() {
           </div>
 
           <motion.div
-            className="flex w-full max-w-6xl flex-col items-center justify-between px-4 font-light tracking-wide text-zinc-800 ~text-[0.65rem]/[0.85rem] dark:text-white sm:flex-row 3xl:absolute 3xl:bottom-6"
+            className="flex w-full max-w-6xl flex-col items-center justify-between px-4 font-light tracking-wide text-zinc-900 ~text-[0.65rem]/[0.85rem] dark:text-zinc-100 sm:flex-row 3xl:absolute 3xl:bottom-6"
             ref={refFooter}
             initial={{ opacity: 0 }}
             animate={isInViewFooter ? { opacity: 1 } : {}}

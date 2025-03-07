@@ -124,7 +124,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
       >
         <MagneticButton>
           <motion.button
-            className={`burgerMenu flex items-center justify-center rounded-full backdrop-blur-[0.4rem] transition-all ${!isFullPage && "md:hidden"} ${
+            className={`burgerMenu flex-center rounded-full backdrop-blur-[0.4rem] transition-all ${!isFullPage && "md:hidden"} ${
               isOpen &&
               "opened right-[1.4rem] top-4 rounded-full bg-black p-2 dark:bg-white"
             }`}
@@ -159,14 +159,14 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
       </motion.div>
 
       <motion.div
-        className={`nav-sidebar ${!isFullPage && "md:hidden"}`}
+        className={`fixed left-0 right-0 top-0 z-20 mx-auto block bg-white opacity-0 dark:bg-black ${!isFullPage && "md:hidden"}`}
         ref={menuRef}
       >
-        <div className="absolute left-0 top-0 flex h-screen w-screen items-center justify-center bg-grid-small-black/[0.15] dark:bg-grid-small-white/[0.25]">
-          <div className="absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,theme(colors.background))] dark:bg-black" />
+        <div className="flex-center absolute left-0 top-0 h-screen w-screen bg-grid-small-black/[0.15] dark:bg-grid-small-white/[0.25]">
+          <div className="flex-center absolute inset-0 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,theme(colors.background))] dark:bg-black" />
         </div>
         <nav
-          className={`z-100 relative flex h-screen flex-col items-center justify-center gap-2 xs:gap-6 lg:gap-4 xl:gap-0 ${isMobileOrTabletLandscape && "!gap-2"}`}
+          className={`z-100 flex-col-center relative h-screen gap-2 xs:gap-6 lg:gap-4 xl:gap-0 ${isMobileOrTabletLandscape && "!gap-2"}`}
         >
           {navItems.map((item, index) => {
             if (index === 0 && !displayHome) {
@@ -189,7 +189,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
                 }}
               >
                 <h3
-                  className={`nav-text ~text-[3.25rem]/[8rem] font-semibold !leading-[1.15] tracking-widest text-black dark:text-white ${isActive && "nav-text-isActive line-through decoration-rose-500"} ${isMobileOrTabletLandscape && "!text-2xl"}`}
+                  className={`nav-text font-semibold !leading-[1.15] tracking-widest ~text-[3.25rem]/[8rem] dark:text-white ${isActive && "nav-text-isActive line-through decoration-rose-500"} ${isMobileOrTabletLandscape && "!text-2xl"}`}
                 >
                   {item.name}
                 </h3>

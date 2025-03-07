@@ -38,7 +38,7 @@ const ScrollToTopButton = () => {
         <div className="fixed bottom-[4.5rem] right-[4.5rem] z-10 md:bottom-20 md:right-20">
           <MagneticButton>
             <motion.button
-              className="flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-full bg-black text-white shadow-md dark:bg-white dark:text-black"
+              className="flex-center h-[2.5rem] w-[2.5rem] rounded-full bg-black text-white shadow-md dark:bg-white dark:text-black"
               onClick={scrollToTop}
               onMouseEnter={() => setIsCursorHovered(true)}
               onMouseLeave={() => setIsCursorHovered(false)}

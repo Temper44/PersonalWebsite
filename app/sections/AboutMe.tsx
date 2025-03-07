@@ -40,16 +40,10 @@ const AboutMe = () => {
           end: "start+=100px center",
           scrub: true,
           onEnter: () => {
-            aboutMeRef.current?.classList.add(
-              "bg-zinc-900",
-              "dark:bg-zinc-100",
-            );
+            aboutMeRef.current?.classList.add("bg-black", "dark:bg-white");
           },
           onLeaveBack: () => {
-            aboutMeRef.current?.classList.remove(
-              "bg-zinc-900",
-              "dark:bg-zinc-100",
-            );
+            aboutMeRef.current?.classList.remove("bg-black", "dark:bg-white");
           },
         });
       }
@@ -82,16 +76,16 @@ const AboutMe = () => {
   }, []);
 
   return (
-    <section className="flex flex-col items-center">
+    <section className="flex-col-center">
       <MarqueeText text="About me" />
       <div
         ref={aboutMeRef}
-        className="relative flex min-h-[130dvh] w-full flex-col justify-center rounded-[3rem] transition-colors duration-1000"
+        className="flex-col-center relative min-h-[130dvh] w-full rounded-[3rem] transition-colors duration-1000"
       >
         <div className="absolute left-8 top-8 text-7xl text-white dark:text-black 2xl:text-8xl">
           <FiArrowDownRight />
         </div>
-        <div className="grid h-full w-full grid-cols-1 place-items-center gap-16 px-6 pb-24 pt-32 lg:grid-cols-2 lg:gap-4 lg:py-32">
+        <div className="full-size grid grid-cols-1 place-items-center gap-16 px-6 pb-24 pt-32 lg:grid-cols-2 lg:gap-4 lg:py-32">
           <div className="relative my-32 h-full lg:my-0">
             <div ref={imageRef} className="sticky top-32 lg:top-12">
               {/* <img
@@ -102,12 +96,12 @@ const AboutMe = () => {
               <div
                 id="imgContainer"
                 ref={imageContainer}
-                className="aspect-[4/5] h-auto w-[80vw] !rounded-xl object-cover shadow-md sm:w-[65vw] sm:object-contain md:w-[55vw] lg:w-[35vw] xl:w-[28vw] xl:object-cover 2xl:w-[32vw]"
+                className="aspect-[4/5] h-auto w-[80vw] !rounded-xl object-cover shadow-md sm:w-[65vw] sm:object-contain md:w-[55vw] lg:w-[35vw] xl:w-[28vw] xl:object-cover"
               ></div>
             </div>
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="f-col gap-6">
             <TextGradient
               text="Developer, Designer, Creator"
               className="mb-6 mt-6 uppercase text-white ~text-6xl/9xl dark:text-black max-xs:text-5xl md:mt-0 lg:mb-20 2xl:max-w-[65%]"
@@ -123,14 +117,14 @@ const AboutMe = () => {
             />
             <div className="flex w-full flex-col gap-6 self-center lg:max-w-[70%] xl:max-w-[65%]">
               <MaskText
-                className="font-light tracking-wide text-white ~text-base/lg dark:text-black"
+                className="textParagraph"
                 text={[
                   aboutMeTexts.firstParagraph,
                   aboutMeTexts.secondParagraph,
                 ]}
               />
               <MaskText
-                className="font-light tracking-wide text-white ~text-base/lg dark:text-black"
+                className="textParagraph"
                 text={[
                   aboutMeTexts.thirdParagraph,
                   aboutMeTexts.fourthParagraph,

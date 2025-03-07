@@ -12,17 +12,17 @@ export default function Page() {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   return (
-    <main className="max-w-screen relative mx-auto flex min-h-dvh flex-col items-center justify-center overflow-hidden">
+    <main className="max-screen-center">
       <FixedBackground />
 
       <MobileMenu isFullPage={true} />
       {isDesktop && <CustomCursor />}
 
-      <section className="container flex min-h-screen flex-col items-center justify-center p-6">
+      <section className="container-flex-center">
         <HeroText heading="Imprint" />
       </section>
 
-      <section className="container flex flex-col gap-2 px-4 pb-32 md:px-20">
+      <section className="f-col container gap-2 px-4 pb-32 md:px-20">
         <p>
           <b>Medieninhaber und verantwortlich für den Inhalt:</b> Mathias Ebner
         </p>

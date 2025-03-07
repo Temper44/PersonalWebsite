@@ -19,7 +19,7 @@ const HeroText = ({
   return (
     <>
       <motion.h1
-        className="colorEffect textShadow text-center font-urbanist font-bold capitalize leading-snug tracking-wide ~text-[6.2rem]/[14rem] max-xs:text-7xl"
+        className="colorEffect textShadow text-center font-bold capitalize leading-snug tracking-wide ~text-[6.2rem]/[14rem] max-xs:text-7xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
@@ -55,7 +55,7 @@ const HeroText = ({
       )}
       {infoText && (
         <motion.p
-          className="z-10 py-4 text-center font-bold text-black ~text-base/2xl dark:text-white"
+          className="z-10 py-4 text-center font-bold text-zinc-100 ~text-base/2xl dark:text-zinc-900"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{

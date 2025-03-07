@@ -27,19 +27,19 @@ export default function Home() {
 
   if (!isClient) {
     return (
-      <main className="relative mx-auto flex h-dvh w-screen flex-col items-center justify-center overflow-hidden"></main>
+      <main className="flex-col-center relative-center h-dvh w-screen overflow-hidden"></main>
     );
   }
 
   return (
-    <main className="relative mx-auto flex h-dvh w-screen flex-col items-center justify-center overflow-hidden">
+    <main className="flex-col-center relative-center h-dvh w-screen overflow-hidden">
       {isMobile && <MobileMenu displayHome={false} />}
       {isDesktop && <CustomCursor />}
 
       <FixedBackground />
       {/* {isTablet && <BackgroundBeams />} */}
-      <section className="textShadow container flex flex-col items-center justify-center px-6 sm:flex-row sm:px-11">
-        <motion.h1 className="relative z-10 mt-[-6rem] text-left !leading-none transition-colors duration-500 ease-in-out ~text-[6rem]/[12rem] max-xs:text-6xl">
+      <section className="container-flex-center px-6 sm:flex-row sm:px-11">
+        <motion.h1 className="textShadow relative z-10 mt-[-6rem] text-left !leading-none transition-colors duration-500 ease-in-out ~text-[6rem]/[12rem] max-xs:text-6xl">
           <motion.span
             className="mb-3 block text-center font-light ~text-2xl/4xl sm:mb-2 sm:text-left"
             initial={{ opacity: 0 }}
@@ -126,7 +126,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="pointer-events-none absolute inset-0 z-[100] flex h-screen w-screen items-center justify-center backdrop-blur-md"
+            className="flex-center pointer-events-none absolute inset-0 z-[100] h-screen w-screen backdrop-blur-md"
           >
             <motion.img
               src="/img/portrait_home.jpg"

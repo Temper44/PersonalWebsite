@@ -16,14 +16,14 @@ const ProjectImageFull = ({ title, src, alt }: ProjectImageItemProps) => {
   const isInView = useInView(ref, { margin: "0px 0px -100px 0px" });
 
   return (
-    <div className="flex h-full w-full flex-col gap-4" ref={ref}>
+    <div className="full-size f-col gap-4" ref={ref}>
       <MaskText
         text={[title]}
-        className="~text-lg/2xl font-semibold tracking-wide"
+        className="font-semibold tracking-wide ~text-lg/2xl"
         headline
       />
       <motion.div
-        className="relative aspect-[16/9] h-full w-full shadow-md"
+        className="full-size relative aspect-[16/9] shadow-md"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={isInView ? { opacity: 1, scale: 1 } : {}}
         transition={{ duration: 1, ease: "easeOut" }}

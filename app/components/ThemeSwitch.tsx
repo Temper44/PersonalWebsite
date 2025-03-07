@@ -54,7 +54,7 @@ export default function ThemeSwitch() {
     >
       <MagneticButton>
         <motion.button
-          className="flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-full border border-black border-opacity-40 bg-opacity-80 shadow-md backdrop-blur-[0.4rem] transition-all hover:scale-[1.15rem] active:scale-105 dark:border-white md:left-8 md:top-8"
+          className="flex-center h-[2.5rem] w-[2.5rem] rounded-full border border-black border-opacity-40 bg-opacity-80 shadow-md backdrop-blur-[0.4rem] transition-all hover:scale-[1.15rem] active:scale-105 dark:border-white md:left-8 md:top-8"
           aria-label="Toggle Theme"
           onClick={toggleTheme}
           onMouseEnter={() => setIsCursorHovered(true)}

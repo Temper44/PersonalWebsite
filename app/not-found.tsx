@@ -12,12 +12,12 @@ export default function NotFound() {
   const words = `Sorry, the page you are looking for does not exist!`;
 
   return (
-    <main className="max-w-screen relative mx-auto flex min-h-dvh flex-col items-center justify-center overflow-hidden">
+    <main className="max-screen-center">
       <FixedBackground />
       <MobileMenu isFullPage={true} />
       {isDesktop && <CustomCursor />}
 
-      <section className="container flex flex-col items-center justify-center p-6">
+      <section className="container-flex-center">
         <HeroText
           heading="404 - Not Found"
           subheading={words}

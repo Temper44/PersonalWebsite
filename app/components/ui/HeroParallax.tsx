@@ -104,13 +104,13 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div className="relative left-0 top-0 z-10 mx-auto w-full max-w-[100rem] px-4 xl:pt-12">
-      <h1 className="~text-[4.5rem]/[9.5rem] font-medium leading-none dark:text-white max-xs:text-[3rem] md:font-semibold md:!leading-tight">
+      <h1 className="font-medium leading-none ~text-[4.5rem]/[9.5rem] dark:text-white max-xs:text-[3rem] md:font-semibold md:!leading-tight">
         Experience the{" "}
-        <span className="~text-[5rem]/[10.5rem] font-bold italic text-zinc-900 dark:text-slate-100 max-xs:text-[3rem]">
+        <span className="font-bold italic text-zinc-900 ~text-[5rem]/[10.5rem] dark:text-zinc-100 max-xs:text-[3rem]">
           Web
         </span>{" "}
         <br /> with a{" "}
-        <span className="colorEffect ~text-[5rem]/[10.5rem] font-bold max-xs:text-[3rem]">
+        <span className="colorEffect font-bold ~text-[5rem]/[10.5rem] max-xs:text-[3rem]">
           Creative
         </span>{" "}
         <span>approach</span>
@@ -152,10 +152,10 @@ export const ProductCard = ({
           style={{ objectFit: "cover", objectPosition: "left top" }}
           alt={product.title}
         />
-        {/* height="600" width="600" className="absolute inset-0 h-full w-full
+        {/* height="600" width="600" className="absolute inset-0 full-size
         object-cover object-left-top" */}
       </Link>
-      <div className="pointer-events-none absolute inset-0 h-full w-full bg-black opacity-0 group-hover/product:opacity-80"></div>
+      <div className="full-size pointer-events-none absolute inset-0 bg-black opacity-0 group-hover/product:opacity-80"></div>
       <h2 className="absolute bottom-4 left-4 text-3xl text-white opacity-0 group-hover/product:opacity-100">
         {product.title}
       </h2>

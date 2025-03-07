@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useCursor } from "./context/CursorContext";
+import clsx from "clsx";
 
 const CustomCursor = () => {
   const { isCursorHovered, position, setPosition } = useCursor();
@@ -29,19 +30,14 @@ const CustomCursor = () => {
 
   return (
     <div
+      className={clsx(
+        "pointer-events-none fixed z-[9999] rounded-full bg-white mix-blend-difference transition-all duration-100 ease-in-out",
+        isCursorHovered ? "size-[3.25rem]" : "size-[1.56rem]",
+      )}
       style={{
-        position: "fixed", // Ensure it's fixed to the viewport
-        zIndex: 9999,
         top: `${position.y}px`,
         left: `${position.x}px`,
-        width: isCursorHovered ? "52px" : "25px", // Change size on hover
-        height: isCursorHovered ? "52px" : "25px",
-        backgroundColor: "#ffffff", // Example color #1A5773
-        borderRadius: "50%",
         transform: "translate(-50%, -50%)",
-        pointerEvents: "none", // Ensure cursor doesn't interfere with clicks
-        mixBlendMode: "difference", // Optional: for unique visual effects
-        transition: "width 0.1s ease, height 0.1s ease",
       }}
     />
   );

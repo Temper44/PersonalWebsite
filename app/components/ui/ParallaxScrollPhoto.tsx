@@ -94,7 +94,7 @@ export const ParallaxScrollPhoto = ({
 
     return (
       <motion.div
-        className={`${className} relative h-full w-full shadow-md`}
+        className={`${className} full-size relative shadow-md`}
         onClick={() => {
           setCurrentImage(idx);
           setIsOpen(true);

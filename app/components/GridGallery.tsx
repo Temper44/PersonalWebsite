@@ -39,7 +39,7 @@ const GridGallery = () => {
   }, []);
 
   return (
-    <div className="container relative mx-auto grid w-full grid-cols-1 gap-5 sm:grid-cols-12 sm:gap-2">
+    <div className="relative-center container grid w-full grid-cols-1 gap-5 sm:grid-cols-12 sm:gap-2">
       {/* Block 1 */}
       <div className="col-span-12 sm:col-span-6 sm:row-span-5">
         <GridImage
@@ -161,7 +161,7 @@ const GridGallery = () => {
       </div>
 
       {/* SVG container */}
-      <div className="svg-container invisible absolute left-0 top-0 z-[-10] hidden h-full w-full items-center justify-center md:visible md:flex">
+      <div className="svg-container full-size invisible absolute left-0 top-0 z-[-10] hidden items-center justify-center md:visible md:flex">
         <svg
           ref={svgRef}
           className="snakeSvg"

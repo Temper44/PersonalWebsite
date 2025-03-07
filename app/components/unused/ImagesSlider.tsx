@@ -17,7 +17,7 @@
 //             transition={{
 //               duration: 0.6,
 //             }}
-//             className="z-50 flex flex-col items-center justify-center p-3"
+//             className="z-50 f-col items-center justify-center p-3"
 //           ></motion.div>
 //         </ImagesSlider> */
 // }
@@ -145,7 +145,7 @@ export const ImagesSlider = ({
   return (
     <div
       className={cn(
-        "relative flex h-full w-full items-center justify-center overflow-hidden",
+        "flex-center full-size relative overflow-hidden",
         className,
       )}
       style={{
@@ -167,7 +167,7 @@ export const ImagesSlider = ({
             animate="visible"
             exit={direction === "up" ? "upExit" : "downExit"}
             variants={slideVariants}
-            className="absolute inset-0 h-full w-full"
+            className="full-size absolute inset-0"
           >
             <Image
               src={loadedImages[currentIndex]}

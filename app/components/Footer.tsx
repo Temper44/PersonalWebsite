@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <motion.footer
-      className="container absolute bottom-0 left-1/2 flex w-full -translate-x-1/2 items-center justify-center gap-4 px-11 py-7 md:w-auto"
+      className="absolute-center flex-center container bottom-0 w-full gap-4 px-11 py-7 md:w-auto"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 1, duration: 1 }}
@@ -23,7 +23,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`More information on ${link.name}`}
-          className="~text-[1.175rem]/[1.4rem] text-black transition-colors duration-500 ease-in-out dark:text-white"
+          className="transition-colors duration-500 ease-in-out ~text-[1.175rem]/[1.4rem] dark:text-white"
           onMouseEnter={() => setIsCursorHovered(true)}
           onMouseLeave={() => setIsCursorHovered(false)}
         >

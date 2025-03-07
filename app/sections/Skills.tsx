@@ -32,15 +32,15 @@ const Skills = () => {
   });
 
   return (
-    <section className="relative flex flex-col items-center overflow-hidden">
+    <section className="flex-col-center relative overflow-hidden">
       <MarqueeText text="Skills" />
       <div className="skillsContainer h-dvh w-screen">
-        <h2 className="absolute left-1/2 top-[60%] w-[80%] -translate-x-1/2 text-center font-extralight tracking-wide ~text-base/2xl sm:top-[75%] md:w-auto">
+        <h2 className="absolute-center top-[60%] w-[80%] text-center font-extralight tracking-wide ~text-base/2xl sm:top-[75%] md:w-auto">
           {skillsText}
         </h2>
-        <div className="mask-clip-path absolute left-1/2 top-0 z-20 h-[40vh] w-[60vw] origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:h-[60vh] md:w-[30vw]">
+        <div className="mask-clip-path absolute-center top-0 z-20 h-[40vh] w-[60vw] origin-center overflow-hidden rounded-3xl md:h-[60vh] md:w-[30vw]">
           <BackgroundGradientAnimation interactive={false}>
-            <div className="absolute inset-0 z-50 flex items-center justify-center ~px-8/28">
+            <div className="flex-center absolute inset-0 z-50 ~px-8/28">
               <TextGradient
                 text={skills.join(" / ")}
                 className="textShadow font-semibold text-white ~text-3xl/8xl"

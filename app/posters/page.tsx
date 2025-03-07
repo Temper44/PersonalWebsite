@@ -54,11 +54,11 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="max-w-screen relative mx-auto flex min-h-dvh flex-col items-center justify-center overflow-hidden">
+    <main className="max-screen-center">
       <FixedBackground />
       <PageUtilities />
 
-      <section className="container flex min-h-screen flex-col items-center justify-center p-6">
+      <section className="container-flex-center">
         <HeroText heading="Posters" subheading={subHeadingTexts.posters} />
       </section>
 
@@ -104,7 +104,7 @@ export default function Page() {
         </svg>
       </section>
 
-      <section className="container flex flex-col items-center" id="posters">
+      <section className="container-flex-center" id="posters">
         <MarqueeText text="selected work" />
         <ParallaxScrollPoster images={parallaxPoster} />
       </section>

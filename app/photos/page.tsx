@@ -63,7 +63,7 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="max-w-screen relative mx-auto flex min-h-dvh flex-col items-center justify-center overflow-hidden">
+    <main className="max-screen-center">
       <FixedBackground />
 
       <ScrollProgressBar />
@@ -71,7 +71,7 @@ export default function Page() {
       {isDesktop && <CustomCursor />}
       <ScrollToTopButton />
 
-      <section className="container flex min-h-screen flex-col items-center justify-center p-6">
+      <section className="container-flex-center">
         <HeroText
           heading="Photos"
           subheading={subHeadingTexts.photos}
@@ -206,17 +206,14 @@ export default function Page() {
         </svg>
       </section>
 
-      <section className="container flex flex-col items-center" id="images">
+      <section className="container-flex-center" id="images">
         <MarqueeText text="landscape shots" />
-        <div className="relative h-full w-screen overflow-hidden pb-20">
+        <div className="relative w-screen overflow-hidden pb-20">
           <Carousel slides={landscapeImages} />
         </div>
         <MarqueeText text="selected work" />
 
-        <div
-          ref={gridGalleryRef}
-          className="container flex flex-col items-center p-6"
-        >
+        <div ref={gridGalleryRef} className="container-flex-center">
           <GridGallery />
         </div>
         <MarqueeText text="street collection" />

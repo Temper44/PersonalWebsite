@@ -55,8 +55,8 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="max-w-screen relative mx-auto">
-      <div className="bg-grain fixed inset-0 z-[-10] h-screen w-screen" />
+    <main className="max-w-screen relative-center">
+      <div className="bg-grain" />
 
       <PageUtilities />
 

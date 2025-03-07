@@ -20,7 +20,7 @@ const CarouselControl = ({
 
   return (
     <button
-      className={`border-3 mx-3 flex h-10 w-10 scale-110 items-center justify-center rounded-full border border-black border-opacity-30 bg-neutral-200 dark:bg-neutral-800 sm:scale-100 ${
+      className={`border-3 flex-center mx-3 h-10 w-10 scale-110 rounded-full border border-black border-opacity-30 bg-zinc-100 dark:bg-zinc-900 sm:scale-100 ${
         type === "previous" ? "rotate-180" : ""
       }`}
       title={title}
@@ -28,7 +28,7 @@ const CarouselControl = ({
       onMouseEnter={() => setIsCursorHovered(true)}
       onMouseLeave={() => setIsCursorHovered(false)}
     >
-      <span className="text-neutral-600 dark:text-neutral-200">
+      <span className="text-zinc-900 dark:text-zinc-100">
         <IoIosArrowForward fontSize={20} />
       </span>
     </button>
@@ -78,7 +78,7 @@ export function Carousel({ slides }: CarouselProps) {
 
   return (
     <div
-      className="relative mx-auto aspect-[3/2] h-full w-[100vw] sm:w-[70vw]"
+      className="relative-center aspect-[3/2] h-full w-[100vw] sm:w-[70vw]"
       aria-labelledby={`carousel-heading-${id}`}
     >
       <ul
@@ -109,7 +109,7 @@ export function Carousel({ slides }: CarouselProps) {
           title="Go to next slide"
           handleClick={handleNextClick}
         />
-        <span className="absolute right-3 text-sm font-light text-neutral-600 dark:text-neutral-200 sm:right-0 2xl:text-base">
+        <span className="absolute right-3 text-sm font-light text-zinc-900 dark:text-zinc-100 sm:right-0 2xl:text-base">
           {current + 1} / {slides.length}
         </span>
       </div>
@@ -160,7 +160,7 @@ const Slide = ({ src, index, current, handleSlideClick }: SlideProps) => {
   return (
     <li
       ref={slideRef}
-      className="relative z-10 mx-[4vmin] flex aspect-[3/2] h-full w-[100vw] flex-1 flex-col items-center justify-center text-center opacity-100 transition-all duration-300 ease-in-out sm:w-[70vw]"
+      className="flex-col-center relative z-10 mx-[4vmin] aspect-[3/2] h-full w-[100vw] flex-1 text-center opacity-100 transition-all duration-300 ease-in-out sm:w-[70vw]"
       onClick={() => handleSlideClick(index)}
       style={{
         transform:
@@ -171,7 +171,7 @@ const Slide = ({ src, index, current, handleSlideClick }: SlideProps) => {
         transformOrigin: "bottom",
       }}
     >
-      <div className="absolute left-0 top-0 h-full w-full overflow-hidden bg-[#000000] transition-all duration-150 ease-out">
+      <div className="full-size absolute left-0 top-0 overflow-hidden bg-black transition-all duration-150 ease-out">
         <Image
           className="duration-600 absolute inset-0 h-full object-cover opacity-100 transition-opacity ease-in-out"
           style={{
