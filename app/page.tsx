@@ -102,17 +102,17 @@ export default function Home() {
               ease: "easeIn",
             }}
           >
-            <span className="font-normal">Technologist</span>
+            <span>Technologist</span>
             {isSmall && (
               <>
                 {" "}
-                <span aria-hidden className="pb-4 font-normal tracking-tight">
+                <span aria-hidden className="pb-4 tracking-tight">
                   Technologist-
                 </span>
-                <span aria-hidden className="pb-4 font-normal tracking-tight">
+                <span aria-hidden className="pb-4 tracking-tight">
                   Technologist-
                 </span>
-                <span aria-hidden className="pb-4 font-normal tracking-tight">
+                <span aria-hidden className="pb-4 tracking-tight">
                   Technologist-
                 </span>
               </>

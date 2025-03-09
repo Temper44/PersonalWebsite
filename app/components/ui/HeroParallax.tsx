@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useSectionInView } from "@/lib/hooks";
 
 export const HeroParallax = ({
   products,
@@ -130,8 +131,11 @@ export const ProductCard = ({
   };
   translate: MotionValue<number>;
 }) => {
+  const { ref } = useSectionInView("");
+
   return (
     <motion.div
+      ref={ref}
       style={{
         x: translate,
       }}
@@ -148,6 +152,7 @@ export const ProductCard = ({
         <Image
           src={product.thumbnail}
           fill
+          loading="eager"
           quality={100}
           style={{ objectFit: "cover", objectPosition: "left top" }}
           alt={product.title}

@@ -6,6 +6,7 @@ import gsap from "gsap";
 import MarqueeText from "../components/MarqueeText";
 import SliderProject from "../components/SliderProject";
 import { projects } from "@/lib/data";
+import { useSectionInView } from "@/lib/hooks";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,8 +36,10 @@ const Projects = () => {
     });
   }, []);
 
+  const { ref } = useSectionInView("Projects");
+
   return (
-    <div className="overflow-hidden">
+    <section id="projects" ref={ref} className="overflow-hidden">
       <MarqueeText text="Selected work" />
       <div
         ref={projectsContainer}
@@ -57,7 +60,7 @@ const Projects = () => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

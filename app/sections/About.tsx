@@ -7,10 +7,11 @@ import MaskText from "../components/MaskText";
 import TextGradient from "../components/TextGradient";
 import hoverEffect from "hover-effect";
 import { aboutMeTexts } from "@/lib/texts";
+import { useSectionInView } from "@/lib/hooks";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AboutMe = () => {
+const About = () => {
   const aboutMeRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const imageContainer = useRef<HTMLDivElement>(null);
@@ -75,8 +76,10 @@ const AboutMe = () => {
     }
   }, []);
 
+  const { ref } = useSectionInView("About");
+
   return (
-    <section className="flex-col-center">
+    <section id="about" ref={ref} className="flex-col-center">
       <MarqueeText text="About me" />
       <div
         ref={aboutMeRef}
@@ -138,4 +141,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default About;

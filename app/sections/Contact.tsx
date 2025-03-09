@@ -4,8 +4,9 @@ import React, { useRef } from "react";
 import Form from "../components/Form";
 import { useCursor } from "../components/context/CursorContext";
 import { footerText } from "@/lib/texts";
+import { useSectionInView } from "@/lib/hooks";
 
-export default function PortfolioFooter() {
+export default function Contact() {
   const { setIsCursorHovered } = useCursor();
   const refFooter = useRef<HTMLDivElement>(null);
   const refSocials = useRef<HTMLDivElement>(null);
@@ -17,8 +18,12 @@ export default function PortfolioFooter() {
   const isInViewMenu = useInView(refMenu);
   const isInViewFooter = useInView(refFooter);
 
+  const { ref } = useSectionInView("Contact");
+
   return (
     <footer
+      id="contact"
+      ref={ref}
       className="relative min-h-[180dvh] overflow-x-hidden xs:min-h-[130dvh] sm:h-screen"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >

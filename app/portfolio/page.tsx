@@ -7,12 +7,14 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { HeroParallax } from "../components/ui/HeroParallax";
 import { products } from "@/lib/data";
 // import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
-import PortfolioFooter from "../sections/PorfolioFooter";
-import AboutMe from "../sections/AboutMe";
+import Contact from "../sections/Contact";
+import About from "../sections/About";
 import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import PageUtilities from "../components/PageUtilities";
 import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
+import FloatingNav from "../components/FloatingNav";
+import ActiveSectionContextProvider from "../components/context/active-section-context";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,13 +57,15 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="max-w-screen relative-center">
-      <div className="bg-grain" />
+    <ActiveSectionContextProvider>
+      <main className="max-w-screen relative-center">
+        <div className="bg-grain" />
 
-      <PageUtilities />
+        <PageUtilities />
+        <FloatingNav />
 
-      <HeroParallax products={products} />
-      {/* <section className="h-screen">
+        <HeroParallax products={products} />
+        {/* <section className="h-screen">
         <svg
           ref={svgRef}
           className="portfolioSvg"
@@ -245,12 +249,13 @@ export default function Page() {
           </defs>
         </svg>
       </section> */}
-      <AboutMe />
-      <Skills />
-      <Projects />
+        <About />
+        <Skills />
+        <Projects />
 
-      <ParallaxScrollGallery />
-      <PortfolioFooter />
-    </main>
+        <ParallaxScrollGallery />
+        <Contact />
+      </main>
+    </ActiveSectionContextProvider>
   );
 }

@@ -9,6 +9,7 @@ import ThemeContextProvider from "./components/context/ThemeContext";
 import ThemeSwitch from "./components/ThemeSwitch";
 import { ReactLenis } from "lenis/react";
 import { TransitionProvider } from "./components/TransitionProvider";
+// import ActiveSectionContextProvider from "./components/context/active-section-context";
 
 // const nunitoSans = Nunito_Sans({
 //   variable: "--font-nunito-sans",
@@ -39,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${urbanist.variable}`}>
+    <html lang="en" className={`${urbanist.variable} !scroll-smooth`}>
       <body className={`vsc-initialized font-urbanist antialiased`}>
         <TransitionProvider>
           <ThemeContextProvider>
@@ -51,7 +52,9 @@ export default function RootLayout({
               }}
             >
               <CursorProvider>
+                {/* <ActiveSectionContextProvider> */}
                 {children}
+                {/* </ActiveSectionContextProvider> */}
                 <ThemeSwitch />
               </CursorProvider>
             </ReactLenis>

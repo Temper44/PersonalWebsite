@@ -66,7 +66,7 @@ const HeroFooter = () => {
               key={item.name}
               href={item.link}
               aria-label={`More information on ${item.name}`}
-              className="relative font-medium uppercase tracking-wide transition-colors duration-500 ease-in-out ~text-[0.8rem]/[1rem]"
+              className="nav-hover-btn relative font-medium uppercase tracking-wide transition-colors duration-500 ease-in-out ~text-[0.8rem]/[1rem]"
               onMouseEnter={() => setIsCursorHovered(true)}
               onMouseLeave={() => setIsCursorHovered(false)}
             >

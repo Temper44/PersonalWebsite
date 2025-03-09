@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/all";
 import TextGradient from "../components/TextGradient";
 import { skills } from "@/lib/data";
 import { skillsText } from "@/lib/texts";
+import { useSectionInView } from "@/lib/hooks";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,8 +32,14 @@ const Skills = () => {
     });
   });
 
+  const { ref } = useSectionInView("Skills");
+
   return (
-    <section className="flex-col-center relative overflow-hidden">
+    <section
+      id="skills"
+      ref={ref}
+      className="flex-col-center relative overflow-hidden"
+    >
       <MarqueeText text="Skills" />
       <div className="skillsContainer h-dvh w-screen">
         <h2 className="absolute-center top-[60%] w-[80%] text-center font-extralight tracking-wide ~text-base/2xl sm:top-[75%] md:w-auto">
