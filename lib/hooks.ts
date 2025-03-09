@@ -8,8 +8,6 @@ export function useSectionInView(sectionName: SectionName, threshold = 0.13) {
     threshold: threshold,
   });
 
-  console.log("useSectionInView -> inView", inView);
-
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
 
   useEffect(() => {
