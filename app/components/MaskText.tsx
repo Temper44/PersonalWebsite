@@ -18,7 +18,6 @@ export default function MaskText({
   const ref = useRef(null);
   const isInView = useInView(ref, {
     margin: "-100px",
-    // once: true,
   });
 
   const animation = {

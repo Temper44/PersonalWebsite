@@ -48,7 +48,6 @@ const ButtonSkillet = ({
 }) => {
   const refButton = useRef<HTMLDivElement>(null);
   const isInView = useInView(refButton, {
-    once: false,
     margin: "0px 0px -100px 0px",
   });
   const { setIsCursorHovered } = useCursor();

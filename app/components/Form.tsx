@@ -48,7 +48,6 @@ const Form = () => {
   };
 
   const isInViewForm = useInView(formRef, {
-    once: false,
     margin: "0px 0px 0px 0px",
   });
 

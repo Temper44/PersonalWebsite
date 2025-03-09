@@ -61,7 +61,7 @@ export default function Page() {
       <main className="max-w-screen relative-center">
         <div className="bg-grain" />
 
-        <PageUtilities />
+        <PageUtilities showScrollTopButtonMobile={false} />
         <FloatingNav />
 
         <HeroParallax products={products} />

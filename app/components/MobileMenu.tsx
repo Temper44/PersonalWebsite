@@ -119,7 +119,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
           opacity: visible ? 1 : 0,
         }}
         transition={{
-          duration: 0.2,
+          duration: 0.3,
         }}
       >
         <MagneticButton>
@@ -189,7 +189,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
                 }}
               >
                 <h3
-                  className={`nav-text font-semibold !leading-[1.15] tracking-widest ~text-[3.25rem]/[8rem] dark:text-white ${isActive && "nav-text-isActive line-through decoration-rose-500"} ${isMobileOrTabletLandscape && "!text-2xl"}`}
+                  className={`nav-text relative font-semibold !leading-[1.15] tracking-widest ~text-[3.25rem]/[8rem] dark:text-white ${isActive ? "nav-text-isActive before:smh-[6px] before:absolute before:left-0 before:top-1/2 before:h-[5px] before:w-full before:-translate-y-1/2 before:rounded-sm before:bg-gradient-to-r before:from-rose-500 before:to-purple-500 before:content-[''] before:lg:h-[8px] before:2xl:h-[10px]" : ""} ${isMobileOrTabletLandscape && "!text-2xl"}`}
                 >
                   {item.name}
                 </h3>

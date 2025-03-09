@@ -36,11 +36,9 @@ const SliderProject = ({
   const refImage = useRef<HTMLDivElement>(null);
   const refFooter = useRef<HTMLDivElement>(null);
   const isInView = useInView(refImage, {
-    once: false,
     margin: "0px 0px -100px 0px",
   });
   const isInViewFooter = useInView(refFooter, {
-    once: false,
     margin: "0px 0px 0px 0px",
   });
 

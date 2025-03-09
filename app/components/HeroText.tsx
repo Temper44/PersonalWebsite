@@ -55,7 +55,7 @@ const HeroText = ({
       )}
       {infoText && (
         <motion.p
-          className="z-10 py-4 text-center font-bold text-zinc-100 ~text-base/2xl dark:text-zinc-900"
+          className="z-10 py-4 text-center font-bold tracking-wide text-zinc-900 ~text-base/2xl dark:text-zinc-100"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{

@@ -161,7 +161,7 @@ const GridGallery = () => {
       </div>
 
       {/* SVG container */}
-      <div className="svg-container full-size invisible absolute left-0 top-0 z-[-10] hidden items-center justify-center md:visible md:flex">
+      <div className="svg-container full-size absolute left-0 top-0 z-[-10] hidden items-center justify-center md:flex">
         <svg
           ref={svgRef}
           className="snakeSvg"
