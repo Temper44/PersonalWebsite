@@ -37,9 +37,11 @@ const SliderProject = ({
   const refFooter = useRef<HTMLDivElement>(null);
   const isInView = useInView(refImage, {
     margin: "0px 0px -100px 0px",
+    once: true,
   });
   const isInViewFooter = useInView(refFooter, {
     margin: "0px 0px 0px 0px",
+    once: true,
   });
 
   const { setIsCursorHovered } = useCursor();

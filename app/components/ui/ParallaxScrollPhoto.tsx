@@ -61,6 +61,7 @@ export const ParallaxScrollPhoto = ({
     const ref = useRef<HTMLDivElement>(null);
     const isInView = useInView(ref, {
       margin: "0px 0px -100px 0px",
+      once: true,
     });
 
     return (

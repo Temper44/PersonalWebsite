@@ -13,7 +13,7 @@ type ProjectImageItemProps = {
 
 const ProjectImageFull = ({ title, src, alt }: ProjectImageItemProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { margin: "0px 0px -100px 0px" });
+  const isInView = useInView(ref, { margin: "0px 0px -100px 0px", once: true });
 
   return (
     <div className="full-size f-col gap-4" ref={ref}>

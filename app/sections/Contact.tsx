@@ -13,10 +13,18 @@ export default function Contact() {
   const refMenu = useRef<HTMLDivElement>(null);
   const refParagraph = useRef<HTMLDivElement>(null);
 
-  const isInViewParagraph = useInView(refParagraph);
-  const isInViewSocials = useInView(refSocials);
-  const isInViewMenu = useInView(refMenu);
-  const isInViewFooter = useInView(refFooter);
+  const isInViewParagraph = useInView(refParagraph, {
+    once: true,
+  });
+  const isInViewSocials = useInView(refSocials, {
+    once: true,
+  });
+  const isInViewMenu = useInView(refMenu, {
+    once: true,
+  });
+  const isInViewFooter = useInView(refFooter, {
+    once: true,
+  });
 
   const { ref } = useSectionInView("Contact");
 

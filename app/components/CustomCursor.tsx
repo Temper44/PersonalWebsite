@@ -6,6 +6,7 @@ import { useCursor } from "./context/CursorContext";
 const CustomCursor = () => {
   const { isCursorHovered, position, setPosition } = useCursor();
   const [isClient, setIsClient] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   // Ensure the component only renders after the client is mounted
   useEffect(() => {
@@ -18,14 +19,28 @@ const CustomCursor = () => {
       });
     };
 
+    // Check if the device supports touch events (to detect touch devices)
+    const checkTouchDevice = () => {
+      if ("ontouchstart" in window || navigator.maxTouchPoints > 0) {
+        setIsTouchDevice(true);
+      } else {
+        setIsTouchDevice(false);
+      }
+    };
+
+    // Initial check for touch device
+    checkTouchDevice();
+
     // Add event listener to track mouse movement
     window.addEventListener("mousemove", updateCursorPosition);
+
+    // Cleanup event listener
     return () => {
       window.removeEventListener("mousemove", updateCursorPosition);
     };
   }, [setPosition]);
 
-  if (!isClient) return null; // Prevent server-side rendering
+  if (!isClient || isTouchDevice) return null; // Hide cursor on touch devices
 
   return (
     <div
@@ -36,7 +51,7 @@ const CustomCursor = () => {
         left: position.x + "px",
         width: isCursorHovered ? "52px" : "25px", // Change size on hover
         height: isCursorHovered ? "52px" : "25px",
-        backgroundColor: "#ffffff", // Example color #1A5773
+        backgroundColor: "#ffffff", // Example color
         borderRadius: "50%",
         transform: "translate(-50%, -50%)",
         pointerEvents: "none", // Ensure cursor doesn't interfere with clicks
