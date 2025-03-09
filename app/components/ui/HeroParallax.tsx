@@ -102,14 +102,22 @@ export const HeroParallax = ({
   );
 };
 
-export const Header = () => {
+const AnimatedText = ({
+  text,
+  custom,
+  className = "",
+}: {
+  text: string;
+  custom: number;
+  className?: string;
+}) => {
   const animation = {
     initial: { y: "100%", opacity: 0 },
     animate: (i: number) => ({
       y: "0%",
       opacity: 1,
       transition: {
-        duration: 1,
+        duration: 0.8,
         ease: [0.33, 1, 0.68, 1], // Smooth easing
         delay: 0.2 * i, // Stagger each word by 0.1s
       },
@@ -117,96 +125,45 @@ export const Header = () => {
   };
 
   return (
+    <div className="inline-flex flex-wrap items-end overflow-hidden">
+      <motion.span
+        className={className}
+        variants={animation}
+        initial="initial"
+        animate="animate"
+        custom={custom}
+      >
+        {text}&nbsp;
+      </motion.span>
+    </div>
+  );
+};
+
+export const Header = () => {
+  return (
     <div className="relative left-0 top-[-50px] z-10 mx-auto w-full max-w-[100rem] px-4 md:top-[-100px] xl:pt-12">
       <div className="overflow-hidden">
         <motion.h1
-          className="font-medium leading-none ~text-[4.5rem]/[9.5rem] dark:text-white max-xs:text-[3rem] md:font-semibold md:!leading-tight"
+          className="font-medium leading-none ~text-[4.5rem]/[9.5rem] dark:text-white max-xs:text-[3rem] md:font-semibold md:!leading-none"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          {/* First Line */}
-          <motion.div
-            className="flex flex-wrap items-end"
-            variants={animation}
-            initial="initial"
-            animate="animate"
-            custom={0}
-          >
-            <motion.span
-              className=""
-              variants={animation}
-              initial="initial"
-              animate="animate"
-              custom={1}
-            >
-              Experience&nbsp;
-            </motion.span>
-            <motion.span
-              className=""
-              variants={animation}
-              initial="initial"
-              animate="animate"
-              custom={2}
-            >
-              the&nbsp;
-            </motion.span>
-            <motion.span
-              className="font-bold italic ~text-[5rem]/[10.5rem] max-xs:text-[3rem]"
-              variants={animation}
-              initial="initial"
-              animate="animate"
-              custom={3}
-            >
-              Web&nbsp;
-            </motion.span>
-          </motion.div>
-
-          {/* <br /> */}
-
-          {/* Second Line */}
-          <motion.div
-            className="flex flex-wrap items-end"
-            variants={animation}
-            initial="initial"
-            animate="animate"
-            custom={4}
-          >
-            <motion.span
-              variants={animation}
-              initial="initial"
-              animate="animate"
-              custom={5}
-            >
-              with&nbsp;
-            </motion.span>
-            <motion.span
-              variants={animation}
-              initial="initial"
-              animate="animate"
-              custom={6}
-            >
-              a&nbsp;
-            </motion.span>
-            <motion.span
-              className="colorEffect font-bold ~text-[5rem]/[10.5rem] max-xs:text-[3rem]"
-              variants={animation}
-              initial="initial"
-              animate="animate"
-              custom={7}
-            >
-              Creative&nbsp;
-            </motion.span>
-            <motion.span
-              variants={animation}
-              initial="initial"
-              animate="animate"
-              custom={8}
-            >
-              {" "}
-              approach
-            </motion.span>
-          </motion.div>
+          <AnimatedText text="Experience" custom={1} />
+          <AnimatedText text="the" custom={2} />
+          <AnimatedText
+            text="Web"
+            custom={3}
+            className="font-bold italic ~text-[5rem]/[10.5rem] max-xs:text-[3rem]"
+          />
+          <AnimatedText text="with" custom={4} />
+          <AnimatedText text="a" custom={5} />
+          <AnimatedText
+            text="Creative"
+            custom={6}
+            className="colorEffect font-bold ~text-[5rem]/[10.5rem] max-xs:text-[3rem]"
+          />
+          <AnimatedText text="approach" custom={7} />
         </motion.h1>
       </div>
     </div>

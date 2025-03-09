@@ -52,8 +52,13 @@ export default function FloatingNav() {
     >
       <motion.div
         className="fixed bottom-8 left-1/2 h-[2.8rem] w-[95%] max-w-[330px] rounded-full border border-black/10 border-opacity-40 bg-white bg-opacity-80 shadow-sm backdrop-blur-[0.5rem] dark:border-white/10 dark:bg-zinc-950 dark:bg-opacity-75 xs:w-[90%] sm:h-[3rem] sm:max-w-[25rem]"
-        initial={{ y: -100, x: "-50%", opacity: 0 }}
-        animate={{ y: 0, x: "-50%", opacity: 1 }}
+        initial={{ y: 100, x: "-50%", opacity: 0 }}
+        animate={{
+          y: 0,
+          x: "-50%",
+          opacity: 1,
+          transition: { delay: 1.7, duration: 0.4, ease: [0.33, 1, 0.68, 1] },
+        }}
       ></motion.div>
 
       <nav className="fixed bottom-8 left-1/2 flex h-[2.8rem] -translate-x-1/2 py-[0.4rem] sm:h-[3rem]">
@@ -62,8 +67,16 @@ export default function FloatingNav() {
             <motion.li
               key={link.hash}
               className="flex-center relative h-full"
-              initial={{ y: -100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              initial={{ y: 100, opacity: 0 }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                transition: {
+                  delay: 1.7,
+                  duration: 0.4,
+                  ease: [0.33, 1, 0.68, 1],
+                },
+              }}
             >
               <Link
                 href={link.hash}
