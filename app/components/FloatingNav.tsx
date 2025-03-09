@@ -68,7 +68,7 @@ export default function FloatingNav() {
               <Link
                 href={link.hash}
                 className={clsx(
-                  "flex-center w-full px-[0.75rem] py-[0.75rem] sm:px-[1rem] sm:py-[1rem]",
+                  "flex-center w-full px-[0.75rem] sm:px-[1rem]",
                   {
                     "text-white": activeSection === link.name,
                   },

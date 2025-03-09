@@ -14,7 +14,7 @@ import MagneticButton from "./MagneticButton";
 const ScrollToTopButton = ({
   showOnMobile = true,
 }: {
-  showOnMobile: boolean;
+  showOnMobile?: boolean;
 }) => {
   const [visible, setVisible] = useState(false);
   const { setIsCursorHovered } = useCursor();

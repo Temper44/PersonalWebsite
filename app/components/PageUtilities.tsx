@@ -10,14 +10,14 @@ import { useMediaQuery } from "react-responsive";
 const PageUtilities = ({
   showScrollTopButtonMobile,
 }: {
-  showScrollTopButtonMobile: boolean;
+  showScrollTopButtonMobile?: boolean;
 }) => {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  // const isMobile = useMediaQuery({ maxWidth: 768 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   return (
     <>
-      {isMobile && <ScrollProgressBar />}
+      <ScrollProgressBar /> {/* isMobile &&  */}
       <MobileMenu isFullPage={true} />
       {isDesktop && <CustomCursor />}
       <ScrollToTopButton showOnMobile={showScrollTopButtonMobile} />
