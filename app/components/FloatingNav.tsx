@@ -52,7 +52,7 @@ export default function FloatingNav() {
       }}
     >
       <motion.div
-        className="will-change-all fixed bottom-8 left-1/2 h-[2.8rem] w-[95%] max-w-[330px] rounded-full border border-black/10 border-opacity-40 bg-white bg-opacity-80 shadow-sm backdrop-blur-[1rem] dark:border-white/10 dark:bg-zinc-950 dark:bg-opacity-80 xs:w-[90%] sm:h-[3rem] sm:max-w-[25rem]"
+        className="will-change-all fixed bottom-8 left-1/2 h-[2.8rem] w-[95%] max-w-[330px] rounded-full border border-black/10 border-opacity-40 bg-white bg-opacity-90 shadow-sm backdrop-blur-[1rem] dark:border-white/10 dark:bg-zinc-950 dark:bg-opacity-90 xs:w-[90%] sm:h-[3rem] sm:max-w-[25rem]"
         initial={{ y: 100, x: "-50%", opacity: 0 }}
         animate={{
           y: 0,

@@ -23,9 +23,6 @@ const Projects = () => {
     ) as NodeListOf<HTMLElement>;
     panelsRef.current = panels;
 
-    console.log(panels.length);
-    console.log(1 / panels.length);
-
     gsap.to(panels, {
       xPercent: -100 * (panels.length - 1), // Moves all panels to the left
       ease: "none", // A bit smoother easing
@@ -45,20 +42,10 @@ const Projects = () => {
     });
   }, []);
 
-  useEffect(() => {
-    if (projects && projects.length > 0) {
-      ScrollTrigger.refresh();
-    }
-  }, [projects]);
-
   const { ref } = useSectionInView("Projects");
 
   return (
-    <section
-      id="projects"
-      ref={ref}
-      className="relative overflow-hidden overflow-y-visible"
-    >
+    <section id="projects" ref={ref} className="relative !overflow-hidden">
       <MarqueeText text="Selected work" />
       <div
         ref={projectsContainer}
