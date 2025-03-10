@@ -122,6 +122,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
         }}
         transition={{
           duration: 0.3,
+          delay: 0.3,
         }}
       >
         <MagneticButton>

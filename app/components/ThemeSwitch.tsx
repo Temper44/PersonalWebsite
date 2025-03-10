@@ -50,6 +50,7 @@ export default function ThemeSwitch() {
       }}
       transition={{
         duration: 0.3,
+        delay: 0.3,
       }}
     >
       <MagneticButton>
