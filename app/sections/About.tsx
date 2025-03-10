@@ -88,7 +88,7 @@ const About = () => {
         <div className="absolute left-8 top-8 text-7xl text-white dark:text-black 2xl:text-8xl">
           <FiArrowDownRight />
         </div>
-        <div className="full-size grid grid-cols-1 place-items-center gap-16 px-6 pb-24 pt-32 lg:grid-cols-2 lg:gap-4 lg:py-32">
+        <div className="full-size grid grid-cols-1 place-items-center gap-16 overflow-x-hidden px-6 pb-24 pt-32 lg:grid-cols-2 lg:gap-4 lg:py-32">
           <div className="relative my-32 h-full lg:my-0">
             <div ref={imageRef} className="sticky top-32 lg:top-12">
               {/* <img
@@ -104,7 +104,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="f-col gap-6 overflow-hidden">
+          <div className="f-col gap-6">
             <TextGradient
               text="Student, Developer, Adventurer"
               className="mb-6 mt-6 !px-6 uppercase leading-tight text-white ~text-[3.5rem]/[8rem] dark:text-black max-xs:text-5xl sm:leading-none md:mt-0 lg:mb-20 2xl:max-w-[65%]"
