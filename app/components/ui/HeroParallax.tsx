@@ -127,7 +127,7 @@ const AnimatedText = ({
   return (
     <div className="inline-flex flex-wrap items-end overflow-hidden">
       <motion.span
-        className={className}
+        className={` ${className}`}
         variants={animation}
         initial="initial"
         animate="animate"
@@ -144,7 +144,7 @@ export const Header = () => {
     <div className="relative left-0 top-[-50px] z-10 mx-auto w-full max-w-[100rem] px-4 md:top-[-100px] xl:pt-12">
       <div className="overflow-hidden">
         <motion.h1
-          className="font-medium leading-none ~text-[4.5rem]/[9.5rem] dark:text-white max-xs:text-[3rem] md:font-semibold md:!leading-none"
+          className="font-medium leading-none ~text-[4.25rem]/[9.5rem] dark:text-white max-xs:text-[3rem] md:font-semibold md:!leading-none"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -154,14 +154,14 @@ export const Header = () => {
           <AnimatedText
             text="Web"
             custom={3}
-            className="font-bold italic ~text-[5rem]/[10.5rem] max-xs:text-[3rem]"
+            className="font-bold italic ~text-[4.75rem]/[10.5rem] max-xs:text-[3rem]"
           />
           <AnimatedText text="with" custom={4} />
           <AnimatedText text="a" custom={5} />
           <AnimatedText
             text="Creative"
             custom={6}
-            className="colorEffect font-bold ~text-[5rem]/[10.5rem] max-xs:text-[3rem]"
+            className="colorEffect font-bold ~text-[4.75rem]/[10.5rem] max-xs:text-[3rem]"
           />
           <AnimatedText text="approach" custom={7} />
         </motion.h1>

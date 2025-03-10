@@ -126,7 +126,7 @@ a {
 
     -webkit-background-clip: text;
     background-clip: text;
-
+    will-change: background-position;
     color: transparent;
     background-size: 200%;
     animation: gradientAnimate 8s ease infinite;
@@ -591,4 +591,9 @@ canvas {
 
 .textParagraph {
   @apply font-light tracking-wide text-zinc-100 ~text-base/lg dark:text-zinc-900;
+}
+
+.will-change {
+  will-change: transform, opacity;
+  // will-change: ;
 }
