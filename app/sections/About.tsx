@@ -79,7 +79,7 @@ const About = () => {
   const { ref } = useSectionInView("About");
 
   return (
-    <section id="about" ref={ref} className="flex-col-center">
+    <section id="about" ref={ref} className="flex-col-center overflow-hidden">
       <MarqueeText text="About me" />
       <div
         ref={aboutMeRef}
