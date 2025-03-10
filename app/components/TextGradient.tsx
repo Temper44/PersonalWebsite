@@ -7,7 +7,7 @@ import gsap from "gsap";
 export default function TextGradient({
   text,
   className,
-  opacityClassName = "opacity-20",
+  opacityClassName = "opacity-10",
   animationStart = "top top",
   animationEnd = `+=600`,
   spaceLine = true,
@@ -40,7 +40,7 @@ export default function TextGradient({
       opacity: 1,
       ease: "none",
       stagger: 0.1,
-      markers: true,
+      //markers: true,
     });
   };
 
@@ -76,7 +76,7 @@ export default function TextGradient({
     word.split(" ").forEach((letter, i) => {
       letters.push(
         <span
-          className={opacityClassName}
+          className={`${opacityClassName} will-change-opacity`}
           key={letter + "_" + i}
           ref={(el) => {
             refs.current.push(el);

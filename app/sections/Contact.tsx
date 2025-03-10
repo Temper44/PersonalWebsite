@@ -35,8 +35,8 @@ export default function Contact() {
       className="relative min-h-[180dvh] overflow-x-hidden xs:min-h-[130dvh] sm:h-screen"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
-      <div className="absolute bottom-0 min-h-[180dvh] w-full xs:min-h-[110dvh] sm:fixed sm:h-screen">
-        <div className="flex-col-center full-size pb-6 pt-32 sm:pt-32">
+      <div className="absolute bottom-0 min-h-[180dvh] w-full xs:min-h-[130dvh] sm:fixed sm:h-screen">
+        <div className="flex-col-center full-size pb-6 pt-44 sm:pt-32">
           <motion.p
             className="tracking-wide ~text-sm/xl"
             ref={refParagraph}

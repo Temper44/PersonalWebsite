@@ -59,9 +59,9 @@ export default function ThemeSwitch() {
           onClick={toggleTheme}
           onMouseEnter={() => setIsCursorHovered(true)}
           onMouseLeave={() => setIsCursorHovered(false)}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.3, duration: 1 }}
+          // initial={{ opacity: 0 }}
+          // animate={{ opacity: 1 }}
+          // transition={{ delay: 1.3, duration: 1 }}
         >
           {theme === "light" ? <BsSun color="black" /> : <BsMoon />}
         </motion.button>

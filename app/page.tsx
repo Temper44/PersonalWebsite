@@ -54,7 +54,7 @@ export default function Home() {
             <span
               onMouseEnter={() => setIsHoveredPortrait(true)}
               onMouseLeave={() => setIsHoveredPortrait(false)}
-              className="font-normal underline"
+              className="font-normal underline decoration-2 underline-offset-4"
             >
               Mathias
             </span>

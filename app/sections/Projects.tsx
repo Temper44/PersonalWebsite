@@ -23,23 +23,42 @@ const Projects = () => {
     ) as NodeListOf<HTMLElement>;
     panelsRef.current = panels;
 
+    console.log(panels.length);
+    console.log(1 / panels.length);
+
     gsap.to(panels, {
       xPercent: -100 * (panels.length - 1), // Moves all panels to the left
-      ease: "none",
+      ease: "none", // A bit smoother easing
       scrollTrigger: {
         trigger: container,
         pin: true,
-        scrub: 1,
-        snap: 1 / (panels.length - 1),
-        end: () => "+=" + container.scrollWidth, // Scrolls horizontally based on width
+        scrub: 1, // ⬆️ Increase to make scrolling require more effort
+        snap: {
+          snapTo: 1 / panels.length - 1, // Ensures each panel is a step
+          duration: 0.1, // ⬆️ Faster snap animation (stronger effect)
+          delay: 0.1, // ⬇️ Lower delay for quicker snapping
+          ease: "power2.inOut", // ⬆️ Snappier easing
+          directional: false,
+        },
+        end: () => "+=" + container.offsetWidth,
       },
     });
   }, []);
 
+  useEffect(() => {
+    if (projects && projects.length > 0) {
+      ScrollTrigger.refresh();
+    }
+  }, [projects]);
+
   const { ref } = useSectionInView("Projects");
 
   return (
-    <section id="projects" ref={ref} className="overflow-hidden">
+    <section
+      id="projects"
+      ref={ref}
+      className="relative overflow-hidden overflow-y-visible"
+    >
       <MarqueeText text="Selected work" />
       <div
         ref={projectsContainer}
@@ -48,7 +67,7 @@ const Projects = () => {
         {projects.map((project, i) => (
           <SliderProject
             key={project.name}
-            className={i % 2 ? "bg-black dark:bg-white" : ""}
+            className={i % 2 ? "panel bg-black dark:bg-white" : ""}
             name={project.name}
             detailsPageLink={project.detailsPageLink}
             subheading={project.subheading}

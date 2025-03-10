@@ -593,7 +593,19 @@ canvas {
   @apply font-light tracking-wide text-zinc-100 ~text-base/lg dark:text-zinc-900;
 }
 
-.will-change {
-  will-change: transform, opacity;
-  // will-change: ;
+// .will-change-transform {
+//   will-change: transform;
+// }
+
+.will-change-opacity {
+  will-change: opacity;
 }
+
+.will-change-all {
+  will-change: transform, opacity;
+}
+
+// .panel {
+//   // flex: 0 0 100vw !important; /* Ensure each panel occupies the full viewport width */
+//   scroll-snap-align: start !important; /* Optional: Helps with natural snapping */
+// }

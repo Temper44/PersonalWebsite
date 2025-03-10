@@ -39,7 +39,7 @@ export default function FloatingNav() {
 
   return (
     <motion.header
-      className="relative z-10"
+      className="will-change-opacity relative z-10"
       initial={{
         opacity: 1,
       }}
@@ -51,7 +51,7 @@ export default function FloatingNav() {
       }}
     >
       <motion.div
-        className="fixed bottom-8 left-1/2 h-[2.8rem] w-[95%] max-w-[330px] rounded-full border border-black/10 border-opacity-40 bg-white bg-opacity-80 shadow-sm backdrop-blur-[0.5rem] dark:border-white/10 dark:bg-zinc-950 dark:bg-opacity-75 xs:w-[90%] sm:h-[3rem] sm:max-w-[25rem]"
+        className="will-change-all fixed bottom-8 left-1/2 h-[2.8rem] w-[95%] max-w-[330px] rounded-full border border-black/10 border-opacity-40 bg-white bg-opacity-80 shadow-sm backdrop-blur-[0.5rem] dark:border-white/10 dark:bg-zinc-950 dark:bg-opacity-75 xs:w-[90%] sm:h-[3rem] sm:max-w-[25rem]"
         initial={{ y: 100, x: "-50%", opacity: 0 }}
         animate={{
           y: 0,
@@ -61,7 +61,7 @@ export default function FloatingNav() {
         }}
       ></motion.div>
 
-      <nav className="fixed bottom-8 left-1/2 flex h-[2.8rem] -translate-x-1/2 py-[0.4rem] sm:h-[3rem]">
+      <nav className="will-change-all fixed bottom-8 left-1/2 flex h-[2.8rem] -translate-x-1/2 py-[0.4rem] sm:h-[3rem]">
         <ul className="flex-center gap-1 font-medium tracking-wide text-zinc-900 ~text-[0.875rem]/[1rem] dark:text-zinc-300 sm:gap-4">
           {sectionLinks.map((link) => (
             <motion.li
@@ -96,7 +96,7 @@ export default function FloatingNav() {
                 {link.name}
                 {link.name === activeSection && (
                   <motion.span
-                    className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-rose-500 to-purple-500"
+                    className="will-change-all absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-rose-500 to-purple-500"
                     layoutId="activeSection"
                     transition={{
                       type: "spring",

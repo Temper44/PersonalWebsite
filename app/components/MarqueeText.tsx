@@ -71,6 +71,7 @@ const MarqueeText = ({ text }: { text: string }) => {
           display: "inline-block",
           whiteSpace: "nowrap",
         }}
+        className="will-change-transform"
       >
         <h2 className="inline-block overflow-hidden font-normal uppercase italic tracking-wide ~text-[2.25rem]/[13rem] ~mt-[9rem]/[13rem] ~mb-[4rem]/[8rem]">
           {text} - {text} - {text} - {text} - {text} - {text} - {text} - {text}

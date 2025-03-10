@@ -107,18 +107,17 @@ const About = () => {
           <div className="f-col gap-6">
             <TextGradient
               text="Student, Developer, Adventurer"
-              className="mb-6 mt-6 uppercase text-white ~text-6xl/9xl dark:text-black max-xs:text-5xl md:mt-0 lg:mb-20 2xl:max-w-[65%]"
-              opacityClassName="opacity-20"
+              className="mb-6 mt-6 !px-6 uppercase leading-tight text-white ~text-[3.5rem]/[8rem] dark:text-black max-xs:text-5xl sm:leading-none md:mt-0 lg:mb-20 2xl:max-w-[65%]"
               animationStart="top center"
               animationEnd="+=200"
               spaceLine={false}
             />
             <MaskText
-              className="font-semibold tracking-wide text-white ~text-2xl/5xl dark:text-black"
+              className="!px-6 font-semibold tracking-wide text-white ~text-2xl/5xl dark:text-black sm:px-0"
               text={["Mathias Ebner"]}
               headline
             />
-            <div className="flex w-full flex-col gap-6 self-center lg:max-w-[70%] xl:max-w-[65%]">
+            <div className="flex w-full flex-col gap-6 self-center !px-6 sm:px-0 lg:max-w-[70%] 3xl:max-w-[65%]">
               <MaskText
                 className="textParagraph"
                 text={[

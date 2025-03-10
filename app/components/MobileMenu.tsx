@@ -106,6 +106,8 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
     }
   });
 
+  console.log("MobileMenu rendered");
+
   return (
     <>
       <motion.div
@@ -131,9 +133,9 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
             aria-label="Main Menu"
             aria-expanded={isOpen}
             onClick={toggleMenu}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.3, duration: 1 }}
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 0.0 }}
+            // transition={{ delay: 1.3, duration: 1 }}
             onMouseEnter={() => setIsCursorHovered(true)}
             onMouseLeave={() => setIsCursorHovered(false)}
           >
@@ -159,7 +161,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
       </motion.div>
 
       <motion.div
-        className={`fixed left-0 right-0 top-0 z-20 mx-auto block bg-white opacity-0 dark:bg-black ${!isFullPage && "md:hidden"}`}
+        className={`will-change-all fixed left-0 right-0 top-0 z-20 mx-auto block bg-white opacity-0 dark:bg-black ${!isFullPage && "md:hidden"}`}
         ref={menuRef}
       >
         <div className="flex-center absolute left-0 top-0 h-screen w-screen bg-grid-small-black/[0.15] dark:bg-grid-small-white/[0.25]">
@@ -189,7 +191,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
                 }}
               >
                 <h3
-                  className={`nav-text relative font-semibold !leading-[1.15] tracking-widest ~text-[3.25rem]/[8rem] dark:text-white ${isActive ? "nav-text-isActive before:smh-[6px] before:absolute before:left-0 before:top-1/2 before:h-[5px] before:w-full before:-translate-y-1/2 before:rounded-sm before:bg-gradient-to-r before:from-rose-500 before:to-purple-500 before:content-[''] before:lg:h-[8px] before:2xl:h-[10px]" : ""} ${isMobileOrTabletLandscape && "!text-2xl"}`}
+                  className={`nav-text will-change-all relative font-semibold !leading-[1.15] tracking-widest ~text-[3.25rem]/[8rem] dark:text-white ${isActive ? "nav-text-isActive before:smh-[6px] before:absolute before:left-0 before:top-1/2 before:h-[5px] before:w-full before:-translate-y-1/2 before:rounded-sm before:bg-gradient-to-r before:from-rose-500 before:to-purple-500 before:content-[''] before:lg:h-[8px] before:2xl:h-[10px]" : ""} ${isMobileOrTabletLandscape && "!text-2xl"}`}
                 >
                   {item.name}
                 </h3>

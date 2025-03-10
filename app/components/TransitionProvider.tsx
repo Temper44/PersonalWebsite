@@ -77,15 +77,15 @@ export function TransitionProvider({
         };
       }}
     >
-      <main>{children}</main>
+      <>{children}</>
 
       <div
         ref={firstLayer}
-        className="fixed inset-0 z-50 translate-y-full bg-gradient-to-r from-rose-500 to-purple-500"
+        className="fixed inset-0 z-50 translate-y-full bg-gradient-to-r from-rose-500 to-purple-500 will-change-transform"
       />
       <div
         ref={secondLayer}
-        className="fixed inset-0 z-50 translate-y-full bg-black"
+        className="fixed inset-0 z-50 translate-y-full bg-black will-change-transform"
       />
     </TransitionRouter>
   );

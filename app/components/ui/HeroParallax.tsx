@@ -127,7 +127,7 @@ const AnimatedText = ({
   return (
     <div className="inline-flex flex-wrap items-end overflow-hidden">
       <motion.span
-        className={` ${className}`}
+        className={`will-change-all ${className}`}
         variants={animation}
         initial="initial"
         animate="animate"
@@ -193,7 +193,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product relative aspect-[3/2] h-auto w-[15rem] flex-shrink-0 xs:w-[20rem] sm:w-[22rem] md:w-[24rem] lg:w-[26rem] xl:w-[28rem] 2xl:w-[30rem]"
+      className="group/product relative aspect-[3/2] h-auto w-[15rem] flex-shrink-0 will-change-transform xs:w-[20rem] sm:w-[22rem] md:w-[24rem] lg:w-[26rem] xl:w-[28rem] 2xl:w-[30rem]"
     >
       <Link
         href={product.link}

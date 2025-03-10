@@ -47,7 +47,9 @@ const SliderProject = ({
   const { setIsCursorHovered } = useCursor();
 
   return (
-    <div className={`panel flex-center h-svh w-screen ${className}`}>
+    <div
+      className={`panel flex-center relative h-svh w-screen will-change-transform ${className}`}
+    >
       <div className="grid h-full max-w-screen-2xl grid-cols-1 gap-y-3 p-4 pb-6 md:auto-rows-auto md:grid-cols-2 md:gap-10 md:p-12 md:pb-6 xl:gap-20 xl:pt-28 2xl:pt-36">
         <div className="f-col order-2 justify-between gap-6 md:order-1">
           <div className="f-col gap-4">
@@ -55,7 +57,7 @@ const SliderProject = ({
               <MaskText
                 text={[name]}
                 headline
-                className={`textShadow font-semibold leading-tight tracking-wide ~text-[2.75rem]/[4.5rem] max-xs:text-4xl md:pb-2 ${reverseColor ? "!text-zinc-100 dark:!text-zinc-900" : ""}`}
+                className={`textShadow w-min font-semibold leading-tight tracking-wide ~text-[2.4rem]/[4.5rem] max-xs:text-4xl md:pb-2 ${reverseColor ? "!text-zinc-100 dark:!text-zinc-900" : ""}`}
                 cursorHoverEffect
               />
             </Link>
@@ -65,15 +67,12 @@ const SliderProject = ({
             />
             <MaskText
               text={[descriptionShort]}
-              className={`font-light leading-relaxed tracking-wide text-zinc-900 ~text-base/xl dark:text-zinc-100 max-sm:text-sm ${reverseColor ? "!text-zinc-100 dark:!text-zinc-900" : ""}`}
+              className={`font-light !leading-relaxed tracking-wide text-zinc-900 ~text-base/xl dark:text-zinc-100 max-sm:text-sm ${reverseColor ? "!text-zinc-100 dark:!text-zinc-900" : ""}`}
             />
           </div>
-          <Button
-            text="Explore More"
-            type="button"
-            href={detailsPageLink}
-            className="justify-self-end"
-          />
+          <div className="self-end">
+            <Button text="Explore More" type="button" href={detailsPageLink} />
+          </div>
         </div>
         <Link
           className="relative order-1 col-span-2 aspect-[3/2] w-full md:order-2 md:col-span-1"
@@ -119,7 +118,7 @@ const SliderProject = ({
                 duration: 1,
                 ease: "easeOut",
               }}
-              className={`mr-20 font-medium tracking-wider text-zinc-900 ~/xl:~text-sm/xl dark:text-zinc-100 md:mr-16 ${reverseColor ? "!text-zinc-100 dark:!text-zinc-900" : ""}`}
+              className={`font-medium tracking-wider text-zinc-900 ~/xl:~text-sm/xl dark:text-zinc-100 md:mr-16 ${reverseColor ? "!text-zinc-100 dark:!text-zinc-900" : ""}`}
             >
               0{++currentCounter}/0{projectsLength}
             </motion.span>
