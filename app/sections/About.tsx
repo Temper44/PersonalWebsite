@@ -79,7 +79,7 @@ const About = () => {
   const { ref } = useSectionInView("About");
 
   return (
-    <section id="about" ref={ref} className="flex-col-center overflow-hidden">
+    <section id="about" ref={ref} className="flex-col-center">
       <MarqueeText text="About me" />
       <div
         ref={aboutMeRef}
@@ -104,7 +104,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="f-col gap-6">
+          <div className="f-col gap-6 overflow-hidden">
             <TextGradient
               text="Student, Developer, Adventurer"
               className="mb-6 mt-6 !px-6 uppercase leading-tight text-white ~text-[3.5rem]/[8rem] dark:text-black max-xs:text-5xl sm:leading-none md:mt-0 lg:mb-20 2xl:max-w-[65%]"

@@ -41,11 +41,11 @@ export default function ThemeSwitch() {
     <motion.div
       className="fixed left-8 top-8"
       initial={{
-        opacity: 1,
-        y: -100,
+        opacity: 0,
+        // y: -100,
       }}
       animate={{
-        y: visible ? 0 : -100,
+        // y: visible ? 0 : -100,
         opacity: visible ? 1 : 0,
       }}
       transition={{
