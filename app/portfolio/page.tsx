@@ -12,7 +12,7 @@ import About from "../sections/About";
 import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import PageUtilities from "../components/PageUtilities";
-import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
+// import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
 import FloatingNav from "../components/FloatingNav";
 import ActiveSectionContextProvider from "../components/context/active-section-context";
 
@@ -253,7 +253,7 @@ export default function Page() {
         <Skills />
         <Projects />
 
-        <ParallaxScrollGallery />
+        {/* <ParallaxScrollGallery /> */}
         <Contact />
       </main>
     </ActiveSectionContextProvider>

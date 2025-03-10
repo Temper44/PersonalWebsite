@@ -47,7 +47,7 @@ const SliderProject = ({
   const { setIsCursorHovered } = useCursor();
 
   return (
-    <div className={`panel flex-center h-dvh w-screen ${className}`}>
+    <div className={`panel flex-center h-svh w-screen ${className}`}>
       <div className="grid h-full max-w-screen-2xl grid-cols-1 gap-y-3 p-4 pb-6 md:auto-rows-auto md:grid-cols-2 md:gap-10 md:p-12 md:pb-6 xl:gap-20 xl:pt-28 2xl:pt-36">
         <div className="f-col order-2 justify-between gap-6 md:order-1">
           <div className="f-col gap-4">
