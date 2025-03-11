@@ -88,7 +88,7 @@ const About = () => {
         <div className="absolute left-8 top-8 text-7xl text-white dark:text-black 2xl:text-8xl">
           <FiArrowDownRight />
         </div>
-        <div className="full-size grid grid-cols-1 place-items-center gap-16 overflow-x-hidden px-6 pb-24 pt-32 lg:grid-cols-2 lg:gap-4 lg:py-32">
+        <div className="full-size grid grid-cols-1 place-items-center gap-16 !px-6 pb-24 pt-32 lg:grid-cols-2 lg:gap-4 lg:py-32">
           <div className="relative my-32 h-full lg:my-0">
             <div ref={imageRef} className="sticky top-32 lg:top-12">
               {/* <img
@@ -104,20 +104,20 @@ const About = () => {
             </div>
           </div>
 
-          <div className="f-col gap-6">
+          <div className="f-col w-full gap-6">
             <TextGradient
               text="Student, Developer, Adventurer"
-              className="mb-6 mt-6 !px-6 uppercase leading-tight text-white ~text-[3.5rem]/[8rem] dark:text-black max-xs:text-5xl sm:leading-none md:mt-0 lg:mb-20 2xl:max-w-[65%]"
+              className="mb-6 mt-6 uppercase leading-tight text-white ~text-[3.5rem]/[8rem] dark:text-black max-xs:text-5xl sm:leading-none md:mt-0 lg:mb-20 2xl:max-w-[65%]"
               animationStart="top center"
               animationEnd="+=200"
               spaceLine={false}
             />
             <MaskText
-              className="!px-6 font-semibold tracking-wide text-white ~text-2xl/5xl dark:text-black sm:px-0"
+              className="font-semibold tracking-wide text-white ~text-2xl/5xl dark:text-black sm:px-0"
               text={["Mathias Ebner"]}
               headline
             />
-            <div className="flex w-full flex-col gap-6 self-center !px-6 sm:px-0 lg:max-w-[70%] 3xl:max-w-[65%]">
+            <div className="flex w-full flex-col gap-6 self-center sm:px-0 lg:max-w-[70%] 3xl:max-w-[65%]">
               <MaskText
                 className="textParagraph"
                 text={[
