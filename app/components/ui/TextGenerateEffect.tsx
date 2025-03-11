@@ -1,7 +1,6 @@
 "use client";
 import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
-import { cn } from "@/lib/utils";
 
 export const TextGenerateEffect = ({
   words,
@@ -51,8 +50,8 @@ export const TextGenerateEffect = ({
   };
 
   return (
-    <div className={cn("font-bold", className)}>
-      <div className="py-4 text-left font-normal !leading-relaxed tracking-wide text-transparent ~text-base/4xl sm:text-center">
+    <div className={className}>
+      <div className="py-4 text-left font-normal !leading-relaxed tracking-wide text-transparent ~text-base/3xl sm:text-center">
         {renderWords()}
       </div>
     </div>

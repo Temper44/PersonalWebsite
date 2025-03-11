@@ -94,12 +94,9 @@ const Form = () => {
           placeholder="Your message"
           maxLength={1000}
         />
-        <Button
-          type="submit"
-          text="Submit"
-          className="place-self-end"
-          icon={<FaPaperPlane />}
-        />
+        <div className="self-end">
+          <Button type="submit" text="Submit" icon={<FaPaperPlane />} />
+        </div>
       </motion.form>
     </>
   );

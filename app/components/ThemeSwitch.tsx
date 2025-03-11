@@ -39,9 +39,9 @@ export default function ThemeSwitch() {
 
   return (
     <motion.div
-      className="fixed left-8 top-8"
+      className="fixed left-8 top-8 z-50"
       initial={{
-        opacity: 0,
+        opacity: 1,
         // y: -100,
       }}
       animate={{

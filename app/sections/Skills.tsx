@@ -40,9 +40,9 @@ const Skills = () => {
       ref={ref}
       className="flex-col-center relative overflow-hidden"
     >
-      <MarqueeText text="Skills" />
+      <MarqueeText fontMobileBigger text="Skills" />
       <div className="skillsContainer h-dvh w-screen">
-        <h2 className="absolute-center top-[60%] w-[80%] text-center font-extralight tracking-wide ~text-base/2xl sm:top-[75%] md:w-auto">
+        <h2 className="absolute-center top-[60%] w-[80%] text-center font-extralight !leading-relaxed tracking-wide ~text-base/2xl sm:top-[75%] md:w-auto">
           {skillsText}
         </h2>
         <div className="mask-clip-path absolute-center top-0 z-20 h-[40vh] w-[60vw] origin-center overflow-hidden rounded-3xl will-change-transform md:h-[60vh] md:w-[30vw]">

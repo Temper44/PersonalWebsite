@@ -3,7 +3,13 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 
-const MarqueeText = ({ text }: { text: string }) => {
+const MarqueeText = ({
+  text,
+  fontMobileBigger,
+}: {
+  text: string;
+  fontMobileBigger?: boolean;
+}) => {
   const marqueeRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
@@ -73,7 +79,9 @@ const MarqueeText = ({ text }: { text: string }) => {
         }}
         className="will-change-transform"
       >
-        <h2 className="inline-block overflow-hidden font-normal uppercase italic tracking-wide ~text-[2.25rem]/[13rem] ~mt-[9rem]/[13rem] ~mb-[4rem]/[8rem]">
+        <h2
+          className={`inline-block overflow-hidden font-normal uppercase italic tracking-wide ${fontMobileBigger ? "~text-[3.2rem]/[13rem]" : "~text-[2.25rem]/[13rem]"} ~mt-[9rem]/[13rem] ~mb-[4rem]/[8rem]`}
+        >
           {text} - {text} - {text} - {text} - {text} - {text} - {text} - {text}
         </h2>
       </div>

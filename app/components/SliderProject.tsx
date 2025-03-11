@@ -67,7 +67,7 @@ const SliderProject = ({
             />
             <MaskText
               text={[descriptionShort]}
-              className={`font-light !leading-relaxed tracking-wide text-zinc-900 ~text-base/xl dark:text-zinc-100 max-sm:text-sm ${reverseColor ? "!text-zinc-100 dark:!text-zinc-900" : ""}`}
+              className={`font-light !leading-relaxed tracking-wide text-zinc-900 ~text-base/xl dark:text-zinc-100 max-xs:text-sm ${reverseColor ? "!text-zinc-100 dark:!text-zinc-900" : ""}`}
             />
           </div>
           <div className="self-end">

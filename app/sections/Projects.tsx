@@ -46,7 +46,7 @@ const Projects = () => {
 
   return (
     <section id="projects" ref={ref} className="relative !overflow-hidden">
-      <MarqueeText text="Selected work" />
+      <MarqueeText fontMobileBigger text="Projects" />
       <div
         ref={projectsContainer}
         className="flex h-screen w-[300vw] !overflow-hidden"

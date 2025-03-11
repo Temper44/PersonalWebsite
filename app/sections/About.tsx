@@ -80,12 +80,12 @@ const About = () => {
 
   return (
     <section id="about" ref={ref} className="flex-col-center">
-      <MarqueeText text="About me" />
+      <MarqueeText fontMobileBigger text="About" />
       <div
         ref={aboutMeRef}
         className="flex-col-center relative min-h-[130dvh] w-full rounded-[3rem] transition-colors duration-1000"
       >
-        <div className="absolute left-8 top-8 text-7xl text-white dark:text-black 2xl:text-8xl">
+        <div className="absolute left-8 top-8 text-6xl text-white dark:text-black 2xl:text-8xl">
           <FiArrowDownRight />
         </div>
         <div className="full-size grid grid-cols-1 place-items-center gap-16 !px-6 pb-24 pt-32 lg:grid-cols-2 lg:gap-4 lg:py-32">
@@ -99,7 +99,7 @@ const About = () => {
               <div
                 id="imgContainer"
                 ref={imageContainer}
-                className="aspect-[4/5] h-auto w-[80vw] !rounded-xl object-cover shadow-md sm:w-[65vw] sm:object-contain md:w-[55vw] lg:w-[35vw] xl:w-[28vw] xl:object-cover"
+                className="aspect-[4/5] h-auto w-[75vw] !rounded-xl object-cover shadow-md sm:w-[65vw] sm:object-contain md:w-[55vw] lg:w-[35vw] xl:w-[28vw] xl:object-cover"
               ></div>
             </div>
           </div>
@@ -107,7 +107,7 @@ const About = () => {
           <div className="f-col w-full gap-6">
             <TextGradient
               text="Student, Developer, Adventurer"
-              className="mb-6 mt-6 uppercase leading-tight text-white ~text-[3.5rem]/[8rem] dark:text-black max-xs:text-5xl sm:leading-none md:mt-0 lg:mb-20 2xl:max-w-[65%]"
+              className="mb-6 mt-6 uppercase leading-none text-white ~text-[3.5rem]/[8rem] dark:text-black max-xs:text-5xl md:mt-0 lg:mb-20 2xl:max-w-[65%]"
               animationStart="top center"
               animationEnd="+=200"
               spaceLine={false}

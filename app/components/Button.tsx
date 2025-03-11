@@ -70,10 +70,10 @@ const ButtonSkillet = ({
         onMouseLeave={() => setIsCursorHovered(false)}
       >
         <div className="absolute inset-0 rounded-full bg-gradient-to-r from-rose-500 to-purple-500" />
-        <div className="flex-center relative gap-3 rounded-full bg-zinc-900 ~px-[1.64rem]/[1.9rem] ~py-[0.58rem]/[0.71rem] group-hover:bg-transparent dark:bg-zinc-100">
+        <div className="flex-center relative gap-3 rounded-full bg-zinc-900 ~text-[0.9rem]/[1rem] ~px-[1.64rem]/[1.9rem] ~py-[0.58rem]/[0.71rem] group-hover:bg-transparent dark:bg-zinc-100">
           {text}
           {icon && (
-            <span className="text-xs opacity-80 transition-all group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:opacity-100">
+            <span className="opacity-80 transition-all group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:opacity-100">
               {icon}
             </span>
           )}

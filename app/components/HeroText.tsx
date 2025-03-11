@@ -33,7 +33,7 @@ const HeroText = ({
       {subheading && (
         <TextGenerateEffect
           words={subheading}
-          className="py-4 ~px-[0.5rem]/[12rem]"
+          className="px-4 py-4 sm:max-w-[70%]"
         />
       )}
 

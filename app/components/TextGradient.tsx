@@ -90,7 +90,8 @@ export default function TextGradient({
   };
 
   return (
-    <div ref={container} className="overflow-hidden">
+    <div ref={container} className="">
+      {/* class: overflow-hidden */}
       <div ref={body} className={`flex flex-wrap ${className}`}>
         {splitWords(text)}
       </div>
