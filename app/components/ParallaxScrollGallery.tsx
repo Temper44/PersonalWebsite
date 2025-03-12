@@ -22,7 +22,7 @@ const images = [
 
 export default function ParallaxScrollGallery() {
   const gallery = useRef(null);
-  const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  // const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
   const { scrollYProgress } = useScroll({
     target: gallery,
@@ -30,30 +30,26 @@ export default function ParallaxScrollGallery() {
   });
 
   // Dynamically update scroll values based on viewport height
-  const y = useTransform(scrollYProgress, [0, 1], [0, 500]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, dimension.height * 2.3]);
-  const y3 = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, dimension.height * 1.25],
-  );
-  const y4 = useTransform(scrollYProgress, [0, 1], [0, dimension.height * 3]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 1000]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, 1800]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, 1000]);
+  const y4 = useTransform(scrollYProgress, [0, 1], [0, 1800]);
 
-  useEffect(() => {
-    // Function to update dimensions on resize
-    const updateDimensions = () => {
-      console.log("dimension", dimension);
+  // useEffect(() => {
+  //   // Function to update dimensions on resize
+  //   const updateDimensions = () => {
+  //     console.log("dimension", dimension);
 
-      setDimension({ width: window.innerWidth, height: window.innerHeight });
-    };
+  //     setDimension({ width: window.innerWidth, height: window.innerHeight });
+  //   };
 
-    updateDimensions(); // Set initial dimensions
-    window.addEventListener("resize", updateDimensions);
+  //   updateDimensions(); // Set initial dimensions
+  //   window.addEventListener("resize", updateDimensions);
 
-    return () => {
-      window.removeEventListener("resize", updateDimensions);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("resize", updateDimensions);
+  //   };
+  // }, []);
 
   return (
     <>
