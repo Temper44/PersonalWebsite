@@ -28,30 +28,28 @@ export default function ParallaxScrollGallery() {
     target: gallery,
     offset: ["start end", "end start"],
   });
-  const { height } = dimension;
-  const y = useTransform(scrollYProgress, [0, 1], [0, height * 2]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 2.3]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25]);
-  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3]);
+
+  // Dynamically update scroll values based on viewport height
+  const y = useTransform(scrollYProgress, [0, 1], [0, dimension.height * 2]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, dimension.height * 2.3]);
+  const y3 = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, dimension.height * 1.25],
+  );
+  const y4 = useTransform(scrollYProgress, [0, 1], [0, dimension.height * 3]);
 
   useEffect(() => {
-    const lenis = new Lenis();
-
-    const raf = (time: number) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-
-    const resize = () => {
+    // Function to update dimensions on resize
+    const updateDimensions = () => {
       setDimension({ width: window.innerWidth, height: window.innerHeight });
     };
 
-    window.addEventListener("resize", resize);
-    requestAnimationFrame(raf);
-    resize();
+    updateDimensions(); // Set initial dimensions
+    window.addEventListener("resize", updateDimensions);
 
     return () => {
-      window.removeEventListener("resize", resize);
+      window.removeEventListener("resize", updateDimensions);
     };
   }, []);
 
@@ -98,6 +96,11 @@ interface ColumnProps {
 }
 
 const Column = ({ images, y, className }: ColumnProps) => {
+  const ref = useRef(null);
+  // const isInView = useInView(ref, {
+  //   margin: "0px 0px -100px 0px",
+  //   once: true,
+  // });
   return (
     <motion.div
       className={`lg:1/4 relative flex h-full w-1/2 flex-col will-change-transform ~gap-3/7 md:w-1/3 ${className}`}
