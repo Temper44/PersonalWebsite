@@ -100,7 +100,7 @@ interface ColumnProps {
 const Column = ({ images, y, className }: ColumnProps) => {
   return (
     <motion.div
-      className={`lg:1/4 relative flex h-full w-1/2 flex-col ~gap-3/7 md:w-1/3 ${className}`}
+      className={`lg:1/4 relative flex h-full w-1/2 flex-col will-change-transform ~gap-3/7 md:w-1/3 ${className}`}
       style={{ y }}
     >
       {images.map((src, i) => (

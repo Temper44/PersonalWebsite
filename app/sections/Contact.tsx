@@ -32,7 +32,7 @@ export default function Contact() {
     <footer
       id="contact"
       ref={ref}
-      className="relative h-[180dvh] overflow-x-hidden xs:h-[130dvh] sm:h-dvh"
+      className="relative h-[180dvh] overflow-x-hidden xs:h-[150dvh] sm:h-dvh"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
       <div className="absolute bottom-0 h-[180dvh] w-full xs:h-[130dvh] sm:fixed sm:h-dvh">
@@ -50,7 +50,7 @@ export default function Contact() {
             {footerText}
           </motion.p>
           <motion.div
-            className="marquee-forward-desktop font-bold ~text-[3.75rem]/[9rem]"
+            className="marquee-forward-desktop mt-[-3rem] font-bold ~text-[3.75rem]/[9rem] sm:mt-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
