@@ -22,34 +22,16 @@ const images = [
 
 export default function ParallaxScrollGallery() {
   const gallery = useRef(null);
-  // const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
   const { scrollYProgress } = useScroll({
     target: gallery,
     offset: ["start end", "end start"],
   });
 
-  // Dynamically update scroll values based on viewport height
   const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 500]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, 1000]);
-  const y4 = useTransform(scrollYProgress, [0, 1], [0, 1800]);
-
-  // useEffect(() => {
-  //   // Function to update dimensions on resize
-  //   const updateDimensions = () => {
-  //     console.log("dimension", dimension);
-
-  //     setDimension({ width: window.innerWidth, height: window.innerHeight });
-  //   };
-
-  //   updateDimensions(); // Set initial dimensions
-  //   window.addEventListener("resize", updateDimensions);
-
-  //   return () => {
-  //     window.removeEventListener("resize", updateDimensions);
-  //   };
-  // }, []);
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const y4 = useTransform(scrollYProgress, [0, 1], [0, 400]);
 
   return (
     <>
@@ -68,17 +50,17 @@ export default function ParallaxScrollGallery() {
         <Column
           images={[images[2], images[3], images[4]]}
           y={y2}
-          className="top-[-25%]"
+          className="top-[-27%]"
         />
         <Column
           images={[images[5], images[6], images[7]]}
           y={y3}
-          className="top-[-45%] hidden md:flex"
+          className="top-[-15%] hidden md:flex"
         />
         <Column
           images={[images[8], images[9], images[10]]}
           y={y4}
-          className="top-[-75%] hidden lg:flex"
+          className="top-[-20%] hidden lg:flex"
         />
       </div>
 
@@ -94,11 +76,6 @@ interface ColumnProps {
 }
 
 const Column = ({ images, y, className }: ColumnProps) => {
-  // const ref = useRef(null);
-  // const isInView = useInView(ref, {
-  //   margin: "0px 0px -100px 0px",
-  //   once: true,
-  // });
   return (
     <motion.div
       className={`relative flex h-full w-1/2 flex-col will-change-transform ~gap-3/7 md:w-1/3 lg:w-1/4 ${className}`}
