@@ -9,6 +9,7 @@ import ThemeContextProvider from "./components/context/ThemeContext";
 import ThemeSwitch from "./components/ThemeSwitch";
 import { ReactLenis } from "lenis/react";
 import { TransitionProvider } from "./components/TransitionProvider";
+import ScrollManager from "./components/ScrollManager";
 // import ActiveSectionContextProvider from "./components/context/active-section-context";
 
 // const nunitoSans = Nunito_Sans({
@@ -53,6 +54,7 @@ export default function RootLayout({
             >
               <CursorProvider>
                 {/* <ActiveSectionContextProvider> */}
+                <ScrollManager />
                 {children}
                 {/* </ActiveSectionContextProvider> */}
                 <ThemeSwitch />
