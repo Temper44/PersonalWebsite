@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useTransform, useScroll, motion, MotionValue } from "framer-motion";
-import Lenis from "lenis";
+// import Lenis from "lenis";
 
 const images = [
   "1.jpg",
@@ -96,7 +96,7 @@ interface ColumnProps {
 }
 
 const Column = ({ images, y, className }: ColumnProps) => {
-  const ref = useRef(null);
+  // const ref = useRef(null);
   // const isInView = useInView(ref, {
   //   margin: "0px 0px -100px 0px",
   //   once: true,
