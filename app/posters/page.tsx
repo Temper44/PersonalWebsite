@@ -62,7 +62,7 @@ export default function Page() {
         <HeroText heading="Posters" subheading={subHeadingTexts.posters} />
       </section>
 
-      <section className="h-screen">
+      <section className="h-svh">
         <svg
           ref={svgRef}
           className="posterSvg"

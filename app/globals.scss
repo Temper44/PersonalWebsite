@@ -22,6 +22,7 @@
 html {
   // scroll-behavior: smooth;
   overscroll-behavior: none;
+  overflow: hidden;
 }
 
 body {
@@ -29,7 +30,7 @@ body {
   background-color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   cursor: none;
-  // overflow-x: hidden;
+  overflow-x: hidden; // Uncommenting to ensure overflow is hidden
 }
 
 img {
@@ -547,7 +548,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container-flex-center {
-  @apply container flex min-h-[100dvh] flex-col items-center justify-center p-6;
+  @apply container flex min-h-dvh flex-col items-center justify-center p-6;
 }
 
 .absolute-center {
