@@ -31,7 +31,7 @@ export default function ParallaxScrollGallery() {
 
   // Dynamically update scroll values based on viewport height
   const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, 1800]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const y3 = useTransform(scrollYProgress, [0, 1], [0, 1000]);
   const y4 = useTransform(scrollYProgress, [0, 1], [0, 1800]);
 
@@ -68,7 +68,7 @@ export default function ParallaxScrollGallery() {
         <Column
           images={[images[2], images[3], images[4]]}
           y={y2}
-          className="top-[-95%] hidden md:flex"
+          className="top-[-15%]"
         />
         <Column
           images={[images[5], images[6], images[7]]}
@@ -101,7 +101,7 @@ const Column = ({ images, y, className }: ColumnProps) => {
   // });
   return (
     <motion.div
-      className={`relative flex h-full w-full flex-col will-change-transform ~gap-3/7 md:w-1/3 lg:w-1/4 ${className}`}
+      className={`relative flex h-full w-1/2 flex-col will-change-transform ~gap-3/7 md:w-1/3 lg:w-1/4 ${className}`}
       style={{ y }}
     >
       {images.map((src, i) => (
