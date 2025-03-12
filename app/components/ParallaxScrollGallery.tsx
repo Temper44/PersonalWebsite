@@ -30,7 +30,7 @@ export default function ParallaxScrollGallery() {
   });
 
   // Dynamically update scroll values based on viewport height
-  const y = useTransform(scrollYProgress, [0, 1], [0, 1600]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 1800]);
   const y3 = useTransform(scrollYProgress, [0, 1], [0, 1000]);
   const y4 = useTransform(scrollYProgress, [0, 1], [0, 1800]);
@@ -62,7 +62,7 @@ export default function ParallaxScrollGallery() {
         <Column
           images={[images[0], images[1], images[2]]}
           y={y}
-          className="top-[-80%]"
+          className="top-[-10%]"
           // top-[-45%]
         />
         <Column
