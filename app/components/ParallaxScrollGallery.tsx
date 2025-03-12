@@ -70,7 +70,7 @@ export default function ParallaxScrollGallery() {
         <Column
           images={[images[2], images[3], images[4]]}
           y={y2}
-          className="top-[-95%]"
+          className="top-[-95%] hidden md:flex"
         />
         <Column
           images={[images[5], images[6], images[7]]}
@@ -103,7 +103,7 @@ const Column = ({ images, y, className }: ColumnProps) => {
   // });
   return (
     <motion.div
-      className={`lg:1/4 relative flex h-full w-1/2 flex-col will-change-transform ~gap-3/7 md:w-1/3 ${className}`}
+      className={`relative flex h-full w-full flex-col will-change-transform ~gap-3/7 md:w-1/3 lg:w-1/4 ${className}`}
       style={{ y }}
     >
       {images.map((src, i) => (
