@@ -19,7 +19,7 @@ export default function Page() {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
   const parallaxPoster = loadParallaxPoster();
   const svgRef = useRef<SVGSVGElement>(null);
-
+  ScrollTrigger.normalizeScroll(true);
   useEffect(() => {
     const paths = svgRef.current?.querySelectorAll("path");
 
