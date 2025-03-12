@@ -16,6 +16,7 @@ import PageUtilities from "../components/PageUtilities";
 import FloatingNav from "../components/FloatingNav";
 import ActiveSectionContextProvider from "../components/context/active-section-context";
 import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
+// import TestSlider from "../components/TestSlider";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -253,6 +254,8 @@ export default function Page() {
         <About />
         <Skills />
         <Projects />
+        {/* <div className="h-screen"></div> */}
+        {/* <TestSlider /> */}
 
         <ParallaxScrollGallery />
         <Contact />

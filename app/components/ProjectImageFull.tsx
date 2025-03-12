@@ -32,7 +32,7 @@ const ProjectImageFull = ({ title, src, alt }: ProjectImageItemProps) => {
           src={src}
           alt={alt}
           layout="fill"
-          objectFit="cover"
+          className="object-cover"
           quality={100}
         />
       </motion.div>

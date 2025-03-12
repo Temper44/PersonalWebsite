@@ -20,7 +20,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 }
 
 body {
@@ -608,4 +608,36 @@ canvas {
 // .panel {
 //   // flex: 0 0 100vw !important; /* Ensure each panel occupies the full viewport width */
 //   scroll-snap-align: start !important; /* Optional: Helps with natural snapping */
+// }
+
+html {
+  // overflow-y: scroll;
+  // height: 100%;
+  // -webkit-overflow-scrolling: touch;
+  // overflow-scrolling: touch;
+  // overscroll-behavior: none;
+}
+// body {
+//   overflow-y: visible;
+//   position: relative;
+//   height: unset;
+// }
+// html,
+// body {
+//   overflow-x: hidden;
+//   margin: 0;
+// }
+
+// .container {
+//   width: 400%;
+//   height: 100vh;
+//   display: flex;
+//   flex-wrap: nowrap;
+// }
+
+// .panel {
+//   min-width: 100vw;
+//   height: 100vh;
+//   // flex: 0 0 100vw;
+//   // scroll-snap-align: start;
 // }

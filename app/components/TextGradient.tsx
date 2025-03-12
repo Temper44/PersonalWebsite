@@ -76,7 +76,8 @@ export default function TextGradient({
     word.split(" ").forEach((letter, i) => {
       letters.push(
         <span
-          className={`${opacityClassName} will-change-opacity`}
+          className={`${opacityClassName} `}
+          // will-change-opacity
           key={letter + "_" + i}
           ref={(el) => {
             refs.current.push(el);

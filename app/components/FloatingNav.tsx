@@ -71,7 +71,7 @@ export default function FloatingNav() {
       }}
     >
       <motion.div
-        className="will-change-all l fixed bottom-8 left-1/2 h-[2.85rem] w-[95%] max-w-[335px] rounded-full border border-black/10 border-opacity-40 bg-white/85 bg-opacity-90 shadow-sm backdrop-blur-[0.4rem] dark:border-white/10 dark:bg-zinc-950/90 dark:bg-opacity-90 xs:w-[90%] sm:h-[3rem] sm:max-w-[25rem] 2xl:h-[3.1rem] 2xl:max-w-[28rem] 3xl:h-[3.5rem] 3xl:max-w-[32rem]"
+        className="fixed bottom-8 left-1/2 h-[2.85rem] w-[95%] max-w-[335px] rounded-full border border-black/10 border-opacity-40 bg-white/85 bg-opacity-90 shadow-sm backdrop-blur-[0.4rem] dark:border-white/10 dark:bg-zinc-950/90 dark:bg-opacity-90 xs:w-[90%] sm:h-[3rem] sm:max-w-[25rem] 2xl:h-[3.1rem] 2xl:max-w-[28rem] 3xl:h-[3.5rem] 3xl:max-w-[32rem]"
         initial={{ y: 100, x: "-50%", opacity: 0 }}
         animate={{
           y: 0,
@@ -81,7 +81,7 @@ export default function FloatingNav() {
         }}
       ></motion.div>
 
-      <nav className="will-change-all fixed bottom-8 left-1/2 flex h-[2.85rem] -translate-x-1/2 py-[0.4rem] sm:h-[3rem] 2xl:h-[3.1rem] 3xl:h-[3.5rem]">
+      <nav className="fixed bottom-8 left-1/2 flex h-[2.85rem] -translate-x-1/2 py-[0.4rem] sm:h-[3rem] 2xl:h-[3.1rem] 3xl:h-[3.5rem]">
         <ul className="flex-center gap-1 font-medium tracking-wide text-zinc-900 ~text-[0.9rem]/[1.1rem] dark:text-zinc-300 sm:gap-4">
           {sectionLinks.map((link) => (
             <motion.li

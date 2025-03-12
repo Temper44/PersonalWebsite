@@ -45,7 +45,8 @@ export default function MaskText({
               variants={animation}
               initial="initial"
               animate={isInView ? "enter" : ""}
-              className={`${className} will-change-transform`}
+              className={`${className} `}
+              // will-change-transform
               onMouseEnter={() => cursorHoverEffect && setIsCursorHovered(true)}
               onMouseLeave={() =>
                 cursorHoverEffect && setIsCursorHovered(false)
@@ -59,7 +60,8 @@ export default function MaskText({
               variants={animation}
               initial="initial"
               animate={isInView ? "enter" : ""}
-              className={`${className} will-change-transform`}
+              className={`${className} `}
+              // will-change-transform
             >
               {phrase}
             </motion.p>

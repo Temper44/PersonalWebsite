@@ -40,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${urbanist.variable} !scroll-smooth`}>
+    <html lang="en" className={`${urbanist.variable} `}>
       <body className={`vsc-initialized font-urbanist antialiased`}>
         <TransitionProvider>
           <ThemeContextProvider>
