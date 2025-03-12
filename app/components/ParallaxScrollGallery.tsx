@@ -30,7 +30,7 @@ export default function ParallaxScrollGallery() {
   });
 
   // Dynamically update scroll values based on viewport height
-  const y = useTransform(scrollYProgress, [0, 1], [0, dimension.height * 2]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 500]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, dimension.height * 2.3]);
   const y3 = useTransform(
     scrollYProgress,
@@ -42,6 +42,8 @@ export default function ParallaxScrollGallery() {
   useEffect(() => {
     // Function to update dimensions on resize
     const updateDimensions = () => {
+      console.log("dimension", dimension);
+
       setDimension({ width: window.innerWidth, height: window.innerHeight });
     };
 
