@@ -19,7 +19,16 @@ export default function Page() {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
   const parallaxPoster = loadParallaxPoster();
   const svgRef = useRef<SVGSVGElement>(null);
-  ScrollTrigger.normalizeScroll(true);
+  // ScrollTrigger.normalizeScroll(true);
+  useEffect(() => {
+    // 🔹 Enable Scroll Normalization (Prevents Address Bar from Hiding/Showing)
+    ScrollTrigger.normalizeScroll(true);
+
+    return () => {
+      // Cleanup to prevent memory leaks
+      ScrollTrigger.normalizeScroll(false);
+    };
+  }, []);
   useEffect(() => {
     const paths = svgRef.current?.querySelectorAll("path");
 
