@@ -29,13 +29,21 @@ const ProjectImageZoom = ({ src, alt }: { src: string; alt: string }) => {
       width: "100vw",
       height: "100vh",
       borderRadius: 0,
+      // objectFit: "cover",
     });
   });
 
   return (
     <div className="imageContainer h-dvh w-screen">
       <div className="mask-clip-path absolute-center top-0 z-20 h-[40vh] w-[60vw] origin-center overflow-hidden rounded-3xl object-cover md:h-[60vh] md:w-[30vw]">
-        <Image src={src} alt={alt} fill quality={100} sizes="100vw" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          quality={100}
+          sizes="100vw"
+          className="object-cover"
+        />
       </div>
     </div>
   );
