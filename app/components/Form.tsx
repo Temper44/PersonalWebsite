@@ -65,7 +65,7 @@ const Form = () => {
       <motion.form
         ref={formRef}
         onSubmit={handleSubmit}
-        className="flex w-full flex-col space-y-6 py-2 sm:py-4"
+        className="flex w-full flex-col space-y-6"
         initial={{ opacity: 0, y: -100 }}
         animate={isInViewForm ? { opacity: 1, y: 0 } : {}}
         transition={{

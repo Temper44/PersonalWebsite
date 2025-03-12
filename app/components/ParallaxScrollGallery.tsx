@@ -1,9 +1,9 @@
 "use client";
+
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useTransform, useScroll, motion, MotionValue } from "framer-motion";
 import Lenis from "lenis";
-// import { BackgroundGradientAnimation } from "./ui/BackgroundGradientAnimation";
 
 const images = [
   "1.jpg",
@@ -30,7 +30,7 @@ export default function ParallaxScrollGallery() {
   });
   const { height } = dimension;
   const y = useTransform(scrollYProgress, [0, 1], [0, height * 2]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 2.3]);
   const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25]);
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3]);
 
@@ -57,22 +57,36 @@ export default function ParallaxScrollGallery() {
 
   return (
     <>
-      <div className="h-[50vh] sm:h-[75vh]" />
-      {/* <BackgroundGradientAnimation
-        interactive={false}
-        containerClassName="h-[50vh] sm:h-[75vh] rounded-b-3xl"
-      /> */}
-      <div ref={gallery} className="gallery">
-        <Column images={[images[0], images[1], images[2]]} y={y} />
-        <Column images={[images[3], images[4], images[5]]} y={y2} />
-        <Column images={[images[6], images[7], images[8]]} y={y3} />
-        <Column images={[images[9], images[10], images[11]]} y={y4} />
+      <div className="h-[50vh] bg-gradient-to-r from-rose-500 to-purple-500 sm:h-[75vh]" />
+
+      <div
+        ref={gallery}
+        className="flex-center relative mx-auto box-border h-[120vh] w-full max-w-9xl overflow-hidden p-6 ~gap-3/7 md:h-[170vh]"
+      >
+        <Column
+          images={[images[0], images[1], images[2]]}
+          y={y}
+          className="top-[-80%]"
+          // top-[-45%]
+        />
+        <Column
+          images={[images[2], images[3], images[4]]}
+          y={y2}
+          className="top-[-95%]"
+        />
+        <Column
+          images={[images[5], images[6], images[7]]}
+          y={y3}
+          className="top-[-45%] hidden md:flex"
+        />
+        <Column
+          images={[images[8], images[9], images[10]]}
+          y={y4}
+          className="top-[-75%] hidden lg:flex"
+        />
       </div>
-      <div className="h-[50vh] sm:h-[75vh]" />
-      {/* <BackgroundGradientAnimation
-        interactive={false}
-        containerClassName="h-[50vh] sm:h-[75vh]"
-      /> */}
+
+      <div className="h-[50vh] rounded-b-3xl bg-gradient-to-r from-purple-500 to-rose-500 sm:h-[75vh]" />
     </>
   );
 }
@@ -80,18 +94,27 @@ export default function ParallaxScrollGallery() {
 interface ColumnProps {
   images: string[];
   y: MotionValue<number>;
+  className: string;
 }
 
-const Column = ({ images, y }: ColumnProps) => {
+const Column = ({ images, y, className }: ColumnProps) => {
   return (
-    <motion.div className="column" style={{ y }}>
-      {images.map((src, i) => {
-        return (
-          <div key={i} className="imageContainer">
-            <Image src={`/img/gallery/${src}`} alt="image" fill />
-          </div>
-        );
-      })}
+    <motion.div
+      className={`lg:1/4 relative flex h-full w-1/2 flex-col ~gap-3/7 md:w-1/3 ${className}`}
+      style={{ y }}
+    >
+      {images.map((src, i) => (
+        <div key={i} className="relative aspect-[9/16] w-full shadow-md">
+          <Image
+            src={`/img/gallery/${src}`}
+            className="rounded-sm object-cover"
+            fill
+            quality={100}
+            alt={`Image ${i + 1}`} // updated `idx` to `i` for accuracy
+            sizes="(max-width: 768px) 100vw, 25vw"
+          />
+        </div>
+      ))}
     </motion.div>
   );
 };

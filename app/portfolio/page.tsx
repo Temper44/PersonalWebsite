@@ -15,6 +15,7 @@ import PageUtilities from "../components/PageUtilities";
 // import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
 import FloatingNav from "../components/FloatingNav";
 import ActiveSectionContextProvider from "../components/context/active-section-context";
+import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -253,7 +254,7 @@ export default function Page() {
         <Skills />
         <Projects />
 
-        {/* <ParallaxScrollGallery /> */}
+        <ParallaxScrollGallery />
         <Contact />
       </main>
     </ActiveSectionContextProvider>

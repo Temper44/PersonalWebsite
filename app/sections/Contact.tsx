@@ -32,13 +32,13 @@ export default function Contact() {
     <footer
       id="contact"
       ref={ref}
-      className="relative min-h-[180dvh] overflow-x-hidden xs:min-h-[130dvh] sm:h-screen"
+      className="relative h-[180dvh] overflow-x-hidden xs:h-[130dvh] sm:h-dvh"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
-      <div className="absolute bottom-0 min-h-[180dvh] w-full xs:min-h-[130dvh] sm:fixed sm:h-screen">
-        <div className="flex-col-center full-size pb-6 pt-44 sm:pt-32">
+      <div className="absolute bottom-0 h-[180dvh] w-full xs:h-[130dvh] sm:fixed sm:h-dvh">
+        <div className="full-size flex flex-col items-center justify-evenly p-6">
+          {/* // pt-44 sm:pt-32 */}
           <motion.p
-            className="tracking-wide ~text-sm/xl"
             ref={refParagraph}
             initial={{ opacity: 0 }}
             animate={isInViewParagraph ? { opacity: 1 } : {}}
@@ -50,7 +50,7 @@ export default function Contact() {
             {footerText}
           </motion.p>
           <motion.div
-            className="marquee-forward-desktop ~text-[3.75rem]/[9rem] ~/lg:~py-8/20"
+            className="marquee-forward-desktop font-bold ~text-[3.75rem]/[9rem]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
@@ -59,33 +59,19 @@ export default function Contact() {
               ease: "easeIn",
             }}
           >
-            <span className="font-bold">Say Hello?</span>
-            <span aria-hidden className="font-bold">
-              -Say Hello?
-            </span>
-            <span aria-hidden className="font-bold">
-              -Say Hello?
-            </span>
-            <span aria-hidden className="font-bold">
-              -Say Hello?
-            </span>
-            <span aria-hidden className="font-bold">
-              -Say Hello?
-            </span>
-            <span aria-hidden className="font-bold">
-              -Say Hello?
-            </span>
-            <span aria-hidden className="font-bold">
-              -Say Hello?
-            </span>
-            <span aria-hidden className="font-bold">
-              -Say Hello?
-            </span>
+            <span>Say Hello?</span>
+            <span aria-hidden>-Say Hello?</span>
+            <span aria-hidden>-Say Hello?</span>
+            <span aria-hidden>-Say Hello?</span>
+            <span aria-hidden>-Say Hello?</span>
+            <span aria-hidden>-Say Hello?</span>
+            <span aria-hidden>-Say Hello?</span>
+            <span aria-hidden>-Say Hello?</span>
           </motion.div>
-          <div className="w-full max-w-xl p-4">
+          <div className="w-full max-w-xl py-4">
             <Form />
           </div>
-          <div className="grid w-full max-w-6xl grid-cols-1 gap-10 px-4 py-4 sm:grid-cols-2 sm:gap-4 sm:py-12 2xl:pt-4 3xl:pt-14">
+          <div className="grid w-full max-w-6xl grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-4 sm:py-12 2xl:pt-4 3xl:pt-14">
             <motion.div
               ref={refSocials}
               className="max-w-md"
@@ -96,7 +82,7 @@ export default function Contact() {
                 ease: "easeOut",
               }}
             >
-              <h3 className="font-semibold tracking-wide ~text-2xl/4xl">
+              <h3 className="font-semibold tracking-wide ~text-2xl/3xl">
                 Socials
               </h3>
               <div className="my-2 h-[1px] w-full bg-zinc-900 dark:bg-zinc-100" />
@@ -106,7 +92,7 @@ export default function Contact() {
                     index < 4 && (
                       <li
                         key={item.id}
-                        className="flex items-center gap-2 tracking-wide text-zinc-900 ~text-base/xl dark:text-zinc-100"
+                        className="flex items-center gap-2 tracking-wide text-zinc-900 ~text-base/lg dark:text-zinc-100"
                       >
                         {item.icon}
                         <a
@@ -133,7 +119,7 @@ export default function Contact() {
                 ease: "easeOut",
               }}
             >
-              <h3 className="font-semibold tracking-wide ~text-2xl/4xl">
+              <h3 className="font-semibold tracking-wide ~text-2xl/3xl">
                 Menu
               </h3>
               <div className="my-2 h-[1px] w-full bg-zinc-900 dark:bg-zinc-100" />
@@ -141,7 +127,7 @@ export default function Contact() {
                 {navItemsFull.map((item) => (
                   <li
                     key={item.name}
-                    className="flex items-center gap-2 tracking-wide text-zinc-900 ~text-base/xl dark:text-zinc-100"
+                    className="flex items-center gap-2 tracking-wide text-zinc-900 ~text-base/lg dark:text-zinc-100"
                   >
                     <a
                       href={item.link}
@@ -157,9 +143,8 @@ export default function Contact() {
               </ul>
             </motion.div>
           </div>
-
           <motion.div
-            className="flex w-full max-w-6xl flex-col items-center justify-between px-4 font-light tracking-wide text-zinc-900 ~text-[0.65rem]/[0.85rem] dark:text-zinc-100 sm:flex-row 3xl:absolute 3xl:bottom-6"
+            className="absolute bottom-6 flex w-full max-w-6xl flex-col items-center justify-between px-4 font-light tracking-wide text-zinc-900 ~text-[0.65rem]/[0.85rem] dark:text-zinc-100 sm:flex-row"
             ref={refFooter}
             initial={{ opacity: 0 }}
             animate={isInViewFooter ? { opacity: 1 } : {}}

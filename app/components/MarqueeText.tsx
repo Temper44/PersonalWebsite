@@ -45,6 +45,7 @@ const MarqueeText = ({
         xPercent: -scrollAmount * 0.01, // Adjust speed by multiplying scroll
         duration: 0.3,
         ease: "power2.out",
+        // scrub: 1,
         onComplete: () => {
           // Resume the timeline after scrolling stops
           marqueeTimeline.play();

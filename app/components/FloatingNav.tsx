@@ -2,19 +2,23 @@
 
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { sectionLinks } from "@/lib/data";
-import Link from "next/link";
+// import Link from "next/link";
 import { clsx } from "clsx";
 import { useActiveSectionContext } from "./context/active-section-context";
 import { useCursor } from "./context/CursorContext";
 import { useState } from "react";
+import { useLenis } from "lenis/react";
+import Link from "next/link";
 
 export default function FloatingNav() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
   const { setIsCursorHovered } = useCursor();
-  const { scrollYProgress } = useScroll();
+  const lenis = useLenis(); // Get the Lenis instance
 
   const [visible, setVisible] = useState(true);
+
+  const { scrollYProgress } = useScroll();
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
@@ -37,9 +41,24 @@ export default function FloatingNav() {
     }
   });
 
+  const handleNavClick = (linkHash: string, linkName: string) => {
+    const targetElement = document.querySelector(linkHash);
+
+    if (targetElement) {
+      lenis?.scrollTo(targetElement as HTMLElement, {
+        duration: 2, // Adjust the duration as needed
+        // offset: -60, // Adjust the offset as needed
+        // easing: "easeInOut", // Predefined easing function
+      });
+    }
+    window.history.pushState(null, "", linkHash);
+    setActiveSection(linkName);
+    setTimeOfLastClick(Date.now());
+  };
+
   return (
     <motion.header
-      className="will-change-opacity relative z-10"
+      className="relative z-10"
       initial={{
         opacity: 1,
       }}
@@ -52,7 +71,7 @@ export default function FloatingNav() {
       }}
     >
       <motion.div
-        className="will-change-all fixed bottom-8 left-1/2 h-[2.8rem] w-[95%] max-w-[330px] rounded-full border border-black/10 border-opacity-40 bg-white bg-opacity-90 shadow-sm backdrop-blur-[1rem] dark:border-white/10 dark:bg-zinc-950 dark:bg-opacity-90 xs:w-[90%] sm:h-[3rem] sm:max-w-[25rem]"
+        className="will-change-all l fixed bottom-8 left-1/2 h-[2.85rem] w-[95%] max-w-[330px] rounded-full border border-black/10 border-opacity-40 bg-white/85 bg-opacity-90 shadow-sm backdrop-blur-[0.4rem] dark:border-white/10 dark:bg-zinc-950/90 dark:bg-opacity-90 xs:w-[90%] sm:h-[3rem] sm:max-w-[25rem] 2xl:h-[3.1rem] 2xl:max-w-[28rem] 3xl:h-[3.5rem] 3xl:max-w-[32rem]"
         initial={{ y: 100, x: "-50%", opacity: 0 }}
         animate={{
           y: 0,
@@ -62,8 +81,8 @@ export default function FloatingNav() {
         }}
       ></motion.div>
 
-      <nav className="will-change-all fixed bottom-8 left-1/2 flex h-[2.8rem] -translate-x-1/2 py-[0.4rem] sm:h-[3rem]">
-        <ul className="flex-center gap-1 font-medium tracking-wide text-zinc-900 ~text-[0.875rem]/[1rem] dark:text-zinc-300 sm:gap-4">
+      <nav className="will-change-all fixed bottom-8 left-1/2 flex h-[2.85rem] -translate-x-1/2 py-[0.4rem] sm:h-[3rem] 2xl:h-[3.1rem] 3xl:h-[3.5rem]">
+        <ul className="flex-center gap-1 font-medium tracking-wide text-zinc-900 ~text-[0.9rem]/[1.1rem] dark:text-zinc-300 sm:gap-4">
           {sectionLinks.map((link) => (
             <motion.li
               key={link.hash}
@@ -81,16 +100,15 @@ export default function FloatingNav() {
             >
               <Link
                 href={link.hash}
-                scroll={true}
                 className={clsx(
-                  "flex-center w-full px-[0.75rem] sm:px-[1rem]",
+                  "flex-center w-full px-[0.8rem] sm:px-[1rem] 2xl:px-[1.25rem] 3xl:px-[1.5rem]",
                   {
                     "text-white": activeSection === link.name,
                   },
                 )}
-                onClick={() => {
-                  setActiveSection(link.name);
-                  setTimeOfLastClick(Date.now());
+                onClick={(e) => {
+                  e.preventDefault(); // Prevent default anchor link behavior
+                  handleNavClick(link.hash, link.name); // Manually scroll using Lenis
                 }}
                 onMouseEnter={() => setIsCursorHovered(true)}
                 onMouseLeave={() => setIsCursorHovered(false)}

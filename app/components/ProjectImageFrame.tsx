@@ -45,7 +45,7 @@ const ProjectImageFrame = ({
           alt={alt}
           fill
           quality={100}
-          style={{ objectFit: "cover" }}
+          className="object-cover"
           sizes="100vw"
         />
       </div>
@@ -53,7 +53,7 @@ const ProjectImageFrame = ({
         <MaskText
           text={[name]}
           headline
-          className={`textShadow font-semibold leading-tight tracking-wide text-zinc-100 ~text-[2.75rem]/[8.5rem] max-xs:text-4xl md:pb-2`}
+          className={`textShadow font-semibold leading-tight tracking-wide text-white ~text-[2.75rem]/[8.5rem] max-xs:text-4xl md:pb-2`}
         />
       </div>
     </div>

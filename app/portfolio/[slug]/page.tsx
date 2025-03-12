@@ -1,5 +1,6 @@
 import Button from "@/app/components/Button";
-import Chip from "@/app/components/Chip";
+import ChipAnimation from "@/app/components/ChipAnimation";
+import ColorCase from "@/app/components/ColoCase";
 import Footer from "@/app/components/Footer";
 import MaskText from "@/app/components/MaskText";
 import PageUtilities from "@/app/components/PageUtilities";
@@ -69,7 +70,7 @@ export default async function Page({
         src={project.imgPreview.src}
         alt={project.imgPreview.alt}
       />
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 p-4 md:grid-cols-2 2xl:gap-8">
+      <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-6 p-4 md:mt-32 md:grid-cols-2 2xl:gap-8">
         <div className="projectDataWrapper order-2">
           <MaskText text={["My role"]} className="textSubHeading" headline />
           <MaskText text={[project.role]} className="projectDataText" />
@@ -100,15 +101,7 @@ export default async function Page({
             headline
           />
 
-          <div className="flex flex-wrap gap-3 sm:gap-4">
-            {project.technologies.map((name) => (
-              <Chip
-                key={name}
-                text={name}
-                className="leading-relaxed text-zinc-900 ~text-sm/base dark:text-zinc-100"
-              />
-            ))}
-          </div>
+          <ChipAnimation technologies={project.technologies} />
         </div>
         <div className="projectDataWrapper order-6 row-span-2 mt-8 justify-self-end md:mt-0">
           <Button
@@ -119,20 +112,7 @@ export default async function Page({
         </div>
       </div>
       <div className="mx-auto my-28 flex max-w-7xl justify-center">
-        <div className="flex gap-6">
-          {project.colors.map((color) => (
-            <div key={color} className="flex-col-center gap-3">
-              <span
-                key={color}
-                className="size-16 rounded-full md:size-20"
-                style={{ backgroundColor: color }}
-              />
-              <span className="text-xs font-extralight text-zinc-900 dark:text-zinc-100">
-                {color}
-              </span>
-            </div>
-          ))}
-        </div>
+        <ColorCase colors={project.colors} />
       </div>
 
       <ProjectImageZoom

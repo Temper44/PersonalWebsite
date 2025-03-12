@@ -96,10 +96,9 @@ export const ParallaxScrollPoster = ({
       >
         <Image
           src={el.thumb}
-          className="brightness-100 transition-all duration-300 hover:brightness-75"
+          className="object-cover brightness-100 transition-all duration-300 hover:brightness-75"
           fill
           quality={100}
-          style={{ objectFit: "cover" }}
           alt={`Image ${idx + 1}`}
           sizes="(max-width: 768px) 100vw, 50vw"
         />

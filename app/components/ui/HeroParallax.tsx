@@ -204,7 +204,7 @@ export const ProductCard = ({
           fill
           loading="eager"
           quality={100}
-          style={{ objectFit: "cover", objectPosition: "left top" }}
+          className="object-cover object-left-top"
           alt={product.title}
         />
         {/* height="600" width="600" className="absolute inset-0 full-size

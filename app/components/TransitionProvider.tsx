@@ -16,7 +16,10 @@ export function TransitionProvider({
     <TransitionRouter
       auto={true}
       leave={(next, from, to) => {
-        console.log({ from, to });
+        console.log("Leaving:", { from, to });
+
+        // 🚀 Instantly scroll to top BEFORE transition starts to prevent flash
+        // window.scrollTo({ top: 0, behavior: "instant" });
 
         const tl = gsap
           .timeline({
@@ -33,9 +36,7 @@ export function TransitionProvider({
           )
           .fromTo(
             secondLayer.current,
-            {
-              y: "100%",
-            },
+            { y: "100%" },
             {
               y: 0,
               duration: 0.5,
@@ -49,6 +50,8 @@ export function TransitionProvider({
         };
       }}
       enter={(next) => {
+        console.log("Entering new page...");
+
         const tl = gsap
           .timeline()
           .fromTo(
@@ -70,8 +73,8 @@ export function TransitionProvider({
             },
             "<50%",
           )
-          .call(next, undefined, "<50%");
-
+          .call(next, undefined, "<50%"); // End transition
+        window.scrollTo({ top: 0, behavior: "instant" });
         return () => {
           tl.kill();
         };

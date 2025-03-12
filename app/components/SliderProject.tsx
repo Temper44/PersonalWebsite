@@ -75,10 +75,11 @@ const SliderProject = ({
           </div>
         </div>
         <Link
-          className="relative order-1 col-span-2 aspect-[3/2] w-full md:order-2 md:col-span-1"
+          className="relative order-1 col-span-2 aspect-[3/2] w-full max-xs:h-[30vh] md:order-2 md:col-span-1"
           href={detailsPageLink}
           onMouseEnter={() => setIsCursorHovered(true)}
           onMouseLeave={() => setIsCursorHovered(false)}
+          scroll={true}
         >
           <motion.div
             ref={refImage}
@@ -95,7 +96,7 @@ const SliderProject = ({
               alt={imgPreview.alt}
               fill
               quality={100}
-              style={{ objectFit: "cover" }}
+              className="rounded-sm object-cover"
               sizes="(max-width: 640px) 100vw, 50vw"
             />
           </motion.div>

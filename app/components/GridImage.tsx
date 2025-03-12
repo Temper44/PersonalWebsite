@@ -37,7 +37,7 @@ const GridImage = ({
         alt={alt}
         fill
         quality={100}
-        style={{ objectFit: "cover" }}
+        className="object-cover"
         sizes={sizes}
       />
     </motion.div>
