@@ -126,7 +126,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="flex-center pointer-events-none absolute inset-0 z-[100] h-screen w-screen backdrop-blur-md"
+            className="flex-center pointer-events-none absolute inset-0 z-[100] h-dvh w-screen backdrop-blur-md"
           >
             <motion.img
               src="/img/portrait_home.jpg"

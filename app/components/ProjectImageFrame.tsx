@@ -37,7 +37,7 @@ const ProjectImageFrame = ({
   });
 
   return (
-    <div id="image-frame" className="relative-center h-dvh w-full max-w-9xl">
+    <div id="image-frame" className="relative-center h-svh w-full max-w-9xl">
       <div className="full-size relative aspect-[16/9] shadow-md">
         <div className="absolute inset-0 z-10 bg-black opacity-60" />
         <Image

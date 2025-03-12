@@ -21,7 +21,7 @@
 
 html {
   // scroll-behavior: smooth;
-  overscroll-behavior: none;
+  // overscroll-behavior: none;
 }
 
 body {
@@ -99,7 +99,7 @@ a {
 }
 
 .bg-grain {
-  @apply fixed inset-0 z-[-10] h-screen w-screen;
+  @apply fixed inset-0 z-[-10] h-dvh w-screen;
   filter: contrast(100%) brightness(95%);
   background: linear-gradient(
       20deg,
