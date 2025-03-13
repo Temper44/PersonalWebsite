@@ -8,7 +8,7 @@ import ThemeContextProvider from "./components/context/ThemeContext";
 import ThemeSwitch from "./components/ThemeSwitch";
 // import { ReactLenis } from "lenis/react";
 import { TransitionProvider } from "./components/TransitionProvider";
-import ScrollManager from "./components/ScrollManager";
+// import ScrollManager from "./components/ScrollManager";
 import ReactLenis from "lenis/react";
 // import ScrollManager from "./components/ScrollManager";
 // import ActiveSectionContextProvider from "./components/context/active-section-context";
