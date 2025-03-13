@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import { useMediaQuery } from "react-responsive";
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+// import React, { useEffect, useRef } from "react";
+// import { useMediaQuery } from "react-responsive";
+// import { gsap } from "gsap";
+// import ScrollTrigger from "gsap/ScrollTrigger";
 import { HeroParallax } from "../components/ui/HeroParallax";
 import { products } from "@/lib/data";
 // import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
@@ -19,45 +19,45 @@ import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
 // import TestSlider from "../components/TestSlider";
 // import TestSlider from "../components/TestSlider";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
-  const isDesktop = useMediaQuery({ minWidth: 1024 });
+  // const isDesktop = useMediaQuery({ minWidth: 1024 });
 
-  const svgRef = useRef<SVGSVGElement>(null);
+  // const svgRef = useRef<SVGSVGElement>(null);
 
-  useEffect(() => {
-    const paths = svgRef.current?.querySelectorAll("path");
+  // useEffect(() => {
+  //   const paths = svgRef.current?.querySelectorAll("path");
 
-    if (paths) {
-      paths.forEach((path) => {
-        const pathLength = path.getTotalLength();
-        path.style.strokeDasharray = pathLength.toString();
-        path.style.strokeDashoffset = pathLength.toString();
-        path.style.opacity = "0"; // Start paths invisible
-      });
+  //   if (paths) {
+  //     paths.forEach((path) => {
+  //       const pathLength = path.getTotalLength();
+  //       path.style.strokeDasharray = pathLength.toString();
+  //       path.style.strokeDashoffset = pathLength.toString();
+  //       path.style.opacity = "0"; // Start paths invisible
+  //     });
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: svgRef.current,
-          start: `top ${isDesktop ? "top-=100px" : "top+=100"}`, // start when the top of the trigger element hits the top of the viewport
-          end: `${isDesktop ? "bottom+=1300px" : "bottom+=1000px"} top`, // end when the top of the trigger element hits the top of the viewport
-          scrub: isDesktop ? 2 : 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-          // markers: true,
-        },
-      });
+  //     const tl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: svgRef.current,
+  //         start: `top ${isDesktop ? "top-=100px" : "top+=100"}`, // start when the top of the trigger element hits the top of the viewport
+  //         end: `${isDesktop ? "bottom+=1300px" : "bottom+=1000px"} top`, // end when the top of the trigger element hits the top of the viewport
+  //         scrub: isDesktop ? 2 : 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+  //         // markers: true,
+  //       },
+  //     });
 
-      tl.to(paths, {
-        strokeDashoffset: 0,
-        opacity: 1,
-        ease: "power2.out",
-      }).to(paths, {
-        strokeDashoffset: (i, target) => target.getTotalLength(),
-        ease: "power2.in",
-        opacity: 0.5,
-      });
-    }
-  }, []);
+  //     tl.to(paths, {
+  //       strokeDashoffset: 0,
+  //       opacity: 1,
+  //       ease: "power2.out",
+  //     }).to(paths, {
+  //       strokeDashoffset: (i, target) => target.getTotalLength(),
+  //       ease: "power2.in",
+  //       opacity: 0.5,
+  //     });
+  //   }
+  // }, []);
 
   return (
     <ActiveSectionContextProvider>

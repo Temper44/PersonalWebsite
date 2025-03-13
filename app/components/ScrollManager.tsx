@@ -2,17 +2,29 @@
 
 import { useEffect } from "react";
 import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLenis } from "lenis/react";
 
 export default function ScrollManager() {
+  const lenis = useLenis(); // ✅ Get Lenis instance
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.normalizeScroll(true);
 
-    return () => {
-      ScrollTrigger.normalizeScroll(false); // Cleanup when unmounting
-    };
-  }, []);
+    function update(time: number) {
+      if (lenis) {
+        lenis.raf(time); // ✅ Sync Lenis
+      }
+      ScrollTrigger.update(); // ✅ Sync ScrollTrigger
+      requestAnimationFrame(update);
+    }
 
-  return null; // This component doesn't render anything
+    requestAnimationFrame(update);
+
+    // return () => {
+    //   ScrollTrigger.kill(); // ✅ Cleanup ScrollTrigger on unmount
+    // };
+  }, [lenis]); // ✅ Only runs when `lenis` is available
+
+  return null; // This component does not render anything
 }

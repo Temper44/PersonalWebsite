@@ -54,8 +54,9 @@ export default function RootLayout({
             >
               <CursorProvider>
                 {/* <ActiveSectionContextProvider> */}
-                <ScrollManager />
                 {children}
+                {/* <ScrollManager /> */}
+
                 {/* </ActiveSectionContextProvider> */}
                 <ThemeSwitch />
               </CursorProvider>
