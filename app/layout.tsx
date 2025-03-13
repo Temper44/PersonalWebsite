@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${urbanist.variable} `}>
-      <body className={`font-urbanist antialiased`}>
+      <body className={`vsc-initialized font-urbanist antialiased`}>
         <TransitionProvider>
           <ThemeContextProvider>
             {/* <ScrollManager> */}

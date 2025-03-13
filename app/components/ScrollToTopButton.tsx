@@ -11,11 +11,7 @@ import { GoArrowUp } from "react-icons/go";
 import { useCursor } from "../components/context/CursorContext";
 import MagneticButton from "./MagneticButton";
 
-const ScrollToTopButton = ({
-  showOnMobile = true,
-}: {
-  showOnMobile?: boolean;
-}) => {
+const ScrollToTopButton = () => {
   const [visible, setVisible] = useState(false);
   const { setIsCursorHovered } = useCursor();
   const { scrollYProgress } = useScroll();
@@ -55,7 +51,7 @@ const ScrollToTopButton = ({
     <AnimatePresence>
       {visible && (
         <div
-          className={`fixed bottom-[4.5rem] right-[4.5rem] z-10 md:bottom-[4.85rem] md:right-20 ${showOnMobile ? "" : "hidden sm:block"}`}
+          className={`fixed bottom-[4.5rem] right-[4.5rem] z-10 md:bottom-[4.85rem] md:right-20`}
         >
           <MagneticButton>
             <motion.button

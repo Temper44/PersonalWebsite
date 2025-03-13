@@ -197,15 +197,17 @@ export const ProductCard = ({
     >
       <Link
         href={product.link}
-        className="block h-full group-hover/product:shadow-2xl"
+        className="relative block h-full group-hover/product:shadow-2xl"
       >
         <Image
           src={product.thumbnail}
           fill
           loading="eager"
+          priority
           quality={100}
           className="object-cover object-left-top"
           alt={product.title}
+          sizes="15vw"
         />
         {/* height="600" width="600" className="absolute inset-0 full-size
         object-cover object-left-top" */}

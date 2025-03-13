@@ -38,7 +38,7 @@ export default function TextGradient({
       opacity: 1,
       ease: "easeIn",
       stagger: 0.1,
-      markers: true,
+      // markers: true,
     });
   }, []);
 

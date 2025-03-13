@@ -66,7 +66,7 @@ export default function Page() {
         {/* <div className="bg-grain" /> */}
         <FixedBackground />
 
-        <PageUtilities showScrollTopButtonMobile={false} />
+        <PageUtilities hide={true} />
         <FloatingNav />
 
         <HeroParallax products={products} />

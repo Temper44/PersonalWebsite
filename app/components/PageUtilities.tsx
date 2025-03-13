@@ -5,22 +5,18 @@ import ScrollProgressBar from "@/app/components/ScrollProgressBar";
 import MobileMenu from "@/app/components/MobileMenu";
 import CustomCursor from "@/app/components/CustomCursor";
 import ScrollToTopButton from "@/app/components/ScrollToTopButton";
-// import { useMediaQuery } from "react-responsive";
+import { useMediaQuery } from "react-responsive";
 
-const PageUtilities = ({
-  showScrollTopButtonMobile,
-}: {
-  showScrollTopButtonMobile?: boolean;
-}) => {
-  // const isMobile = useMediaQuery({ maxWidth: 768 });
+const PageUtilities = ({ hide = false }: { hide?: boolean }) => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   // const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   return (
     <>
-      <ScrollProgressBar /> {/* isMobile &&  */}
+      {isMobile && <ScrollProgressBar />} {/* isMobile &&  */}
       <MobileMenu isFullPage={true} />
       <CustomCursor />
-      <ScrollToTopButton showOnMobile={showScrollTopButtonMobile} />
+      {!hide && <ScrollToTopButton />}
     </>
   );
 };
