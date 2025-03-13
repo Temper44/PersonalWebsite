@@ -106,8 +106,6 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
     }
   });
 
-  console.log("MobileMenu rendered");
-
   return (
     <>
       <motion.div
@@ -127,16 +125,22 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
       >
         <MagneticButton>
           <motion.button
-            className={`burgerMenu flex-center rounded-full backdrop-blur-[0.4rem] transition-all ${!isFullPage && "md:hidden"} ${
+            className={`burgerMenu flex-center rounded-full transition-all ${!isFullPage && "md:hidden"} ${
               isOpen &&
               "opened right-[1.4rem] top-4 rounded-full bg-black p-2 dark:bg-white"
             }`}
             aria-label="Main Menu"
             aria-expanded={isOpen}
             onClick={toggleMenu}
-            // initial={{ opacity: 0 }}
-            // animate={{ opacity: 0.0 }}
-            // transition={{ delay: 1.3, duration: 1 }}
+            animate={{
+              backdropFilter: visible
+                ? "blur(7px) opacity(1)"
+                : "blur(0px) opacity(0)",
+              WebkitBackdropFilter: visible
+                ? "blur(7px) opacity(1)"
+                : "blur(0px) opacity(0)",
+            }}
+            transition={{ duration: 1, ease: "easeIn" }}
             onMouseEnter={() => setIsCursorHovered(true)}
             onMouseLeave={() => setIsCursorHovered(false)}
           >

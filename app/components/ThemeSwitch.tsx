@@ -55,7 +55,7 @@ export default function ThemeSwitch() {
               ? "blur(7px) opacity(1)"
               : "blur(0px) opacity(0)",
           }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          transition={{ duration: 1, ease: "easeIn" }}
         >
           {theme === "light" ? <BsSun color="black" /> : <BsMoon />}
         </motion.button>

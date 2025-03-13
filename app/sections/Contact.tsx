@@ -44,7 +44,7 @@ export default function Contact() {
             animate={isInViewParagraph ? { opacity: 1 } : {}}
             transition={{
               duration: 1,
-              ease: "easeOut",
+              ease: "easeIn",
             }}
           >
             {footerText}
@@ -150,7 +150,7 @@ export default function Contact() {
             animate={isInViewFooter ? { opacity: 1 } : {}}
             transition={{
               duration: 1,
-              ease: "easeOut",
+              ease: "easeIn",
             }}
           >
             <p>@2025 Mathias Ebner</p>

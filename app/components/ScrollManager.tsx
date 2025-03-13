@@ -39,8 +39,9 @@ export default function ScrollManager({
   useEffect(() => {
     // Initialize Lenis
     const lenis = new Lenis({
-      duration: 3,
-      syncTouch: true, // Improves touch scrolling behavior
+      duration: 2,
+      lerp: 0.05,
+      // syncTouch: true, // Improves touch scrolling behavior
     });
 
     lenisRef.current = lenis;
