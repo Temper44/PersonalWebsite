@@ -10,22 +10,18 @@ import MagneticButton from "./MagneticButton";
 export default function ThemeSwitch() {
   const { theme, toggleTheme } = useTheme();
   const { setIsCursorHovered } = useCursor();
-
   const { scrollYProgress } = useScroll();
 
-  // set true for the initial state so that nav bar is visible in the hero section
   const [visible, setVisible] = useState(true);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
       const direction = current! - scrollYProgress.getPrevious()!;
-
-      // 🔥 Check if the page is scrollable
       const isScrollable =
         document.documentElement.scrollHeight > window.innerHeight;
 
       if (!isScrollable) {
-        setVisible(true); // Always show the menu if scrolling isn't possible
+        setVisible(true);
         return;
       }
 
@@ -40,29 +36,26 @@ export default function ThemeSwitch() {
   return (
     <motion.div
       className="fixed left-8 top-8 z-50"
-      initial={{
-        opacity: 1,
-        // y: -100,
-      }}
-      animate={{
-        // y: visible ? 0 : -100,
-        opacity: visible ? 1 : 0,
-      }}
-      transition={{
-        duration: 0.3,
-        delay: 0.3,
-      }}
+      initial={{ opacity: 1 }}
+      animate={{ opacity: visible ? 1 : 0 }}
+      transition={{ duration: 0.3, delay: 0.3 }}
     >
       <MagneticButton>
         <motion.button
-          className="flex-center h-[2.5rem] w-[2.5rem] rounded-full border border-black border-opacity-40 bg-opacity-80 shadow-md backdrop-blur-[0.4rem] transition-all hover:scale-[1.15rem] active:scale-105 dark:border-white md:left-8 md:top-8"
+          className="flex-center h-[2.5rem] w-[2.5rem] rounded-full border border-black border-opacity-40 shadow-md transition-all duration-1000 active:scale-110 dark:border-white md:left-8 md:top-8"
           aria-label="Toggle Theme"
           onClick={toggleTheme}
           onMouseEnter={() => setIsCursorHovered(true)}
           onMouseLeave={() => setIsCursorHovered(false)}
-          // initial={{ opacity: 0 }}
-          // animate={{ opacity: 1 }}
-          // transition={{ delay: 1.3, duration: 1 }}
+          animate={{
+            backdropFilter: visible
+              ? "blur(7px) opacity(1)"
+              : "blur(0px) opacity(0)",
+            WebkitBackdropFilter: visible
+              ? "blur(7px) opacity(1)"
+              : "blur(0px) opacity(0)",
+          }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
         >
           {theme === "light" ? <BsSun color="black" /> : <BsMoon />}
         </motion.button>

@@ -99,7 +99,7 @@ const About = () => {
               <div
                 id="imgContainer"
                 ref={imageContainer}
-                className="aspect-[4/5] h-auto w-[75vw] !rounded-xl object-cover shadow-md sm:w-[65vw] sm:object-contain md:w-[55vw] lg:w-[35vw] xl:w-[28vw] xl:object-cover"
+                className="aspect-[4/5] h-auto w-[75vw] !rounded-xl object-cover shadow-md sm:w-[45vw] sm:object-contain md:w-[38vw] lg:w-[29vw] xl:w-[25vw] xl:object-cover 2xl:w-[23vw] 3xl:w-[21vw]"
               ></div>
             </div>
           </div>
@@ -107,17 +107,17 @@ const About = () => {
           <div className="f-col w-full gap-6">
             <TextGradient
               text="Student, Developer, Adventurer"
-              className="mb-6 mt-6 uppercase leading-none text-white ~text-[3.5rem]/[8rem] dark:text-black max-xs:text-5xl md:mt-0 lg:mb-20 2xl:max-w-[65%]"
+              className="mb-6 mt-6 uppercase leading-none text-white ~text-[3.5rem]/[8rem] dark:text-black max-xs:text-5xl md:mt-0 lg:mb-20 lg:text-[4.5rem] xl:text-[5.5rem] 2xl:max-w-[65%] 2xl:~text-[4rem]/[8rem]"
               animationStart="top center"
-              animationEnd="+=200"
+              animationEnd="+=270"
               spaceLine={false}
             />
             <MaskText
-              className="font-semibold tracking-wide text-white ~text-2xl/5xl dark:text-black sm:px-0"
+              className="font-semibold tracking-wide text-white ~text-2xl/4xl dark:text-black sm:px-0"
               text={["Mathias Ebner"]}
               headline
             />
-            <div className="flex w-full flex-col gap-6 self-center sm:px-0 lg:max-w-[70%] 3xl:max-w-[65%]">
+            <div className="2xl:max-[70%] flex w-full flex-col gap-6 self-center sm:max-w-[90%] sm:px-0 md:max-w-[85%] lg:max-w-[80%] xl:max-w-[75%] 2xl:max-w-[70%] 3xl:max-w-[65%]">
               <MaskText
                 className="textParagraph"
                 text={[

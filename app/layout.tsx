@@ -6,7 +6,7 @@ import "./globals.scss";
 import { CursorProvider } from "./components/context/CursorContext";
 import ThemeContextProvider from "./components/context/ThemeContext";
 import ThemeSwitch from "./components/ThemeSwitch";
-import { ReactLenis } from "lenis/react";
+// import { ReactLenis } from "lenis/react";
 import { TransitionProvider } from "./components/TransitionProvider";
 import ScrollManager from "./components/ScrollManager";
 // import ScrollManager from "./components/ScrollManager";
@@ -34,23 +34,22 @@ export default function RootLayout({
         <TransitionProvider>
           <ThemeContextProvider>
             <ScrollManager>
-              <ReactLenis
+              {/* <ReactLenis
                 root
                 options={{
                   lerp: 0.05,
-                  duration: 2,
                 }}
-              >
-                <CursorProvider>
-                  {/* <ActiveSectionContextProvider> */}
-                  {/* <ScrollManager /> */}
+              > */}
+              <CursorProvider>
+                {/* <ActiveSectionContextProvider> */}
+                {/* <ScrollManager /> */}
 
-                  {children}
+                {children}
 
-                  {/* </ActiveSectionContextProvider> */}
-                  <ThemeSwitch />
-                </CursorProvider>
-              </ReactLenis>
+                {/* </ActiveSectionContextProvider> */}
+                <ThemeSwitch />
+              </CursorProvider>
+              {/* </ReactLenis> */}
             </ScrollManager>
           </ThemeContextProvider>
         </TransitionProvider>

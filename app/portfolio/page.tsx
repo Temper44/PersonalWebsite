@@ -16,6 +16,7 @@ import PageUtilities from "../components/PageUtilities";
 // import FloatingNav from "../components/FloatingNav";
 import ActiveSectionContextProvider from "../components/context/active-section-context";
 import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
+import FixedBackground from "../components/FixedBackground";
 // import TestSlider from "../components/TestSlider";
 // import TestSlider from "../components/TestSlider";
 
@@ -62,7 +63,8 @@ export default function Page() {
   return (
     <ActiveSectionContextProvider>
       <main className="max-w-screen relative-center">
-        <div className="bg-grain" />
+        {/* <div className="bg-grain" /> */}
+        <FixedBackground />
 
         <PageUtilities showScrollTopButtonMobile={false} />
         {/* <FloatingNav /> */}
