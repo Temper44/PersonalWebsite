@@ -123,6 +123,7 @@ const MarqueeText = ({
           marqueeTimeline.play();
         },
       });
+      // gsap.ticker.lagSmoothing(0);
     };
 
     // Add scroll event listener

@@ -485,48 +485,6 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-// .gallery {
-//   height: 175vh;
-//   background: black;
-//   position: relative;
-//   display: flex;
-//   gap: 2vw;
-//   padding: 2vw;
-//   box-sizing: border-box;
-//   overflow: hidden;
-//   .column {
-//     position: relative;
-//     height: 100%;
-//     width: 25%;
-//     min-width: 250px;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 2vw;
-//     .imageContainer {
-//       height: 100%;
-//       width: 100%;
-//       position: relative;
-//       border-radius: 1vw;
-//       overflow: hidden;
-//       img {
-//         object-fit: cover;
-//       }
-//     }
-//     &:nth-of-type(1) {
-//       top: -45%;
-//     }
-//     &:nth-of-type(2) {
-//       top: -95%;
-//     }
-//     &:nth-of-type(3) {
-//       top: -45%;
-//     }
-//     &:nth-of-type(4) {
-//       top: -75%;
-//     }
-//   }
-// }
-
 .field-input {
   @apply w-full rounded-md border border-black/10 px-5 py-2 text-base tracking-wide text-zinc-900 shadow-sm placeholder:text-zinc-400;
 }
@@ -594,10 +552,6 @@ canvas {
   @apply font-light !leading-relaxed tracking-wide text-zinc-100 ~text-base/lg dark:text-zinc-900;
 }
 
-// .will-change-transform {
-//   will-change: transform;
-// }
-
 .will-change-opacity {
   will-change: opacity;
 }
@@ -605,40 +559,3 @@ canvas {
 .will-change-all {
   will-change: transform, opacity;
 }
-
-// .panel {
-//   // flex: 0 0 100vw !important; /* Ensure each panel occupies the full viewport width */
-//   scroll-snap-align: start !important; /* Optional: Helps with natural snapping */
-// }
-
-html {
-  // overflow-y: scroll;
-  // height: 100%;
-  // -webkit-overflow-scrolling: touch;
-  // overflow-scrolling: touch;
-  // overscroll-behavior: none;
-}
-// body {
-//   overflow-y: visible;
-//   position: relative;
-//   height: unset;
-// }
-// html,
-// body {
-//   overflow-x: hidden;
-//   margin: 0;
-// }
-
-// .container {
-//   width: 400%;
-//   height: 100vh;
-//   display: flex;
-//   flex-wrap: nowrap;
-// }
-
-// .panel {
-//   min-width: 100vw;
-//   height: 100vh;
-//   // flex: 0 0 100vw;
-//   // scroll-snap-align: start;
-// }

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 // import { Nunito_Sans } from "next/font/google";
-// import { Raleway } from "next/font/google";
 import { Urbanist } from "next/font/google";
 
 import "./globals.scss";
@@ -9,20 +8,9 @@ import ThemeContextProvider from "./components/context/ThemeContext";
 import ThemeSwitch from "./components/ThemeSwitch";
 import { ReactLenis } from "lenis/react";
 import { TransitionProvider } from "./components/TransitionProvider";
+import ScrollManager from "./components/ScrollManager";
 // import ScrollManager from "./components/ScrollManager";
 // import ActiveSectionContextProvider from "./components/context/active-section-context";
-
-// const nunitoSans = Nunito_Sans({
-//   variable: "--font-nunito-sans",
-//   subsets: ["latin"],
-//   display: "swap",
-// });
-
-// const raleway = Raleway({
-//   variable: "--font-raleway",
-//   subsets: ["latin"],
-//   display: "swap",
-// });
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
@@ -45,22 +33,25 @@ export default function RootLayout({
       <body className={`vsc-initialized font-urbanist antialiased`}>
         <TransitionProvider>
           <ThemeContextProvider>
-            <ReactLenis
-              root
-              options={{
-                lerp: 0.05,
-                duration: 2,
-              }}
-            >
-              <CursorProvider>
-                {/* <ActiveSectionContextProvider> */}
-                {children}
-                {/* <ScrollManager /> */}
+            <ScrollManager>
+              <ReactLenis
+                root
+                options={{
+                  lerp: 0.05,
+                  duration: 2,
+                }}
+              >
+                <CursorProvider>
+                  {/* <ActiveSectionContextProvider> */}
+                  {/* <ScrollManager /> */}
 
-                {/* </ActiveSectionContextProvider> */}
-                <ThemeSwitch />
-              </CursorProvider>
-            </ReactLenis>
+                  {children}
+
+                  {/* </ActiveSectionContextProvider> */}
+                  <ThemeSwitch />
+                </CursorProvider>
+              </ReactLenis>
+            </ScrollManager>
           </ThemeContextProvider>
         </TransitionProvider>
       </body>

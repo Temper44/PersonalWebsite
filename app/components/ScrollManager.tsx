@@ -1,30 +1,23 @@
+// ScrollManager.tsx
 "use client";
-
 import { useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLenis } from "lenis/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import ScrollTrigger
+import gsap from "gsap";
 
-export default function ScrollManager() {
-  const lenis = useLenis(); // ✅ Get Lenis instance
+// Register ScrollTrigger to make sure it works
+gsap.registerPlugin(ScrollTrigger);
 
+export default function ScrollManager({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    function update(time: number) {
-      if (lenis) {
-        lenis.raf(time); // ✅ Sync Lenis
-      }
-      ScrollTrigger.update(); // ✅ Sync ScrollTrigger
-      requestAnimationFrame(update);
+    // Check if it's a mobile device, and normalize scroll only for mobile
+    if (window.innerWidth <= 640) {
+      ScrollTrigger.normalizeScroll(true); // Only apply to mobile devices
     }
+  }, []);
 
-    requestAnimationFrame(update);
-
-    // return () => {
-    //   ScrollTrigger.kill(); // ✅ Cleanup ScrollTrigger on unmount
-    // };
-  }, [lenis]); // ✅ Only runs when `lenis` is available
-
-  return null; // This component does not render anything
+  return <>{children}</>; // Return the children as they are wrapped with ScrollManager
 }
