@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import Footer from "../components/Footer";
 import HeroText from "../components/HeroText";
@@ -12,6 +12,7 @@ import { loadParallaxPoster } from "@/lib/loadImages";
 import { ParallaxScrollPoster } from "../components/ui/ParallaxScrollPoster";
 import PageUtilities from "../components/PageUtilities";
 import { subHeadingTexts } from "@/lib/texts";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,7 +21,7 @@ export default function Page() {
   const parallaxPoster = loadParallaxPoster();
   const svgRef = useRef<SVGSVGElement>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const paths = svgRef.current?.querySelectorAll("path");
 
     if (paths) {

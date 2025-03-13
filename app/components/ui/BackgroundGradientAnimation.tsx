@@ -35,8 +35,8 @@ export const BackgroundGradientAnimation = ({
 }) => {
   const interactiveRef = useRef<HTMLDivElement>(null);
 
-  const [curX, setCurX] = useState(0);
-  const [curY, setCurY] = useState(0);
+  const curX = useRef(0);
+  const curY = useRef(0);
   const [tgX, setTgX] = useState(0);
   const [tgY, setTgY] = useState(0);
   useEffect(() => {
@@ -54,24 +54,33 @@ export const BackgroundGradientAnimation = ({
     document.body.style.setProperty("--fourth-color", fourthColor);
     document.body.style.setProperty("--fifth-color", fifthColor);
     document.body.style.setProperty("--pointer-color", pointerColor);
-    document.body.style.setProperty("--size", size);
+    if (window.innerWidth > 1900) {
+      document.body.style.setProperty("--size", "50%");
+    } else {
+      document.body.style.setProperty("--size", size);
+    }
     document.body.style.setProperty("--blending-value", blendingValue);
   }, []);
 
   useEffect(() => {
-    function move() {
-      if (!interactiveRef.current) {
-        return;
-      }
-      setCurX(curX + (tgX - curX) / 20);
-      setCurY(curY + (tgY - curY) / 20);
-      interactiveRef.current.style.transform = `translate(${Math.round(
-        curX,
-      )}px, ${Math.round(curY)}px)`;
-    }
+    const move = () => {
+      if (!interactiveRef.current) return;
+      curX.current += (tgX - curX.current) / 20;
+      curY.current += (tgY - curY.current) / 20;
 
-    move();
+      interactiveRef.current.style.transform = `translate(${Math.round(curX.current)}px, ${Math.round(curY.current)}px)`;
+
+      requestAnimationFrame(move); // Smoother updates
+    };
+
+    requestAnimationFrame(move);
   }, [tgX, tgY]);
+
+  useEffect(() => {
+    if (window.innerWidth > 1900) {
+      document.body.style.setProperty("--blending-value", "normal");
+    }
+  }, []);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (interactiveRef.current) {
@@ -96,11 +105,7 @@ export const BackgroundGradientAnimation = ({
       <svg className="hidden">
         <defs>
           <filter id="blurMe">
-            <feGaussianBlur
-              in="SourceGraphic"
-              stdDeviation="10"
-              result="blur"
-            />
+            <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
             <feColorMatrix
               in="blur"
               mode="matrix"

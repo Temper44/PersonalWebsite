@@ -1,15 +1,18 @@
 "use client";
 
-import { useRef, useEffect, JSX } from "react";
+import { useRef, JSX } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function TextGradient({
   text,
   className,
   opacityClassName = "opacity-10",
   animationStart = "top top",
-  animationEnd = `+=600`,
+  animationEnd = `+=1000`,
   spaceLine = true,
 }: {
   text: string;
@@ -23,12 +26,7 @@ export default function TextGradient({
   const body = useRef(null);
   const container = useRef(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    createAnimation();
-  }, []);
-
-  const createAnimation = () => {
+  useGSAP(() => {
     gsap.to(refs.current, {
       scrollTrigger: {
         trigger: container.current,
@@ -40,9 +38,9 @@ export default function TextGradient({
       opacity: 1,
       ease: "easeIn",
       stagger: 0.1,
-      //markers: true,
+      markers: true,
     });
-  };
+  }, []);
 
   const splitWords = (phrase: string) => {
     const body: JSX.Element[] = [];

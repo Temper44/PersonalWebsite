@@ -167,9 +167,10 @@
 
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -182,7 +183,7 @@ const MarqueeText = ({
 }) => {
   const marqueeRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const marquee = marqueeRef.current;
 
     if (!marquee) return;
@@ -200,10 +201,6 @@ const MarqueeText = ({
         });
       },
     });
-
-    return () => {
-      ScrollTrigger.killAll(); // Clean up on unmount
-    };
   }, []);
 
   return (

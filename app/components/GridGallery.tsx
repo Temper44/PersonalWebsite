@@ -1,14 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import GridImage from "./GridImage";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const GridGallery = () => {
   const svgRef = useRef<SVGSVGElement>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     if (!svgRef.current) return;
     const path = svgRef.current.querySelector("path");
     if (!path) return;

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import MobileMenu from "../components/MobileMenu";
 import CustomCursor from "../components/CustomCursor";
 import { useMediaQuery } from "react-responsive";
@@ -17,6 +17,7 @@ import MarqueeText from "../components/MarqueeText";
 import { Carousel } from "../components/ui/Carousel";
 import FixedBackground from "../components/FixedBackground";
 import { subHeadingTexts } from "@/lib/texts";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +30,7 @@ export default function Page() {
 
   const svgRef = useRef<SVGSVGElement>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const paths = svgRef.current?.querySelectorAll("path");
 
     if (paths) {

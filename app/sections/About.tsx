@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import MarqueeText from "../components/MarqueeText";
 import { FiArrowDownRight } from "react-icons/fi";
 import gsap from "gsap";
@@ -8,6 +8,7 @@ import TextGradient from "../components/TextGradient";
 import hoverEffect from "hover-effect";
 import { aboutMeTexts } from "@/lib/texts";
 import { useSectionInView } from "@/lib/hooks";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,7 +18,7 @@ const About = () => {
   const imageContainer = useRef<HTMLDivElement>(null);
   const hasLoaded = useRef(false); // Prevent re-initialization
 
-  useEffect(() => {
+  useGSAP(() => {
     if (typeof window !== "undefined") {
       if (aboutMeRef.current && imageRef.current) {
         gsap.fromTo(
