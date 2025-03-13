@@ -13,7 +13,7 @@ import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import PageUtilities from "../components/PageUtilities";
 // import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
-// import FloatingNav from "../components/FloatingNav";
+import FloatingNav from "../components/FloatingNav";
 import ActiveSectionContextProvider from "../components/context/active-section-context";
 import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
 import FixedBackground from "../components/FixedBackground";
@@ -67,7 +67,7 @@ export default function Page() {
         <FixedBackground />
 
         <PageUtilities showScrollTopButtonMobile={false} />
-        {/* <FloatingNav /> */}
+        <FloatingNav />
 
         <HeroParallax products={products} />
         {/* <section className="h-screen">

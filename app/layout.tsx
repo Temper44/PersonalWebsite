@@ -9,6 +9,7 @@ import ThemeSwitch from "./components/ThemeSwitch";
 // import { ReactLenis } from "lenis/react";
 import { TransitionProvider } from "./components/TransitionProvider";
 import ScrollManager from "./components/ScrollManager";
+import ReactLenis from "lenis/react";
 // import ScrollManager from "./components/ScrollManager";
 // import ActiveSectionContextProvider from "./components/context/active-section-context";
 
@@ -33,13 +34,14 @@ export default function RootLayout({
       <body className={`vsc-initialized font-urbanist antialiased`}>
         <TransitionProvider>
           <ThemeContextProvider>
-            <ScrollManager>
-              {/* <ReactLenis
-                root
-                options={{
-                  lerp: 0.05,
-                }}
-              > */}
+            {/* <ScrollManager> */}
+            <ReactLenis
+              root
+              options={{
+                duration: 2,
+                lerp: 0.05,
+              }}
+            >
               <CursorProvider>
                 {/* <ActiveSectionContextProvider> */}
                 {/* <ScrollManager /> */}
@@ -49,8 +51,8 @@ export default function RootLayout({
                 {/* </ActiveSectionContextProvider> */}
                 <ThemeSwitch />
               </CursorProvider>
-              {/* </ReactLenis> */}
-            </ScrollManager>
+            </ReactLenis>
+            {/* </ScrollManager> */}
           </ThemeContextProvider>
         </TransitionProvider>
       </body>

@@ -46,7 +46,10 @@ const Skills = () => {
           {skillsText}
         </h2>
         <div className="mask-clip-path absolute-center top-0 z-20 h-[40vh] w-[60vw] origin-center overflow-hidden rounded-3xl will-change-transform md:h-[60vh] md:w-[30vw]">
-          <BackgroundGradientAnimation interactive={false}>
+          <BackgroundGradientAnimation
+            interactive={false}
+            containerClassName="will-change-transform"
+          >
             <div className="flex-center absolute inset-0 z-50 ~px-8/28">
               <TextGradient
                 text={skills.join(" / ")}

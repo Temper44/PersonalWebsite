@@ -49,10 +49,10 @@ export default function ThemeSwitch() {
           onMouseLeave={() => setIsCursorHovered(false)}
           animate={{
             backdropFilter: visible
-              ? "blur(7px) opacity(1)"
+              ? "blur(6px) opacity(1)"
               : "blur(0px) opacity(0)",
             WebkitBackdropFilter: visible
-              ? "blur(7px) opacity(1)"
+              ? "blur(6px) opacity(1)"
               : "blur(0px) opacity(0)",
           }}
           transition={{ duration: 1, ease: "easeIn" }}
