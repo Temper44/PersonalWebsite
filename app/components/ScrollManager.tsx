@@ -55,9 +55,9 @@ export default function ScrollManager({
     gsap.ticker.lagSmoothing(0); // Prevents stuttering caused by frame drops
 
     // Enable ScrollTrigger's normalizeScroll (only for mobile)
-    if (window.innerWidth <= 640) {
-      ScrollTrigger.normalizeScroll(true);
-    }
+    // if (window.innerWidth <= 640) {
+    //   ScrollTrigger.normalizeScroll(true);
+    // }
 
     // Clean up on unmount
     return () => {
