@@ -23,18 +23,33 @@
 
 "use client";
 import { useEffect } from "react";
-import { ScrollTrigger } from "@/lib/gsapConfig";
+import { ScrollTrigger, gsap } from "@/lib/gsapConfig";
+import { useLenis } from "lenis/react";
 
 export default function ScrollManager() {
+  const lenis = useLenis();
+
   useEffect(() => {
-    if (
-      window.innerWidth <= 640 &&
-      navigator.userAgent.toLowerCase().includes("firefox")
-    ) {
-      ScrollTrigger.normalizeScroll(true);
-    }
-    // ScrollTrigger.normalizeScroll(true);
-  }, []);
+    if (!lenis) return;
+
+    // Update ScrollTrigger when Lenis scrolls
+    const onScroll = () => ScrollTrigger.update();
+    lenis.on("scroll", onScroll);
+
+    // Sync Lenis with GSAP
+    const updateLenis = (time: number) => {
+      if (lenis.isScrolling) {
+        lenis.raf(time * 1000);
+      }
+    };
+
+    gsap.ticker.add(updateLenis);
+
+    return () => {
+      lenis.off("scroll", onScroll);
+      gsap.ticker.remove(updateLenis);
+    };
+  }, [lenis]);
 
   return null;
 }

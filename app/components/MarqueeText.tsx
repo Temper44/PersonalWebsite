@@ -165,6 +165,70 @@
 
 // export default MarqueeText;
 
+// "use client";
+
+// import React, { useRef } from "react";
+// import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsapConfig";
+
+// const MarqueeText = ({
+//   text,
+//   fontMobileBigger,
+// }: {
+//   text: string;
+//   fontMobileBigger?: boolean;
+// }) => {
+//   const marqueeRef = useRef<HTMLDivElement>(null);
+
+//   useGSAP(() => {
+//     const marquee = marqueeRef.current;
+
+//     if (!marquee) return;
+
+//     // Sync with scrolling using ScrollTrigger
+//     ScrollTrigger.create({
+//       trigger: marquee,
+//       start: "top bottom",
+//       end: "bottom top",
+//       scrub: 1, // Smooth effect
+//       onUpdate: (self) => {
+//         gsap.to(marquee, {
+//           xPercent: -self.progress * 10, // Adjust speed dynamically
+//           ease: "power2.out",
+//         });
+//       },
+//     });
+//   }, []);
+
+//   return (
+//     <div
+//       className="overflow-hidden"
+//       style={{
+//         overflow: "hidden",
+//         whiteSpace: "nowrap",
+//         position: "relative",
+//         width: "99vw",
+//       }}
+//     >
+//       <div
+//         ref={marqueeRef}
+//         style={{
+//           display: "inline-block",
+//           whiteSpace: "nowrap",
+//         }}
+//         className="will-change-transform"
+//       >
+//         <h2
+//           className={`inline-block overflow-hidden font-normal uppercase italic tracking-wide ${fontMobileBigger ? "~text-[3.2rem]/[13rem]" : "~text-[2.25rem]/[13rem]"} ~mt-[9rem]/[13rem] ~mb-[4rem]/[8rem]`}
+//         >
+//           {text} - {text} - {text} - {text} - {text} - {text} - {text} - {text}
+//         </h2>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default MarqueeText;
+
 "use client";
 
 import React, { useRef } from "react";
@@ -181,20 +245,17 @@ const MarqueeText = ({
 
   useGSAP(() => {
     const marquee = marqueeRef.current;
-
     if (!marquee) return;
 
-    // Sync with scrolling using ScrollTrigger
+    gsap.set(marquee, { xPercent: 0 }); // Ensure it starts at 0
+
     ScrollTrigger.create({
       trigger: marquee,
       start: "top bottom",
       end: "bottom top",
-      scrub: 1, // Smooth effect
+      scrub: 2,
       onUpdate: (self) => {
-        gsap.to(marquee, {
-          xPercent: -self.progress * 10, // Adjust speed dynamically
-          ease: "power2.out",
-        });
+        gsap.set(marquee, { xPercent: -self.progress * 10 }); // Adjust speed dynamically
       },
     });
   }, []);
@@ -218,7 +279,11 @@ const MarqueeText = ({
         className="will-change-transform"
       >
         <h2
-          className={`inline-block overflow-hidden font-normal uppercase italic tracking-wide ${fontMobileBigger ? "~text-[3.2rem]/[13rem]" : "~text-[2.25rem]/[13rem]"} ~mt-[9rem]/[13rem] ~mb-[4rem]/[8rem]`}
+          className={`inline-block overflow-hidden font-normal uppercase italic tracking-wide ${
+            fontMobileBigger
+              ? "~text-[3.2rem]/[13rem]"
+              : "~text-[2.25rem]/[13rem]"
+          } ~mt-[9rem]/[13rem] ~mb-[4rem]/[8rem]`}
         >
           {text} - {text} - {text} - {text} - {text} - {text} - {text} - {text}
         </h2>
