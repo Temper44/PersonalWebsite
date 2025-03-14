@@ -46,6 +46,13 @@ export default function ScrollManager() {
     gsap.ticker.add(updateLenis);
     gsap.ticker.lagSmoothing(0);
 
+    // if (
+    //   window.innerWidth <= 640 &&
+    //   navigator.userAgent.toLowerCase().includes("firefox")
+    // ) {
+    //   ScrollTrigger.normalizeScroll(true);
+    // }
+
     return () => {
       lenis.off("scroll", onScroll);
       gsap.ticker.remove(updateLenis);
