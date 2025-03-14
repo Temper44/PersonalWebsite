@@ -4,14 +4,13 @@ import { Urbanist } from "next/font/google";
 
 import "./globals.scss";
 import { CursorProvider } from "./components/context/CursorContext";
-// import ThemeContextProvider from "./components/context/ThemeContext";
-// import ThemeSwitch from "./components/ThemeSwitch";
-// // import { ReactLenis } from "lenis/react";
+import ThemeContextProvider from "./components/context/ThemeContext";
+import ThemeSwitch from "./components/ThemeSwitch";
 import { TransitionProvider } from "./components/TransitionProvider";
-// // import ScrollManager from "./components/ScrollManager";
-// import ReactLenis from "lenis/react";
 // import ScrollManager from "./components/ScrollManager";
-// import ActiveSectionContextProvider from "./components/context/active-section-context";
+import ReactLenis from "lenis/react";
+import ScrollManager from "./components/ScrollManager";
+import ActiveSectionContextProvider from "./components/context/active-section-context";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
@@ -33,9 +32,9 @@ export default function RootLayout({
     <html lang="en" className={`${urbanist.variable} `}>
       <body className={`vsc-initialized font-urbanist antialiased`}>
         <TransitionProvider>
-          {/* <ThemeContextProvider> */}
-          {/* <ScrollManager> */}
-          {/* <ReactLenis
+          <ThemeContextProvider>
+            {/* <ScrollManager> */}
+            <ReactLenis
               root
               options={{
                 duration: 2,
@@ -48,19 +47,19 @@ export default function RootLayout({
 
                 // smoothWheel: true,
               }}
-            > */}
-          <CursorProvider>
-            {/* <ActiveSectionContextProvider> */}
-            {/* <ScrollManager /> */}
+            >
+              <CursorProvider>
+                <ActiveSectionContextProvider>
+                  <ScrollManager />
 
-            {children}
-
-            {/* </ActiveSectionContextProvider> */}
-            {/* <ThemeSwitch /> */}
-          </CursorProvider>
-          {/* </ReactLenis> */}
-          {/* </ScrollManager> */}
-          {/* </ThemeContextProvider>*/}
+                  {children}
+                </ActiveSectionContextProvider>
+                <ThemeSwitch />
+              </CursorProvider>
+            </ReactLenis>
+            {/* </ScrollManager> */}
+          </ThemeContextProvider>
+          *
         </TransitionProvider>
       </body>
     </html>
