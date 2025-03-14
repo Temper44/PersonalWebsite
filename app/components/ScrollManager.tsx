@@ -44,6 +44,7 @@ export default function ScrollManager() {
     };
 
     gsap.ticker.add(updateLenis);
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
       lenis.off("scroll", onScroll);
