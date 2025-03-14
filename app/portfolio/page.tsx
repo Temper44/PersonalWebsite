@@ -62,7 +62,7 @@ export default function Page() {
 
   return (
     <ActiveSectionContextProvider>
-      <main className="max-w-screen relative-center overflow-hidden">
+      <main className="max-screen-center relative-center overflow-hidden">
         {/* <div className="bg-grain" /> */}
         <FixedBackground />
 
