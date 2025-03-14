@@ -27,12 +27,12 @@ import { useEffect } from "react";
 
 export default function ScrollManager() {
   useEffect(() => {
-    // if (
-    //   window.innerWidth <= 640 &&
-    //   navigator.userAgent.toLowerCase().includes("firefox")
-    // ) {
-    //   ScrollTrigger.normalizeScroll(true);
-    // }
+    if (
+      window.innerWidth <= 640 &&
+      navigator.userAgent.toLowerCase().includes("firefox")
+    ) {
+      ScrollTrigger.normalizeScroll(true);
+    }
     // ScrollTrigger.normalizeScroll(true);
   }, []);
 
