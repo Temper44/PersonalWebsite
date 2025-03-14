@@ -32,10 +32,10 @@ export default function Contact() {
     <footer
       id="contact"
       ref={ref}
-      className="relative h-[180dvh] overflow-x-hidden xs:h-[150dvh] sm:h-dvh"
+      className="relative h-[210dvh] overflow-x-hidden xs:h-[160dvh] sm:h-dvh"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
-      <div className="absolute bottom-0 h-[180dvh] w-full xs:h-[140dvh] sm:fixed sm:h-dvh">
+      <div className="absolute bottom-0 h-[200dvh] w-full xs:h-[150dvh] sm:fixed sm:h-dvh">
         <div className="full-size flex flex-col items-center justify-evenly p-6">
           {/* // pt-44 sm:pt-32 */}
           <motion.p
@@ -144,7 +144,7 @@ export default function Contact() {
             </motion.div>
           </div>
           <motion.div
-            className="absolute bottom-6 flex w-full max-w-6xl flex-col items-center justify-between px-4 font-light tracking-wide text-zinc-900 ~text-[0.65rem]/[0.85rem] dark:text-zinc-100 sm:flex-row"
+            className="absolute bottom-16 flex w-full max-w-6xl flex-col items-center justify-between px-4 font-light tracking-wide text-zinc-900 ~text-[0.65rem]/[0.85rem] dark:text-zinc-100 sm:bottom-6 sm:flex-row"
             ref={refFooter}
             initial={{ opacity: 0 }}
             animate={isInViewFooter ? { opacity: 1 } : {}}
