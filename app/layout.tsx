@@ -40,7 +40,7 @@ export default function RootLayout({
               options={{
                 duration: 2,
                 lerp: 0.05,
-                syncTouch: true,
+                // syncTouch: true,
               }}
             >
               <CursorProvider>
