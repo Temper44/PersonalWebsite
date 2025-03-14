@@ -23,7 +23,7 @@
 
 "use client";
 import { useEffect } from "react";
-import { ScrollTrigger } from "@/lib/gsapConfig";
+// import { ScrollTrigger } from "@/lib/gsapConfig";
 
 export default function ScrollManager() {
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function ScrollManager() {
     // ) {
     //   ScrollTrigger.normalizeScroll(true);
     // }
-    ScrollTrigger.normalizeScroll(true);
+    // ScrollTrigger.normalizeScroll(true);
   }, []);
 
   return null;
