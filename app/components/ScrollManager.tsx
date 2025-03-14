@@ -33,6 +33,7 @@ export default function ScrollManager() {
     // ) {
     //   ScrollTrigger.normalizeScroll(true);
     // }
+    ScrollTrigger.normalizeScroll(true);
   }, []);
 
   return null;
