@@ -11,8 +11,8 @@ export const BackgroundGradientAnimation = ({
   fourthColor = "200, 50, 50",
   fifthColor = "173, 70, 255",
   pointerColor = "140, 100, 255",
-  size = "80%",
-  blendingValue = "hard-light",
+  size = "70%",
+  blendingValue = "normal",
   children,
   className,
   interactive = true,
@@ -75,12 +75,6 @@ export const BackgroundGradientAnimation = ({
 
     requestAnimationFrame(move);
   }, [tgX, tgY]);
-
-  useEffect(() => {
-    if (window.innerWidth > 1900) {
-      document.body.style.setProperty("--blending-value", "normal");
-    }
-  }, []);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (interactiveRef.current) {
