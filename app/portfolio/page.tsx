@@ -16,7 +16,7 @@
 // import FloatingNav from "../components/FloatingNav";
 import ActiveSectionContextProvider from "../components/context/active-section-context";
 // import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
-import FixedBackground from "../components/FixedBackground";
+// import FixedBackground from "../components/FixedBackground";
 // import TestSlider from "../components/TestSlider";
 // import TestSlider from "../components/TestSlider";
 
