@@ -10,6 +10,7 @@ import { useCursor } from "./context/CursorContext";
 import { usePathname } from "next/navigation"; // Import the useRouter hook
 import { useMediaQuery } from "react-responsive";
 import MagneticButton from "./MagneticButton";
+import { useGSAP } from "@gsap/react";
 
 interface MobileMenuProps {
   isFullPage?: boolean;
@@ -31,7 +32,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
   });
 
   // GSAP animation on menu state change (open/close)
-  useEffect(() => {
+  useGSAP(() => {
     if (isOpen) {
       const timeline = gsap.timeline({
         defaults: { duration: 0.75, ease: "power2.out" },
@@ -46,9 +47,9 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
         )
         .fromTo(
           menuItemsRef.current,
-          { opacity: 0, x: 85 },
-          { opacity: 1, x: 0, stagger: 0.1 },
-          "-=0.5",
+          { opacity: 0, x: 90 },
+          { opacity: 1, x: 0, stagger: 0.15 },
+          "-=0.4",
         );
     } else {
       const timeline = gsap.timeline({

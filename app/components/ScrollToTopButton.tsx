@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   motion,
   AnimatePresence,
-  useMotionValueEvent,
   useScroll,
+  useMotionValueEvent,
 } from "framer-motion";
 import { GoArrowUp } from "react-icons/go";
 import { useCursor } from "../components/context/CursorContext";
@@ -15,32 +15,27 @@ const ScrollToTopButton = () => {
   const [visible, setVisible] = useState(false);
   const { setIsCursorHovered } = useCursor();
   const { scrollYProgress } = useScroll();
+  const lastScrollY = useRef(0);
 
-  const [lastScrollY, setLastScrollY] = useState(0); // To track scroll direction
+  useMotionValueEvent(scrollYProgress, "change", () => {
+    const currentScrollY = window.scrollY;
+    const direction = currentScrollY - lastScrollY.current;
 
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
-    if (typeof current === "number") {
-      const currentScrollY = window.scrollY;
-      const direction = currentScrollY - lastScrollY; // Check if we are scrolling up or down
+    const isScrollable =
+      document.documentElement.scrollHeight > window.innerHeight;
 
-      const isScrollable =
-        document.documentElement.scrollHeight > window.innerHeight;
-
-      // Always show the button if scrolling isn't possible
-      if (!isScrollable) {
-        setVisible(true);
-        return;
-      }
-
-      // Only start showing the button after reaching 50% of scroll progress
-      if (current > 0.5) {
-        setVisible(direction < 0); // Show only when scrolling up
-      } else {
-        setVisible(false); // Hide the button if we're less than 50% scrolled
-      }
-
-      setLastScrollY(currentScrollY); // Update last scroll position
+    if (!isScrollable) {
+      setVisible(true);
+      return;
     }
+
+    if (scrollYProgress.get() > 0.5) {
+      setVisible(direction < 0); // Show only when scrolling up
+    } else {
+      setVisible(false);
+    }
+
+    lastScrollY.current = currentScrollY;
   });
 
   const scrollToTop = () => {
@@ -50,8 +45,12 @@ const ScrollToTopButton = () => {
   return (
     <AnimatePresence>
       {visible && (
-        <div
-          className={`fixed bottom-[4.5rem] right-[4.5rem] z-10 md:bottom-[4.85rem] md:right-20`}
+        <motion.div
+          className="fixed bottom-[4.5rem] right-[4.5rem] z-10 md:bottom-[4.85rem] md:right-20"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.3, ease: "easeOut" }} // Smoother transition
         >
           <MagneticButton>
             <motion.button
@@ -59,16 +58,12 @@ const ScrollToTopButton = () => {
               onClick={scrollToTop}
               onMouseEnter={() => setIsCursorHovered(true)}
               onMouseLeave={() => setIsCursorHovered(false)}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.3 }}
               aria-label="Scroll to top"
             >
               <GoArrowUp size={24} />
             </motion.button>
           </MagneticButton>
-        </div>
+        </motion.div>
       )}
     </AnimatePresence>
   );

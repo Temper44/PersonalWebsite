@@ -20,9 +20,9 @@ export const HeroParallax = ({
     thumbnail: string;
   }[];
 }) => {
-  const firstRow = products.slice(0, 5);
-  const secondRow = products.slice(5, 10);
-  const thirdRow = products.slice(10, 15);
+  const firstRow = products.slice(0, 4);
+  const secondRow = products.slice(4, 8);
+  const thirdRow = products.slice(8, 13);
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -70,7 +70,7 @@ export const HeroParallax = ({
         }}
         className=""
       >
-        <motion.div className="mb-14 flex flex-row-reverse space-x-10 space-x-reverse md:mb-20 md:space-x-20">
+        <motion.div className="mb-14 flex space-x-10 space-x-reverse md:mb-20 md:space-x-20">
           {firstRow.map((product) => (
             <ProductCard
               product={product}
@@ -88,7 +88,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-10 space-x-reverse md:space-x-20">
+        <motion.div className="flex space-x-10 space-x-reverse md:space-x-20">
           {thirdRow.map((product) => (
             <ProductCard
               product={product}
@@ -193,7 +193,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product relative aspect-[3/2] h-auto w-[15rem] flex-shrink-0 will-change-transform xs:w-[20rem] sm:w-[22rem] md:w-[24rem] lg:w-[26rem] xl:w-[28rem] 2xl:w-[30rem]"
+      className="group/product relative aspect-[16/9] h-auto w-[15rem] flex-shrink-0 will-change-transform xs:w-[20rem] sm:w-[22rem] md:w-[24rem] lg:w-[26rem] xl:w-[28rem] 2xl:w-[30rem]"
     >
       <Link
         href={product.link}
