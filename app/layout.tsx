@@ -7,7 +7,7 @@ import { CursorProvider } from "./components/context/CursorContext";
 // import ThemeContextProvider from "./components/context/ThemeContext";
 // import ThemeSwitch from "./components/ThemeSwitch";
 // // import { ReactLenis } from "lenis/react";
-// import { TransitionProvider } from "./components/TransitionProvider";
+import { TransitionProvider } from "./components/TransitionProvider";
 // // import ScrollManager from "./components/ScrollManager";
 // import ReactLenis from "lenis/react";
 // import ScrollManager from "./components/ScrollManager";
@@ -40,10 +40,10 @@ export default function RootLayout({
           />
           {/* You can include other meta tags or links here */}
         </head>
-        {/* <TransitionProvider> */}
-        {/* <ThemeContextProvider> */}
-        {/* <ScrollManager> */}
-        {/* <ReactLenis
+        <TransitionProvider>
+          {/* <ThemeContextProvider> */}
+          {/* <ScrollManager> */}
+          {/* <ReactLenis
               root
               options={{
                 duration: 2,
@@ -57,19 +57,19 @@ export default function RootLayout({
                 // smoothWheel: true,
               }}
             > */}
-        <CursorProvider>
-          {/* <ActiveSectionContextProvider> */}
-          {/* <ScrollManager /> */}
+          <CursorProvider>
+            {/* <ActiveSectionContextProvider> */}
+            {/* <ScrollManager /> */}
 
-          {children}
+            {children}
 
-          {/* </ActiveSectionContextProvider> */}
-          {/* <ThemeSwitch /> */}
-        </CursorProvider>
-        {/* </ReactLenis> */}
-        {/* </ScrollManager> */}
-        {/* </ThemeContextProvider>
-        </TransitionProvider> */}
+            {/* </ActiveSectionContextProvider> */}
+            {/* <ThemeSwitch /> */}
+          </CursorProvider>
+          {/* </ReactLenis> */}
+          {/* </ScrollManager> */}
+          {/* </ThemeContextProvider>*/}
+        </TransitionProvider>
       </body>
     </html>
   );
