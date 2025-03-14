@@ -3,14 +3,13 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { navItems } from "@/lib/data";
-import gsap from "gsap";
 // import Link from "next/link";
 import { Link } from "next-transition-router";
 import { useCursor } from "./context/CursorContext";
 import { usePathname } from "next/navigation"; // Import the useRouter hook
 import { useMediaQuery } from "react-responsive";
 import MagneticButton from "./MagneticButton";
-import { useGSAP } from "@gsap/react";
+import { gsap, useGSAP } from "@/lib/gsapConfig";
 
 interface MobileMenuProps {
   isFullPage?: boolean;

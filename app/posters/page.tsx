@@ -6,15 +6,11 @@ import Footer from "../components/Footer";
 import HeroText from "../components/HeroText";
 import FixedBackground from "../components/FixedBackground";
 import MarqueeText from "../components/MarqueeText";
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import { loadParallaxPoster } from "@/lib/loadImages";
 import { ParallaxScrollPoster } from "../components/ui/ParallaxScrollPoster";
 import PageUtilities from "../components/PageUtilities";
 import { subHeadingTexts } from "@/lib/texts";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap, useGSAP } from "@/lib/gsapConfig";
 
 export default function Page() {
   const isDesktop = useMediaQuery({ minWidth: 1024 });

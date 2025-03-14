@@ -3,10 +3,7 @@
 import React from "react";
 import MaskText from "./MaskText";
 import Image from "next/image";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger);
+import { gsap, useGSAP } from "@/lib/gsapConfig";
 
 const ProjectImageFrame = ({
   name,

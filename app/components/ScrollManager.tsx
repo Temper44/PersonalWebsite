@@ -23,19 +23,16 @@
 
 "use client";
 import { useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+// import { ScrollTrigger } from "@/lib/gsapConfig";
 
 export default function ScrollManager() {
   useEffect(() => {
-    if (
-      window.innerWidth <= 640 &&
-      navigator.userAgent.toLowerCase().includes("firefox")
-    ) {
-      ScrollTrigger.normalizeScroll(true);
-    }
+    // if (
+    //   window.innerWidth <= 640 &&
+    //   navigator.userAgent.toLowerCase().includes("firefox")
+    // ) {
+    //   ScrollTrigger.normalizeScroll(true);
+    // }
   }, []);
 
   return null;

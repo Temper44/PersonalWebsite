@@ -1,11 +1,7 @@
 "use client";
 
 import { useRef, JSX } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap, useGSAP } from "@/lib/gsapConfig";
 
 export default function TextGradient({
   text,

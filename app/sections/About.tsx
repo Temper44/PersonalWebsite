@@ -1,16 +1,12 @@
 import React, { useRef } from "react";
 import MarqueeText from "../components/MarqueeText";
 import { FiArrowDownRight } from "react-icons/fi";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MaskText from "../components/MaskText";
 import TextGradient from "../components/TextGradient";
 import hoverEffect from "hover-effect";
 import { aboutMeTexts } from "@/lib/texts";
 import { useSectionInView } from "@/lib/hooks";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap, useGSAP, ScrollTrigger } from "@/lib/gsapConfig";
 
 const About = () => {
   const aboutMeRef = useRef<HTMLDivElement>(null);

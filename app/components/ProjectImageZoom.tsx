@@ -1,13 +1,10 @@
 "use client";
 
 import React from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
 
-gsap.registerPlugin(ScrollTrigger);
+import { gsap, useGSAP } from "@/lib/gsapConfig";
 
 const ProjectImageZoom = ({ src, alt }: { src: string; alt: string }) => {
   const isSmall = useMediaQuery({ maxWidth: 640 });

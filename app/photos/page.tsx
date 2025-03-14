@@ -10,16 +10,12 @@ import GridGallery from "../components/GridGallery";
 import Footer from "../components/Footer";
 import { loadParallaxImages, loadSliderImages } from "../../lib/loadImages";
 import ScrollProgressBar from "../components/ScrollProgressBar";
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import HeroText from "../components/HeroText";
 import MarqueeText from "../components/MarqueeText";
 import { Carousel } from "../components/ui/Carousel";
 import FixedBackground from "../components/FixedBackground";
 import { subHeadingTexts } from "@/lib/texts";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap, useGSAP } from "@/lib/gsapConfig";
 
 export default function Page() {
   const isDesktop = useMediaQuery({ minWidth: 1024 });

@@ -1,10 +1,6 @@
 import { useRef } from "react";
 import GridImage from "./GridImage";
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap, useGSAP } from "@/lib/gsapConfig";
 
 const GridGallery = () => {
   const svgRef = useRef<SVGSVGElement>(null);

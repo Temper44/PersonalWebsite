@@ -1,15 +1,11 @@
 "use client";
 
 import React, { useRef } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import gsap from "gsap";
 import MarqueeText from "../components/MarqueeText";
 import SliderProject from "../components/SliderProject";
 import { projects } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap, useGSAP } from "@/lib/gsapConfig";
 
 const Projects = () => {
   const projectsContainer = useRef<HTMLDivElement | null>(null);

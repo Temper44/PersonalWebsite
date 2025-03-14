@@ -1,15 +1,11 @@
 import React from "react";
 import { BackgroundGradientAnimation } from "../components/ui/BackgroundGradientAnimation";
 import MarqueeText from "../components/MarqueeText";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import TextGradient from "../components/TextGradient";
 import { skills } from "@/lib/data";
 import { skillsText } from "@/lib/texts";
 import { useSectionInView } from "@/lib/hooks";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap, useGSAP } from "@/lib/gsapConfig";
 
 const Skills = () => {
   useGSAP(() => {

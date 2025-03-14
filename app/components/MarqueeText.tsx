@@ -168,11 +168,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsapConfig";
 
 const MarqueeText = ({
   text,
