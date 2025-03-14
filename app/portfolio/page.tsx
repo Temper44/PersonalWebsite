@@ -4,20 +4,18 @@
 // import { useMediaQuery } from "react-responsive";
 // import { gsap } from "gsap";
 // import ScrollTrigger from "gsap/ScrollTrigger";
-// import { HeroParallax } from "../components/ui/HeroParallax";
-// import { products } from "@/lib/data";
-// // import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
-// import Contact from "../sections/Contact";
-// import About from "../sections/About";
-// import Skills from "../sections/Skills";
-// import Projects from "../sections/Projects";
+import { HeroParallax } from "../components/ui/HeroParallax";
+import { products } from "@/lib/data";
+import Contact from "../sections/Contact";
+import About from "../sections/About";
+import Skills from "../sections/Skills";
+import Projects from "../sections/Projects";
 import PageUtilities from "../components/PageUtilities";
 // import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
-// import FloatingNav from "../components/FloatingNav";
+import FloatingNav from "../components/FloatingNav";
 import ActiveSectionContextProvider from "../components/context/active-section-context";
-// import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
+import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
 import FixedBackground from "../components/FixedBackground";
-// import TestSlider from "../components/TestSlider";
 // import TestSlider from "../components/TestSlider";
 
 // gsap.registerPlugin(ScrollTrigger);
@@ -67,9 +65,9 @@ export default function Page() {
         <FixedBackground />
 
         <PageUtilities hide={true} />
-        {/* <FloatingNav />
+        <FloatingNav />
 
-        <HeroParallax products={products} /> */}
+        <HeroParallax products={products} />
         {/* <section className="h-screen">
         <svg
           ref={svgRef}
@@ -254,14 +252,14 @@ export default function Page() {
           </defs>
         </svg>
       </section> */}
-        {/* <About />
+        <About />
         <Skills />
-        <Projects /> */}
+        <Projects />
         {/* <div className="h-screen"></div> */}
         {/* <TestSlider /> */}
 
-        {/* <ParallaxScrollGallery />
-        <Contact /> */}
+        <ParallaxScrollGallery />
+        <Contact />
       </main>
     </ActiveSectionContextProvider>
   );
