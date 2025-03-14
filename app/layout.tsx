@@ -57,16 +57,16 @@ export default function RootLayout({
                 // smoothWheel: true,
               }}
             > */}
-        {/* <CursorProvider> */}
-        {/* <ActiveSectionContextProvider> */}
-        {/* <ScrollManager /> */}
+        <CursorProvider>
+          {/* <ActiveSectionContextProvider> */}
+          {/* <ScrollManager /> */}
 
-        {children}
+          {children}
 
-        {/* </ActiveSectionContextProvider> */}
-        {/* <ThemeSwitch />
-              </CursorProvider>
-            </ReactLenis> */}
+          {/* </ActiveSectionContextProvider> */}
+          {/* <ThemeSwitch /> */}
+        </CursorProvider>
+        {/* </ReactLenis> */}
         {/* </ScrollManager> */}
         {/* </ThemeContextProvider>
         </TransitionProvider> */}
