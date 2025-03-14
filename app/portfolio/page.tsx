@@ -64,7 +64,7 @@ export default function Page() {
     <ActiveSectionContextProvider>
       <main className="max-w-screen relative-center h-[200vh]">
         {/* <div className="bg-grain" /> */}
-        <FixedBackground />
+        {/* <FixedBackground /> */}
         {/* 
         <PageUtilities hide={true} />
         <FloatingNav />
