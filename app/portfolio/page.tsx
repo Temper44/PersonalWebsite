@@ -11,12 +11,12 @@
 // import About from "../sections/About";
 // import Skills from "../sections/Skills";
 // import Projects from "../sections/Projects";
-// import PageUtilities from "../components/PageUtilities";
+import PageUtilities from "../components/PageUtilities";
 // import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
 // import FloatingNav from "../components/FloatingNav";
 import ActiveSectionContextProvider from "../components/context/active-section-context";
 // import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
-// import FixedBackground from "../components/FixedBackground";
+import FixedBackground from "../components/FixedBackground";
 // import TestSlider from "../components/TestSlider";
 // import TestSlider from "../components/TestSlider";
 
@@ -64,10 +64,10 @@ export default function Page() {
     <ActiveSectionContextProvider>
       <main className="max-w-screen relative-center h-[200vh]">
         {/* <div className="bg-grain" /> */}
-        {/* <FixedBackground /> */}
-        {/* 
+        <FixedBackground />
+
         <PageUtilities hide={true} />
-        <FloatingNav />
+        {/* <FloatingNav />
 
         <HeroParallax products={products} /> */}
         {/* <section className="h-screen">
