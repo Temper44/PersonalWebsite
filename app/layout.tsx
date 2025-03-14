@@ -42,7 +42,7 @@ export default function RootLayout({
                 lerp: 0.05,
                 syncTouch: true,
                 syncTouchLerp: 0.1,
-                touchMultiplier: 2,
+                touchMultiplier: 5,
                 wheelMultiplier: 1.25,
                 // syncTouchLerp: 0.99,
 
