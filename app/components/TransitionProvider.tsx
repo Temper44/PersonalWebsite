@@ -84,11 +84,11 @@ export function TransitionProvider({
 
       <div
         ref={firstLayer}
-        className="fixed inset-0 z-50 translate-y-full bg-gradient-to-r from-rose-500 to-purple-500 will-change-transform"
+        className="fixed inset-0 z-50 translate-y-full overflow-hidden bg-gradient-to-r from-rose-500 to-purple-500 will-change-transform"
       />
       <div
         ref={secondLayer}
-        className="fixed inset-0 z-50 translate-y-full bg-black will-change-transform"
+        className="fixed inset-0 z-50 translate-y-full overflow-hidden bg-black will-change-transform"
       />
     </TransitionRouter>
   );
