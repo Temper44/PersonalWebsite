@@ -3,8 +3,12 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
+gsap.config({
+  force3D: true,
+});
+
 ScrollTrigger.config({
-  limitCallbacks: true,
+  //   limitCallbacks: true,
   ignoreMobileResize: true,
 });
 
