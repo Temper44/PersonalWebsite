@@ -32,10 +32,10 @@ export default function Contact() {
     <footer
       id="contact"
       ref={ref}
-      className="relative h-[210dvh] overflow-x-hidden xs:h-[160dvh] sm:h-dvh"
+      className="relative h-[210dvh] overflow-x-hidden xs:h-[170dvh] sm:h-dvh"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
-      <div className="absolute bottom-0 h-[200dvh] w-full xs:h-[150dvh] sm:fixed sm:h-dvh">
+      <div className="absolute bottom-0 h-[200dvh] w-full xs:h-[160dvh] sm:fixed sm:h-dvh">
         <div className="full-size flex flex-col items-center justify-evenly p-6">
           {/* // pt-44 sm:pt-32 */}
           <motion.p
