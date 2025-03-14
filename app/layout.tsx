@@ -41,7 +41,7 @@ export default function RootLayout({
                 duration: 2,
                 lerp: 0.05,
                 syncTouch: true,
-                syncTouchLerp: 0.05,
+                syncTouchLerp: 0.75,
                 // smoothWheel: true,
               }}
             >
