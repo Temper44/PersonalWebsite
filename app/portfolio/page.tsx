@@ -62,14 +62,14 @@ export default function Page() {
 
   return (
     <ActiveSectionContextProvider>
-      <main className="max-w-screen relative-center min-h-screen overflow-hidden bg-red-400">
+      <main className="max-w-screen relative-center h-[200vh]">
         {/* <div className="bg-grain" /> */}
         <FixedBackground />
-
+        {/* 
         <PageUtilities hide={true} />
         <FloatingNav />
 
-        <HeroParallax products={products} />
+        <HeroParallax products={products} /> */}
         {/* <section className="h-screen">
         <svg
           ref={svgRef}
@@ -254,14 +254,14 @@ export default function Page() {
           </defs>
         </svg>
       </section> */}
-        <About />
+        {/* <About />
         <Skills />
-        <Projects />
+        <Projects /> */}
         {/* <div className="h-screen"></div> */}
         {/* <TestSlider /> */}
 
-        <ParallaxScrollGallery />
-        <Contact />
+        {/* <ParallaxScrollGallery />
+        <Contact /> */}
       </main>
     </ActiveSectionContextProvider>
   );
