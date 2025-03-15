@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { useCursor } from "./context/CursorContext";
 import { navItems, socialMedia } from "@/lib/data";
