@@ -60,7 +60,7 @@ export default function Page() {
 
   return (
     <ActiveSectionContextProvider>
-      <main className="relative-center h-lvh">
+      <main className="relative-center">
         {/* <div className="bg-grain" /> */}
         <FixedBackground />
 

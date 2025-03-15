@@ -10,7 +10,6 @@ import { TransitionProvider } from "./components/TransitionProvider";
 // import ScrollManager from "./components/ScrollManager";
 import ReactLenis from "lenis/react";
 import ScrollManager from "./components/ScrollManager";
-import ActiveSectionContextProvider from "./components/context/active-section-context";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
@@ -49,17 +48,15 @@ export default function RootLayout({
               }}
             >
               <CursorProvider>
-                <ActiveSectionContextProvider>
-                  <ScrollManager />
+                <ScrollManager />
 
-                  {children}
-                </ActiveSectionContextProvider>
+                {children}
+
                 <ThemeSwitch />
               </CursorProvider>
             </ReactLenis>
             {/* </ScrollManager> */}
           </ThemeContextProvider>
-          *
         </TransitionProvider>
       </body>
     </html>
