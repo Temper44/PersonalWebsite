@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef } from "react";
 import MarqueeText from "../components/MarqueeText";
 import { FiArrowDownRight } from "react-icons/fi";

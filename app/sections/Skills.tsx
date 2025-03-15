@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { BackgroundGradientAnimation } from "../components/ui/BackgroundGradientAnimation";
 import MarqueeText from "../components/MarqueeText";

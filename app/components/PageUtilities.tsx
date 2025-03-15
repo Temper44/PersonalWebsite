@@ -7,14 +7,24 @@ import CustomCursor from "@/app/components/CustomCursor";
 import ScrollToTopButton from "@/app/components/ScrollToTopButton";
 import { useMediaQuery } from "react-responsive";
 
-const PageUtilities = ({ hide = false }: { hide?: boolean }) => {
+const PageUtilities = ({
+  hide = false,
+  menuFullPage = true,
+  menuDisplayHome = true,
+}: {
+  hide?: boolean;
+  menuFullPage?: boolean;
+  menuDisplayHome?: boolean;
+}) => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
-  // const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   return (
     <>
-      {isMobile && <ScrollProgressBar />} {/* isMobile &&  */}
-      <MobileMenu isFullPage={true} />
+      {isMobile && <ScrollProgressBar />}
+      <MobileMenu
+        menuFullPage={menuFullPage}
+        menuDisplayHome={menuDisplayHome}
+      />
       <CustomCursor />
       {!hide && <ScrollToTopButton />}
     </>

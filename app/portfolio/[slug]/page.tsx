@@ -1,6 +1,7 @@
 import Button from "@/app/components/Button";
 import ChipAnimation from "@/app/components/ChipAnimation";
 import ColorCase from "@/app/components/ColoCase";
+import FixedBackground from "@/app/components/FixedBackground";
 import Footer from "@/app/components/Footer";
 import MaskText from "@/app/components/MaskText";
 import PageUtilities from "@/app/components/PageUtilities";
@@ -63,7 +64,7 @@ export default async function Page({
 
   return (
     <main className="max-w-screen relative-center overflow-hidden">
-      <div className="bg-grain" />
+      <FixedBackground />
       <PageUtilities />
       <ProjectImageFrame
         name={project.name}
@@ -100,7 +101,6 @@ export default async function Page({
             className="textSubHeading mb-3"
             headline
           />
-
           <ChipAnimation technologies={project.technologies} />
         </div>
         <div className="projectDataWrapper order-6 row-span-2 mt-8 justify-self-end md:mt-0">
@@ -111,6 +111,7 @@ export default async function Page({
           />
         </div>
       </div>
+
       <div className="mx-auto my-28 flex max-w-7xl justify-center">
         <ColorCase colors={project.colors} />
       </div>

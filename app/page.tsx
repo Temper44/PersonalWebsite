@@ -1,47 +1,41 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
-import MobileMenu from "./components/MobileMenu";
 import HeroFooter from "./components/HeroFooter";
-import CustomCursor from "./components/CustomCursor";
 // import { BackgroundBeams } from "./components/ui/BackgroundBeams";
 import FixedBackground from "./components/FixedBackground";
+import PageUtilities from "./components/PageUtilities";
 
 export default function Home() {
   // const [isHovered, setIsHovered] = useState(false);
   const [isHoveredPortrait, setIsHoveredPortrait] = useState(false);
 
   const isSmall = useMediaQuery({ maxWidth: 640 });
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-  // const isTablet = useMediaQuery({ minWidth: 768 });
-  const isDesktop = useMediaQuery({ minWidth: 1024 });
-
-  const [isClient, setIsClient] = useState(false);
+  // const [isClient, setIsClient] = useState(false);
 
   // Set `isClient` to true after the component mounts
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  // useEffect(() => {
+  //   setIsClient(true);
+  // }, []);
 
-  if (!isClient) {
-    return (
-      <main className="flex-col-center relative-center h-dvh w-screen overflow-hidden"></main>
-    );
-  }
+  // if (!isClient) {
+  //   return (
+  //     <main className="flex-col-center relative-center h-dvh w-screen overflow-hidden"></main>
+  //   );
+  // }
 
   return (
     <main className="flex-col-center relative-center h-dvh w-screen overflow-hidden">
-      {isMobile && <MobileMenu displayHome={false} />}
-      {isDesktop && <CustomCursor />}
-
       <FixedBackground />
+      <PageUtilities hide menuDisplayHome={false} menuFullPage={false} />
+
       {/* {isTablet && <BackgroundBeams />} */}
       <section className="container-flex-center px-6 sm:flex-row sm:px-11">
-        <motion.h1 className="textShadow relative z-10 mt-[-6rem] text-left !leading-none transition-colors duration-500 ease-in-out ~text-[6rem]/[12rem] max-xs:text-6xl">
+        <motion.h1 className="textShadow relative z-10 mt-[-6rem] text-left !leading-none transition-colors duration-500 ease-in-out ~text-[6rem]/[11rem] max-xs:text-6xl">
           <motion.span
-            className="mb-3 block text-center font-light ~text-2xl/4xl sm:mb-2 sm:text-left"
+            className="mb-3 block text-center font-light ~text-[1.5rem]/[2rem] sm:mb-2 sm:text-left"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{

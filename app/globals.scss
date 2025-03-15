@@ -127,13 +127,7 @@ a {
 
 @supports (background-clip: text) or (-webkit-background-clip: text) {
   .colorEffect {
-    background-image: linear-gradient(
-      to right,
-      #fd4f55,
-      #f70ccc,
-      #0890ff,
-      #fd4f55
-    );
+    background-image: linear-gradient(to right, #f43f5e, #a855f7, #f43f5e);
 
     -webkit-background-clip: text;
     background-clip: text;
@@ -220,13 +214,14 @@ a {
   .nav-text:hover:not(.nav-text-isActive) {
     color: transparent;
     transform: translateX(20px); /* Moves text to the right smoothly */
-    background-image: linear-gradient(
-      to right,
-      #fd4f55,
-      #f70ccc,
-      #0890ff,
-      #fd4f55
-    );
+    background-image: linear-gradient(to right, #f43f5e, #a855f7, #f43f5e);
+    // background-image: linear-gradient(
+    //   to right,
+    //   #fd4f55,
+    //   #f70ccc,
+    //   #0890ff,
+    //   #fd4f55
+    // );
 
     -webkit-background-clip: text;
     background-clip: text;
@@ -364,14 +359,14 @@ body::-webkit-scrollbar-thumb {
 }
 .portfolioSvg {
   width: 100%;
-  position: fixed;
-  top: 25%;
+  position: absolute;
+  // top: 25%;
   transform: translateX(-50%);
   left: 50%;
 
   @media screen and (max-width: 768px) {
     width: 90%;
-    top: 25%;
+    // top: 25%;
   }
 }
 .posterSvg {

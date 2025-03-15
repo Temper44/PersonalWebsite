@@ -1,6 +1,6 @@
 export const subHeadingTexts = {
   blog: `A collection of thoughts and insights from technical stuff to personal experiences`,
-  photos: `No matter where I am, I’m always looking for that perfect moment, whether in nature or the city. At least I try to..`,
+  photos: `No matter where I am, I’m always looking for that perfect moment, whether in nature or the city. At least I try to...`,
   posters: `Here's where my random design ideas come to life. I just let the process take me wherever it goes`,
   models: `Exploring form and function through 3D designs—experimenting with shapes, materials, and techniques to bring small-scale ideas to life`,
 };

@@ -253,9 +253,9 @@ const MarqueeText = ({
       trigger: marquee,
       start: "top bottom",
       end: "bottom top",
-      scrub: 2,
+      scrub: 1,
       onUpdate: (self) => {
-        gsap.set(marquee, { xPercent: -self.progress * 20 }); // Adjust speed dynamically
+        gsap.set(marquee, { xPercent: -self.progress * 10 }); // Adjust speed dynamically
       },
     });
   }, []);

@@ -12,11 +12,14 @@ import MagneticButton from "./MagneticButton";
 import { gsap, useGSAP } from "@/lib/gsapConfig";
 
 interface MobileMenuProps {
-  isFullPage?: boolean;
-  displayHome?: boolean;
+  menuFullPage?: boolean;
+  menuDisplayHome?: boolean;
 }
 
-const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
+const MobileMenu = ({
+  menuFullPage = true,
+  menuDisplayHome = true,
+}: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen((prevState) => !prevState);
   const menuRef = useRef(null);
@@ -125,7 +128,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
       >
         <MagneticButton>
           <motion.button
-            className={`burgerMenu flex-center rounded-full transition-all ${!isFullPage && "md:hidden"} ${
+            className={`burgerMenu flex-center rounded-full transition-all ${!menuFullPage && "md:hidden"} ${
               isOpen &&
               "opened right-[1.4rem] top-4 rounded-full bg-black p-2 dark:bg-white"
             }`}
@@ -166,7 +169,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
       </motion.div>
 
       <motion.div
-        className={`will-change-all fixed left-0 right-0 top-0 z-20 mx-auto block bg-white opacity-0 dark:bg-black ${!isFullPage && "md:hidden"}`}
+        className={`will-change-all fixed left-0 right-0 top-0 z-20 mx-auto block bg-white opacity-0 dark:bg-black ${!menuFullPage && "md:hidden"}`}
         ref={menuRef}
       >
         <div className="flex-center absolute left-0 top-0 h-screen w-screen bg-grid-small-black/[0.15] dark:bg-grid-small-white/[0.25]">
@@ -176,7 +179,7 @@ const MobileMenu = ({ isFullPage, displayHome = true }: MobileMenuProps) => {
           className={`z-100 flex-col-center relative h-screen gap-2 xs:gap-6 lg:gap-4 xl:gap-0 ${isMobileOrTabletLandscape && "!gap-2"}`}
         >
           {navItems.map((item, index) => {
-            if (index === 0 && !displayHome) {
+            if (index === 0 && !menuDisplayHome) {
               return null;
             }
             // Check if the current route matches the item's link
