@@ -1,26 +1,19 @@
-"use client";
-
-import MobileMenu from "./components/MobileMenu";
-import CustomCursor from "./components/CustomCursor";
-import { useMediaQuery } from "react-responsive";
 import HeroText from "./components/HeroText";
 import FixedBackground from "./components/FixedBackground";
 import HeroFooter from "./components/HeroFooter";
+import PageUtilities from "./components/PageUtilities";
+import { subHeadingTexts } from "@/lib/texts";
 
 export default function NotFound() {
-  const isDesktop = useMediaQuery({ minWidth: 1024 });
-  const words = `Sorry, the page you are looking for does not exist!`;
-
   return (
     <main className="max-screen-center">
       <FixedBackground />
-      <MobileMenu isFullPage={true} />
-      {isDesktop && <CustomCursor />}
+      <PageUtilities />
 
       <section className="container-flex-center">
         <HeroText
           heading="404 - Not Found"
-          subheading={words}
+          subheading={subHeadingTexts.notFound}
           infoText="Please navigate to a different page"
         />
       </section>

@@ -3,6 +3,7 @@ export const subHeadingTexts = {
   photos: `No matter where I am, I’m always looking for that perfect moment, whether in nature or the city. At least I try to...`,
   posters: `Here's where my random design ideas come to life. I just let the process take me wherever it goes`,
   models: `Exploring form and function through 3D designs—experimenting with shapes, materials, and techniques to bring small-scale ideas to life`,
+  notFound: `Sorry, the page you are looking for does not exist!`,
 };
 
 export const aboutMeTexts = {
