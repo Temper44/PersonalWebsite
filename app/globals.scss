@@ -484,7 +484,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container-flex-center {
-  @apply flex min-h-dvh w-full max-w-9xl flex-col items-center justify-center py-6 ~px-6/24;
+  @apply flex min-h-svh w-full max-w-9xl flex-col items-center justify-center py-6 ~px-6/24;
 }
 
 .absolute-center {
