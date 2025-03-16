@@ -480,7 +480,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .max-screen-center {
-  @apply relative mx-auto flex min-h-dvh flex-col items-center justify-center overflow-hidden;
+  @apply relative mx-auto flex min-h-svh flex-col items-center justify-center overflow-hidden;
 }
 
 .container-flex-center {
