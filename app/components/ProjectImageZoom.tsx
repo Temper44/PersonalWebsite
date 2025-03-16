@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
-
 import { gsap, useGSAP } from "@/lib/gsapConfig";
 
 const ProjectImageZoom = ({ src, alt }: { src: string; alt: string }) => {

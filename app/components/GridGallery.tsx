@@ -1,5 +1,5 @@
 import GridImage from "./GridImage";
-import SnakeSvg from "./svg/SnakeSvg";
+import SnakeSvg from "./SnakeSvg";
 
 const GridGallery = () => {
   return (

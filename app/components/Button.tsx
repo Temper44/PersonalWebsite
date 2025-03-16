@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useCursor } from "./context/CursorContext";
 import Link from "next/link";
 import { useInView } from "motion/react";
@@ -82,6 +82,3 @@ const ButtonSkillet = ({
     </motion.div>
   );
 };
-
-// only clasname in button element
-//origan  button:  className={group flex w-fit items-center justify-center gap-3 rounded-full border border-rose-500 border-purple-500 bg-zinc-900 px-8 py-3 font-medium tracking-wider text-white shadow-md transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-rose-500 hover:to-purple-500 focus:scale-105 active:scale-105 dark:bg-zinc-100 dark:text-black hover:dark:text-white ${className}}

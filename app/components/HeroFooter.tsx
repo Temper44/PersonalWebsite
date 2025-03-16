@@ -1,23 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import { useCursor } from "./context/CursorContext";
 import { navItems, socialMedia } from "@/lib/data";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useMediaQuery } from "react-responsive";
 
 const HeroFooter = () => {
   const { setIsCursorHovered } = useCursor();
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Detect media query changes
-  const mediaQueryMobile = useMediaQuery({ maxWidth: 768 });
-
-  // Prevent re-renders by syncing state once
-  useEffect(() => {
-    setIsMobile(mediaQueryMobile);
-  }, [mediaQueryMobile]);
 
   return (
     <footer className="container absolute bottom-0 flex items-center justify-around px-11 py-7">
@@ -28,12 +17,16 @@ const HeroFooter = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
       >
-        {socialMedia.map((link) => (
+        {socialMedia.map((link, index) => (
           <Link
             key={link.id}
             href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={index === socialMedia.length - 1 ? undefined : "_blank"}
+            rel={
+              index === socialMedia.length - 1
+                ? undefined
+                : "noopener noreferrer"
+            }
             aria-label={`More information on ${link.name}`}
             className="transition-colors duration-500 ease-in-out ~text-[1.175rem]/[1.25rem] dark:text-white"
             onMouseEnter={() => setIsCursorHovered(true)}
@@ -42,22 +35,11 @@ const HeroFooter = () => {
             {link.icon}
           </Link>
         ))}
-        {/* <Link
-          href="/imprint"
-          className="text-sm transition-colors duration-500 ease-in-out md:inline xl:text-base 2xl:text-lg"
-          aria-label="More information on Imprint"
-          onMouseEnter={() => setIsCursorHovered(true)}
-          onMouseLeave={() => setIsCursorHovered(false)}
-        >
-          Imprint
-        </Link> */}
       </motion.div>
 
       {/* Navigation */}
       <motion.nav
-        className={`items-center justify-center md:flex md:gap-6 lg:gap-8 ${
-          isMobile ? "hidden" : "flex"
-        }`}
+        className={`hidden items-center justify-center md:flex md:gap-6 lg:gap-8`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.3, duration: 1 }}

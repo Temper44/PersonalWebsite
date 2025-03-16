@@ -8,11 +8,11 @@ export default function NotFound() {
   return (
     <main className="max-screen-center">
       <FixedBackground />
-      <PageUtilities />
+      <PageUtilities menuFullPage={false} />
 
       <section className="container-flex-center">
         <HeroText
-          heading="404 - Not Found"
+          heading="404"
           subheading={subHeadingTexts.notFound}
           infoText="Please navigate to a different page"
         />

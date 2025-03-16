@@ -105,7 +105,7 @@ export default BezierLine;
 
 // .bezierLine svg path {
 //   stroke: white;
-//   stroke-width: 1px;
+//   strokeWidth: 1px;
 //   fill: none;
 // }
 
