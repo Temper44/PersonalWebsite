@@ -1,21 +1,21 @@
-import { HeroParallax } from "../components/ui/HeroParallax";
-import { products } from "@/lib/data";
+// import { HeroParallax } from "../components/ui/HeroParallax";
+// import { products } from "@/lib/data";
 import Contact from "../sections/Contact";
-import About from "../sections/About";
-import Skills from "../sections/Skills";
-import Projects from "../sections/Projects";
-import PageUtilities from "../components/PageUtilities";
-import FloatingNav from "../components/FloatingNav";
+// import About from "../sections/About";
+// import Skills from "../sections/Skills";
+// import Projects from "../sections/Projects";
+// import PageUtilities from "../components/PageUtilities";
+// import FloatingNav from "../components/FloatingNav";
 import ActiveSectionContextProvider from "../components/context/active-section-context";
-import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
-import FixedBackground from "../components/FixedBackground";
-import SvgContainer from "../components/SvgContainer";
+// import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
+// import FixedBackground from "../components/FixedBackground";
+// import SvgContainer from "../components/SvgContainer";
 
 export default function Page() {
   return (
     <ActiveSectionContextProvider>
       <main className="relative-center">
-        <FixedBackground />
+        {/* <FixedBackground />
         <PageUtilities hide={true} />
         <FloatingNav />
         <HeroParallax products={products} />
@@ -142,7 +142,7 @@ export default function Page() {
         <About />
         <Skills />
         <Projects />
-        <ParallaxScrollGallery />
+        <ParallaxScrollGallery /> */}
         <Contact />
       </main>
     </ActiveSectionContextProvider>
