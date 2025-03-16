@@ -25,7 +25,7 @@ const Skills = () => {
 
     clipAnimation.to(".mask-clip-path", {
       width: "100vw",
-      height: "100dvh",
+      height: "100svh",
       borderRadius: 0,
     });
   });
@@ -39,7 +39,7 @@ const Skills = () => {
       className="flex-col-center relative overflow-hidden"
     >
       <MarqueeText fontMobileBigger text="Skills" />
-      <div className="skillsContainer h-dvh w-screen">
+      <div className="skillsContainer h-svh w-screen">
         <h2 className="absolute-center top-[60%] w-[80%] text-center font-extralight !leading-relaxed tracking-wide ~text-base/2xl sm:top-[75%] md:w-auto">
           {skillsText}
         </h2>

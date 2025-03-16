@@ -23,7 +23,7 @@ const ProjectImageZoom = ({ src, alt }: { src: string; alt: string }) => {
 
     clipAnimation.to(".mask-clip-path", {
       width: "100vw",
-      height: "100vh",
+      height: "100svh",
       borderRadius: 0,
       // objectFit: "cover",
     });
