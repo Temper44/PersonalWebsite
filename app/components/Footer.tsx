@@ -16,12 +16,14 @@ const Footer = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 1, duration: 1 }}
     >
-      {socialMedia.map((link) => (
+      {socialMedia.map((link, index) => (
         <Link
           key={link.id}
           href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
+          target={index === socialMedia.length - 1 ? undefined : "_blank"}
+          rel={
+            index === socialMedia.length - 1 ? undefined : "noopener noreferrer"
+          }
           aria-label={`More information on ${link.name}`}
           className="transition-colors duration-500 ease-in-out ~text-[1.175rem]/[1.4rem] dark:text-white"
           onMouseEnter={() => setIsCursorHovered(true)}

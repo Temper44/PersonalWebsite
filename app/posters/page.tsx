@@ -55,7 +55,7 @@ export default function Page() {
       </SvgContainer>
 
       <section className="container-flex-center" id="posters">
-        <MarqueeText fontMobileBigger text="selected work" />
+        <MarqueeText fontMobileBigger text="Urban" />
         <ParallaxScrollPoster images={parallaxPoster} />
       </section>
       <Footer />

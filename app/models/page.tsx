@@ -11,7 +11,7 @@ export default function Page() {
       <PageUtilities hide />
       <section className="container-flex-center">
         <HeroText
-          heading="3D-Models"
+          heading="Models"
           subheading={subHeadingTexts.models}
           infoText="Coming soon.."
         />

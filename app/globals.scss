@@ -5,16 +5,14 @@
 :root {
   --background: #f7f7f7;
   --foreground: #080e10;
-  --mobile: 640px;
-  --tablet: 768px;
-  --sb-track-color: #d1d1d1; /* Light mode track color */
-  --sb-thumb-color: #3b3b3b; /* Light mode thumb color */
+  --sb-track-color: #d1d1d1;
+  --sb-thumb-color: #3b3b3b;
   --sb-size: 11px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #080e10;
+    --background: #130a0f;
     --foreground: #f7f7f7;
   }
 }
@@ -138,7 +136,6 @@ a {
     transition:
       background-position 0.4s ease-in,
       background-size 0.4s ease-in;
-    // transition: all 0.4s ease-in;
   }
 
   @keyframes gradientAnimate {
@@ -215,14 +212,6 @@ a {
     color: transparent;
     transform: translateX(20px); /* Moves text to the right smoothly */
     background-image: linear-gradient(to right, #f43f5e, #a855f7, #f43f5e);
-
-    // background-image: linear-gradient(
-    //   to right,
-    //   #fd4f55,
-    //   #f70ccc,
-    //   #0890ff,
-    //   #fd4f55
-    // );
 
     -webkit-background-clip: text;
     background-clip: text;
@@ -470,13 +459,6 @@ body::-webkit-scrollbar-thumb {
 
 .dark .field-input {
   @apply border-white/10 bg-zinc-900 text-white;
-}
-
-.projectsWrapper {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
 }
 
 .max-screen-center {

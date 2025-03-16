@@ -125,7 +125,7 @@ const AnimatedText = ({
   };
 
   return (
-    <div className="inline-flex flex-wrap items-end overflow-hidden">
+    <span className="inline-flex flex-wrap items-end overflow-hidden">
       <motion.span
         className={`will-change-all ${className}`}
         variants={animation}
@@ -135,7 +135,7 @@ const AnimatedText = ({
       >
         {text}&nbsp;
       </motion.span>
-    </div>
+    </span>
   );
 };
 

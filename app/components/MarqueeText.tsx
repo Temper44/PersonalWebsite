@@ -247,7 +247,7 @@ const MarqueeText = ({
     const marquee = marqueeRef.current;
     if (!marquee) return;
 
-    gsap.set(marquee, { xPercent: 0 }); // Ensure it starts at 0
+    gsap.set(marquee, { xPercent: 0 });
 
     ScrollTrigger.create({
       trigger: marquee,
@@ -255,7 +255,7 @@ const MarqueeText = ({
       end: "bottom top",
       scrub: 1,
       onUpdate: (self) => {
-        gsap.set(marquee, { xPercent: -self.progress * 10 }); // Adjust speed dynamically
+        gsap.set(marquee, { xPercent: -self.progress * 12 }); // Adjust speed dynamically
       },
     });
   }, []);
@@ -283,7 +283,7 @@ const MarqueeText = ({
             fontMobileBigger
               ? "~text-[3.2rem]/[13rem]"
               : "~text-[2.25rem]/[13rem]"
-          } ~mt-[9rem]/[13rem] ~mb-[4rem]/[8rem]`}
+          } ~mt-[10rem]/[25rem] ~mb-[4.5rem]/[9rem]`}
         >
           {text} - {text} - {text} - {text} - {text} - {text} - {text} - {text}
         </h2>

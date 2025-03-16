@@ -177,7 +177,7 @@ const Slide = ({ src, index, current, handleSlideClick }: SlideProps) => {
           style={{
             opacity: current === index ? 1 : 0.5,
           }}
-          alt=""
+          alt={`landsacpe-${index}`}
           src={src}
           fill
           onLoad={imageLoaded}

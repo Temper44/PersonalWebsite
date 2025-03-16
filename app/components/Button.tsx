@@ -20,7 +20,7 @@ const Button = ({
   className?: string;
 }) => {
   return href ? (
-    <Link href={href}>
+    <Link href={href} className="outline-none">
       <ButtonSkillet
         type={type}
         text={text}
@@ -69,15 +69,15 @@ const ButtonSkillet = ({
         onMouseEnter={() => setIsCursorHovered(true)}
         onMouseLeave={() => setIsCursorHovered(false)}
       >
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-rose-500 to-purple-500" />
-        <div className="flex-center relative gap-3 rounded-full bg-zinc-900 ~text-[0.9rem]/[1.05rem] ~px-[1.64rem]/[1.87rem] ~py-[0.58rem]/[0.68rem] group-hover:bg-transparent dark:bg-zinc-100">
+        <span className="absolute inset-0 rounded-full bg-gradient-to-r from-rose-500 to-purple-500" />
+        <span className="flex-center relative gap-3 rounded-full bg-zinc-900 ~text-[0.9rem]/[1.05rem] ~px-[1.64rem]/[1.87rem] ~py-[0.58rem]/[0.68rem] group-hover:bg-transparent dark:bg-zinc-100">
           {text}
           {icon && (
             <span className="opacity-80 transition-all group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:opacity-100">
               {icon}
             </span>
           )}
-        </div>
+        </span>
       </button>
     </motion.div>
   );

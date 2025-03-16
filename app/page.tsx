@@ -4,34 +4,18 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import HeroFooter from "./components/HeroFooter";
-// import { BackgroundBeams } from "./components/ui/BackgroundBeams";
 import FixedBackground from "./components/FixedBackground";
 import PageUtilities from "./components/PageUtilities";
 
 export default function Home() {
-  // const [isHovered, setIsHovered] = useState(false);
   const [isHoveredPortrait, setIsHoveredPortrait] = useState(false);
-
   const isSmall = useMediaQuery({ maxWidth: 640 });
-  // const [isClient, setIsClient] = useState(false);
-
-  // Set `isClient` to true after the component mounts
-  // useEffect(() => {
-  //   setIsClient(true);
-  // }, []);
-
-  // if (!isClient) {
-  //   return (
-  //     <main className="flex-col-center relative-center h-dvh w-screen overflow-hidden"></main>
-  //   );
-  // }
 
   return (
-    <main className="flex-col-center relative-center h-dvh w-screen overflow-hidden">
+    <main className="flex-col-center relative-center h-svh w-screen overflow-hidden">
       <FixedBackground />
       <PageUtilities hide menuDisplayHome={false} menuFullPage={false} />
 
-      {/* {isTablet && <BackgroundBeams />} */}
       <section className="container-flex-center sm:flex-row sm:px-11">
         <motion.h1 className="textShadow relative z-10 mt-[-6rem] text-left !leading-none transition-colors duration-500 ease-in-out ~text-[6rem]/[11rem] max-xs:text-6xl">
           <motion.span
@@ -64,13 +48,7 @@ export default function Home() {
               ease: "easeIn",
             }}
           >
-            <span
-              className="colorEffect font-bold"
-              // onMouseEnter={() => setIsHovered(true)}
-              // onMouseLeave={() => setIsHovered(false)}
-            >
-              Creative
-            </span>
+            <span className="colorEffect font-bold">Creative</span>
             {isSmall && (
               <>
                 {" "}
@@ -120,7 +98,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="flex-center pointer-events-none absolute inset-0 z-[100] h-dvh w-screen backdrop-blur-md"
+            className="flex-center pointer-events-none absolute inset-0 z-[100] h-svh w-screen backdrop-blur-md"
           >
             <motion.img
               src="/img/portrait_home.jpg"

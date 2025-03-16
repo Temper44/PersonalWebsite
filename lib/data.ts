@@ -56,10 +56,10 @@ interface NavItem {
 export const navItems: NavItem[] = [
   { name: "Home", link: "./" },
   { name: "Portfolio", link: "/portfolio" },
-  { name: "Blog", link: "/blog" },
   { name: "Photos", link: "/photos" },
   { name: "Posters", link: "/posters" },
-  { name: "3D-Models", link: "/models" },
+  { name: "Blog", link: "/blog" },
+  { name: "Models", link: "/models" },
 ];
 
 //extended version of navItems with imprint

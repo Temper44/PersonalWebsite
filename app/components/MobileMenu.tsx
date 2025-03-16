@@ -171,11 +171,11 @@ const MobileMenu = ({
         className={`will-change-all fixed left-0 right-0 top-0 z-20 mx-auto block bg-white opacity-0 dark:bg-black ${!menuFullPage && "md:hidden"}`}
         ref={menuRef}
       >
-        <div className="flex-center absolute left-0 top-0 h-screen w-screen bg-grid-small-black/[0.15] dark:bg-grid-small-white/[0.25]">
+        <div className="flex-center absolute left-0 top-0 h-svh w-screen bg-grid-small-black/[0.15] dark:bg-grid-small-white/[0.25]">
           <div className="flex-center absolute inset-0 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,theme(colors.background))] dark:bg-black" />
         </div>
         <nav
-          className={`z-100 flex-col-center relative h-screen gap-2 xs:gap-6 lg:gap-4 xl:gap-0 ${isMobileOrTabletLandscape && "!gap-2"}`}
+          className={`z-100 flex-col-center relative h-svh gap-2 xs:gap-6 lg:gap-4 xl:gap-0 ${isMobileOrTabletLandscape && "!gap-2"}`}
         >
           {navItems.map((item, index) => {
             if (index === 0 && !menuDisplayHome) {

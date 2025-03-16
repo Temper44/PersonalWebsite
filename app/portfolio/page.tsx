@@ -10,6 +10,41 @@ import ActiveSectionContextProvider from "../components/context/active-section-c
 import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
 import FixedBackground from "../components/FixedBackground";
 import SvgContainer from "../components/SvgContainer";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mathias Ebner - Web Developer Portfolio",
+  description:
+    "Explore the portfolio of Mathias Ebner, a creative technologist specializing in web development, and UI/UX. Discover innovative web projects, stunning web designs that combine technology and creativity. Learn more about his skills and passions.",
+  keywords: [
+    "Web Developer",
+    "Frontend Developer",
+    "Creative Technologist",
+    "Portfolio",
+    "Software Engineer Portfolio",
+    "Web Projects",
+    "Web Design",
+    "Mathias Ebner",
+    "Technology",
+  ],
+  openGraph: {
+    siteName: "Mathias Ebner - Web Developer Portfolio",
+    type: "website",
+    locale: "en_AT",
+    url: "https://mathiasebner.com",
+    title: "Mathias Ebner - Web Developer Portfolio",
+    description:
+      "Explore the portfolio of Mathias Ebner, a creative technologist specializing in web development, and UI/UX. Discover innovative web projects, stunning web designs that combine technology and creativity.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+    "max-video-preview": -1,
+    googleBot: "index, follow",
+  },
+};
 
 export default function Page() {
   return (

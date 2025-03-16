@@ -44,7 +44,7 @@ const Projects = () => {
       <MarqueeText fontMobileBigger text="Projects" />
       <div
         ref={projectsContainer}
-        className="flex h-dvh w-[300vw] !overflow-hidden"
+        className="flex h-svh w-[300vw] !overflow-hidden"
       >
         {projects.map((project, i) => (
           <SliderProject

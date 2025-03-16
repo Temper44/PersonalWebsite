@@ -1,40 +1,48 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const ScrollProgressBar = () => {
   const progressRef = useRef<HTMLDivElement | null>(null);
   const animationFrame = useRef<number | null>(null);
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
+    setHydrated(true); // Prevents mismatch by ensuring client-side updates only
+
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+
+      if (progressRef.current) {
+        progressRef.current.style.width = `${progress}%`;
+      }
+    };
+
     const handleScroll = () => {
       if (animationFrame.current) {
-        cancelAnimationFrame(animationFrame.current); // Cancel previous frame request
+        cancelAnimationFrame(animationFrame.current);
       }
-
-      animationFrame.current = requestAnimationFrame(() => {
-        const scrollTop = window.scrollY;
-        const docHeight =
-          document.documentElement.scrollHeight - window.innerHeight;
-        const progress = (scrollTop / docHeight) * 100;
-
-        if (progressRef.current) {
-          progressRef.current.style.width = `${progress}%`; // Update width directly
-        }
-      });
+      animationFrame.current = requestAnimationFrame(updateProgress);
     };
 
     window.addEventListener("scroll", handleScroll);
+    updateProgress(); // Ensure progress is updated immediately on mount
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       if (animationFrame.current) cancelAnimationFrame(animationFrame.current);
     };
   }, []);
 
+  if (!hydrated) return null; // Prevents hydration mismatch
+
   return (
     <div
       ref={progressRef}
       className="fixed left-0 top-0 z-20 h-[3px] bg-gradient-to-r from-rose-500 to-purple-500 lg:hidden"
-      style={{ width: "0%" }} // Start with no width
+      style={{ width: "0%" }} // Initially hidden before hydration
     />
   );
 };

@@ -82,7 +82,7 @@ const About = () => {
       <MarqueeText fontMobileBigger text="About" />
       <div
         ref={aboutMeRef}
-        className="flex-col-center relative min-h-[130dvh] w-full rounded-[3rem] transition-colors duration-1000"
+        className="flex-col-center relative min-h-[130svh] w-full rounded-[3rem] transition-colors duration-1000"
       >
         <div className="absolute left-8 top-8 text-6xl text-white dark:text-black 2xl:text-8xl">
           <FiArrowDownRight />
