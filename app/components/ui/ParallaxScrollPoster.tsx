@@ -114,7 +114,7 @@ export const ParallaxScrollPoster = ({
 
   return (
     <div className={cn("w-full items-start overflow-hidden", className)}>
-      <div className="container mx-auto grid grid-cols-1 gap-20 px-2 pb-40 md:grid-cols-2">
+      <div className="mx-auto grid w-full max-w-9xl grid-cols-1 gap-20 px-2 pb-40 md:grid-cols-2">
         <Lightbox
           className="cursor-pointer"
           open={isOpen}

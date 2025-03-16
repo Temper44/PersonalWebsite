@@ -32,7 +32,7 @@ export default function Home() {
       <PageUtilities hide menuDisplayHome={false} menuFullPage={false} />
 
       {/* {isTablet && <BackgroundBeams />} */}
-      <section className="container-flex-center px-6 sm:flex-row sm:px-11">
+      <section className="container-flex-center sm:flex-row sm:px-11">
         <motion.h1 className="textShadow relative z-10 mt-[-6rem] text-left !leading-none transition-colors duration-500 ease-in-out ~text-[6rem]/[11rem] max-xs:text-6xl">
           <motion.span
             className="mb-3 block text-center font-light ~text-[1.5rem]/[2rem] sm:mb-2 sm:text-left"

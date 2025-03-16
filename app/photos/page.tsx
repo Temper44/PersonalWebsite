@@ -156,12 +156,11 @@ export default function Page() {
         <div className="relative w-screen overflow-hidden pb-20">
           <Carousel slides={landscapeImages} />
         </div>
-        <MarqueeText text="selected work" />
+        <MarqueeText text="travel" />
 
-        <div className="container-flex-center">
-          <GridGallery />
-        </div>
-        <MarqueeText text="street collection" />
+        <GridGallery />
+
+        <MarqueeText text="street" />
         <ParallaxScrollPhoto images={parallaxImages} />
       </section>
       <Footer />

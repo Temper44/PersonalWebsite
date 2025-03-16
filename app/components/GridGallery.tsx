@@ -3,7 +3,7 @@ import SnakeSvg from "./SnakeSvg";
 
 const GridGallery = () => {
   return (
-    <div className="relative-center container grid w-full grid-cols-1 gap-5 sm:grid-cols-12 sm:gap-2">
+    <div className="relative-center grid w-full grid-cols-1 gap-5 sm:grid-cols-12 sm:gap-2">
       {/* Block 1 */}
       <div className="col-span-12 sm:col-span-6 sm:row-span-5">
         <GridImage
