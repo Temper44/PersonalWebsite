@@ -11,13 +11,11 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import { cn } from "@/lib/utils";
 import { useMediaQuery } from "react-responsive";
 import { useCursor } from "../context/CursorContext";
 
 export const ParallaxScrollPoster = ({
   images,
-  className,
 }: {
   images: { src: string; thumb: string; caption?: string; size?: string }[];
   className?: string;
@@ -113,27 +111,25 @@ export const ParallaxScrollPoster = ({
   }, [isOpen]);
 
   return (
-    <div className={cn("w-full items-start overflow-hidden", className)}>
-      <div className="mx-auto grid w-full max-w-9xl grid-cols-1 gap-20 px-2 pb-40 md:grid-cols-2">
-        <Lightbox
-          className="cursor-pointer"
-          open={isOpen}
-          close={() => setIsOpen(false)}
-          index={currentImage || 0}
-          slides={images.map((el) => ({
-            src: el.src,
-            alt: el.caption || "Image",
-          }))}
-        />
-        {images.map((el, idx) => (
-          <AnimatedWrapper
-            key={`grid-1-${idx}`}
-            translate={idx % 2 === 0 ? translateFirst : translateSecond}
-          >
-            <ParallaxImage idx={idx} el={el} className="aspect-[1/1.414]" />
-          </AnimatedWrapper>
-        ))}
-      </div>
+    <div className="mx-auto grid w-full max-w-8xl grid-cols-1 pt-20 ~gap-8/28 ~pb-28/48 md:grid-cols-2">
+      <Lightbox
+        className="cursor-pointer"
+        open={isOpen}
+        close={() => setIsOpen(false)}
+        index={currentImage || 0}
+        slides={images.map((el) => ({
+          src: el.src,
+          alt: el.caption || "Image",
+        }))}
+      />
+      {images.map((el, idx) => (
+        <AnimatedWrapper
+          key={`grid-1-${idx}`}
+          translate={idx % 2 === 0 ? translateFirst : translateSecond}
+        >
+          <ParallaxImage idx={idx} el={el} className="aspect-[1/1.414]" />
+        </AnimatedWrapper>
+      ))}
     </div>
   );
 };

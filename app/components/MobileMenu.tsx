@@ -198,7 +198,7 @@ const MobileMenu = ({
                 }}
               >
                 <h3
-                  className={`nav-text will-change-all relative font-semibold !leading-[1.15] tracking-widest ~text-[3.25rem]/[8rem] dark:text-white ${isActive ? "nav-text-isActive before:smh-[6px] before:absolute before:left-0 before:top-1/2 before:h-[5px] before:w-full before:-translate-y-1/2 before:rounded-sm before:bg-gradient-to-r before:from-rose-500 before:to-purple-500 before:content-[''] before:lg:h-[8px] before:2xl:h-[10px]" : ""} ${isMobileOrTabletLandscape && "!text-2xl"}`}
+                  className={`nav-text will-change-all relative font-semibold !leading-[1.15] tracking-widest ~text-[3.25rem]/[7.5rem] dark:text-white ${isActive ? "nav-text-isActive before:smh-[6px] before:absolute before:left-0 before:top-1/2 before:h-[5px] before:w-full before:-translate-y-1/2 before:rounded-sm before:bg-gradient-to-r before:from-rose-500 before:to-purple-500 before:content-[''] before:lg:h-[8px] before:2xl:h-[10px]" : ""} ${isMobileOrTabletLandscape && "!text-2xl"}`}
                 >
                   {item.name}
                 </h3>

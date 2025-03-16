@@ -70,13 +70,13 @@ export default function Contact() {
             <span aria-hidden>-Say Hello?</span>
             <span aria-hidden>-Say Hello?</span>
           </motion.div>
-          <div className="w-full max-w-xl py-4">
+          <div className="w-full max-w-2xl py-4">
             <Form />
           </div>
-          <div className="grid w-full max-w-6xl grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-4 sm:py-12 2xl:pt-4 3xl:pt-14">
+          <div className="grid w-full max-w-7xl grid-cols-1 justify-items-center gap-10 sm:grid-cols-2 sm:gap-4 sm:py-12 2xl:pt-4 3xl:pt-14">
             <motion.div
               ref={refSocials}
-              className="max-w-md"
+              className="w-full sm:w-[80%] 2xl:w-[600px]"
               initial={{ opacity: 0, x: -100 }}
               animate={isInViewSocials ? { opacity: 1, x: 0 } : {}}
               transition={{
@@ -112,7 +112,7 @@ export default function Contact() {
               </ul>
             </motion.div>
             <motion.div
-              className="max-w-md"
+              className="w-full sm:w-[80%] 2xl:w-[550px]"
               ref={refMenu}
               initial={{ opacity: 0, x: 100 }}
               animate={isInViewMenu ? { opacity: 1, x: 0 } : {}}
@@ -146,7 +146,7 @@ export default function Contact() {
             </motion.div>
           </div>
           <motion.div
-            className="absolute bottom-16 flex w-full max-w-6xl flex-col items-center justify-between px-4 font-light tracking-wide text-zinc-900 ~text-[0.65rem]/[0.85rem] dark:text-zinc-100 sm:bottom-6 sm:flex-row"
+            className="absolute bottom-16 flex w-full max-w-7xl flex-col items-center justify-between px-4 font-light tracking-wide text-zinc-900 ~text-[0.65rem]/[0.85rem] dark:text-zinc-100 sm:bottom-6 sm:flex-row"
             ref={refFooter}
             initial={{ opacity: 0 }}
             animate={isInViewFooter ? { opacity: 1 } : {}}

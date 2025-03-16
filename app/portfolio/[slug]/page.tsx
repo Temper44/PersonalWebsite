@@ -71,7 +71,7 @@ export default async function Page({
         src={project.imgPreview.src}
         alt={project.imgPreview.alt}
       />
-      <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-6 p-4 md:mt-32 md:grid-cols-2 2xl:gap-8">
+      <div className="mx-auto mt-16 grid max-w-8xl grid-cols-1 gap-6 p-6 md:mt-32 md:grid-cols-2 2xl:gap-8">
         <div className="projectDataWrapper order-2">
           <MaskText text={["My role"]} className="textSubHeading" headline />
           <MaskText text={[project.role]} className="projectDataText" />
@@ -112,7 +112,7 @@ export default async function Page({
         </div>
       </div>
 
-      <div className="mx-auto my-28 flex max-w-7xl justify-center">
+      <div className="mx-auto my-28 flex max-w-8xl justify-center">
         <ColorCase colors={project.colors} />
       </div>
 
@@ -121,7 +121,7 @@ export default async function Page({
         alt={project.imgPreview.alt}
       />
 
-      <div className="flex-col-center mx-auto my-24 max-w-7xl gap-12 p-4 md:my-36 md:gap-20 xl:gap-36">
+      <div className="flex-col-center mx-auto my-24 max-w-8xl gap-12 p-6 md:my-36 md:gap-20 xl:gap-36">
         {project.imgFullScreen.map((img) => (
           <ProjectImageFull
             key={img.title}
@@ -132,7 +132,7 @@ export default async function Page({
         ))}
       </div>
 
-      <div className="mb-28 flex w-full max-w-8xl justify-end p-4">
+      <div className="mb-28 flex w-full max-w-8xl justify-end p-6">
         <Button
           text="Next Project"
           href={project.nextProjectLink}

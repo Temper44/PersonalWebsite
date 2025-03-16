@@ -49,7 +49,7 @@ const Projects = () => {
         {projects.map((project, i) => (
           <SliderProject
             key={project.name}
-            className={i % 2 ? "panel bg-black dark:bg-white" : ""}
+            className={i % 2 ? "" : "bg-black dark:bg-white"}
             name={project.name}
             detailsPageLink={project.detailsPageLink}
             subheading={project.subheading}
@@ -57,7 +57,7 @@ const Projects = () => {
             imgPreview={project.imgPreview}
             currentCounter={i}
             projectsLength={projects.length}
-            reverseColor={i % 2 ? true : false}
+            reverseColor={i % 2 ? false : true}
           />
         ))}
       </div>

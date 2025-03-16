@@ -141,7 +141,7 @@ const AnimatedText = ({
 
 export const Header = () => {
   return (
-    <div className="relative left-0 top-[-50px] z-10 mx-auto w-full max-w-[100rem] px-4 md:top-[-100px] xl:pt-12">
+    <div className="relative left-0 top-[-50px] z-10 mx-auto w-full max-w-8xl p-6 md:top-[-100px] xl:pt-12">
       <div className="overflow-hidden">
         <motion.h1
           className="font-medium leading-none ~text-[4.25rem]/[9.5rem] dark:text-white max-xs:text-[3rem] md:font-semibold md:!leading-none"

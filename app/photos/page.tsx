@@ -152,15 +152,15 @@ export default function Page() {
       </SvgContainer>
 
       <section className="container-flex-center" id="images">
-        <MarqueeText text="landscape shots" />
+        <MarqueeText fontMobileBigger text="landscape" />
         <div className="relative w-screen overflow-hidden pb-20">
           <Carousel slides={landscapeImages} />
         </div>
-        <MarqueeText text="travel" />
+        <MarqueeText fontMobileBigger text="travel" />
 
         <GridGallery />
 
-        <MarqueeText text="street" />
+        <MarqueeText fontMobileBigger text="street" />
         <ParallaxScrollPhoto images={parallaxImages} />
       </section>
       <Footer />

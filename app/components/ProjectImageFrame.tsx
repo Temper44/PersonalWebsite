@@ -34,7 +34,7 @@ const ProjectImageFrame = ({
   });
 
   return (
-    <div id="image-frame" className="relative-center h-svh w-full max-w-9xl">
+    <div id="image-frame" className="relative-center h-svh w-full max-w-8xl">
       <div className="full-size relative aspect-[16/9] shadow-md">
         <div className="absolute inset-0 z-10 bg-black opacity-60" />
         <Image
@@ -46,11 +46,11 @@ const ProjectImageFrame = ({
           sizes="100vw"
         />
       </div>
-      <div className="absolute bottom-36 left-4 z-20 max-w-7xl md:bottom-20 md:left-12 2xl:bottom-32">
+      <div className="absolute bottom-36 left-4 z-20 md:bottom-20 md:left-12 2xl:bottom-32">
         <MaskText
           text={[name]}
           headline
-          className={`textShadow font-semibold leading-tight tracking-wide text-white ~text-[2.75rem]/[8.5rem] max-xs:text-4xl md:pb-2`}
+          className={`textShadow font-semibold leading-tight tracking-wide text-white ~text-[2.75rem]/[8rem] max-xs:text-4xl md:pb-2`}
         />
       </div>
     </div>

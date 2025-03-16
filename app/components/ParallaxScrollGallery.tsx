@@ -39,7 +39,7 @@ export default function ParallaxScrollGallery() {
 
       <div
         ref={gallery}
-        className="flex-center relative mx-auto box-border h-[120vh] w-full max-w-9xl overflow-hidden p-6 ~gap-3/7 md:h-[170vh]"
+        className="flex-center relative mx-auto h-[120vh] w-full max-w-9xl overflow-hidden p-6 ~gap-3/7 md:h-[170vh]"
       >
         <Column
           images={[images[0], images[1], images[2]]}

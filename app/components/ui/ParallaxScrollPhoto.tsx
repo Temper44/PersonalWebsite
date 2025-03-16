@@ -11,16 +11,13 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import { cn } from "@/lib/utils";
 import { useMediaQuery } from "react-responsive";
 import { useCursor } from "../context/CursorContext";
 
 export const ParallaxScrollPhoto = ({
   images,
-  className,
 }: {
   images: { src: string; thumb: string; caption?: string; size?: string }[];
-  className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
   const [currentImage, setCurrentImage] = useState<number | null>(null);
@@ -37,7 +34,7 @@ export const ParallaxScrollPhoto = ({
   const translateSecond = useTransform(
     scrollYProgress,
     [0, 1],
-    isMobile ? [0, 0] : [0, 200],
+    isMobile ? [0, 0] : [0, -100],
   );
   const translateThird = useTransform(
     scrollYProgress,
@@ -124,49 +121,47 @@ export const ParallaxScrollPhoto = ({
   }, [isOpen]);
 
   return (
-    <div className={cn("w-full items-start overflow-hidden", className)}>
-      <div className="mx-auto grid w-full max-w-9xl grid-cols-1 items-start gap-8 md:grid-cols-3">
-        <div className="grid gap-8">
-          <Lightbox
-            className="cursor-pointer"
-            open={isOpen}
-            close={() => setIsOpen(false)}
-            index={currentImage || 0}
-            slides={images.map((el) => ({
-              src: el.src,
-              alt: el.caption || "Image",
-            }))}
-          />
-          {firstPart.map((el, idx) => (
-            <AnimatedWrapper key={`grid-1-${idx}`} translate={translateFirst}>
-              <ParallaxImage idx={idx} el={el} className="aspect-[4/5]" />
-            </AnimatedWrapper>
-          ))}
-        </div>
+    <div className="mx-auto grid w-full max-w-8xl grid-cols-1 ~gap-5/12 ~pb-28/48 sm:pt-20 md:grid-cols-3">
+      <div className="grid ~gap-5/12">
+        <Lightbox
+          className="cursor-pointer"
+          open={isOpen}
+          close={() => setIsOpen(false)}
+          index={currentImage || 0}
+          slides={images.map((el) => ({
+            src: el.src,
+            alt: el.caption || "Image",
+          }))}
+        />
+        {firstPart.map((el, idx) => (
+          <AnimatedWrapper key={`grid-1-${idx}`} translate={translateFirst}>
+            <ParallaxImage idx={idx} el={el} className="aspect-[4/5]" />
+          </AnimatedWrapper>
+        ))}
+      </div>
 
-        <div className="grid gap-8">
-          {secondPart.map((el, idx) => (
-            <AnimatedWrapper key={`grid-2-${idx}`} translate={translateSecond}>
-              <ParallaxImage
-                idx={idx + firstPart.length}
-                el={el}
-                className="aspect-[3/4]"
-              />
-            </AnimatedWrapper>
-          ))}
-        </div>
+      <div className="grid ~gap-5/12">
+        {secondPart.map((el, idx) => (
+          <AnimatedWrapper key={`grid-2-${idx}`} translate={translateSecond}>
+            <ParallaxImage
+              idx={idx + firstPart.length}
+              el={el}
+              className="aspect-[3/4]"
+            />
+          </AnimatedWrapper>
+        ))}
+      </div>
 
-        <div className="grid gap-8">
-          {thirdPart.map((el, idx) => (
-            <AnimatedWrapper key={`grid-3-${idx}`} translate={translateThird}>
-              <ParallaxImage
-                idx={idx + firstPart.length + secondPart.length}
-                el={el}
-                className="aspect-[4/5]"
-              />
-            </AnimatedWrapper>
-          ))}
-        </div>
+      <div className="grid ~gap-5/12">
+        {thirdPart.map((el, idx) => (
+          <AnimatedWrapper key={`grid-3-${idx}`} translate={translateThird}>
+            <ParallaxImage
+              idx={idx + firstPart.length + secondPart.length}
+              el={el}
+              className="aspect-[4/5]"
+            />
+          </AnimatedWrapper>
+        ))}
       </div>
     </div>
   );
