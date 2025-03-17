@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 
 import "./globals.scss";
-import { CursorProvider } from "./components/context/CursorContext";
+// import { CursorProvider } from "./components/context/CursorContext";
 import ThemeContextProvider from "./components/context/ThemeContext";
 import ThemeSwitch from "./components/ThemeSwitch";
 import { TransitionProvider } from "./components/TransitionProvider";
@@ -47,13 +47,13 @@ export default function RootLayout({
                 // smoothWheel: true,
               }}
             >
-              <CursorProvider>
-                <ScrollManager />
+              {/* <CursorProvider> */}
+              <ScrollManager />
 
-                {children}
+              {children}
 
-                <ThemeSwitch />
-              </CursorProvider>
+              <ThemeSwitch />
+              {/* </CursorProvider> */}
             </ReactLenis>
             {/* </ScrollManager> */}
           </ThemeContextProvider>
