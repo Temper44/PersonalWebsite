@@ -132,7 +132,7 @@ a {
     will-change: background-position;
     color: transparent;
     background-size: 200%;
-    animation: gradientAnimate 8s ease infinite;
+    animation: gradientAnimate 7s ease infinite;
     transition:
       background-position 0.4s ease-in,
       background-size 0.4s ease-in;
@@ -218,7 +218,7 @@ a {
 
     color: transparent;
     background-size: 200%;
-    animation: gradientAnimate 8s ease infinite;
+    animation: gradientAnimate 7s ease infinite;
     transition: all 0.4s ease-in;
 
     @keyframes gradientAnimate {
@@ -438,9 +438,7 @@ body::-webkit-scrollbar-thumb {
   span {
     white-space: nowrap; /* Prevent wrapping */
     will-change: transform, background-position; /* Optimize animation */
-    animation:
-      marquee-move-text2 7s linear infinite,
-      gradientAnimate 7s ease infinite;
+    animation: marquee-move-text2 9s linear infinite;
   }
 
   @keyframes marquee-move-text2 {

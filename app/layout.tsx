@@ -40,6 +40,14 @@ export const metadata: Metadata = {
     locale: "en_AT",
     url: "https://mathiasebner.com",
     title: "Mathias Ebner - Creative Technologist",
+    images: [
+      {
+        url: "icon.png",
+        width: 100,
+        height: 100,
+        alt: "Mathias Ebner - Creative Technologist",
+      },
+    ],
     description:
       "Explore the personal website of Mathias Ebner, a creative technologist specializing in web development, and UI/UX. Discover innovative web projects, stunning web designs that combine technology and creativity.",
   },
