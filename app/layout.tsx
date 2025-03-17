@@ -40,11 +40,19 @@ export const metadata: Metadata = {
     locale: "en_AT",
     url: "https://mathiasebner.com",
     title: "Mathias Ebner - Creative Technologist",
+    countryName: "Austria",
+
     images: [
       {
-        url: "icon_500.png",
-        width: 500,
-        height: 500,
+        url: "icon_1080.png",
+        width: 1080,
+        height: 1080,
+        alt: "Mathias Ebner - Creative Technologist",
+      },
+      {
+        url: "icon_1200.png",
+        width: 1200,
+        height: 630,
         alt: "Mathias Ebner - Creative Technologist",
       },
     ],
