@@ -49,12 +49,6 @@ export const metadata: Metadata = {
         height: 630,
         alt: "Mathias Ebner - Creative Technologist",
       },
-      {
-        url: "/img/icon_1080.png",
-        width: 1080,
-        height: 1080,
-        alt: "Mathias Ebner - Creative Technologist",
-      },
     ],
     description:
       "Explore the personal website of Mathias Ebner, a creative technologist specializing in web development, and UI/UX. Discover innovative web projects, stunning web designs that combine technology and creativity.",
