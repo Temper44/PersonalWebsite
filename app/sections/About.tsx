@@ -39,7 +39,7 @@ const About = () => {
           start: "top center",
           end: "start+=100px center",
           scrub: false,
-          markers: true,
+          // markers: true,
           onEnter: () => {
             aboutMeRef.current?.classList.add("bg-black", "dark:bg-white");
           },
@@ -109,7 +109,7 @@ const About = () => {
               text="Student, Developer, Adventurer"
               className="mb-8 mt-8 uppercase leading-none text-white ~text-[3rem]/[7.5rem] dark:text-black max-xs:text-5xl md:mt-0 lg:mb-20 lg:text-[4.5rem] xl:text-[5rem] xl:font-medium xl:tracking-wide 2xl:max-w-[65%] 2xl:~text-[4rem]/[7.5rem]"
               animationStart="top center"
-              animationEnd="+=270"
+              animationEnd="+=300"
               spaceLine={false}
             />
             <MaskText

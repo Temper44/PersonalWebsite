@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/img/icon_1200.png",
+        url: "https://personal-website-iota-neon-25.vercel.app/img/icon_1200.png",
         width: 1200,
         height: 630,
         alt: "Mathias Ebner - Creative Technologist",

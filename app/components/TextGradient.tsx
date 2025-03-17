@@ -29,10 +29,10 @@ export default function TextGradient({
         scrub: true,
         start: animationStart,
         end: animationEnd,
-        markers: true,
+        // markers: true,
       },
       opacity: 1,
-      ease: "easeIn",
+      ease: "none",
       stagger: 0.1,
     });
   }, []);
