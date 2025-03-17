@@ -33,6 +33,15 @@ export const metadata: Metadata = {
     locale: "en_AT",
     url: "http://personal-website-iota-neon-25.vercel.app/portfolio",
     title: "Mathias Ebner - Web Developer Portfolio",
+    countryName: "Austria",
+    images: [
+      {
+        url: "/img/icon_1200_portfolio.png",
+        width: 1200,
+        height: 630,
+        alt: "Mathias Ebner - Creative Technologist",
+      },
+    ],
     description:
       "Explore the portfolio of Mathias Ebner, a creative technologist specializing in web development, and UI/UX. Discover innovative web projects, stunning web designs that combine technology and creativity.",
   },
