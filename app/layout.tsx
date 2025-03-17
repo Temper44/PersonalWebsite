@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 
 import "./globals.scss";
-import { CursorProvider } from "./components/context/CursorContext";
 import ThemeContextProvider from "./components/context/ThemeContext";
 import ThemeSwitch from "./components/ThemeSwitch";
 import { TransitionProvider } from "./components/TransitionProvider";
 // import ScrollManager from "./components/ScrollManager";
 import ReactLenis from "lenis/react";
 import ScrollManager from "./components/ScrollManager";
+import { CursorProvider } from "./components/context/CursorContext";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
