@@ -38,19 +38,19 @@ export const metadata: Metadata = {
     siteName: "Mathias Ebner - Creative Technologist",
     type: "website",
     locale: "en_AT",
-    url: "https://mathiasebner.com",
+    url: "http://personal-website-iota-neon-25.vercel.app/",
     title: "Mathias Ebner - Creative Technologist",
     countryName: "Austria",
 
     images: [
       {
-        url: "icon_1080.png",
+        url: "/img/icon_1080.png",
         width: 1080,
         height: 1080,
         alt: "Mathias Ebner - Creative Technologist",
       },
       {
-        url: "icon_1200.png",
+        url: "/img/icon_1200.png",
         width: 1200,
         height: 630,
         alt: "Mathias Ebner - Creative Technologist",
