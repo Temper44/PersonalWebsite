@@ -7,19 +7,23 @@ import { useCursor } from "./context/CursorContext";
 export default function MaskText({
   text,
   className,
+  containerClassName,
   headline = false,
   cursorHoverEffect = false,
+  viewInMargin = {
+    margin: "-100px",
+    once: true,
+  },
 }: {
   text: string[];
   className?: string;
+  containerClassName?: string;
   headline?: boolean;
   cursorHoverEffect?: boolean;
+  viewInMargin?: object;
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, {
-    margin: "-100px",
-    once: true,
-  });
+  const isInView = useInView(ref, viewInMargin);
 
   const animation = {
     initial: { y: "100%" }, // Start the text off-screen (downwards)
@@ -36,7 +40,7 @@ export default function MaskText({
   const { setIsCursorHovered } = useCursor();
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className={containerClassName}>
       {text.map((phrase, index) => (
         <div key={index} className="overflow-hidden">
           {headline ? (

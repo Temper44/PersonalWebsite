@@ -51,7 +51,7 @@ export const TextGenerateEffect = ({
 
   return (
     <div className={className}>
-      <div className="py-4 text-left font-normal !leading-relaxed tracking-wide text-transparent ~text-base/3xl sm:text-center">
+      <div className="py-4 text-left font-normal !leading-relaxed tracking-wide text-transparent ~text-[1rem]/[1.5rem] sm:text-center">
         {renderWords()}
       </div>
     </div>

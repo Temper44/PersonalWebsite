@@ -143,8 +143,8 @@ const MobileMenu = ({
                 : "blur(0px) opacity(0)",
             }}
             transition={{ duration: 1, ease: "easeIn" }}
-            onMouseEnter={() => setIsCursorHovered(true)}
-            onMouseLeave={() => setIsCursorHovered(false)}
+            onMouseEnter={() => visible && setIsCursorHovered(true)}
+            onMouseLeave={() => visible && setIsCursorHovered(false)}
           >
             <svg width="50" height="50" viewBox="0 0 100 100">
               <path

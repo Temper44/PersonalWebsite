@@ -7,17 +7,14 @@ import Form from "../components/Form";
 import { useCursor } from "../components/context/CursorContext";
 import { footerText } from "@/lib/texts";
 import { useSectionInView } from "@/lib/hooks";
+import MaskText from "../components/MaskText";
 
 export default function Contact() {
   const { setIsCursorHovered } = useCursor();
   const refFooter = useRef<HTMLDivElement>(null);
   const refSocials = useRef<HTMLDivElement>(null);
   const refMenu = useRef<HTMLDivElement>(null);
-  const refParagraph = useRef<HTMLDivElement>(null);
 
-  const isInViewParagraph = useInView(refParagraph, {
-    once: true,
-  });
   const isInViewSocials = useInView(refSocials, {
     once: true,
   });
@@ -39,18 +36,15 @@ export default function Contact() {
     >
       <div className="absolute bottom-0 h-[200svh] w-full xs:h-[160svh] sm:fixed sm:h-svh">
         <div className="full-size flex flex-col items-center justify-evenly p-6">
-          {/* // pt-44 sm:pt-32 */}
-          <motion.p
-            ref={refParagraph}
-            initial={{ opacity: 0 }}
-            animate={isInViewParagraph ? { opacity: 1 } : {}}
-            transition={{
-              duration: 1,
-              ease: "easeIn",
+          <MaskText
+            containerClassName="textShort"
+            viewInMargin={{
+              margin: "10px",
+              once: true,
             }}
-          >
-            {footerText}
-          </motion.p>
+            text={[footerText]}
+          />
+
           <motion.div
             className="marquee-forward-desktop mt-[-2rem] font-bold ~text-[3.75rem]/[9rem] sm:mt-0"
             initial={{ opacity: 0 }}

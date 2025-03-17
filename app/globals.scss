@@ -4,7 +4,7 @@
 
 :root {
   --background: #f7f7f7;
-  --foreground: #080e10;
+  --foreground: #10080e;
   --sb-track-color: #d1d1d1;
   --sb-thumb-color: #3b3b3b;
   --sb-size: 11px;
@@ -297,7 +297,7 @@ body::-webkit-scrollbar-thumb {
   border: 3px solid #333333;
   border-radius: 60px;
   position: relative;
-  scale: 0.8;
+
   &::before {
     content: "";
     width: 10px;
@@ -509,6 +509,10 @@ canvas {
 
 .textParagraph {
   @apply font-light !leading-relaxed tracking-wide text-zinc-100 ~text-base/lg dark:text-zinc-900;
+}
+
+.textShort {
+  @apply mx-auto w-[80%] text-center font-light !leading-relaxed tracking-wide ~text-base/xl md:max-w-4xl;
 }
 
 .will-change-opacity {

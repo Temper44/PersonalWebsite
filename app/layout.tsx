@@ -77,8 +77,8 @@ export default function RootLayout({
             <ReactLenis
               root
               options={{
-                duration: 2,
-                lerp: 0.05,
+                // duration: 2,
+                lerp: 0.07,
                 // syncTouch: true,
                 // syncTouchLerp: 0.1,
                 // touchMultiplier: 0,

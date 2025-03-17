@@ -45,8 +45,8 @@ export default function ThemeSwitch() {
           className="flex-center h-[2.5rem] w-[2.5rem] rounded-full border border-black border-opacity-40 shadow-md transition-all duration-1000 active:scale-110 dark:border-white md:left-8 md:top-8"
           aria-label="Toggle Theme"
           onClick={toggleTheme}
-          onMouseEnter={() => setIsCursorHovered(true)}
-          onMouseLeave={() => setIsCursorHovered(false)}
+          onMouseEnter={() => visible && setIsCursorHovered(true)}
+          onMouseLeave={() => visible && setIsCursorHovered(false)}
           animate={{
             backdropFilter: visible
               ? "blur(6px) opacity(1)"

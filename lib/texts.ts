@@ -16,4 +16,7 @@ export const aboutMeTexts = {
 export const skillsText =
   "I strive to learn and master modern web technologies to create seamless, accessible, and visually stunning experiences";
 
+export const projectsText =
+  "A showcase of recent projects i did alone or in teams. This section demonstrates my skills and creativity through various works that highlight my technical capabilities";
+
 export const footerText = "Thanks for stopping by, want to";

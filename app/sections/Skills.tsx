@@ -8,6 +8,7 @@ import { skills } from "@/lib/data";
 import { skillsText } from "@/lib/texts";
 import { useSectionInView } from "@/lib/hooks";
 import { gsap, useGSAP } from "@/lib/gsapConfig";
+import MaskText from "../components/MaskText";
 
 const Skills = () => {
   useGSAP(() => {
@@ -19,6 +20,7 @@ const Skills = () => {
         scrub: 1,
         pin: true,
         pinSpacing: true,
+        invalidateOnRefresh: true,
         // markers: true,
       },
     });
@@ -39,10 +41,11 @@ const Skills = () => {
       className="flex-col-center relative overflow-hidden"
     >
       <MarqueeText fontMobileBigger text="Skills" />
-      <div className="skillsContainer h-svh w-screen">
-        <h2 className="absolute-center top-[60%] w-[80%] text-center font-extralight !leading-relaxed tracking-wide ~text-base/2xl sm:top-[75%] md:w-auto">
+      <div className="skillsContainer relative h-svh w-screen">
+        {/* <p className="absolute-center textShort top-[60%] sm:top-[75%]">
           {skillsText}
-        </h2>
+        </p> */}
+
         <div className="mask-clip-path absolute-center top-0 z-20 h-[40vh] w-[60vw] origin-center overflow-hidden rounded-3xl will-change-transform md:h-[60vh] md:w-[30vw]">
           <BackgroundGradientAnimation interactive={false}>
             <div className="flex-center absolute inset-0 z-50 ~px-8/28">
@@ -50,10 +53,16 @@ const Skills = () => {
                 text={skills.join(" / ")}
                 className="textShadow font-semibold text-white ~text-3xl/8xl"
                 opacityClassName="opacity-0"
+                animationStart="bottom top"
+                animationEnd="+=850"
               />
             </div>
           </BackgroundGradientAnimation>
         </div>
+        <MaskText
+          containerClassName="absolute-center textShort top-[60%] sm:top-[75%]"
+          text={[skillsText]}
+        />
       </div>
     </section>
   );

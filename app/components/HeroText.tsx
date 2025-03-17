@@ -35,13 +35,13 @@ const HeroText = ({
       {subheading && (
         <TextGenerateEffect
           words={subheading}
-          className="px-4 py-4 sm:max-w-[70%]"
+          className="px-4 py-4 sm:max-w-[75%] 3xl:max-w-6xl"
         />
       )}
 
       {!infoText && (
         <motion.a
-          className="scrollIcon mt-40 md:mt-20"
+          className="scrollIcon mt-40 scale-75 md:mt-32"
           href={`#${anchor}`}
           aria-label="scroll down"
           initial={{ opacity: 0 }}

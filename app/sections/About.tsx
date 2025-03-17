@@ -106,7 +106,7 @@ const About = () => {
           <div className="f-col w-full gap-6">
             <TextGradient
               text="Student, Developer, Adventurer"
-              className="mb-6 mt-6 uppercase leading-none text-white ~text-[3.5rem]/[8rem] dark:text-black max-xs:text-5xl md:mt-0 lg:mb-20 lg:text-[4.5rem] xl:text-[5.5rem] 2xl:max-w-[65%] 2xl:~text-[4rem]/[8rem]"
+              className="mb-6 mt-6 uppercase leading-none text-white ~text-[3.5rem]/[7.5rem] dark:text-black max-xs:text-5xl md:mt-0 lg:mb-20 lg:text-[4.5rem] xl:text-[5rem] xl:font-medium xl:tracking-wide 2xl:max-w-[65%] 2xl:~text-[4rem]/[7.5rem]"
               animationStart="top center"
               animationEnd="+=270"
               spaceLine={false}

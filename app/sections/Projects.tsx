@@ -6,6 +6,8 @@ import SliderProject from "../components/SliderProject";
 import { projects } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { gsap, useGSAP } from "@/lib/gsapConfig";
+import MaskText from "../components/MaskText";
+import { projectsText } from "@/lib/texts";
 
 const Projects = () => {
   const projectsContainer = useRef<HTMLDivElement | null>(null);
@@ -42,6 +44,10 @@ const Projects = () => {
   return (
     <section id="projects" ref={ref} className="relative !overflow-hidden">
       <MarqueeText fontMobileBigger text="Projects" />
+      <MaskText
+        containerClassName=" textShort ~mb-[5rem]/[13rem]"
+        text={[projectsText]}
+      />
       <div
         ref={projectsContainer}
         className="flex h-svh w-[300vw] !overflow-hidden"
@@ -49,7 +55,11 @@ const Projects = () => {
         {projects.map((project, i) => (
           <SliderProject
             key={project.name}
-            className={i % 2 ? "" : "bg-black dark:bg-white"}
+            className={
+              i % 2
+                ? ""
+                : "bg-gradient-to-br from-zinc-950 to-zinc-900 dark:from-zinc-100 dark:to-zinc-50"
+            }
             name={project.name}
             detailsPageLink={project.detailsPageLink}
             subheading={project.subheading}

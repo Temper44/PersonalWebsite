@@ -7,25 +7,25 @@ export default function TextGradient({
   text,
   className,
   opacityClassName = "opacity-10",
-  animationStart = "top top",
-  animationEnd = `+=1000`,
+  animationStart,
+  animationEnd,
   spaceLine = true,
 }: {
   text: string;
   className?: string;
   opacityClassName?: string;
-  animationStart?: string;
-  animationEnd?: string;
+  animationStart: string;
+  animationEnd: string;
   spaceLine?: boolean;
 }) {
   const refs = useRef<(HTMLSpanElement | null)[]>([]);
   const body = useRef(null);
-  const container = useRef(null);
+  const container2 = useRef(null);
 
   useGSAP(() => {
     gsap.to(refs.current, {
       scrollTrigger: {
-        trigger: container.current,
+        trigger: container2.current,
         scrub: true,
         start: animationStart,
         end: animationEnd,
@@ -34,7 +34,6 @@ export default function TextGradient({
       opacity: 1,
       ease: "easeIn",
       stagger: 0.1,
-      // markers: true,
     });
   }, []);
 
@@ -85,7 +84,7 @@ export default function TextGradient({
   };
 
   return (
-    <div ref={container} className="">
+    <div ref={container2} className="overflow-hidden">
       {/* class: overflow-hidden */}
       <div ref={body} className={`flex flex-wrap ${className}`}>
         {splitWords(text)}
