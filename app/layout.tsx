@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     title: "Mathias Ebner - Creative Technologist",
     images: [
       {
-        url: "icon.png",
-        width: 100,
-        height: 100,
+        url: "icon_500.png",
+        width: 500,
+        height: 500,
         alt: "Mathias Ebner - Creative Technologist",
       },
     ],
