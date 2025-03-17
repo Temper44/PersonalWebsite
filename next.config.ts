@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // reactStrictMode: false,
   images: {
     remotePatterns: [
       {
@@ -12,9 +13,6 @@ const nextConfig: NextConfig = {
         hostname: "aceternity.com",
       },
     ],
-  },
-  generateBuildId: async () => {
-    return process.env.GIT_HASH || "default-build-id"; // Fallback to prevent undefined
   },
 };
 
