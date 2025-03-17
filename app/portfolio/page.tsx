@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Mathias Ebner - Web Developer Portfolio",
     type: "website",
     locale: "en_AT",
-    url: "https://mathiasebner.com",
+    url: "http://personal-website-iota-neon-25.vercel.app/portfolio",
     title: "Mathias Ebner - Web Developer Portfolio",
     description:
       "Explore the portfolio of Mathias Ebner, a creative technologist specializing in web development, and UI/UX. Discover innovative web projects, stunning web designs that combine technology and creativity.",

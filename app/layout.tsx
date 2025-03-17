@@ -44,15 +44,15 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/img/icon_1080.png",
-        width: 1080,
-        height: 1080,
-        alt: "Mathias Ebner - Creative Technologist",
-      },
-      {
         url: "/img/icon_1200.png",
         width: 1200,
         height: 630,
+        alt: "Mathias Ebner - Creative Technologist",
+      },
+      {
+        url: "/img/icon_1080.png",
+        width: 1080,
+        height: 1080,
         alt: "Mathias Ebner - Creative Technologist",
       },
     ],
