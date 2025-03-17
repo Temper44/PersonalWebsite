@@ -45,7 +45,7 @@ const Projects = () => {
     <section id="projects" ref={ref} className="relative !overflow-hidden">
       <MarqueeText fontMobileBigger text="Projects" />
       <MaskText
-        containerClassName=" textShort ~mb-[5rem]/[13rem]"
+        containerClassName=" textShort ~mb-[7rem]/[13rem]"
         text={[projectsText]}
       />
       <div

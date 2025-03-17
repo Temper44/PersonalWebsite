@@ -279,11 +279,11 @@ const MarqueeText = ({
         className="will-change-transform"
       >
         <h2
-          className={`inline-block overflow-hidden font-normal uppercase italic tracking-wide ${
+          className={`inline-block overflow-hidden font-semibold uppercase italic tracking-wide sm:font-medium ${
             fontMobileBigger
-              ? "~text-[3.2rem]/[13rem]"
+              ? "~text-[3.5rem]/[13rem]"
               : "~text-[2.25rem]/[13rem]"
-          } ~mt-[10rem]/[25rem] ~mb-[4.5rem]/[9rem]`}
+          } ~mt-[11rem]/[25rem] ~mb-[4.5rem]/[9rem]`}
         >
           {text} - {text} - {text} - {text} - {text} - {text} - {text} - {text}
         </h2>

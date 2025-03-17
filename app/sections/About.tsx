@@ -36,9 +36,10 @@ const About = () => {
 
         ScrollTrigger.create({
           trigger: aboutMeRef.current,
-          start: "top-=100px center",
+          start: "top center",
           end: "start+=100px center",
-          scrub: true,
+          scrub: false,
+          markers: true,
           onEnter: () => {
             aboutMeRef.current?.classList.add("bg-black", "dark:bg-white");
           },
@@ -82,7 +83,7 @@ const About = () => {
       <MarqueeText fontMobileBigger text="About" />
       <div
         ref={aboutMeRef}
-        className="flex-col-center relative min-h-[130svh] w-full rounded-[3rem] transition-colors duration-1000"
+        className="flex-col-center duration-400 relative min-h-[130svh] w-full rounded-[3rem] transition-colors ease-linear"
       >
         <div className="absolute left-8 top-8 text-6xl text-white dark:text-black 2xl:text-8xl">
           <FiArrowDownRight />
@@ -106,7 +107,7 @@ const About = () => {
           <div className="f-col w-full gap-6">
             <TextGradient
               text="Student, Developer, Adventurer"
-              className="mb-6 mt-6 uppercase leading-none text-white ~text-[3.5rem]/[7.5rem] dark:text-black max-xs:text-5xl md:mt-0 lg:mb-20 lg:text-[4.5rem] xl:text-[5rem] xl:font-medium xl:tracking-wide 2xl:max-w-[65%] 2xl:~text-[4rem]/[7.5rem]"
+              className="mb-8 mt-8 uppercase leading-none text-white ~text-[3rem]/[7.5rem] dark:text-black max-xs:text-5xl md:mt-0 lg:mb-20 lg:text-[4.5rem] xl:text-[5rem] xl:font-medium xl:tracking-wide 2xl:max-w-[65%] 2xl:~text-[4rem]/[7.5rem]"
               animationStart="top center"
               animationEnd="+=270"
               spaceLine={false}
