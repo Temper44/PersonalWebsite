@@ -29,14 +29,30 @@ export const HeroParallax = ({
     offset: ["start start", "end start"],
   });
 
-  const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
+  const springConfig = { stiffness: 300, damping: 40, bounce: 100 };
+  // const isDesktop = useMediaQuery({ minWidth: 768 });
+  // const isLargeDesktop = useMediaQuery({ minWidth: 1920 });
+
+  const translateYValue =
+    window.innerWidth >= 1920
+      ? [-700, 500]
+      : window.innerWidth >= 768
+        ? [-700, 330]
+        : [-530, 250];
+
+  const translateXValue =
+    window.innerWidth >= 1920
+      ? [0, 400]
+      : window.innerWidth >= 768
+        ? [0, -500]
+        : [0, -500];
 
   const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 1000]),
+    useTransform(scrollYProgress, [0, 0.8], translateXValue),
     springConfig,
   );
   const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, -1000]),
+    useTransform(scrollYProgress, [0, 0.8], [0, -200]),
     springConfig,
   );
   const rotateX = useSpring(
@@ -44,7 +60,7 @@ export const HeroParallax = ({
     springConfig,
   );
   const opacity = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [0.2, 1]),
+    useTransform(scrollYProgress, [0, 0.2], [0, 1]),
     springConfig,
   );
   const rotateZ = useSpring(
@@ -52,7 +68,7 @@ export const HeroParallax = ({
     springConfig,
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
+    useTransform(scrollYProgress, [0, 0.2], translateYValue),
     springConfig,
   );
   return (
@@ -70,7 +86,7 @@ export const HeroParallax = ({
         }}
         className=""
       >
-        <motion.div className="mb-14 flex space-x-10 space-x-reverse md:mb-20 md:space-x-20">
+        <motion.div className="flex ~mb-10/20 ~space-x-10/20">
           {firstRow.map((product) => (
             <ProductCard
               product={product}
@@ -79,7 +95,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="mb-14 flex flex-row space-x-10 md:mb-20 md:space-x-20">
+        <motion.div className="flex ~mb-10/20 ~space-x-10/20">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
@@ -88,7 +104,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex space-x-10 space-x-reverse md:space-x-20">
+        <motion.div className="flex ~space-x-10/20">
           {thirdRow.map((product) => (
             <ProductCard
               product={product}
@@ -112,20 +128,21 @@ const AnimatedText = ({
   className?: string;
 }) => {
   const animation = {
-    initial: { y: "100%", opacity: 0 },
+    initial: { y: "100%", x: "15%", opacity: 0 },
     animate: (i: number) => ({
       y: "0%",
+      x: "0%",
       opacity: 1,
       transition: {
-        duration: 0.8,
-        ease: [0.33, 1, 0.68, 1], // Smooth easing
-        delay: 0.2 * i, // Stagger each word by 0.1s
+        duration: 0.5,
+        ease: "easeIn", // Smooth easing
+        delay: 0.13 * i, // Stagger each word by 0.1s
       },
     }),
   };
 
   return (
-    <span className="inline-flex flex-wrap items-end overflow-hidden">
+    <span className="mb-[0rem] inline-flex flex-wrap items-end overflow-hidden">
       <motion.span
         className={`will-change-all ${className}`}
         variants={animation}
@@ -141,29 +158,30 @@ const AnimatedText = ({
 
 export const Header = () => {
   return (
-    <div className="relative left-0 top-[-50px] z-10 mx-auto w-full max-w-8xl p-6 md:top-[-100px] xl:pt-12">
+    <div className="relative left-0 top-[-50px] z-10 mx-auto w-full p-6 md:top-[-100px] md:max-w-4xl lg:max-w-5xl xl:max-w-6xl xl:pt-12 2xl:max-w-[88rem] 3xl:max-w-8xl">
       <div className="overflow-hidden">
         <motion.h1
-          className="font-medium leading-none ~text-[4.25rem]/[9.5rem] dark:text-white max-xs:text-[3rem] md:font-semibold md:!leading-none"
+          className="-space-y-12 font-semibold leading-[1.2] tracking-tight ~text-[3.5rem]/[9.5rem] dark:text-white max-xs:text-[2.7rem] md:font-medium 2xl:tracking-normal"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <AnimatedText text="Experience" custom={1} />
-          <AnimatedText text="the" custom={2} />
-          <AnimatedText
-            text="Web"
-            custom={3}
-            className="font-bold italic ~text-[4.75rem]/[10.5rem] max-xs:text-[3rem]"
-          />
-          <AnimatedText text="with" custom={4} />
-          <AnimatedText text="a" custom={5} />
+          <AnimatedText text="Transforming" custom={1} className="textShadow" />
+
+          <AnimatedText text="Ideas" custom={2} className="textShadow" />
+
+          <AnimatedText text="into" custom={3} className="textShadow" />
           <AnimatedText
             text="Creative"
-            custom={6}
-            className="colorEffect font-bold ~text-[4.75rem]/[10.5rem] max-xs:text-[3rem]"
+            custom={4}
+            className="colorEffect font-bold ~text-[4rem]/[10.5rem] max-xs:text-[3rem]"
           />
-          <AnimatedText text="approach" custom={7} />
+          <AnimatedText
+            text="Web"
+            custom={5}
+            className="textShadow font-bold ~text-[4rem]/[10.5rem] max-xs:text-[3rem]"
+          />
+          <AnimatedText text="Experiences" custom={6} className="textShadow" />
         </motion.h1>
       </div>
     </div>
@@ -193,7 +211,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product relative aspect-[16/9] h-auto w-[15rem] flex-shrink-0 will-change-transform xs:w-[20rem] sm:w-[22rem] md:w-[24rem] lg:w-[26rem] xl:w-[28rem] 2xl:w-[30rem]"
+      className="group/product relative aspect-[16/9] h-auto flex-shrink-0 will-change-transform ~w-[15rem]/[32rem]" //xs:w-[20rem] sm:w-[22rem] md:w-[24rem] lg:w-[26rem] xl:w-[28rem] 2xl:w-[30rem]
     >
       <Link
         href={product.link}
@@ -204,10 +222,10 @@ export const ProductCard = ({
           fill
           loading="eager"
           priority
-          quality={100}
+          quality={75}
           className="object-cover object-left-top"
           alt={product.title}
-          sizes="15vw"
+          sizes="30vw"
         />
         {/* height="600" width="600" className="absolute inset-0 full-size
         object-cover object-left-top" */}

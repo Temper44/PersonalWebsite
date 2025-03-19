@@ -512,7 +512,7 @@ canvas {
 }
 
 .textParagraph {
-  @apply font-light !leading-relaxed tracking-wide text-zinc-100 ~text-base/lg dark:text-zinc-900;
+  @apply font-light !leading-relaxed tracking-wide text-zinc-100 dark:text-zinc-900;
 }
 
 .textShort {

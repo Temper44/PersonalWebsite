@@ -50,7 +50,7 @@ const SliderProject = ({
     <div
       className={`panel flex-center relative h-svh w-screen will-change-transform ${className}`}
     >
-      <div className="grid h-full max-w-8xl grid-cols-1 gap-y-3 p-6 md:auto-rows-auto md:grid-cols-2 md:gap-10 md:p-12 md:pb-6 xl:gap-20 xl:pt-28 2xl:pt-36">
+      <div className="grid h-full max-w-8xl grid-cols-1 gap-y-3 p-6 md:auto-rows-auto md:grid-cols-2 md:gap-10 md:p-12 md:pb-6 xl:gap-20 xl:pt-28 2xl:gap-28 2xl:pt-36">
         <div className="f-col order-2 justify-between gap-6 md:order-1">
           <div className="f-col gap-4">
             <Link href={detailsPageLink}>
@@ -67,7 +67,7 @@ const SliderProject = ({
             />
             <MaskText
               text={[descriptionShort]}
-              className={`font-light !leading-relaxed tracking-wide text-zinc-900 ~text-base/xl dark:text-zinc-100 max-xs:text-sm ${reverseColor ? "!text-zinc-100 dark:!text-zinc-900" : ""}`}
+              className={`font-light !leading-relaxed tracking-wide text-zinc-900 ~text-base/lg dark:text-zinc-100 max-xs:text-sm ${reverseColor ? "!text-zinc-100 dark:!text-zinc-900" : ""}`}
             />
           </div>
           <div className="self-end">
@@ -95,7 +95,7 @@ const SliderProject = ({
               src={imgPreview.src}
               alt={imgPreview.alt}
               fill
-              quality={100}
+              quality={80}
               className="rounded-sm object-cover"
               sizes="(max-width: 640px) 100vw, 50vw"
             />

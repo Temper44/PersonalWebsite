@@ -17,39 +17,6 @@ export async function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
 }
 
-// 🌟 SEO Metadata for better search ranking & social previews
-// export async function generateMetadata({
-//   params,
-// }: {
-//   params: { slug: string };
-// }) {
-//   const project = projects.find((p) => p.slug === params.slug);
-
-//   if (!project) {
-//     return {
-//       title: "Project Not Found",
-//       description: "This project does not exist.",
-//     };
-//   }
-
-//   return {
-//     title: `${project.name} | My Portfolio`,
-//     description: project.subheading,
-//     openGraph: {
-//       title: project.name,
-//       description: project.subheading,
-//       images: [{ url: project.imgPreview.src }],
-//       type: "website",
-//     },
-//     twitter: {
-//       card: "summary_large_image",
-//       title: project.name,
-//       description: project.subheading,
-//       images: [project.imgPreview.src],
-//     },
-//   };
-// }
-
 export default async function Page({
   params,
 }: {

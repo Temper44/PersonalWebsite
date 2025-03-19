@@ -14,7 +14,7 @@ const ProjectImageZoom = ({ src, alt }: { src: string; alt: string }) => {
         trigger: ".imageContainer",
         start: "center center",
         end: isSmall ? "+=250 center" : "+=800 center",
-        scrub: 0.5,
+        scrub: 1,
         pin: true,
         pinSpacing: true,
         // markers: true,
@@ -36,7 +36,7 @@ const ProjectImageZoom = ({ src, alt }: { src: string; alt: string }) => {
           src={src}
           alt={alt}
           fill
-          quality={100}
+          quality={80}
           sizes="100vw"
           className="object-cover"
         />

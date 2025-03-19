@@ -41,7 +41,7 @@ const ScrollProgressBar = () => {
   return (
     <div
       ref={progressRef}
-      className="fixed left-0 top-0 z-20 h-[3px] bg-gradient-to-r from-rose-500 to-purple-500 lg:hidden"
+      className="fixed left-0 top-0 z-20 h-[4px] bg-gradient-to-r from-rose-500 to-purple-500 lg:hidden"
       style={{ width: "0%" }} // Initially hidden before hydration
     />
   );

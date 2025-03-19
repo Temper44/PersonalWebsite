@@ -24,15 +24,15 @@ const Projects = () => {
 
     gsap.to(panels, {
       xPercent: -100 * (panels.length - 1), // Moves all panels to the left
-      ease: "none", // A bit smoother easing
+      ease: "none",
       scrollTrigger: {
         trigger: container,
         pin: true,
-        scrub: 1, // ⬆️ Increase to make scrolling require more effort
+        scrub: 1,
         snap: {
           snapTo: 1 / (panels.length - 1), // Ensures each panel is a step
           duration: { min: 0.3, max: 0.7 }, // ⬆️ Faster snap animation (stronger effect)
-          ease: "power2.inOut", // ⬆️ Snappier easing
+          ease: "power2.inOut",
         },
         end: () => "+=" + (container ? container.offsetWidth : 0),
       },

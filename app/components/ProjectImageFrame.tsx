@@ -41,7 +41,7 @@ const ProjectImageFrame = ({
           src={src}
           alt={alt}
           fill
-          quality={100}
+          quality={80}
           className="object-cover"
           sizes="100vw"
         />

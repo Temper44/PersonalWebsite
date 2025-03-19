@@ -78,11 +78,11 @@ export default function RootLayout({
               root
               options={{
                 // duration: 2,
-                lerp: 0.07,
+                lerp: 0.12,
                 // syncTouch: true,
                 // syncTouchLerp: 0.1,
                 // touchMultiplier: 0,
-                // wheelMultiplier: 1.25,
+                wheelMultiplier: 1.4,
                 // syncTouchLerp: 0.99,
 
                 // smoothWheel: true,

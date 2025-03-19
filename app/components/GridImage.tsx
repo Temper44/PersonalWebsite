@@ -36,7 +36,7 @@ const GridImage = ({
         src={src}
         alt={alt}
         fill
-        quality={100}
+        quality={75}
         className="object-cover"
         sizes={sizes}
       />

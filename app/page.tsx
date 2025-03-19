@@ -2,14 +2,19 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from "react-responsive";
 import HeroFooter from "./components/HeroFooter";
 import FixedBackground from "./components/FixedBackground";
 import PageUtilities from "./components/PageUtilities";
+import useBetterMediaQuery from "./components/useBetterMediaQuery";
 
 export default function Home() {
   const [isHoveredPortrait, setIsHoveredPortrait] = useState(false);
-  const isSmall = useMediaQuery({ maxWidth: 640 });
+
+  //do it with window.innerWidth
+  // const isSmall2 = window.innerWidth < 640;
+  // const isSmall = useMediaQuery({ maxWidth: 640 });
+  const isSmall = useBetterMediaQuery("(max-width: 640px)");
 
   return (
     <main className="flex-col-center relative-center h-svh w-screen overflow-hidden">
@@ -17,9 +22,9 @@ export default function Home() {
       <PageUtilities hide menuDisplayHome={false} menuFullPage={false} />
 
       <section className="container-flex-center sm:flex-row sm:px-11">
-        <motion.h1 className="textShadow relative z-10 mt-[-6rem] text-left !leading-none transition-colors duration-500 ease-in-out ~text-[6rem]/[11rem] max-xs:text-6xl">
+        <motion.h1 className="relative z-10 mt-[-6rem] text-left !leading-none transition-colors duration-500 ease-in-out ~text-[6rem]/[11rem] max-xs:text-6xl">
           <motion.span
-            className="mb-3 block text-center font-light ~text-[1.5rem]/[2rem] sm:mb-2 sm:text-left"
+            className="mb-3 block text-center font-normal ~text-[1.5rem]/[2rem] sm:mb-2 sm:text-left"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
@@ -32,7 +37,7 @@ export default function Home() {
             <span
               onMouseEnter={() => setIsHoveredPortrait(true)}
               onMouseLeave={() => setIsHoveredPortrait(false)}
-              className="font-normal underline decoration-2 underline-offset-4"
+              className="font-medium underline decoration-2 underline-offset-4"
             >
               Mathias
             </span>
@@ -65,7 +70,7 @@ export default function Home() {
             )}
           </motion.div>
           <motion.div
-            className="marquee-backward mt-4 sm:mt-0"
+            className="marquee-backward mt-4 font-medium sm:mt-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{

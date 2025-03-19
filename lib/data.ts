@@ -4,7 +4,6 @@ import { IoMdMail } from "react-icons/io";
 import { ReactElement } from "react";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 
-// Define the type for social media items
 interface SocialMediaItem {
   id: number;
   name: string;
@@ -12,7 +11,6 @@ interface SocialMediaItem {
   icon: ReactElement;
 }
 
-// Define the social media array
 export const socialMedia: SocialMediaItem[] = [
   {
     id: 1,
@@ -46,13 +44,11 @@ export const socialMedia: SocialMediaItem[] = [
   },
 ];
 
-// Define the type for navigation items
 interface NavItem {
   name: string;
   link: string;
 }
 
-// Define the navigation items array
 export const navItems: NavItem[] = [
   { name: "Home", link: "./" },
   { name: "Portfolio", link: "/portfolio" },
@@ -87,7 +83,6 @@ export const sectionLinks = [
   },
 ];
 
-// Define the words array
 export const words: string[] = [
   "design",
   "code",
@@ -214,66 +209,65 @@ export const projects = [
 
 export const products = [
   {
-    title: "RoteDonauNuss",
+    title: "Rote Donau Nuss",
     link: "https://rotedonaunuss.com",
     thumbnail: "/img/hero/rotedonaunuss.png",
   },
   {
-    title: "CityInformation",
+    title: "City Information",
     link: "",
     thumbnail: "/img/hero/cityInformation.png",
   },
   {
-    title: "CampEvent",
-    link: "https://users.multimediatechnology.at/~fhs47758/mmp1/myEvents.php",
-    thumbnail: "/img/hero/campEvent.png",
+    title: "Connective",
+    link: "https://connective-web.vercel.app/",
+    thumbnail: "/img/hero/connective.jpg",
+  },
+  {
+    title: "This Is Trance",
+    link: "",
+    thumbnail: "/img/hero/thisIsTrance.jpg",
+  },
+  {
+    title: "IPhone",
+    link: "",
+    thumbnail: "/img/hero/iPhone.jpg",
   },
 
   {
-    title: "DataVizWebsite",
-    link: "https://editorially.org",
-    thumbnail: "/img/hero/campEvent.png",
+    title: "Zentry",
+    link: "",
+    thumbnail: "/img/hero/zentry.jpg",
   },
   {
-    title: "ThisIsTrance",
-    link: "https://editrix.ai",
-    thumbnail: "/img/hero/campEvent.png",
+    title: "TeamConnect Homepage",
+    link: "https://teamconnect-home.vercel.app/",
+    thumbnail: "/img/hero/teamconnectHome.png",
   },
   {
-    title: "IPhone 14",
-    link: "https://app.pixelperfect.quest",
-    thumbnail: "/img/hero/rotedonaunuss.png",
-  },
-
-  {
-    title: "Awards",
-    link: "https://algochurn.com",
-    thumbnail: "/img/hero/campEvent.png",
+    title: "Hilink",
+    link: "",
+    thumbnail: "/img/hero/travel.jpg",
   },
   {
-    title: "TeamConnect",
-    link: "https://ui.aceternity.com",
-    thumbnail: "/img/hero/rotedonaunuss.png",
+    title: "Ben's backery",
+    link: "",
+    thumbnail: "/img/hero/bakery.png",
   },
   {
-    title: "Ebnerbuch",
-    link: "https://tailwindmasterkit.com",
-    thumbnail: "/img/hero/rotedonaunuss.png",
-  },
-  {
-    title: "Ben bäckt",
-    link: "https://smartbridgetech.com",
-    thumbnail: "/img/hero/rotedonaunuss.png",
-  },
-  {
-    title: "Renderwork Studio",
-    link: "https://renderwork.studio",
-    thumbnail: "/img/hero/rotedonaunuss.png",
+    title: "Manage",
+    link: "",
+    thumbnail: "/img/hero/product.png",
   },
 
   {
-    title: "Creme Digital",
-    link: "https://cremedigital.com",
-    thumbnail: "/img/hero/rotedonaunuss.png",
+    title: "Nike",
+    link: "",
+    thumbnail: "/img/hero/nike.jpg",
+  },
+  {
+    title: "Portfolio",
+    link: "",
+    thumbnail: "/img/hero/portfolio.png",
   },
 ];

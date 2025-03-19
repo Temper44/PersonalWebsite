@@ -52,7 +52,6 @@ const Skills = () => {
               <TextGradient
                 text={skills.join(" / ")}
                 className="textShadow font-semibold text-white ~text-3xl/8xl"
-                opacityClassName="opacity-0"
                 animationStart="bottom center"
                 animationEnd="+=500"
               />

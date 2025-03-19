@@ -6,7 +6,7 @@ import { gsap, useGSAP } from "@/lib/gsapConfig";
 export default function TextGradient({
   text,
   className,
-  opacityClassName = "opacity-10",
+  opacityClassName = "opacity-0",
   animationStart,
   animationEnd,
   spaceLine = true,

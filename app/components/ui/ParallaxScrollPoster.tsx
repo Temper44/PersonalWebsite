@@ -96,7 +96,7 @@ export const ParallaxScrollPoster = ({
           src={el.thumb}
           className="object-cover brightness-100 transition-all duration-300 hover:brightness-75"
           fill
-          quality={100}
+          quality={80}
           alt={`Image ${idx + 1}`}
           sizes="(max-width: 768px) 100vw, 50vw"
         />

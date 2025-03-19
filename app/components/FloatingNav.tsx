@@ -77,7 +77,7 @@ export default function FloatingNav() {
           y: 0,
           x: "-50%",
           opacity: 1,
-          transition: { delay: 1.7, duration: 0.4, ease: [0.33, 1, 0.68, 1] },
+          transition: { delay: 1.3, duration: 0.4, ease: "easeIn" },
         }}
       ></motion.div>
 
@@ -92,9 +92,9 @@ export default function FloatingNav() {
                 y: 0,
                 opacity: 1,
                 transition: {
-                  delay: 1.7,
+                  delay: 1.3,
                   duration: 0.4,
-                  ease: [0.33, 1, 0.68, 1],
+                  ease: "easeIn",
                 },
               }}
             >

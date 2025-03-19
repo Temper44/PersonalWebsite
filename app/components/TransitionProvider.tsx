@@ -15,12 +15,7 @@ export function TransitionProvider({
   return (
     <TransitionRouter
       auto={true}
-      leave={(next, from, to) => {
-        console.log("Leaving:", { from, to });
-
-        // 🚀 Instantly scroll to top BEFORE transition starts to prevent flash
-        // window.scrollTo({ top: 0, behavior: "instant" });
-
+      leave={(next) => {
         const tl = gsap
           .timeline({
             onComplete: next,
@@ -50,8 +45,6 @@ export function TransitionProvider({
         };
       }}
       enter={(next) => {
-        console.log("Entering new page...");
-
         const tl = gsap
           .timeline()
           .fromTo(
@@ -73,7 +66,7 @@ export function TransitionProvider({
             },
             "<50%",
           )
-          .call(next, undefined, "<50%"); // End transition
+          .call(next, undefined, "<50%");
         window.scrollTo({ top: 0, behavior: "instant" });
         return () => {
           tl.kill();
