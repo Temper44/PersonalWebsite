@@ -8,7 +8,7 @@ import {
   MotionValue,
 } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import { useSectionInView } from "@/lib/hooks";
 import { useBetterMediaQuery } from "@/lib/hooks";
 
@@ -41,17 +41,23 @@ export const HeroParallax = ({
       : [-530, 250];
 
   const translateXValue = isLargeDesktop
-    ? [0, 400]
+    ? [500, -100]
     : isDesktop
       ? [0, -500]
       : [0, -500];
+
+  const translateXReverseValue = isLargeDesktop
+    ? [0, 350]
+    : isDesktop
+      ? [-280, 50]
+      : [-280, 50];
 
   const translateX = useSpring(
     useTransform(scrollYProgress, [0, 0.8], translateXValue),
     springConfig,
   );
   const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 0.8], [0, -200]),
+    useTransform(scrollYProgress, [0, 0.8], translateXReverseValue),
     springConfig,
   );
   const rotateX = useSpring(
@@ -212,10 +218,11 @@ export const ProductCard = ({
       key={product.title}
       className="group/product relative aspect-[16/9] h-auto flex-shrink-0 will-change-transform ~w-[15rem]/[32rem]"
     >
-      <Link
+      {/* <Link
         href={product.link}
         className="relative block h-full group-hover/product:shadow-2xl"
-      >
+      > */}
+      <div className="relative block h-full group-hover/product:shadow-2xl">
         <Image
           src={product.thumbnail}
           fill
@@ -226,9 +233,9 @@ export const ProductCard = ({
           alt={product.title}
           sizes="30vw"
         />
-      </Link>
+      </div>
       <div className="full-size pointer-events-none absolute inset-0 bg-black opacity-0 group-hover/product:opacity-80"></div>
-      <h2 className="absolute bottom-4 left-4 text-3xl text-white opacity-0 group-hover/product:opacity-100">
+      <h2 className="absolute bottom-4 left-4 text-white opacity-0 ~text-lg/3xl group-hover/product:opacity-100">
         {product.title}
       </h2>
     </motion.div>

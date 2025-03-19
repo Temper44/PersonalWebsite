@@ -3,7 +3,7 @@
 import React from "react";
 import ScrollProgressBar from "@/app/components/ScrollProgressBar";
 import MobileMenu from "@/app/components/MobileMenu";
-import CustomCursor from "@/app/components/CustomCursor";
+// import CustomCursor from "@/app/components/CustomCursor";
 import ScrollToTopButton from "@/app/components/ScrollToTopButton";
 import { useBetterMediaQuery } from "@/lib/hooks";
 import ThemeSwitch from "./ThemeSwitch";
@@ -28,7 +28,6 @@ const PageUtilities = ({
         menuFullPage={menuFullPage}
         menuDisplayHome={menuDisplayHome}
       />
-      <CustomCursor />
       {!hide && <ScrollToTopButton />}
     </>
   );

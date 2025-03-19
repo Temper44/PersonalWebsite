@@ -1,25 +1,30 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useCursor } from "./context/CursorContext";
 
 const CustomCursor = () => {
-  const { isCursorHovered, position, setPosition } = useCursor();
+  const { isCursorHovered } = useCursor();
   const [isClient, setIsClient] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
-  // Ensure the component only renders after the client is mounted
+  // Ref to store the cursor position
+  const positionRef = useRef({ x: 0, y: 0 });
+  const cursorRef = useRef<HTMLDivElement>(null);
+
+  // Update the cursor position on mouse move
   useEffect(() => {
     setIsClient(true);
 
     const updateCursorPosition = (e: MouseEvent) => {
-      setPosition({
+      // Update cursor position in the ref without triggering a re-render
+      positionRef.current = {
         x: e.clientX,
         y: e.clientY,
-      });
+      };
     };
 
-    // Check if the device supports touch events (to detect touch devices)
+    // Check for touch devices
     const checkTouchDevice = () => {
       if ("ontouchstart" in window || navigator.maxTouchPoints > 0) {
         setIsTouchDevice(true);
@@ -35,17 +40,36 @@ const CustomCursor = () => {
     return () => {
       window.removeEventListener("mousemove", updateCursorPosition);
     };
-  }, [setPosition]);
+  }, []);
+
+  // Use requestAnimationFrame for smoother cursor movement
+  useEffect(() => {
+    let animationFrameId: number;
+
+    const moveCursor = () => {
+      if (cursorRef.current) {
+        // Set cursor position
+        cursorRef.current.style.left = `${positionRef.current.x}px`;
+        cursorRef.current.style.top = `${positionRef.current.y}px`;
+      }
+
+      // Continue the animation
+      animationFrameId = requestAnimationFrame(moveCursor);
+    };
+
+    animationFrameId = requestAnimationFrame(moveCursor); // Start the animation loop
+
+    return () => cancelAnimationFrame(animationFrameId); // Cleanup the animation loop
+  }, []);
 
   if (!isClient || isTouchDevice) return null; // Hide cursor on touch devices
 
   return (
     <div
+      ref={cursorRef}
       style={{
         position: "fixed",
         zIndex: 9999,
-        top: position.y + "px",
-        left: position.x + "px",
         width: isCursorHovered ? "52px" : "25px",
         height: isCursorHovered ? "52px" : "25px",
         backgroundColor: "#ffffff",

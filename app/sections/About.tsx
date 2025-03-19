@@ -87,7 +87,7 @@ const About = () => {
           ref={aboutMeRef}
           className="flex-col-center duration-400 relative min-h-[130svh] w-full rounded-[3rem] transition-colors ease-linear"
         >
-          <div className="absolute left-8 top-8 text-6xl text-white dark:text-black 2xl:text-8xl">
+          <div className="absolute left-8 top-8 text-white ~text-6xl/8xl dark:text-black">
             <FiArrowDownRight />
           </div>
           <div className="full-size grid grid-cols-1 place-items-center gap-16 !px-6 pb-24 pt-32 lg:grid-cols-2 lg:gap-4 lg:py-32">

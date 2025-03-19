@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import { useCursor } from "./context/CursorContext";
-import Link from "next/link";
 import { useInView } from "motion/react";
 import { motion } from "framer-motion";
 

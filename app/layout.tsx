@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
+
 import "./globals.scss";
 import ThemeContextProvider from "./components/context/ThemeContext";
 import { TransitionProvider } from "./components/TransitionProvider";
 import ReactLenis from "lenis/react";
 import ScrollManager from "./components/ScrollManager";
 import { CursorProvider } from "./components/context/CursorContext";
+import CustomCursor from "./components/CustomCursor";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
@@ -79,6 +81,7 @@ export default function RootLayout({
             >
               <CursorProvider>
                 <ScrollManager />
+                <CustomCursor />
 
                 {children}
               </CursorProvider>
