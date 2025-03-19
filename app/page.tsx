@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 // import { useMediaQuery } from "react-responsive";
 import HeroFooter from "./components/HeroFooter";
@@ -14,14 +14,7 @@ export default function Home() {
   //do it with window.innerWidth
   // const isSmall2 = window.innerWidth < 640;
   // const isSmall = useMediaQuery({ maxWidth: 640 });
-  const [isClient, setIsClient] = useState(false);
   const isSmall = useBetterMediaQuery("(max-width: 640px)");
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) return null;
 
   return (
     <main className="flex-col-center relative-center h-svh w-screen overflow-hidden">
