@@ -20,14 +20,18 @@ const Button = ({
   className?: string;
 }) => {
   return href ? (
-    <Link href={href} className="outline-none" tabIndex={-1}>
+    <a
+      href={href}
+      className="focus-visible:!ring-0 focus-visible:!ring-offset-0"
+      tabIndex={-1}
+    >
       <ButtonSkillet
         type={type}
         text={text}
         icon={icon}
         className={className}
       />
-    </Link>
+    </a>
   ) : (
     <ButtonSkillet type={type} text={text} icon={icon} className={className} />
   );

@@ -10,10 +10,13 @@ export default function Page() {
       <PageUtilities hide />
 
       <section className="container-flex-center">
-        <HeroText heading="Imprint" />
+        <HeroText heading="Imprint" anchor="imprint" />
       </section>
 
-      <section className="f-col container gap-2 px-4 pb-32 md:px-20">
+      <section
+        id="imprint"
+        className="f-col container gap-2 px-4 pb-32 md:px-20"
+      >
         <p>
           <b>Medieninhaber und verantwortlich für den Inhalt:</b> Mathias Ebner
         </p>
