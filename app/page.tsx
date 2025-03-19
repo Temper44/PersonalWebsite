@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import HeroFooter from "./components/HeroFooter";
 import FixedBackground from "./components/FixedBackground";
 import PageUtilities from "./components/PageUtilities";
-import useBetterMediaQuery from "./components/useBetterMediaQuery";
+import { useBetterMediaQuery } from "@/lib/hooks";
 
 export default function Home() {
   const [isHoveredPortrait, setIsHoveredPortrait] = useState(false);

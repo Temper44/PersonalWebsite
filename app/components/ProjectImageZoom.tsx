@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { gsap, useGSAP } from "@/lib/gsapConfig";
-import useBetterMediaQuery from "./useBetterMediaQuery";
+import { useBetterMediaQuery } from "@/lib/hooks";
 
 const ProjectImageZoom = ({ src, alt }: { src: string; alt: string }) => {
   const isSmall = useBetterMediaQuery("(max-width: 768px)");

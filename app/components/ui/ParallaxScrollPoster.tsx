@@ -12,7 +12,7 @@ import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { useCursor } from "../context/CursorContext";
-import useBetterMediaQuery from "../useBetterMediaQuery";
+import { useBetterMediaQuery } from "@/lib/hooks";
 
 export const ParallaxScrollPoster = ({
   images,

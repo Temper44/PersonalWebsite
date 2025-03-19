@@ -5,7 +5,7 @@ import ScrollProgressBar from "@/app/components/ScrollProgressBar";
 import MobileMenu from "@/app/components/MobileMenu";
 import CustomCursor from "@/app/components/CustomCursor";
 import ScrollToTopButton from "@/app/components/ScrollToTopButton";
-import useBetterMediaQuery from "./useBetterMediaQuery";
+import { useBetterMediaQuery } from "@/lib/hooks";
 
 const PageUtilities = ({
   hide = false,

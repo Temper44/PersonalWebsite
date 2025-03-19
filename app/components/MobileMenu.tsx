@@ -8,7 +8,7 @@ import { useCursor } from "./context/CursorContext";
 import { usePathname } from "next/navigation";
 import MagneticButton from "./MagneticButton";
 import { gsap, useGSAP } from "@/lib/gsapConfig";
-import useBetterMediaQuery from "./useBetterMediaQuery";
+import { useBetterMediaQuery } from "@/lib/hooks";
 
 interface MobileMenuProps {
   menuFullPage?: boolean;

@@ -10,7 +10,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useSectionInView } from "@/lib/hooks";
-import useBetterMediaQuery from "../useBetterMediaQuery";
+import { useBetterMediaQuery } from "@/lib/hooks";
 
 export const HeroParallax = ({
   products,

@@ -2,7 +2,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useId } from "react";
-import useBetterMediaQuery from "../useBetterMediaQuery";
+import { useBetterMediaQuery } from "@/lib/hooks";
 
 export const TextHoverEffect = ({
   text,
