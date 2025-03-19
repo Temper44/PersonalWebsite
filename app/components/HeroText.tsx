@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { useCursor } from "./context/CursorContext";
+import { useLenis } from "lenis/react";
 
 const HeroText = ({
   heading,
@@ -17,11 +18,22 @@ const HeroText = ({
   anchor?: string;
 }) => {
   const { setIsCursorHovered } = useCursor();
+  const lenis = useLenis();
+
+  const handleNavClick = (linkHash: string) => {
+    const targetElement = document.querySelector(linkHash);
+
+    if (targetElement) {
+      lenis?.scrollTo(targetElement as HTMLElement, {
+        duration: 1,
+      });
+    }
+  };
 
   return (
     <>
       <motion.h1
-        className="colorEffect textShadow text-center font-bold capitalize leading-snug tracking-wide ~text-[6.2rem]/[14rem] max-xs:text-7xl"
+        className="colorEffect text-center font-bold capitalize leading-snug tracking-wide ~text-[6.2rem]/[14rem] max-xs:text-7xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
@@ -41,8 +53,8 @@ const HeroText = ({
 
       {!infoText && (
         <motion.a
-          className="scrollIcon mt-40 scale-75 md:mt-32"
-          href={`#${anchor}`}
+          className="scrollIcon customFocusOutline mt-40 scale-75 md:mt-32"
+          href=""
           aria-label="scroll down"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -53,11 +65,15 @@ const HeroText = ({
             duration: 1,
             ease: "easeIn",
           }}
+          onClick={(e) => {
+            e.preventDefault(); // Prevent default anchor link behavior
+            handleNavClick(`#${anchor}`); // Manually scroll using Lenis
+          }}
         ></motion.a>
       )}
       {infoText && (
         <motion.p
-          className="z-10 py-4 text-center font-bold tracking-wide text-zinc-900 ~text-base/2xl dark:text-zinc-100"
+          className="z-10 py-4 text-center font-bold tracking-wide text-zinc-900 ~text-base/xl dark:text-zinc-100"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{

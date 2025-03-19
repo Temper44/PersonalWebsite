@@ -20,8 +20,9 @@ const MobileMenu = ({
   menuDisplayHome = true,
 }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => setIsOpen((prevState) => !prevState);
-  const menuRef = useRef(null);
+  const toggleMenu = () => setIsOpen((prevState) => visible && !prevState); // Toggle the menu only if it's visible
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuToggleButtonRef = useRef<HTMLButtonElement>(null);
   const menuItemsRef = useRef<HTMLAnchorElement[]>([]); // Refs for individual menu items
   const { setIsCursorHovered } = useCursor();
   const { scrollYProgress } = useScroll();
@@ -75,17 +76,39 @@ const MobileMenu = ({
   useEffect(() => {
     const handleEscKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setIsOpen(false); // Close the menu when the Escape key is pressed
+        setIsOpen(false);
       }
     };
-
     window.addEventListener("keydown", handleEscKey);
-
-    // Cleanup the event listener when the component unmounts or the menu closes
     return () => {
       window.removeEventListener("keydown", handleEscKey);
     };
   }, []);
+
+  useEffect(() => {
+    const focusableElements = document.querySelectorAll(
+      "button, a, input, textarea, select",
+    );
+
+    if (isOpen) {
+      // Disable focus for everything outside the menu and toggle button
+      focusableElements.forEach((el) => {
+        if (
+          !menuRef.current?.contains(el) &&
+          el !== menuToggleButtonRef.current
+        ) {
+          (el as HTMLElement).setAttribute("tabindex", "-1");
+        }
+      });
+    } else {
+      // Restore focus to everything when the menu closes
+      setTimeout(() => {
+        document.querySelectorAll("[tabindex='-1']").forEach((el) => {
+          (el as HTMLElement).removeAttribute("tabindex");
+        });
+      }, 10); // Slight delay to prevent conflicts with closing animation
+    }
+  }, [isOpen]);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
@@ -95,7 +118,7 @@ const MobileMenu = ({
       const isScrollable =
         document.documentElement.scrollHeight > window.innerHeight;
 
-      if (!isScrollable) {
+      if (!isScrollable || document.body.classList.contains("no-scroll")) {
         setVisible(true); // Always show the menu if scrolling isn't possible
         return;
       }
@@ -125,7 +148,8 @@ const MobileMenu = ({
       >
         <MagneticButton>
           <motion.button
-            className={`burgerMenu flex-center rounded-full transition-all ${!menuFullPage && "md:hidden"} ${
+            ref={menuToggleButtonRef}
+            className={`burgerMenu flex-center customFocusOutline rounded-full transition-all ${!menuFullPage && "md:hidden"} ${
               isOpen &&
               "opened right-[1.4rem] top-4 rounded-full bg-black p-2 dark:bg-white"
             }`}
@@ -166,14 +190,14 @@ const MobileMenu = ({
       </motion.div>
 
       <motion.div
-        className={`will-change-all fixed left-0 right-0 top-0 z-20 mx-auto block bg-white opacity-0 dark:bg-black ${!menuFullPage && "md:hidden"}`}
+        className={`will-change-all fixed left-0 right-0 top-0 z-20 mx-auto block bg-white opacity-0 dark:bg-black ${!menuFullPage && "md:hidden"} overflow-hidden`}
         ref={menuRef}
       >
-        <div className="flex-center absolute left-0 top-0 h-svh w-screen bg-grid-small-black/[0.15] dark:bg-grid-small-white/[0.25]">
+        <div className="flex-center absolute left-0 top-0 h-svh w-screen overflow-hidden bg-grid-small-black/[0.15] dark:bg-grid-small-white/[0.25]">
           <div className="flex-center absolute inset-0 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,theme(colors.background))] dark:bg-black" />
         </div>
         <nav
-          className={`z-100 flex-col-center relative h-svh gap-2 xs:gap-6 lg:gap-4 xl:gap-0 ${isMobileOrTabletLandscape && "!gap-2"}`}
+          className={`z-100 flex-col-center relative h-svh gap-2 overflow-hidden xs:gap-6 lg:gap-4 xl:gap-0 ${isMobileOrTabletLandscape && "!gap-2"}`}
         >
           {navItems.map((item, index) => {
             if (index === 0 && !menuDisplayHome) {

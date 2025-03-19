@@ -516,6 +516,10 @@ canvas {
   @apply relative flex h-[120vh] w-full items-start justify-center overflow-hidden sm:h-[130vh] md:h-[140vh] xl:h-[150vh] 2xl:h-[160vh];
 }
 
+.customFocusOutline {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black/50;
+}
+
 html.lenis,
 html.lenis body {
   height: auto;

@@ -6,6 +6,7 @@ import MobileMenu from "@/app/components/MobileMenu";
 import CustomCursor from "@/app/components/CustomCursor";
 import ScrollToTopButton from "@/app/components/ScrollToTopButton";
 import { useBetterMediaQuery } from "@/lib/hooks";
+import ThemeSwitch from "./ThemeSwitch";
 
 const PageUtilities = ({
   hide = false,
@@ -20,6 +21,8 @@ const PageUtilities = ({
 
   return (
     <>
+      <ThemeSwitch />
+
       {isMobile && <ScrollProgressBar />}
       <MobileMenu
         menuFullPage={menuFullPage}

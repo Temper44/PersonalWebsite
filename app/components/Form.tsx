@@ -7,8 +7,11 @@ import Toast from "./Toast";
 import Button from "./Button";
 import { useInView } from "motion/react";
 import { motion } from "framer-motion";
+import { useCursor } from "./context/CursorContext";
 
 const Form = () => {
+  const { setIsCursorHovered } = useCursor();
+
   const formRef = useRef(null);
   const [form, setForm] = useState({ email: "", message: "" });
   const [toast, setToast] = useState<{
@@ -81,10 +84,18 @@ const Form = () => {
           value={form.email}
           onChange={handleChange}
           required
-          className="field-input"
+          className="field-input cursor-none"
           placeholder="Your email"
           maxLength={100}
+          id="email"
+          onMouseEnter={() => setIsCursorHovered(true)}
+          onMouseLeave={() => setIsCursorHovered(false)}
         />
+        <label
+          htmlFor="email"
+          className="sr-only"
+          aria-label="Email input"
+        ></label>
 
         <textarea
           name="message"
@@ -92,10 +103,19 @@ const Form = () => {
           onChange={handleChange}
           required
           rows={4}
-          className="field-input"
+          className="field-input cursor-none"
           placeholder="Your message"
           maxLength={1000}
+          id="message"
+          onMouseEnter={() => setIsCursorHovered(true)}
+          onMouseLeave={() => setIsCursorHovered(false)}
         />
+        <label
+          htmlFor="message"
+          className="sr-only"
+          aria-label="Message input"
+        ></label>
+
         <div className="self-end">
           <Button type="submit" text="Submit" icon={<FaPaperPlane />} />
         </div>

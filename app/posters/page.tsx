@@ -16,7 +16,11 @@ export default function Page() {
       <FixedBackground />
       <PageUtilities />
       <section className="container-flex-center">
-        <HeroText heading="Posters" subheading={subHeadingTexts.posters} />
+        <HeroText
+          heading="Posters"
+          subheading={subHeadingTexts.posters}
+          anchor="posters"
+        />
       </section>
       <SvgContainer
         width="504"

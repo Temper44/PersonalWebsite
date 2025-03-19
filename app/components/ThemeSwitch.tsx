@@ -42,9 +42,9 @@ export default function ThemeSwitch() {
     >
       <MagneticButton>
         <motion.button
-          className="flex-center h-[2.5rem] w-[2.5rem] rounded-full border border-black border-opacity-40 shadow-md transition-all duration-1000 active:scale-110 dark:border-white md:left-8 md:top-8"
+          className="flex-center customFocusOutline h-[2.5rem] w-[2.5rem] rounded-full border border-black border-opacity-40 shadow-md transition-all duration-1000 active:scale-110 dark:border-white md:left-8 md:top-8"
           aria-label="Toggle Theme"
-          onClick={toggleTheme}
+          onClick={visible ? toggleTheme : undefined}
           onMouseEnter={() => visible && setIsCursorHovered(true)}
           onMouseLeave={() => visible && setIsCursorHovered(false)}
           animate={{

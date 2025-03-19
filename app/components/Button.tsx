@@ -20,7 +20,7 @@ const Button = ({
   className?: string;
 }) => {
   return href ? (
-    <Link href={href} className="outline-none">
+    <Link href={href} className="outline-none" tabIndex={-1}>
       <ButtonSkillet
         type={type}
         text={text}
