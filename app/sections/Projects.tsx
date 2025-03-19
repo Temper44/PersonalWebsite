@@ -31,7 +31,7 @@ const Projects = () => {
         scrub: 1,
         snap: {
           snapTo: 1 / (panels.length - 1), // Ensures each panel is a step
-          duration: { min: 0.3, max: 0.7 }, // ⬆️ Faster snap animation (stronger effect)
+          duration: { min: 0.3, max: 0.7 }, // ⬆️ Faster snap animation
           ease: "power2.inOut",
         },
         end: () => "+=" + (container ? container.offsetWidth : 0),

@@ -21,10 +21,10 @@ export default function ColorCase({ colors }: ColorCaseProps) {
         <motion.div
           key={color}
           className="flex-col-center gap-3"
-          initial={{ opacity: 0, y: 60 }} // Start from bottom with opacity 0
-          animate={isInView && { opacity: 1, y: 0 }} // Animate to original position with full opacity
+          initial={{ opacity: 0, y: 60 }}
+          animate={isInView && { opacity: 1, y: 0 }}
           transition={{
-            delay: index * 0.15, // Stagger the animation by delay
+            delay: index * 0.15,
             duration: 0.5,
             ease: "easeOut",
           }}

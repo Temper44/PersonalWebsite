@@ -6,7 +6,7 @@ import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import PageUtilities from "../components/PageUtilities";
 import FloatingNav from "../components/FloatingNav";
-import ActiveSectionContextProvider from "../components/context/active-section-context";
+import ActiveSectionContextProvider from "../components/context/ActiveSectionContext";
 import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
 import FixedBackground from "../components/FixedBackground";
 import SvgContainer from "../components/SvgContainer";

@@ -114,10 +114,8 @@ const MobileMenu = ({
         className="fixed right-20 top-6 z-50"
         initial={{
           opacity: 0,
-          // y: -100,
         }}
         animate={{
-          // y: visible ? 0 : -100,
           opacity: visible ? 1 : 0,
         }}
         transition={{

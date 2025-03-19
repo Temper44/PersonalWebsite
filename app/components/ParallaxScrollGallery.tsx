@@ -32,7 +32,6 @@ export default function ParallaxScrollGallery() {
           images={[images[0], images[1], images[2]]}
           y={y}
           className="top-[-5%]"
-          // top-[-45%]
         />
         <Column
           images={[images[3], images[4], images[5]]}

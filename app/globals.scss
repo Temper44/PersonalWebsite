@@ -18,13 +18,6 @@
 }
 
 html {
-  // scroll-behavior: smooth;
-  // overscroll-behavior: none;
-  // height: 100%;
-  // min-height: 100vh;
-  // // overflow: hidden;
-
-  // margin: 0;
 }
 
 body {
@@ -32,12 +25,6 @@ body {
   background-color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   cursor: none;
-  // height: 100%;
-  // min-height: 100vh;
-  // min-height: -webkit-fill-available;
-  // margin: 0;
-
-  // overflow-x: hidden;
 }
 
 img {
@@ -179,7 +166,7 @@ a {
     position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 0px; /* Initially no gap */
+    gap: 0px;
     transition:
       transform 0.4s ease-in-out,
       gap 0.4s ease-in-out;
@@ -275,10 +262,9 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-/* Dark mode styles */
 .dark body {
-  --sb-track-color: #191919; /* Dark mode track color */
-  --sb-thumb-color: #757575; /* Dark mode thumb color */
+  --sb-track-color: #191919;
+  --sb-thumb-color: #757575;
 }
 
 .dark body::-webkit-scrollbar-track {
@@ -393,17 +379,17 @@ body::-webkit-scrollbar-thumb {
     overflow: hidden;
 
     span {
-      white-space: nowrap; /* Prevent wrapping */
-      will-change: transform; /* Optimize animation */
+      white-space: nowrap;
+      will-change: transform;
       animation: marquee-move-text 7s linear infinite;
     }
   }
   @keyframes marquee-move-text {
     from {
-      transform: translateX(0); /* Start at default position */
+      transform: translateX(0);
     }
     to {
-      transform: translateX(-100%); /* Move by 100% of the track's width */
+      transform: translateX(-100%);
     }
   }
 }
@@ -415,9 +401,8 @@ body::-webkit-scrollbar-thumb {
     overflow: hidden;
 
     span {
-      // font-weight: 500 !important;
-      white-space: nowrap; /* Prevent wrapping */
-      will-change: transform, background-position; /* Optimize animation */
+      white-space: nowrap;
+      will-change: transform, background-position;
       animation:
         marquee-move-text2 7s linear infinite,
         gradientAnimate 7s ease infinite;
@@ -425,7 +410,7 @@ body::-webkit-scrollbar-thumb {
   }
   @keyframes marquee-move-text2 {
     from {
-      transform: translateX(0%); /* Start at default position */
+      transform: translateX(0%);
     }
     to {
       transform: translateX(100%);
@@ -440,14 +425,14 @@ body::-webkit-scrollbar-thumb {
   overflow: hidden;
 
   span {
-    white-space: nowrap; /* Prevent wrapping */
-    will-change: transform, background-position; /* Optimize animation */
+    white-space: nowrap;
+    will-change: transform, background-position;
     animation: marquee-move-text2 9s linear infinite;
   }
 
   @keyframes marquee-move-text2 {
     from {
-      transform: translateX(0%); /* Start at default position */
+      transform: translateX(0%);
     }
     to {
       transform: translateX(100%);

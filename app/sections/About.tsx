@@ -39,7 +39,6 @@ const About = () => {
           start: "top center",
           end: "start+=100px center",
           scrub: false,
-          // markers: true,
           onEnter: () => {
             aboutMeRef.current?.classList.add("bg-black", "dark:bg-white");
           },

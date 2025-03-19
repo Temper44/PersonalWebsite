@@ -21,7 +21,6 @@ const Skills = () => {
         pin: true,
         pinSpacing: true,
         invalidateOnRefresh: true,
-        // markers: true,
       },
     });
 
@@ -42,10 +41,6 @@ const Skills = () => {
     >
       <MarqueeText fontMobileBigger text="Skills" />
       <div className="skillsContainer relative h-svh w-screen">
-        {/* <p className="absolute-center textShort top-[60%] sm:top-[75%]">
-          {skillsText}
-        </p> */}
-
         <div className="mask-clip-path absolute-center top-0 z-20 h-[40vh] w-[60vw] origin-center overflow-hidden rounded-3xl will-change-transform md:h-[60vh] md:w-[30vw]">
           <BackgroundGradientAnimation>
             <div className="flex-center absolute inset-0 z-50 ~px-8/28">

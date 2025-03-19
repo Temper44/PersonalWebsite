@@ -73,19 +73,11 @@ export default function RootLayout({
       <body className={`vsc-initialized font-urbanist antialiased`}>
         <TransitionProvider>
           <ThemeContextProvider>
-            {/* <ScrollManager> */}
             <ReactLenis
               root
               options={{
-                // duration: 2,
                 lerp: 0.12,
-                // syncTouch: true,
-                // syncTouchLerp: 0.1,
-                // touchMultiplier: 0,
                 wheelMultiplier: 1.4,
-                // syncTouchLerp: 0.99,
-
-                // smoothWheel: true,
               }}
             >
               <CursorProvider>
@@ -96,7 +88,6 @@ export default function RootLayout({
                 <ThemeSwitch />
               </CursorProvider>
             </ReactLenis>
-            {/* </ScrollManager> */}
           </ThemeContextProvider>
         </TransitionProvider>
       </body>

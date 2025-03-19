@@ -26,13 +26,13 @@ export default function MaskText({
   const isInView = useInView(ref, viewInMargin);
 
   const animation = {
-    initial: { y: "100%" }, // Start the text off-screen (downwards)
+    initial: { y: "100%" },
     enter: (i: number) => ({
-      y: "0", // Move the text to its normal position
+      y: "0",
       transition: {
         duration: 0.8,
-        ease: [0.33, 1, 0.68, 1], // Custom easing
-        delay: 0.08 * i, // Stagger the animations
+        ease: [0.33, 1, 0.68, 1],
+        delay: 0.08 * i,
       },
     }),
   };
@@ -50,7 +50,6 @@ export default function MaskText({
               initial="initial"
               animate={isInView ? "enter" : ""}
               className={`${className} `}
-              // will-change-transform
               onMouseEnter={() => cursorHoverEffect && setIsCursorHovered(true)}
               onMouseLeave={() =>
                 cursorHoverEffect && setIsCursorHovered(false)
@@ -65,7 +64,6 @@ export default function MaskText({
               initial="initial"
               animate={isInView ? "enter" : ""}
               className={`${className} `}
-              // will-change-transform
             >
               {phrase}
             </motion.p>

@@ -134,8 +134,8 @@ const AnimatedText = ({
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeIn", // Smooth easing
-        delay: 0.13 * i, // Stagger each word by 0.1s
+        ease: "easeIn",
+        delay: 0.13 * i,
       },
     }),
   };
@@ -210,7 +210,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product relative aspect-[16/9] h-auto flex-shrink-0 will-change-transform ~w-[15rem]/[32rem]" //xs:w-[20rem] sm:w-[22rem] md:w-[24rem] lg:w-[26rem] xl:w-[28rem] 2xl:w-[30rem]
+      className="group/product relative aspect-[16/9] h-auto flex-shrink-0 will-change-transform ~w-[15rem]/[32rem]"
     >
       <Link
         href={product.link}
@@ -226,8 +226,6 @@ export const ProductCard = ({
           alt={product.title}
           sizes="30vw"
         />
-        {/* height="600" width="600" className="absolute inset-0 full-size
-        object-cover object-left-top" */}
       </Link>
       <div className="full-size pointer-events-none absolute inset-0 bg-black opacity-0 group-hover/product:opacity-80"></div>
       <h2 className="absolute bottom-4 left-4 text-3xl text-white opacity-0 group-hover/product:opacity-100">

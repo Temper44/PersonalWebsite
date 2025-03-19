@@ -28,13 +28,10 @@ const CustomCursor = () => {
       }
     };
 
-    // Initial check for touch device
     checkTouchDevice();
 
-    // Add event listener to track mouse movement
     window.addEventListener("mousemove", updateCursorPosition);
 
-    // Cleanup event listener
     return () => {
       window.removeEventListener("mousemove", updateCursorPosition);
     };
@@ -45,17 +42,17 @@ const CustomCursor = () => {
   return (
     <div
       style={{
-        position: "fixed", // Ensure it's fixed to the viewport
+        position: "fixed",
         zIndex: 9999,
         top: position.y + "px",
         left: position.x + "px",
-        width: isCursorHovered ? "52px" : "25px", // Change size on hover
+        width: isCursorHovered ? "52px" : "25px",
         height: isCursorHovered ? "52px" : "25px",
-        backgroundColor: "#ffffff", // Example color
+        backgroundColor: "#ffffff",
         borderRadius: "50%",
         transform: "translate(-50%, -50%)",
-        pointerEvents: "none", // Ensure cursor doesn't interfere with clicks
-        mixBlendMode: "difference", // Optional: for unique visual effects
+        pointerEvents: "none",
+        mixBlendMode: "difference",
         transition: "width 0.1s ease, height 0.1s ease",
       }}
     />

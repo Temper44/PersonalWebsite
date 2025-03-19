@@ -44,7 +44,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.1,
     },
-    // other pages
   ];
 
   const sitemap = [...defaultPages];

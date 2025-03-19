@@ -255,7 +255,7 @@ const MarqueeText = ({
       end: "bottom top",
       scrub: 1,
       onUpdate: (self) => {
-        gsap.set(marquee, { xPercent: -self.progress * 12 }); // Adjust speed dynamically
+        gsap.set(marquee, { xPercent: -self.progress * 13 });
       },
     });
   }, []);

@@ -36,7 +36,7 @@ const CarouselControl = ({
 };
 
 interface CarouselProps {
-  slides: string[]; // Array of image paths
+  slides: string[];
 }
 
 export function Carousel({ slides }: CarouselProps) {

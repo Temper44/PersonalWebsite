@@ -12,7 +12,6 @@ const SnakeSvg = () => {
     if (!path) return;
     const pathLength = path.getTotalLength();
 
-    // Set initial SVG path styles
     gsap.set(path, {
       strokeDasharray: pathLength,
       // strokeDashoffset: pathLength,

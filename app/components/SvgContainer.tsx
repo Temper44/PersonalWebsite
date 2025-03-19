@@ -32,11 +32,10 @@ const SvgContainer = ({
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: svgRef.current,
-          start: `top top+=200px`, // start when the top of the trigger element hits the top of the viewport
-          end: "bottom top", // end when the top of the trigger element hits the top of the viewport
+          start: `top top+=200px`,
+          end: "bottom top",
           scrub: 1,
           pin: true,
-          //   markers: true,
         },
       });
 

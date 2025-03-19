@@ -20,10 +20,10 @@ export default function ChipAnimation({ technologies }: ChipAnimationProps) {
       {technologies.map((name, index) => (
         <motion.div
           key={name}
-          initial={{ opacity: 0, y: 60 }} // Start from bottom with opacity 0
-          animate={isInView && { opacity: 1, y: 0 }} // Animate to original position with full opacity
+          initial={{ opacity: 0, y: 60 }}
+          animate={isInView && { opacity: 1, y: 0 }}
           transition={{
-            delay: index * 0.15, // Stagger the animation by delay
+            delay: index * 0.15,
             duration: 0.5,
             ease: "easeOut",
           }}

@@ -2,9 +2,8 @@
 
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { sectionLinks } from "@/lib/data";
-// import Link from "next/link";
 import { clsx } from "clsx";
-import { useActiveSectionContext } from "./context/active-section-context";
+import { useActiveSectionContext } from "./context/ActiveSectionContext";
 import { useCursor } from "./context/CursorContext";
 import { useState } from "react";
 import { useLenis } from "lenis/react";
@@ -14,7 +13,7 @@ export default function FloatingNav() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
   const { setIsCursorHovered } = useCursor();
-  const lenis = useLenis(); // Get the Lenis instance
+  const lenis = useLenis();
 
   const [visible, setVisible] = useState(true);
 

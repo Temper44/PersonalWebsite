@@ -29,7 +29,6 @@ export default function TextGradient({
         scrub: true,
         start: animationStart,
         end: animationEnd,
-        // markers: true,
       },
       opacity: 1,
       ease: "none",
@@ -70,7 +69,6 @@ export default function TextGradient({
       letters.push(
         <span
           className={`${opacityClassName} `}
-          // will-change-opacity
           key={letter + "_" + i}
           ref={(el) => {
             refs.current.push(el);
@@ -85,7 +83,6 @@ export default function TextGradient({
 
   return (
     <div ref={container2} className="overflow-hidden">
-      {/* class: overflow-hidden */}
       <div ref={body} className={`flex flex-wrap ${className}`}>
         {splitWords(text)}
       </div>

@@ -29,5 +29,5 @@
     ".next/types/**/*.ts",
     "lib/loadImages.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "unused", "depricated"]
 }

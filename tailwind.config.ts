@@ -101,7 +101,7 @@ export default {
       );
     },
     fluid({
-      checkSC144: false, // default: true
+      checkSC144: false,
     }),
   ],
   darkMode: "class",

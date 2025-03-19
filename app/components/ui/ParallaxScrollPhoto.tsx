@@ -42,7 +42,6 @@ export const ParallaxScrollPhoto = ({
     isMobile ? [0, 0] : [0, 0],
   );
 
-  // Split images into 3 parts
   const third = Math.ceil(images.length / 3);
   const firstPart = images.slice(0, third);
   const secondPart = images.slice(third, 1.9 * third);
