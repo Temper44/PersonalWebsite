@@ -38,12 +38,10 @@ export default {
         "9xl": "120rem", // 1920px
       },
       animation: {
-        spotlight: "spotlight 2s ease .75s 1 forwards",
-        first: "moveVertical 30s ease infinite",
-        second: "moveInCircle 20s reverse infinite",
-        third: "moveInCircle 40s linear infinite",
-        fourth: "moveHorizontal 40s ease infinite",
-        fifth: "moveInCircle 20s ease infinite",
+        second: "moveInCircle 20s reverse infinite", //pink
+        third: "moveInCircle 40s linear infinite", //blue
+        fourth: "moveHorizontal 40s ease infinite", //red
+        // fifth: "moveInCircle 20s ease infinite", //violett
       },
       keyframes: {
         moveHorizontal: {
@@ -68,17 +66,6 @@ export default {
             transform: "rotate(360deg)",
           },
         },
-        moveVertical: {
-          "0%": {
-            transform: "translateY(-50%)",
-          },
-          "50%": {
-            transform: "translateY(50%)",
-          },
-          "100%": {
-            transform: "translateY(-50%)",
-          },
-        },
       },
     },
     screens, // Tailwind's default screens, in `rem`
@@ -91,11 +78,11 @@ export default {
     function ({ matchUtilities, theme }: any) {
       matchUtilities(
         {
-          "bg-grid": (value: any) => ({
-            backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100" height="100" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`,
-            )}")`,
-          }),
+          // "bg-grid": (value: any) => ({
+          //   backgroundImage: `url("${svgToDataUri(
+          //     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100" height="100" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`,
+          //   )}")`,
+          // }),
           "bg-grid-small": (value: any) => ({
             backgroundImage: `url("${svgToDataUri(
               `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`,

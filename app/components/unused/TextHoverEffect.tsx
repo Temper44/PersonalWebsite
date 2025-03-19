@@ -2,7 +2,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useId } from "react";
-import { useMediaQuery } from "react-responsive";
+import useBetterMediaQuery from "../useBetterMediaQuery";
 
 export const TextHoverEffect = ({
   text,
@@ -24,8 +24,7 @@ export const TextHoverEffect = ({
   const maskId = `revealMask-${uniqueId}`;
   const maskDefId = `textMask-${uniqueId}`;
 
-  const isDesktop = useMediaQuery({ minWidth: 1280 });
-  // const isBigDesktop = useMediaQuery({ minWidth: 1600 });
+  const isDesktop = useBetterMediaQuery("(max-width: 1280px)");
 
   useEffect(() => {
     if (svgRef.current && cursor.x !== null && cursor.y !== null) {

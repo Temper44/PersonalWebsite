@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import {
   motion,
   useScroll,
@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useSectionInView } from "@/lib/hooks";
+import useBetterMediaQuery from "../useBetterMediaQuery";
 
 export const HeroParallax = ({
   products,
@@ -30,37 +31,20 @@ export const HeroParallax = ({
   });
 
   const springConfig = { stiffness: 300, damping: 40, bounce: 100 };
-  // const isDesktop = useMediaQuery({ minWidth: 768 });
-  // const isLargeDesktop = useMediaQuery({ minWidth: 1920 });
+  const isDesktop = useBetterMediaQuery("(min-width: 768px)");
+  const isLargeDesktop = useBetterMediaQuery("(min-width: 1920px)");
 
-  const [translateYValue, setTranslateYValue] = React.useState<number[]>([
-    -530, 250,
-  ]);
-  const [translateXValue, setTranslateXValue] = React.useState<number[]>([
-    0, -500,
-  ]);
+  const translateYValue = isLargeDesktop
+    ? [-700, 500]
+    : isDesktop
+      ? [-700, 330]
+      : [-530, 250];
 
-  useEffect(() => {
-    const updateValues = () => {
-      if (window.innerWidth >= 1920) {
-        setTranslateYValue([-700, 500]);
-        setTranslateXValue([0, 400]);
-      } else if (window.innerWidth >= 768) {
-        setTranslateYValue([-700, 330]);
-        setTranslateXValue([0, -500]);
-      } else {
-        setTranslateYValue([-530, 250]);
-        setTranslateXValue([0, -500]);
-      }
-    };
-
-    updateValues();
-    window.addEventListener("resize", updateValues);
-
-    return () => {
-      window.removeEventListener("resize", updateValues);
-    };
-  }, []);
+  const translateXValue = isLargeDesktop
+    ? [0, 400]
+    : isDesktop
+      ? [0, -500]
+      : [0, -500];
 
   const translateX = useSpring(
     useTransform(scrollYProgress, [0, 0.8], translateXValue),

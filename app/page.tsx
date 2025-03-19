@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-// import { useMediaQuery } from "react-responsive";
 import HeroFooter from "./components/HeroFooter";
 import FixedBackground from "./components/FixedBackground";
 import PageUtilities from "./components/PageUtilities";
@@ -10,10 +9,6 @@ import useBetterMediaQuery from "./components/useBetterMediaQuery";
 
 export default function Home() {
   const [isHoveredPortrait, setIsHoveredPortrait] = useState(false);
-
-  //do it with window.innerWidth
-  // const isSmall2 = window.innerWidth < 640;
-  // const isSmall = useMediaQuery({ maxWidth: 640 });
   const isSmall = useBetterMediaQuery("(max-width: 640px)");
 
   return (

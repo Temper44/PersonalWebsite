@@ -5,7 +5,7 @@ import ScrollProgressBar from "@/app/components/ScrollProgressBar";
 import MobileMenu from "@/app/components/MobileMenu";
 import CustomCursor from "@/app/components/CustomCursor";
 import ScrollToTopButton from "@/app/components/ScrollToTopButton";
-import { useMediaQuery } from "react-responsive";
+import useBetterMediaQuery from "./useBetterMediaQuery";
 
 const PageUtilities = ({
   hide = false,
@@ -16,7 +16,7 @@ const PageUtilities = ({
   menuFullPage?: boolean;
   menuDisplayHome?: boolean;
 }) => {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isMobile = useBetterMediaQuery("(max-width: 768px)");
 
   return (
     <>

@@ -2,11 +2,11 @@
 
 import React from "react";
 import Image from "next/image";
-import { useMediaQuery } from "react-responsive";
 import { gsap, useGSAP } from "@/lib/gsapConfig";
+import useBetterMediaQuery from "./useBetterMediaQuery";
 
 const ProjectImageZoom = ({ src, alt }: { src: string; alt: string }) => {
-  const isSmall = useMediaQuery({ maxWidth: 640 });
+  const isSmall = useBetterMediaQuery("(max-width: 768px)");
 
   useGSAP(() => {
     const clipAnimation = gsap.timeline({

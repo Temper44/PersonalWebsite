@@ -28,13 +28,7 @@ const ProjectImageFull = ({ title, src, alt }: ProjectImageItemProps) => {
         animate={isInView ? { opacity: 1, scale: 1 } : {}}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <Image
-          src={src}
-          alt={alt}
-          layout="fill"
-          className="object-cover"
-          quality={80}
-        />
+        <Image src={src} alt={alt} fill className="object-cover" quality={80} />
       </motion.div>
     </div>
   );

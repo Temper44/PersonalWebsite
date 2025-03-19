@@ -6,9 +6,9 @@ import { navItems } from "@/lib/data";
 import { Link } from "next-transition-router";
 import { useCursor } from "./context/CursorContext";
 import { usePathname } from "next/navigation";
-import { useMediaQuery } from "react-responsive";
 import MagneticButton from "./MagneticButton";
 import { gsap, useGSAP } from "@/lib/gsapConfig";
+import useBetterMediaQuery from "./useBetterMediaQuery";
 
 interface MobileMenuProps {
   menuFullPage?: boolean;
@@ -28,9 +28,9 @@ const MobileMenu = ({
   const [visible, setVisible] = useState(true);
   const pathname = usePathname(); // Get the current router
 
-  const isMobileOrTabletLandscape = useMediaQuery({
-    query: "(max-width: 1024px) and (orientation: landscape)", // Only detect landscape mode on mobile/tablets
-  });
+  const isMobileOrTabletLandscape = useBetterMediaQuery(
+    "(max-width: 1024px) and (orientation: landscape)",
+  ); // Only detect landscape mode on mobile/tablets
 
   // GSAP animation on menu state change (open/close)
   useGSAP(() => {

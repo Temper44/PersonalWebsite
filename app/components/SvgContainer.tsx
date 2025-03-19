@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import { useMediaQuery } from "react-responsive";
 import { gsap, useGSAP } from "@/lib/gsapConfig";
 
 const SvgContainer = ({
@@ -17,7 +16,6 @@ const SvgContainer = ({
   height: string;
   viewBox: string;
 }) => {
-  const isDesktop = useMediaQuery({ minWidth: 1024 });
   const svgRef = useRef<SVGSVGElement>(null);
 
   useGSAP(() => {
@@ -34,7 +32,7 @@ const SvgContainer = ({
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: svgRef.current,
-          start: `top ${isDesktop ? "top+=200px" : "top+=200px"}`, // start when the top of the trigger element hits the top of the viewport
+          start: `top top+=200px`, // start when the top of the trigger element hits the top of the viewport
           end: "bottom top", // end when the top of the trigger element hits the top of the viewport
           scrub: 1,
           pin: true,

@@ -11,8 +11,8 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import { useMediaQuery } from "react-responsive";
 import { useCursor } from "../context/CursorContext";
+import useBetterMediaQuery from "../useBetterMediaQuery";
 
 export const ParallaxScrollPoster = ({
   images,
@@ -25,7 +25,7 @@ export const ParallaxScrollPoster = ({
   const [isOpen, setIsOpen] = useState(false);
   const [lightboxClosed, setLightboxClosed] = useState(true);
 
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isMobile = useBetterMediaQuery("(max-width: 768px)");
 
   const translateFirst = useTransform(
     scrollYProgress,
