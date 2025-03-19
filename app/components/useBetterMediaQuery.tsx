@@ -3,14 +3,18 @@
 import { useEffect, useState } from "react";
 
 export default function useBetterMediaQuery(mediaQueryString: string) {
-  const [matches, setMatches] = useState<boolean>();
+  const [matches, setMatches] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
+    if (typeof window === "undefined") return; // Prevents running on the server
+
     const mediaQueryList = window.matchMedia(mediaQueryString);
-    const listener = () => setMatches(!!mediaQueryList.matches);
-    listener();
-    mediaQueryList.addEventListener("change", listener); // updated from .addListener
-    return () => mediaQueryList.removeEventListener("change", listener); // updated from .removeListener
+    const listener = () => setMatches(mediaQueryList.matches);
+
+    listener(); // Check initial value
+    mediaQueryList.addEventListener("change", listener);
+
+    return () => mediaQueryList.removeEventListener("change", listener);
   }, [mediaQueryString]);
 
   return matches;
