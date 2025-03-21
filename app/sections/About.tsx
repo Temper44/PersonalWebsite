@@ -56,7 +56,7 @@ const About = () => {
             new hoverEffect({
               parent: imageContainer.current,
               intensity: 0.2,
-              image1: "./img/portrait.jpg",
+              image1: "./img/portrait_new2.jpg",
               image2: "./img/portrait2.jpg",
               displacementImage: "./img/distortion.png",
               imagesRatio: 5 / 4,
