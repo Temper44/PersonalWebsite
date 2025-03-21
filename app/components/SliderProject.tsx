@@ -75,7 +75,7 @@ const SliderProject = ({
           </div>
         </div>
         <Link
-          className="relative order-1 col-span-2 aspect-[3/2] w-full max-xs:h-[30vh] md:order-2 md:col-span-1"
+          className="relative order-1 col-span-2 aspect-[5/3] w-full overflow-hidden rounded-md bg-gradient-to-r from-rose-500 to-purple-500 shadow-md max-xs:h-[30vh] md:order-2 md:col-span-1"
           href={detailsPageLink}
           onMouseEnter={() => setIsCursorHovered(true)}
           onMouseLeave={() => setIsCursorHovered(false)}
@@ -83,7 +83,7 @@ const SliderProject = ({
         >
           <motion.div
             ref={refImage}
-            className="full-size relative shadow-md"
+            className="full-size relative"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{
@@ -96,8 +96,8 @@ const SliderProject = ({
               alt={imgPreview.alt}
               fill
               quality={80}
-              className="rounded-sm object-cover"
-              sizes="(max-width: 640px) 100vw, 50vw"
+              className="object-contain"
+              sizes="(min-width: 640px) 45vw, (min-width: 1920px) 35vw, 100vw"
             />
           </motion.div>
         </Link>

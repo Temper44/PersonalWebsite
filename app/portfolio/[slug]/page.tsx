@@ -1,7 +1,6 @@
 import Button from "@/app/components/Button";
 import ChipAnimation from "@/app/components/ChipAnimation";
 import ColorCase from "@/app/components/ColoCase";
-import FixedBackground from "@/app/components/FixedBackground";
 import Footer from "@/app/components/Footer";
 import MaskText from "@/app/components/MaskText";
 import PageUtilities from "@/app/components/PageUtilities";
@@ -31,14 +30,13 @@ export default async function Page({
 
   return (
     <main className="max-w-screen relative-center overflow-hidden">
-      <FixedBackground />
       <PageUtilities />
       <ProjectImageFrame
         name={project.name}
         src={project.imgPreview.src}
         alt={project.imgPreview.alt}
       />
-      <div className="mx-auto mt-16 grid max-w-8xl grid-cols-1 gap-6 p-6 md:mt-32 md:grid-cols-2 2xl:gap-8">
+      <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-6 p-6 md:mt-32 md:grid-cols-2 2xl:gap-8">
         <div className="projectDataWrapper order-2">
           <MaskText text={["My role"]} className="textSubHeading" headline />
           <MaskText text={[project.role]} className="projectDataText" />
@@ -72,29 +70,32 @@ export default async function Page({
         </div>
         <div className="projectDataWrapper order-6 row-span-2 mt-8 justify-self-end md:mt-0">
           <Button
-            text="View Project"
-            href={project.detailsPageLink}
+            text="View Live"
+            href={project.liveLink}
             icon={<FiExternalLink size={16} />}
           />
         </div>
       </div>
 
-      <div className="mx-auto my-28 flex max-w-8xl justify-center">
+      <div className="mx-auto my-28 flex max-w-7xl justify-center">
         <ColorCase colors={project.colors} />
       </div>
 
       <ProjectImageZoom
-        src={project.imgPreview.src}
-        alt={project.imgPreview.alt}
+        colorsGradient={project.colorsGradient}
+        src={project.imgScroll.src}
+        alt={project.imgScroll.alt}
       />
 
-      <div className="flex-col-center mx-auto my-24 max-w-8xl gap-12 p-6 md:my-36 md:gap-20 xl:gap-36">
-        {project.imgFullScreen.map((img) => (
+      <div className="flex-col-center mx-auto my-24 max-w-7xl gap-12 p-6 md:my-36 md:gap-20 xl:gap-36">
+        {project.imgFullScreen.map((img, index) => (
           <ProjectImageFull
             key={img.title}
             title={img.title}
             src={img.src}
             alt={img.alt}
+            objectCover={index !== 0 ? true : false}
+            shadow={index !== 0 ? true : false}
           />
         ))}
       </div>

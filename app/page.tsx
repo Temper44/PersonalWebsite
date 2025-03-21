@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import HeroFooter from "./components/HeroFooter";
-import FixedBackground from "./components/FixedBackground";
+// import FixedBackground from "./components/FixedBackground";
 import PageUtilities from "./components/PageUtilities";
 import { useBetterMediaQuery } from "@/lib/hooks";
 
@@ -13,7 +13,6 @@ export default function Home() {
 
   return (
     <main className="flex-col-center relative-center h-svh w-screen overflow-hidden">
-      <FixedBackground />
       <PageUtilities hide menuDisplayHome={false} menuFullPage={false} />
 
       <section className="container-flex-center sm:flex-row sm:px-11">

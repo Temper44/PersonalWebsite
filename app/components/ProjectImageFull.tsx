@@ -9,9 +9,18 @@ type ProjectImageItemProps = {
   title: string;
   src: string;
   alt: string;
+  objectCover?: boolean;
+
+  shadow: boolean;
 };
 
-const ProjectImageFull = ({ title, src, alt }: ProjectImageItemProps) => {
+const ProjectImageFull = ({
+  title,
+  src,
+  alt,
+  objectCover,
+  shadow,
+}: ProjectImageItemProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { margin: "0px 0px -100px 0px", once: true });
 
@@ -23,12 +32,19 @@ const ProjectImageFull = ({ title, src, alt }: ProjectImageItemProps) => {
         headline
       />
       <motion.div
-        className="full-size relative aspect-[16/9] shadow-md"
+        className={`full-size relative aspect-[17/9] overflow-hidden rounded-sm ${shadow && "shadow-lg"} `}
         initial={{ opacity: 0, scale: 0.95 }}
         animate={isInView ? { opacity: 1, scale: 1 } : {}}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <Image src={src} alt={alt} fill className="object-cover" quality={80} />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className={objectCover ? "object-cover" : "object-contain"}
+          quality={80}
+          sizes="95vw"
+        />
       </motion.div>
     </div>
   );

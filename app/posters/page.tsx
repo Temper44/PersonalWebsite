@@ -1,6 +1,5 @@
 import Footer from "../components/Footer";
 import HeroText from "../components/HeroText";
-import FixedBackground from "../components/FixedBackground";
 import MarqueeText from "../components/MarqueeText";
 import { loadParallaxPoster } from "@/lib/loadImages";
 import { ParallaxScrollPoster } from "../components/ui/ParallaxScrollPoster";
@@ -13,7 +12,6 @@ export default function Page() {
 
   return (
     <main className="max-screen-center">
-      <FixedBackground />
       <PageUtilities />
       <section className="container-flex-center">
         <HeroText

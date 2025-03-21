@@ -8,6 +8,7 @@ import ReactLenis from "lenis/react";
 import ScrollManager from "./components/ScrollManager";
 import { CursorProvider } from "./components/context/CursorContext";
 import CustomCursor from "./components/CustomCursor";
+import FixedBackground from "./components/FixedBackground";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
@@ -82,7 +83,7 @@ export default function RootLayout({
               <CursorProvider>
                 <ScrollManager />
                 <CustomCursor />
-
+                <FixedBackground />
                 {children}
               </CursorProvider>
             </ReactLenis>

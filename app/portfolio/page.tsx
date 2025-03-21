@@ -8,7 +8,6 @@ import PageUtilities from "../components/PageUtilities";
 import FloatingNav from "../components/FloatingNav";
 import ActiveSectionContextProvider from "../components/context/ActiveSectionContext";
 import ParallaxScrollGallery from "../components/ParallaxScrollGallery";
-import FixedBackground from "../components/FixedBackground";
 import SvgContainer from "../components/SvgContainer";
 import type { Metadata } from "next";
 
@@ -59,7 +58,6 @@ export default function Page() {
   return (
     <ActiveSectionContextProvider>
       <main className="relative-center">
-        <FixedBackground />
         <PageUtilities hide={true} />
         <FloatingNav />
         <HeroParallax products={products} />

@@ -5,7 +5,6 @@ import { loadParallaxImages, loadSliderImages } from "../../lib/loadImages";
 import HeroText from "../components/HeroText";
 import MarqueeText from "../components/MarqueeText";
 import { Carousel } from "../components/ui/Carousel";
-import FixedBackground from "../components/FixedBackground";
 import { subHeadingTexts } from "@/lib/texts";
 import PageUtilities from "../components/PageUtilities";
 import SvgContainer from "../components/SvgContainer";
@@ -16,7 +15,6 @@ export default function Page() {
 
   return (
     <main className="max-screen-center">
-      <FixedBackground />
       <PageUtilities />
 
       <section className="container-flex-center">

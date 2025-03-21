@@ -39,7 +39,7 @@ const Projects = () => {
     });
   }, []);
 
-  const { ref } = useSectionInView("Projects");
+  const { ref } = useSectionInView("Projects", 0.01);
 
   return (
     <section id="projects" ref={ref} className="relative !overflow-hidden">
@@ -50,7 +50,7 @@ const Projects = () => {
       />
       <div
         ref={projectsContainer}
-        className="flex h-svh w-[300vw] !overflow-hidden"
+        className="flex h-svh w-[400vw] !overflow-hidden"
       >
         {projects.map((project, i) => (
           <SliderProject

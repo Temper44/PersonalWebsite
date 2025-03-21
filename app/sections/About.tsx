@@ -138,7 +138,7 @@ const About = () => {
               </div>
             </div>
             <div className="absolute-center bottom-[-5px] h-[12px] w-[20%]">
-              <div className="h-full w-full rounded-full bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500"></div>
+              <div className="h-full w-full rounded-full bg-gradient-to-r from-rose-500 to-purple-500"></div>
             </div>
           </div>
         </div>
